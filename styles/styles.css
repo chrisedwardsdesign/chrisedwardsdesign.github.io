@@ -390,7 +390,7 @@ section {
 .maintenance--message {
   font-size: 13px;
   line-height: 130%;
-  color: #001eff;
+  /* color: #001eff; */
 }
 .maintenance--game-container {
   display: flex;
