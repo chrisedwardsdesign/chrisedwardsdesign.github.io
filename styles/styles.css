@@ -779,3 +779,7 @@ section {
 .svg-hide {
   display: none;
 }
+
+form input[type="email"] {
+  touch-action: manipulation;
+}
