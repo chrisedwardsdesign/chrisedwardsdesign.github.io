@@ -356,6 +356,8 @@ section {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
+  max-height: 100vh;
+  min-height: 100dvh;
 }
 .maintenance--title {
   font-size: 13px;
