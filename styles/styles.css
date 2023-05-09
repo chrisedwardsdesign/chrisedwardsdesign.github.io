@@ -369,14 +369,14 @@ section {
 }
 .container-maintenance--copyright {
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
   flex-direction: column;
   position: absolute;
-  right: 1rem;
+  left: 1rem;
   bottom: 1rem;
 }
 .maintenance--copyright-p {
-  font-size: 11px;
+  font-size: 13px;
   line-height: 130%;
-  text-align: right;
+  text-align: left;
 }
