@@ -354,9 +354,9 @@ section {
 /* temp css - maintenance */
 .section--maintenance {
   display: flex;
-  gap: 13px;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  flex-direction: column;
 }
 .maintenance--title {
   font-size: 13px;
@@ -367,6 +367,8 @@ section {
   line-height: 130%;
 }
 .maintenance--copyright {
+  font-size: 11px;
+  line-height: 100%;
   position: absolute;
   right: 1rem;
   bottom: 1rem;
