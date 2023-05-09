@@ -365,10 +365,16 @@ section {
   font-size: 13px;
   line-height: 130%;
 }
-.container-maintenance--copyright-p {
-  font-size: 11px;
-  line-height: 100%;
-  position: absolute;
+.container-maintenance--copyright {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+   position: absolute;
   right: 1rem;
   bottom: 1rem;
+}
+.maintenance--copyright-p {
+  font-size: 11px;
+  line-height: 130%;
+  text-align: right;
 }
