@@ -349,3 +349,10 @@ section {
   -o-object-fit: contain;
      object-fit: contain;
 }/*# sourceMappingURL=styles.css.map */
+
+.section--maintenance {
+  display: flex;
+  gap: 13px;
+  justify-content: center;
+  align-items: center;
+}
