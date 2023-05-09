@@ -352,7 +352,7 @@ section {
 
 
 /* temp css - maintenance */
-.section--maintenance {
+.container-maintenance {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -365,7 +365,7 @@ section {
   font-size: 13px;
   line-height: 130%;
 }
-.maintenance--copyright {
+.container-maintenance--copyright-p {
   font-size: 11px;
   line-height: 100%;
   position: absolute;
