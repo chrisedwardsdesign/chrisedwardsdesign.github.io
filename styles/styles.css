@@ -350,9 +350,24 @@ section {
      object-fit: contain;
 }/*# sourceMappingURL=styles.css.map */
 
+
+/* temp css - maintenance */
 .section--maintenance {
   display: flex;
   gap: 13px;
   justify-content: center;
   align-items: center;
+}
+.maintenance--title {
+  font-size: 13px;
+  line-height: 130%;
+}
+.maintenance--message {
+  font-size: 13px;
+  line-height: 130%;
+}
+.maintenance--copyright {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
 }
