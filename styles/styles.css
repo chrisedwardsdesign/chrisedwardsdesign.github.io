@@ -553,7 +553,16 @@ section {
   text-align: right;
   color: #000;
   background-color: #fff!important;
+  outline-color: -webkit-focus-ring-color;
+  outline-style: none;
+  outline-width: 0;
 }
+
+:focus-visible {
+  outline-color: -webkit-focus-ring-color;
+  outline-style: none;
+  outline-width: 0;
+  }
 
 .container-countdown--desk {
   display: flex;
