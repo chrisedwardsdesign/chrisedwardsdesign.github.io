@@ -487,6 +487,11 @@ section {
   -webkit-backdrop-filter: blur(3px);
 }
 
+.maintenance--input:nth-child(4)  {
+  border-bottom: 0;
+  height: calc(44px * 3);
+}
+
 .maintenance--input:last-child {
   border-bottom: 0;
 }
@@ -504,6 +509,7 @@ section {
   border: 0;
   padding: 0.5rem;
   outline: 0px!important;
+  outline-style: none;
 }
 
 .maintenance--input label:focus-visible {
@@ -514,12 +520,14 @@ section {
 .maintenance--input label:focus {
   outline: 0px!important;
   outline-color: none!important;
+  outline-style: none;
 }
 
 .maintenance--input form { 
   width: 100%;
   height: 100%;
   border: 0;
+  outline-style: none;
 }
 
 .maintenance--input input { 
@@ -531,6 +539,7 @@ section {
   background-color: transparent!important;
   color: white;
   text-align: right;
+  outline-style: none;
 }
 
 .maintenance--input input:visited { 
@@ -547,6 +556,7 @@ section {
   padding: 0.5rem;
   text-align: left;
   cursor: pointer;
+  outline-style: none;
 }
 
 .maintenance--input textarea {
@@ -557,6 +567,7 @@ section {
   padding: 0.5rem;
   text-align: right;
   outline: -webkit-focus-ring-color auto 0px;
+  outline: none;
   color: #fff;
 }
 
@@ -569,11 +580,11 @@ section {
   outline-width: 0;
 }
 
-:focus-visible {
+/* :focus-visible {
   outline-color: -webkit-focus-ring-color;
   outline-style: none;
   outline-width: 0;
-  }
+  } */
 
 .container-countdown--desk {
   display: flex;
