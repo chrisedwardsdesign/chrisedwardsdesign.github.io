@@ -375,10 +375,11 @@ section {
   top: 1rem;
   left: 1rem;
 }
+
 .maintenance--content {
   display: flex;
-  flex-direction: row;
-  gap: 0.5rem;
+  flex-direction: column;
+  gap: 0;
   align-items: flex-start;
   width: fit-content;
   height: fit-content;
@@ -397,6 +398,7 @@ section {
   line-height: 130%;
   text-transform: uppercase;
 }
+
 .maintenance--message {
   font-size: 13px;
   line-height: 130%;
@@ -404,14 +406,22 @@ section {
   /* color: #001eff; */
 }
 
+.maintenance--version-history {
+  font-size: 13px;
+  line-height: 130%;
+  white-space: nowrap;
+  /* color: #001eff; */
+}
+
 @media only screen and (max-width: 640px) {
-  .maintenance--message {
+  .maintenance--version-history {
     position: relative;
-    bottom: -1rem;
-    right: 1rem;
+    bottom: -0.5rem;
+    right: -1rem;
     transform: rotate(90deg) translate(0, 100%);
     transform-origin: top right;
     line-height: 100%;
+    text-align: right;
   }
 }
 .maintenance--game-container {
@@ -680,22 +690,34 @@ section {
 .container-maintenance--copyright {
   display: flex;
   align-items: flex-start;
+  gap: 0.5rem;
   flex-direction: row;
   position: absolute;
   bottom: 0;
-  width: 100%;
+  left: 0;
+  width: fit-content;
   height: fit-content;
   justify-content: space-between;
   padding: 1rem;
 }
 
-/* @media only screen and (max-width: 640px) {
+.maintenance--version-container {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: fit-content;
+  height: fit-content;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+@media only screen and (max-width: 640px) {
   .container-maintenance--copyright {
-    align-items: flex-end;
-    left: unset;
-    right: 1rem;
+    flex-direction: column;
+    gap: 0;
   }
-} */
+}
 
 .maintenance--copyright-p {
   font-size: 13px;
