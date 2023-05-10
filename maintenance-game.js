@@ -113,15 +113,17 @@ document.addEventListener("DOMContentLoaded", function() {
     svgTriggerOne = document.getElementById('maintenance--svg-trigger-1'),
     svgTriggerTwo = document.getElementById('drawerTriggerMinusSvg'),
     svgTriggerThree = document.getElementById('drawerTriggerCloseSvg'),
+    burgerOpen = document.getElementById('burgerOpen'),
+    burgerClose = document.getElementById('burgerClose'),
     formOverlay = document.getElementById('formOverlay');
-
-    drawerTriggerMinusSvg
 
   function formToggle() {  
     formPosition.classList.toggle('form-slide-left');
     formOverlay.classList.toggle('form-hide');
     svgTriggerTwo.classList.toggle('svg-hide');
     svgTriggerThree.classList.toggle('svg-hide');
+    burgerOpen.classList.toggle('svg-hide');
+    burgerClose.classList.toggle('svg-hide');
   }
 
   formTrigger.addEventListener('click', formToggle);
