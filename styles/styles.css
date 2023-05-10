@@ -41,7 +41,7 @@
 
 body {
   background-color: var(--background-color-primary);
-  font-family: "Space Mono", monospace;
+  font-family: "Arial", sans-serif;
   font-size: 1rem;
   color: var(--color-primary);
   transition: all 0.4s ease-in-out;
@@ -367,7 +367,7 @@ section {
 .maintenance--info {
   display: flex;
   flex-direction: column;
-  gap: 11px;
+  gap: 0;
   align-items: flex-start;
   width: fit-content;
   height: fit-content;
@@ -377,7 +377,17 @@ section {
 }
 .maintenance--content {
   display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: flex-start;
+  width: fit-content;
+  height: fit-content;
+}
+
+.maintenance--content-2 {
+  display: flex;
   flex-direction: column;
+  gap: 0;
   align-items: flex-start;
   width: fit-content;
   height: fit-content;
@@ -391,6 +401,12 @@ section {
   font-size: 13px;
   line-height: 130%;
   /* color: #001eff; */
+}
+
+@media only screen and (max-width: 640px) {
+  .maintenance--message {
+    display: none;
+  }
 }
 .maintenance--game-container {
   display: flex;
@@ -611,11 +627,11 @@ section {
 .container-countdown--mob {
   display: none;
   flex-direction: row;
-  gap: 0.5rem;
-  align-items: flex-start;
-  width: fit-content;
-  height: fit-content;
-  text-align: left;
+    gap: 0.5rem;
+    width: fit-content;
+    height: fit-content;
+    text-align: left;
+    text-transform: uppercase;
 }
 
 .container-countdown--mob .maintenance--title-h2 {
@@ -652,6 +668,14 @@ section {
   bottom: 1rem;
   width: fit-content;
   height: fit-content;
+}
+
+@media only screen and (max-width: 640px) {
+  .container-maintenance--copyright {
+    align-items: flex-end;
+    left: unset;
+    right: 1rem;
+  }
 }
 
 .maintenance--copyright-p {
@@ -745,11 +769,13 @@ section {
   padding: 1rem;
   cursor: pointer;
   padding: 0.75rem;
+  stroke-width: 1.5px;
 }
 
 .maintenance--svg-close {
   width: auto;
   height: 13px;
+  stroke-width: 1.5px;
 }
 
 .maintenance--svg-close-2 {
@@ -808,6 +834,7 @@ section {
   stroke: #000;
   left: 0;
   opacity: 1;
+  stroke-width: 1.5px;
 }
 
 /* .maintenance--form-sbumit--svg:hover {
