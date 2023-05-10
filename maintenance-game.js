@@ -110,9 +110,9 @@ function clickRandomWord() {
 document.addEventListener("DOMContentLoaded", function() {
   const formTrigger = document.getElementById('formTriggerOpen'),
     formPosition = document.getElementById('formPosition'),
-    svgTriggerOne = document.getElementById('maintenance--svg-trigger-1'),
-    svgTriggerTwo = document.getElementById('drawerTriggerMinusSvg'),
-    svgTriggerThree = document.getElementById('drawerTriggerCloseSvg'),
+    // svgTriggerOne = document.getElementById('maintenance--svg-trigger-1'),
+    // svgTriggerTwo = document.getElementById('drawerTriggerMinusSvg'),
+    // svgTriggerThree = document.getElementById('drawerTriggerCloseSvg'),
     burgerOpen = document.getElementById('burgerOpen'),
     burgerClose = document.getElementById('burgerClose'),
     formOverlay = document.getElementById('formOverlay');
@@ -120,14 +120,14 @@ document.addEventListener("DOMContentLoaded", function() {
   function formToggle() {  
     formPosition.classList.toggle('form-slide-left');
     formOverlay.classList.toggle('form-hide');
-    svgTriggerTwo.classList.toggle('svg-hide');
-    svgTriggerThree.classList.toggle('svg-hide');
+    // svgTriggerTwo.classList.toggle('svg-hide');
+    // svgTriggerThree.classList.toggle('svg-hide');
     burgerOpen.classList.toggle('svg-hide');
     burgerClose.classList.toggle('svg-hide');
   }
 
   formTrigger.addEventListener('click', formToggle);
-  svgTriggerOne.addEventListener('click', formToggle);
+  // svgTriggerOne.addEventListener('click', formToggle);
   formOverlay.addEventListener('click', formToggle);
 })
 
