@@ -476,7 +476,7 @@ section {
 
 .maintenance--input--message {
   align-items: flex-start!important;
-  padding: 0.75rem 0.5rem;
+  padding: 0.75rem 0.5rem!important;
 }
 
 
