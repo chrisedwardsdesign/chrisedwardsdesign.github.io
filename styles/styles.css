@@ -899,3 +899,7 @@ form input[type="email"] {
 .maintenance--uppercase {
   text-transform: uppercase;
 }
+
+form label {
+  pointer-events: none;
+}
