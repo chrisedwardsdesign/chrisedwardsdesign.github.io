@@ -400,12 +400,18 @@ section {
 .maintenance--message {
   font-size: 13px;
   line-height: 130%;
+  white-space: nowrap;
   /* color: #001eff; */
 }
 
 @media only screen and (max-width: 640px) {
   .maintenance--message {
-    display: none;
+    position: relative;
+    bottom: -1rem;
+    right: 1rem;
+    transform: rotate(90deg) translate(0, 100%);
+    transform-origin: top right;
+    line-height: 100%;
   }
 }
 .maintenance--game-container {
@@ -482,7 +488,7 @@ section {
 
 .maintenance--input {
   display: grid;
-  grid-template-columns: 1fr 82px;
+  grid-template-columns: 1fr;
   gap: 2px;
   width: 100%;
   height: 44px;
@@ -495,6 +501,8 @@ section {
 .maintenance--input--message {
   align-items: flex-start!important;
   padding: 0.75rem 0.5rem!important;
+  grid-column: 1 / 3;
+  grid-row: 1;
 }
 
 
@@ -532,7 +540,8 @@ section {
   text-transform: uppercase;
   font-size: 13px;
   justify-content: flex-end;
-  visibility: hidden;
+  grid-column: 1 / 3;
+  grid-row: 1;
 }
 
 .maintenance--input label:focus-visible {
@@ -566,6 +575,8 @@ section {
   font-family: inherit;
   font-size: 13px;
   line-height: 130%;
+  grid-column: 1 / 3;
+  grid-row: 1;
 }
 
 .maintenance--input input:visited { 
@@ -598,6 +609,8 @@ section {
   font-family: inherit;
   font-size: 13px;
   line-height: 130%;
+  grid-column: 1 / 3;
+  grid-row: 1;
 }
 
 .maintenance--input textarea:focus-visible {
@@ -616,7 +629,7 @@ section {
   } */
 
 .container-countdown--desk {
-  display: flex;
+  display: none;
   flex-direction: row;
   gap: 0.5REM;
   align-items: flex-end;
@@ -629,7 +642,7 @@ section {
 }
 
 .container-countdown--mob {
-  display: none;
+  display: flex;
   flex-direction: row;
     gap: 0.5rem;
     width: fit-content;
@@ -659,20 +672,21 @@ section {
   .container-countdown--desk {
     display: none;
   }
-  .container-countdown--mob {
+  /* .container-countdown--mob {
     display: flex!important;
-  }
+  } */
 }
 
 .container-maintenance--copyright {
   display: flex;
   align-items: flex-start;
-  flex-direction: column;
+  flex-direction: row;
   position: absolute;
-  left: 1rem;
-  bottom: 1rem;
-  width: fit-content;
+  bottom: 0;
+  width: 100%;
   height: fit-content;
+  justify-content: space-between;
+  padding: 1rem;
 }
 
 /* @media only screen and (max-width: 640px) {
@@ -687,6 +701,7 @@ section {
   font-size: 13px;
   line-height: 130%;
   text-align: left;
+  white-space: nowrap;
 }
 
 .container-maintenance--contact {
@@ -695,7 +710,7 @@ section {
   flex-direction: column;
   position: absolute;
   right: 1rem;
-  bottom: 1rem;
+  top: 1rem;
   width: 42px;
   height: fit-content;
   cursor: pointer;
@@ -709,11 +724,12 @@ section {
 
 @media only screen and (max-width: 640px) {
   .container-maintenance--contact {
-    align-items: flex-end;
+    align-items: center;
     top: 1rem;
     border-radius: 0.5rem;
     border: 1px solid white;
     padding: 0.5rem;
+    width: fit-content;
   }
   .maintenance--contact-h3 {
     display: none;
@@ -779,14 +795,14 @@ section {
 }
 
 .maintenance--svg-close {
-  width: auto;
-  height: 13px;
-  stroke-width: 1.5px;
+  width: 15px;
+  height: 16px;
+  /* stroke-width: 1.5px; */
 }
 
 .maintenance--svg-close-2 {
-  width: 24px;
-  height: 13px;
+  width: 15px;
+  height: 16px;
 }
 
 .maintenance--svg-close-2 path {
@@ -856,4 +872,8 @@ section {
 
 form input[type="email"] {
   touch-action: manipulation;
+}
+
+.maintenance--uppercase {
+  text-transform: uppercase;
 }
