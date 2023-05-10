@@ -699,6 +699,7 @@ section {
   width: 42px;
   height: fit-content;
   cursor: pointer;
+  z-index: 1;
 }
 
 .container-maintenance--contact:hover .maintenance--contact-h3 {
