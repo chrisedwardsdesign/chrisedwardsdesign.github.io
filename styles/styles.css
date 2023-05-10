@@ -810,6 +810,7 @@ section {
   -webkit-backdrop-filter: blur(3px);
   color: #000;
   font-weight: 600;
+  font-size: 13px;
 }
 
 .maintenance--input button:hover {
