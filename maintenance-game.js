@@ -101,9 +101,6 @@ function clickRandomWord() {
 document.addEventListener("DOMContentLoaded", function() {
   const formTrigger = document.getElementById('formTriggerOpen'),
     formPosition = document.getElementById('formPosition'),
-    // svgTriggerOne = document.getElementById('maintenance--svg-trigger-1'),
-    // svgTriggerTwo = document.getElementById('drawerTriggerMinusSvg'),
-    // svgTriggerThree = document.getElementById('drawerTriggerCloseSvg'),
     burgerOpen = document.getElementById('burgerOpen'),
     burgerClose = document.getElementById('burgerClose'),
     formOverlay = document.getElementById('formOverlay');
@@ -111,48 +108,44 @@ document.addEventListener("DOMContentLoaded", function() {
   function formToggle() {  
     formPosition.classList.toggle('form-slide-left');
     formOverlay.classList.toggle('form-hide');
-    // svgTriggerTwo.classList.toggle('svg-hide');
-    // svgTriggerThree.classList.toggle('svg-hide');
     burgerOpen.classList.toggle('svg-hide');
     burgerClose.classList.toggle('svg-hide');
   }
 
   formTrigger.addEventListener('click', formToggle);
-  // svgTriggerOne.addEventListener('click', formToggle);
   formOverlay.addEventListener('click', formToggle);
+
+  // form
+  document.querySelector("#formPosition").addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+    var formData = new FormData(this);
+    var submitButton = document.querySelector("#maintenance--form-submit");
+    
+    fetch(this.action, {
+      method: this.method,
+      body: formData,
+      headers: {
+        "Accept": "application/json"
+      }
+    }).then(response => {
+      if (response.ok) {
+        submitButton.textContent = "Message sent!";
+        this.reset();
+        // Wait for 2 seconds, then close the form
+        setTimeout(formToggle, 2000);
+      } else {
+        throw new Error('Form submission failed');
+      }
+    }).catch(error => {
+      submitButton.textContent = "Error!";
+      console.error(error);
+    });
+  });
+  
 })
 
-document.addEventListener("DOMContentLoaded", function() {
-  const form = document.querySelector("#formPosition");
-  const submitButton = form.querySelector("#maintenance--form-submit");
-  const successMessage = "Message sent!";
-
-  form.addEventListener("submit", function(event) {
-    event.preventDefault(); // prevent default form submission
-    submitButton.disabled = true; // disable the submit button to prevent multiple submissions
-
-    // Send the form data using AJAX
-    const formData = new FormData(form);
-    const xhr = new XMLHttpRequest();
-    xhr.open("POST", form.action, true);
-    xhr.onreadystatechange = function() {
-      if (xhr.readyState === 4 && xhr.status === 200) {
-        // Form submission successful, display a success message to the user
-        submitButton.textContent = successMessage;
-      } else if (xhr.readyState === 4 && xhr.status !== 200) {
-        // Form submission failed, display an error message to the user
-        submitButton.textContent = "Error sending message!";
-      }
-      submitButton.disabled = false; // re-enable the submit button
-    };
-    xhr.send(formData);
-  });
-});
-
-
-
 // countdown timer
-
 // Set the date and time to count down to
 const countdownDate = new Date("2023-05-15T23:59:59Z").getTime();
 
