@@ -803,7 +803,7 @@ section {
   height: 100%;
   align-items: center;
   padding: 0.5rem;
-  justify-content: space-between;
+  justify-content: center;
   overflow: hidden;
   background-color: #ffffffa6;
   backdrop-filter: blur(3px);
