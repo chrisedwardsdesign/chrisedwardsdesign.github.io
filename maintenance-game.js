@@ -38,17 +38,6 @@ function clickRandomColor() {
   }
 }
 
-//   function clickRandomWord() {
-//     let randomWord = storedWords[Math.floor(Math.random() * storedWords.length)];
-
-//     if (randomWord === lastWord) {
-//       return clickRandomWord();
-//     }
-
-//     lastWord = randomWord;
-//     contMove.textContent = randomWord;
-//   }
-
 function clickRandomWord() {
   let randomWord;
   
@@ -71,8 +60,10 @@ function clickRandomWord() {
   function randomMove() {
     let x = Math.floor(Math.random() * (contParent.offsetWidth - contMove.offsetWidth));
     let y = Math.floor(Math.random() * (contParent.offsetHeight - contMove.offsetHeight));
+    let rotation = Math.floor(Math.random() * 90) - 45; // select random rotation angle between -45 and 45 degrees
     contMove.style.left = x + "px";
     contMove.style.top = y + "px";
+    contMove.style.transform = "rotate(" + rotation + "deg)"; // apply rotation to element
   };
 
   function startAutoAnimate() {
@@ -135,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function() {
 // countdown timer
 
 // Set the date and time to count down to
-const countdownDate = new Date("2023-12-31T23:59:59Z").getTime();
+const countdownDate = new Date("2023-05-15T23:59:59Z").getTime();
 
 // Update the countdown every second
 const countdownInterval = setInterval(function() {
