@@ -470,7 +470,7 @@ section {
   height: 44px;
   font-size: 13px;
   line-height: 130%;
-  align-items: baseline;
+  align-items: center;
   border-bottom: 1px solid white;
 }
 
@@ -542,6 +542,9 @@ section {
   color: white;
   text-align: right;
   outline-style: none;
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 130%;
 }
 
 .maintenance--input input:visited { 
@@ -571,6 +574,9 @@ section {
   outline: -webkit-focus-ring-color auto 0px;
   outline: none;
   color: #fff;
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 130%;
 }
 
 .maintenance--input textarea:focus-visible {
@@ -614,6 +620,7 @@ section {
 .maintenance--title-h2 {
   font-size: 13px;
   line-height: 130%;
+  margin: 0.5rem;
 }
 
 .maintenance--time {
@@ -731,6 +738,7 @@ section {
   align-items: center;
   padding: 1rem;
   cursor: pointer;
+  padding: 0.75rem;
 }
 
 .maintenance--svg-close {
@@ -761,7 +769,7 @@ section {
   width: 100%;
   height: 100%;
   align-items: center;
-  padding: 1rem;
+  padding: 0.5rem;
   justify-content: space-between;
   overflow: hidden;
   background-color: #ffffffa6;
