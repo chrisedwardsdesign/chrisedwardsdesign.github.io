@@ -474,7 +474,7 @@ section {
 .maintenance-container--form {
   position: relative;
   left: 0;
-  transition: left 1s;
+  transition: left 0.35s ease-in-out;
   display: flex;
   gap: 0;
   align-items: flex-start;
@@ -785,7 +785,7 @@ section {
 
 .form-slide-left {
   left: 100vw;
-  transition: left 1s;
+  transition: left 0.35s ease-in-out;
   overflow: hidden;
 }
 
