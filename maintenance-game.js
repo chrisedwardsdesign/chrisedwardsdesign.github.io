@@ -123,17 +123,32 @@ document.addEventListener("DOMContentLoaded", function() {
 })
 
 document.addEventListener("DOMContentLoaded", function() {
-  document.querySelector("#formPosition").addEventListener("submit", function(event) {
-    // Prevent the form from submitting normally
-    event.preventDefault();
-    
-    // Send the email
-    this.submit();
-    
-    // Replace the text inside the submit button with a success message
-    document.querySelector("#maintenance--form-submit").textContent = "Message sent!";
+  const form = document.querySelector("#formPosition");
+  const submitButton = form.querySelector("#maintenance--form-submit");
+  const successMessage = "Message sent!";
+
+  form.addEventListener("submit", function(event) {
+    event.preventDefault(); // prevent default form submission
+    submitButton.disabled = true; // disable the submit button to prevent multiple submissions
+
+    // Send the form data using AJAX
+    const formData = new FormData(form);
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", form.action, true);
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        // Form submission successful, display a success message to the user
+        submitButton.textContent = successMessage;
+      } else if (xhr.readyState === 4 && xhr.status !== 200) {
+        // Form submission failed, display an error message to the user
+        submitButton.textContent = "Error sending message!";
+      }
+      submitButton.disabled = false; // re-enable the submit button
+    };
+    xhr.send(formData);
   });
-})
+});
+
 
 
 // countdown timer
