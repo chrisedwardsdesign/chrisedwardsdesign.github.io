@@ -756,8 +756,8 @@ section {
 }
 
 #drawerTriggerMinusSvg {
-  width: 13px;
-  height: inherit;
+  width: 24px;
+  height: 13px;
 }
 
 .maintenance--svg-close path {
