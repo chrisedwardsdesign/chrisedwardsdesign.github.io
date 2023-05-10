@@ -470,7 +470,7 @@ section {
   height: 44px;
   font-size: 13px;
   line-height: 130%;
-  align-items: center;
+  align-items: baseline;
   border-bottom: 1px solid white;
 }
 
@@ -510,6 +510,8 @@ section {
   padding: 0.5rem;
   outline: 0px!important;
   outline-style: none;
+  text-transform: uppercase;
+  font-size: 13px;
 }
 
 .maintenance--input label:focus-visible {
@@ -652,7 +654,7 @@ section {
   position: absolute;
   right: 1rem;
   bottom: 1rem;
-  width: fit-content;
+  width: 42px;
   height: fit-content;
   cursor: pointer;
 }
@@ -666,8 +668,21 @@ section {
   .container-maintenance--contact {
     align-items: flex-end;
     top: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid white;
+    padding: 0.5rem;
+  }
+  .maintenance--contact-h3 {
+    display: none;
   }
 }
+
+@media only screen and (min-width: 640px) {
+.container-maintenance--contact svg {
+    display: none;
+  }
+}
+
 .maintenance--contact-h3 {
   font-size: 13px;
   line-height: 130%;
@@ -723,6 +738,15 @@ section {
   height: 13px;
 }
 
+.maintenance--svg-close-2 {
+  width: 24px;
+  height: 13px;
+}
+
+.maintenance--svg-close-2 path {
+  stroke: #fff;
+}
+
 #drawerTriggerMinusSvg {
   width: 13px;
   height: inherit;
@@ -743,6 +767,7 @@ section {
   background-color: #ffffffa6;
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
+  color: #000;
 }
 
 .maintenance--input button:hover {
@@ -750,7 +775,7 @@ section {
   background-color: #001eff7a!important;
   backdrop-filter: blur(3px)!important;
   -webkit-backdrop-filter: blur(3px)!important;
-  color: #fff;
+  color: #fff!important;
 }
 
 .maintenance--input button:hover svg {
@@ -763,8 +788,8 @@ section {
 
 .maintenance--form-submit--svg {
   position: relative;
-  height: 13px;
-  width: 13px;
+  height: 24px;
+  width: auto;
   fill: none;
   stroke: #000;
   left: 0;
