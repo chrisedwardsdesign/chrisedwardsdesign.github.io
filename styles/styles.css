@@ -1,168 +1,853 @@
-document.addEventListener("DOMContentLoaded", function() {
-  const contMove = document.getElementById("contMove");
-  const contParent = document.getElementById("contParent");
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
 
-//   const storedColors = ["#f000ff", "#001eff", "#FF5F1F", "#FFFFFF"]; // pink, blue, orange, white
-  const storedColors = ["#FFFFFF","#001eff"]; // white, blue
-  const storedWords = ["DESIGN", "ANIMATION", "UX", "CODE", "COMING SOON"];
+:root {
+  --color-primary: #f3f3f3;
+  --color-secondary: #141414;
+  --color-orange: #ff5900;
+  --color-dark-green: #002c24;
+  --color-fuchsia: #ff2eff;
+  --background-color-primary: #141414;
+  --background-color-secondary: #f3f3f3;
+  --link-hover: #4c4c4c;
+  --link-visited: #ff6fdd;
+  --link-active: #e4e4e4;
+  --font-weight: 400;
+  --text-uppercase: uppercase;
+  --h1: 19px;
+  --h2: 17px;
+  --h3: 13px;
+  --h4: 13px;
+  --h5: 13px;
+  --h5: 13px;
+  --pb: 13px;
+  --pbm: 11px;
+  --pbs: 11px;
+  --base-text: 13px;
+  --base-text-line-height: 130%;
+  --padding-base: 13px;
+  --padding-base-small: 11px;
+  --padding-base-double: 16px;
+  --margin-base: 13px;
+  --margin-base-small: 11px;
+  --margin-base-double: 16px;
+  --nav-gap-desk: 13px;
+  --nav-gap-mob: 13px;
+}
 
-  let lastColor;
-  let lastWord;
-  let autoAnimateTimeout;
-  let isFirstRandomWord = true; // Add a flag to check if it's the first time the function is called
-  let isFirstRandomColor = true; // Add a flag to check if it's the first time the function is called
+body {
+  background-color: var(--background-color-primary);
+  font-family: "Arial", sans-serif;
+  font-size: 1rem;
+  color: var(--color-primary);
+  transition: all 0.4s ease-in-out;
+}
 
-function clickRandomColor() {
-  const white = "#FFFFFF";
-  let randomColor;
-  
-  // Exclude the last color in the array if it's the first time the function is called
-  if (isFirstRandomColor) {
-    randomColor = storedColors[Math.floor(Math.random() * (storedColors.length - 1))];
-    isFirstRandomColor = false;
-  } else {
-    randomColor = storedColors[Math.floor(Math.random() * storedColors.length)];
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  font-family: inherit;
+}
+
+button {
+  line-height: 100%;
+  margin: --margin-base --margin-base-double;
+  padding: --padding-base --padding-base-double;
+  text-transform: var(--text-uppercase);
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  display: block;
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
+  -webkit-margin-start: 0;
+          margin-inline-start: 0;
+  -webkit-margin-end: 0;
+          margin-inline-end: 0;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  text-transform: none;
+}
+
+a {
+  outline: none;
+}
+
+a:link {
+  color: var(--link);
+}
+
+a:visited {
+  color: var(--link-visited);
+}
+
+a:focus {
+  text-decoration: none;
+  background: var(--background-color-secondary);
+}
+
+a:hover {
+  text-decoration: none;
+  background: var(--link-hover);
+}
+
+a:active {
+  background: var(--background-color-secondary);
+  color: var(--link-active);
+}
+
+header {
+  height: 100vh;
+  color: var(--color-primary);
+  overflow: hidden;
+}
+
+section {
+  position: absolute;
+  min-height: 100vh;
+  width: 100%;
+  left: 0;
+  top: 0;
+  padding: 1rem;
+}
+
+.section {
+  transform: translateY(-100%);
+  transition: all 0.4s ease-in-out;
+  background-color: rgba(243, 243, 243, 0);
+}
+
+.sec1 {
+  display: none;
+  transform: translateY(0) scale(1);
+}
+
+.sec2 {
+  transform: translateY(0) scale(1);
+}
+
+.sec2-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: calc(var(--margin-base) / 2);
+  padding: 0 var(--margin-base);
+}
+
+.sec-holder {
+  grid-column: 1/span 8;
+  grid-row: 1/span 6;
+  height: calc(100% - 39px);
+  margin: 0 -13PX 0 -13PX;
+  background-color: #212121;
+}
+
+.sec2-img-holder-1 {
+  grid-column: 1/span 2;
+  grid-row: 1/span 3;
+  background-color: #141414;
+  height: calc(100% - 39px);
+  align-self: end;
+}
+
+.sec2-img-holder-2 {
+  grid-column: 5/span 4;
+  grid-row: 1/span 3;
+  background-color: #141414;
+  height: calc(100% - 39px);
+  align-self: end;
+}
+
+.sec-item-desktop {
+  cursor: pointer;
+  display: flex;
+  gap: var(--margin-base);
+  align-items: center;
+  justify-content: flex-start;
+  height: calc(var(--pb) * 3);
+  padding: 0 calc(var(--nav-gap-desk) / 2);
+  outline: 0;
+  background-color: #212121;
+  grid-row: 6;
+  align-self: end;
+}
+
+.sec-item-content-desktop {
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: min-content;
+  gap: var(--margin-base);
+  align-items: center;
+  justify-content: flex-start;
+  padding: calc(var(--nav-gap-desk) / 2);
+  outline: 0;
+  background-color: #212121;
+  grid-row: 4/span 2;
+}
+
+.header-desk {
+  font-size: var(--pb);
+  align-self: start;
+}
+
+.copy-desk {
+  align-self: start;
+}
+
+.se3 {
+  display: none;
+  transform: translateY(0) scale(1);
+}
+
+.sec4 {
+  display: none;
+  transform: translateY(0) scale(1);
+}
+
+/* nav desktop */
+/* hide desktop-menu */
+@media screen and (max-width: 640px) {
+  .nav-desktop {
+    display: none !important;
   }
+}
+.menu {
+  display: inline-grid;
+  grid-auto-columns: 1fr;
+  gap: 0;
+  width: 100%;
+}
 
-  if (randomColor === lastColor) {
-    return clickRandomColor();
+.nav-desktop {
+  display: flex;
+  padding: 0 var(--margin-base);
+  z-index: 1000;
+  position: relative;
+}
+
+.nav-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-auto-rows: auto;
+  gap: calc(var(--nav-gap-desk) / 2);
+  width: 100%;
+}
+
+.logotype-desktop {
+  grid-column: 1;
+  grid-row: 1;
+  font-size: var(--base-text);
+}
+
+.menu-item-desktop {
+  cursor: pointer;
+  display: flex;
+  gap: var(--margin-base);
+  align-items: center;
+  justify-content: flex-start;
+  height: calc(var(--pb) * 3);
+  padding: 0 calc(var(--nav-gap-desk) / 2);
+  outline: 0;
+}
+
+/* nav mobile */
+/* hide mobile-menu */
+@media only screen and (min-width: 640px) {
+  .mob-none {
+    display: none;
   }
+}
+.menu {
+  display: inline-grid;
+  grid-auto-columns: 1fr;
+  gap: 0;
+  width: 100%;
+}
 
-  lastColor = randomColor;
-  contMove.style.backgroundColor = randomColor;
+.menu-item {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: calc(var(--pb) * 3);
+  padding: 0 var(--pb);
+  outline: 1px solid var(--color-primary);
+  outline-offset: -0.5px;
+}
 
-  if (randomColor === white) {
-    contMove.style.color = "#000000"; // set text color to black
-  } else {
-    contMove.style.color = "#FFFFFF"; // set text color to white
+.menu-item:hover, .menu-item-desktop:hover {
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  transition: background-color, color 0.2s ease-in-out;
+}
+
+.svg-base {
+  height: 7px !important;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+  transform: rotateZ(270deg);
+  stroke: red !important;
+}
+
+.gallery-slideshow {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: calc(var(--margin-base) / 2);
+  grid-column: 1/span 8;
+  grid-row: 2/span 4;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  perspective-origin: 50% 50%;
+  cursor: grab;
+  transfrom-style: preserve-3d;
+}
+
+.slide-holder {
+  width: 100%;
+  height: 100%;
+}
+
+.slide-1 {
+  grid-column: 1/3;
+  grid-row: 1/5;
+  align-self: center;
+  justify-self: center;
+  width: 50%;
+}
+
+.slide-2 {
+  grid-column: 3/5;
+  grid-row: 1/5;
+  align-self: end;
+  justify-self: end;
+  width: 75%;
+}
+
+.slide-3 {
+  grid-column: 5/7;
+  grid-row: 1/5;
+  align-self: start;
+  justify-self: start;
+}
+
+.slide-img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+/*# sourceMappingURL=styles.css.map */
+
+
+/* temp css - maintenance */
+.container-maintenance {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-height: 100vh;
+  min-height: 100dvh;
+  overflow: hidden;
+}
+.maintenance--info {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  align-items: flex-start;
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+.maintenance--content {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: flex-start;
+  width: fit-content;
+  height: fit-content;
+}
+
+.maintenance--content-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  align-items: flex-start;
+  width: fit-content;
+  height: fit-content;
+}
+.maintenance--title {
+  font-size: 13px;
+  line-height: 130%;
+  text-transform: uppercase;
+}
+.maintenance--message {
+  font-size: 13px;
+  line-height: 130%;
+  /* color: #001eff; */
+}
+
+@media only screen and (max-width: 640px) {
+  .maintenance--message {
+    display: none;
+  }
+}
+.maintenance--game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 4rem;
+  right: 4rem;
+  top: 4rem;
+  bottom: 4rem;
+  z-index: 1;
+}
+.maintenance--game-btn {
+  position: absolute;
+  display: flex;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  border-radius: 100px;
+  width: fit-content;
+  height: fit-content;
+  overflow: hidden;
+  background: #001effde;
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 4px );
+  cursor: pointer;
+  opacity: 1;
+}
+.maintenance--game-btn:hover {
+  opacity: 0.75;
+  transition: opacity 0.3s;
+}
+
+.maintenance--form-overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background-color-primary);
+  z-index: 1;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.maintenance-container--form {
+  position: relative;
+  left: 0;
+  transition: left 1s;
+  display: flex;
+  gap: 0;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 360px;
+  height: fit-content;
+  text-align: left;
+  border: 1px solid white;
+  border-radius: 0.5rem;
+  z-index: 3;
+  background-color: #14141436;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+@media screen and (max-width: 640px) {
+  .maintenance-container--form {
+    width: 100%;
   }
 }
 
-//   function clickRandomWord() {
-//     let randomWord = storedWords[Math.floor(Math.random() * storedWords.length)];
-
-//     if (randomWord === lastWord) {
-//       return clickRandomWord();
-//     }
-
-//     lastWord = randomWord;
-//     contMove.textContent = randomWord;
-//   }
-
-function clickRandomWord() {
-  let randomWord;
-  
-  // Exclude the last word in the array if it's the first time the function is called
-  if (isFirstRandomWord) {
-    randomWord = storedWords[Math.floor(Math.random() * (storedWords.length - 1))];
-    isFirstRandomWord = false;
-  } else {
-    randomWord = storedWords[Math.floor(Math.random() * storedWords.length)];
-  }
-
-  if (randomWord === lastWord) {
-    return clickRandomWord();
-  }
-
-  lastWord = randomWord;
-  contMove.textContent = randomWord;
+.maintenance--input {
+  display: grid;
+  grid-template-columns: 82px 1fr;
+  gap: 2px;
+  width: 100%;
+  height: 44px;
+  font-size: 13px;
+  line-height: 130%;
+  align-items: center;
+  border-bottom: 1px solid white;
 }
 
-  function randomMove() {
-    let x = Math.floor(Math.random() * (contParent.offsetWidth - contMove.offsetWidth));
-    let y = Math.floor(Math.random() * (contParent.offsetHeight - contMove.offsetHeight));
-    contMove.style.left = x + "px";
-    contMove.style.top = y + "px";
-  };
-
-  function startAutoAnimate() {
-  autoAnimateTimeout = setTimeout(function() {
-    contMove.classList.add("hidden"); // add 'hidden' class to element
-    setTimeout(function() { // wait for transition to complete
-      clickRandomColor();
-      clickRandomWord();
-      randomMove();
-      contMove.classList.remove("hidden"); // remove 'hidden' class from element
-    }, 200);
-    startAutoAnimate();
-  }, 2500);
+.maintenance--input--message {
+  align-items: flex-start!important;
+  padding: 0.75rem 0.5rem!important;
 }
 
 
-  contMove.addEventListener("click", function() {
-    clearTimeout(autoAnimateTimeout);
-    contMove.style.visibility = "visible"; // set visibility property to "visible"
-    contMove.classList.add("hidden"); // add 'hidden' class to element
-    setTimeout(function() { // wait for transition to complete
-      clickRandomColor();
-      clickRandomWord();
-      randomMove();
-      contMove.classList.remove("hidden"); // remove 'hidden' class from element
-      startAutoAnimate();
-    }, 200);
-  });
+.maintenance--input-header-bg-scolor {
+  /* background-color: #001eff; */
+  background-color: #001eff7a;
+  border-radius: 0.5rem 0.5rem 0 0;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
 
-  contMove.style.visibility = "visible"; // set visibility property to "visible"
-  startAutoAnimate();
-});
+.maintenance--input:nth-child(4)  {
+  border-bottom: 0;
+  height: calc(44px * 3);
+}
 
-// modal slide
-document.addEventListener("DOMContentLoaded", function() {
-  const formTrigger = document.getElementById('formTriggerOpen'),
-    formPosition = document.getElementById('formPosition'),
-    // svgTriggerOne = document.getElementById('maintenance--svg-trigger-1'),
-    // svgTriggerTwo = document.getElementById('drawerTriggerMinusSvg'),
-    // svgTriggerThree = document.getElementById('drawerTriggerCloseSvg'),
-    burgerOpen = document.getElementById('burgerOpen'),
-    burgerClose = document.getElementById('burgerClose'),
-    formOverlay = document.getElementById('formOverlay');
+.maintenance--input:last-child {
+  border-bottom: 0;
+}
 
-  function formToggle() {  
-    formPosition.classList.toggle('form-slide-left');
-    formOverlay.classList.toggle('form-hide');
-    // svgTriggerTwo.classList.toggle('svg-hide');
-    // svgTriggerThree.classList.toggle('svg-hide');
-    burgerOpen.classList.toggle('svg-hide');
-    burgerClose.classList.toggle('svg-hide');
+.maintenance--input H2 {
+  padding: 0.5rem;
+  grid-column: 1 / 3;
+}
+
+.maintenance--input label { 
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  padding: 0.5rem;
+  outline: 0px!important;
+  outline-style: none;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.maintenance--input label:focus-visible {
+  outline: 0px!important;
+  outline-color: none!important;
+}
+
+.maintenance--input label:focus {
+  outline: 0px!important;
+  outline-color: none!important;
+  outline-style: none;
+}
+
+.maintenance--input form { 
+  width: 100%;
+  height: 100%;
+  border: 0;
+  outline-style: none;
+}
+
+.maintenance--input input { 
+  width: 100%;
+  height: 100%;
+  border: 0;
+  outline: -webkit-focus-ring-color auto 0px;
+  padding: 0.5rem;
+  background-color: transparent!important;
+  color: white;
+  text-align: right;
+  outline-style: none;
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 130%;
+}
+
+.maintenance--input input:visited { 
+  background: #fff!important;
+}
+
+.maintenance--input button { 
+  width: 100%;
+  height: 100%;
+  grid-column: 1 / 3;
+  border: 0;
+  font-family: inherit;
+  border-radius: 0 0 0.5rem 0.5rem;
+  padding: 0.5rem;
+  text-align: left;
+  cursor: pointer;
+  outline-style: none;
+}
+
+.maintenance--input textarea {
+  width: 100%;
+  height: calc(44px * 3);
+  border: 0;
+  background-color: transparent!important;
+  padding: 0.75rem 0.5rem;
+  text-align: right;
+  outline: -webkit-focus-ring-color auto 0px;
+  outline: none;
+  color: #fff;
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 130%;
+}
+
+.maintenance--input textarea:focus-visible {
+  text-align: right;
+  color: #000;
+  background-color: #fff!important;
+  outline-color: -webkit-focus-ring-color;
+  outline-style: none;
+  outline-width: 0;
+}
+
+/* :focus-visible {
+  outline-color: -webkit-focus-ring-color;
+  outline-style: none;
+  outline-width: 0;
+  } */
+
+.container-countdown--desk {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5REM;
+  align-items: flex-end;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  width: fit-content;
+  height: fit-content;
+  text-align: right;
+}
+
+.container-countdown--mob {
+  display: none;
+  flex-direction: row;
+    gap: 0.5rem;
+    width: fit-content;
+    height: fit-content;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.container-countdown--mob .maintenance--title-h2 {
+  font-size: 13px;
+  line-height: 130%;
+  /* margin: 0.5rem 0 0.5rem 0.5rem; */
+}
+
+.maintenance--title-h2 {
+  font-size: 13px;
+  line-height: 130%;
+}
+
+.maintenance--time {
+  font-size: 13px;
+  line-height: 130%;
+  text-transform: uppercase;
+}
+
+@media only screen and (max-width: 640px) {
+  .container-countdown--desk {
+    display: none;
   }
-
-  formTrigger.addEventListener('click', formToggle);
-  // svgTriggerOne.addEventListener('click', formToggle);
-  formOverlay.addEventListener('click', formToggle);
-})
-
-
-// countdown timer
-
-// Set the date and time to count down to
-const countdownDate = new Date("2023-12-31T23:59:59Z").getTime();
-
-// Update the countdown every second
-const countdownInterval = setInterval(function() {
-
-  // Get the current date and time
-  const now = new Date().getTime();
-
-  // Calculate the difference between the countdown date and the current date
-  const distance = countdownDate - now;
-
-  // Calculate the time remaining in days, hours, minutes, and seconds
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-  // Update the countdown timer elements with the time remaining
-  const countdownTimerDesk = document.getElementById("countdownTimerDesk");
-  countdownTimerDesk.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-
-  const countdownTimerMob = document.getElementById("countdownTimerMob");
-  countdownTimerMob.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-
-  // If the countdown has ended, display a message and clear the countdown interval
-  if (distance < 0) {
-    clearInterval(countdownInterval);
-    countdownTimerDesk.textContent = "EXPIRED";
-    countdownTimerMob.textContent = "EXPIRED";
+  .container-countdown--mob {
+    display: flex!important;
   }
-}, 1000);
+}
+
+.container-maintenance--copyright {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  width: fit-content;
+  height: fit-content;
+}
+
+/* @media only screen and (max-width: 640px) {
+  .container-maintenance--copyright {
+    align-items: flex-end;
+    left: unset;
+    right: 1rem;
+  }
+} */
+
+.maintenance--copyright-p {
+  font-size: 13px;
+  line-height: 130%;
+  text-align: left;
+}
+
+.container-maintenance--contact {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  width: 42px;
+  height: fit-content;
+  cursor: pointer;
+}
+
+.container-maintenance--contact:hover .maintenance--contact-h3 {
+  opacity: 0.75;
+  transition: opacity 0.3s;
+}
+
+@media only screen and (max-width: 640px) {
+  .container-maintenance--contact {
+    align-items: flex-end;
+    top: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid white;
+    padding: 0.5rem;
+  }
+  .maintenance--contact-h3 {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 640px) {
+.container-maintenance--contact svg {
+    display: none;
+  }
+}
+
+.maintenance--contact-h3 {
+  font-size: 13px;
+  line-height: 130%;
+  opacity: 1;
+}
+
+#contMove {
+  transition: all 0.25s ease-in-out;
+  touch-action: none;
+}
+
+#contMove.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+/* modal css */
+
+.form-slide-left {
+  left: 100vw;
+  transition: left 1s;
+  overflow: hidden;
+}
+
+.form-hide {
+  display: none;
+  opacity: 0!important;
+  transition: opacity 0.75s;
+}
+
+.maintenance--form-marquee-container {
+  display: grid;
+  grid-template-columns: 1fr min-content;
+  gap: 0;
+}
+
+.maintenance--form-marquee-text {
+  width: 100%;
+}
+
+.maintenance--svg-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  padding: 1rem;
+  cursor: pointer;
+  padding: 0.75rem;
+  stroke-width: 1.5px;
+}
+
+.maintenance--svg-close {
+  width: auto;
+  height: 13px;
+  stroke-width: 1.5px;
+}
+
+.maintenance--svg-close-2 {
+  width: 24px;
+  height: 13px;
+}
+
+.maintenance--svg-close-2 path {
+  stroke: #fff;
+}
+
+#drawerTriggerMinusSvg {
+  width: 24px;
+  height: 13px;
+}
+
+.maintenance--svg-close path {
+  stroke: #fff;
+}
+
+#maintenance--form-submit {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  padding: 0.5rem;
+  justify-content: space-between;
+  overflow: hidden;
+  background-color: #ffffffa6;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  color: #000;
+  font-weight: 600;
+}
+
+.maintenance--input button:hover {
+  /* background-color: var(--background-color-primary); */
+  background-color: #001eff7a!important;
+  backdrop-filter: blur(3px)!important;
+  -webkit-backdrop-filter: blur(3px)!important;
+  color: #fff!important;
+}
+
+.maintenance--input button:hover svg {
+  stroke: #fff;
+}
+
+.maintenance--svg-container:hover svg {
+  opacity: 0.75;
+}
+
+.maintenance--form-submit--svg {
+  position: relative;
+  height: 24px;
+  width: auto;
+  fill: none;
+  stroke: #000;
+  left: 0;
+  opacity: 1;
+  stroke-width: 1.5px;
+}
+
+/* .maintenance--form-sbumit--svg:hover {
+  left: 13px;
+  opacity: 0;
+} */
+
+.svg-hide {
+  display: none;
+}
+
+form input[type="email"] {
+  touch-action: manipulation;
+}
