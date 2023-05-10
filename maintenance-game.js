@@ -122,6 +122,19 @@ document.addEventListener("DOMContentLoaded", function() {
   formOverlay.addEventListener('click', formToggle);
 })
 
+document.addEventListener("DOMContentLoaded", function() {
+  document.querySelector("#formPosition").addEventListener("submit", function(event) {
+    // Prevent the form from submitting normally
+    event.preventDefault();
+    
+    // Send the email
+    this.submit();
+    
+    // Replace the text inside the submit button with a success message
+    document.querySelector("#maintenance--form-submit").textContent = "Message sent!";
+  });
+})
+
 
 // countdown timer
 
