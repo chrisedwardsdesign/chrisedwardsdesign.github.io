@@ -100,9 +100,12 @@ function clickRandomWord() {
 // modal slide
 document.addEventListener("DOMContentLoaded", function() {
   const formTrigger = document.getElementById('formTriggerOpen'),
+    formTriggerTwo = document.getElementById('formTriggerTwo'),
     formPosition = document.getElementById('formPosition'),
     burgerOpen = document.getElementById('burgerOpen'),
     burgerClose = document.getElementById('burgerClose'),
+    closeMinus = document.getElementById('closeMinus'),
+    minusClose = document.getElementById('minusClose'),
     formOverlay = document.getElementById('formOverlay');
 
   function formToggle() {  
@@ -110,10 +113,13 @@ document.addEventListener("DOMContentLoaded", function() {
     formOverlay.classList.toggle('form-hide');
     burgerOpen.classList.toggle('svg-hide');
     burgerClose.classList.toggle('svg-hide');
+    closeMinus.classList.toggle('svg-hide');
+    minusClose.classList.toggle('svg-hide');
   }
 
   formTrigger.addEventListener('click', formToggle);
   formOverlay.addEventListener('click', formToggle);
+  formTriggerTwo.addEventListener('click', formToggle);
 
   // form
   document.querySelector("#formPosition").addEventListener("submit", function(event) {
@@ -144,6 +150,35 @@ document.addEventListener("DOMContentLoaded", function() {
   });
   
 })
+
+// marquee
+// Wait for the HTML document to load before executing any JavaScript code
+document.addEventListener("DOMContentLoaded", function() {
+  const marqueeText1 = document.getElementById("formTitleMarquee");
+  const marqueeContainer = document.querySelector(".maintenance--marquee-container");
+  let marqueeTextWidth = marqueeText1.offsetWidth;
+  let marqueeParentWidth = marqueeContainer.offsetWidth;
+
+  animate(marqueeText1, marqueeContainer);
+
+  function animate(element, container) {
+    let baseValue = 0;
+    function step() {
+      baseValue -= 2; // decrease baseValue by 2 pixels on each frame
+      element.style.marginLeft = baseValue + "px";
+      if (baseValue <= -marqueeTextWidth) {
+        baseValue = marqueeParentWidth;
+      }
+      requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  window.addEventListener("resize", function() {
+    marqueeTextWidth = marqueeText1.offsetWidth;
+    marqueeParentWidth = marqueeContainer.offsetWidth;
+  });
+});
 
 // countdown timer
 // Set the date and time to count down to
