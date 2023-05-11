@@ -106,7 +106,8 @@ a:active {
 }
 
 header {
-  height: 100vh;
+  /* height: 100vh; */
+  height: fit-content;
   color: var(--color-primary);
   overflow: hidden;
 }
@@ -354,6 +355,32 @@ section {
 
 
 /* temp css - maintenance */
+.container--header {
+  position: relative;
+  z-index: 1;
+}
+
+.container--nav {
+  margin: 1rem 1rem 0;
+  display: flex;
+  gap: 1rem;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.container--footer {
+  margin: 1rem;
+  display: flex;
+  gap: 1rem;
+  flex-direction: row;
+  justify-content: space-between;
+  z-index: 0;
+  position: -webkit-sticky;
+  position: absolute;
+  bottom: 0;
+  width: -webkit-fill-available;
+}
+
 .container-maintenance {
   display: flex;
   flex-direction: column;
@@ -364,6 +391,7 @@ section {
   min-height: 100dvh;
   overflow: hidden;
 }
+
 .maintenance--info {
   display: flex;
   flex-direction: column;
@@ -385,7 +413,7 @@ section {
   height: fit-content;
 }
 
-.maintenance--content-2 {
+.maintenance--title-content {
   display: flex;
   flex-direction: column;
   gap: 0;
@@ -393,6 +421,15 @@ section {
   width: fit-content;
   height: fit-content;
 }
+
+.maintenance--announcement {
+  width: fit-content;
+  height: fit-content;
+  min-height: fit-content;
+  padding: 0;
+  margin: 0;
+}
+
 .maintenance--title {
   font-size: 13px;
   line-height: 130%;
@@ -415,7 +452,7 @@ section {
 
 @media only screen and (max-width: 640px) {
   .maintenance--version-history {
-    position: relative;
+    position: absolute;
     bottom: -0.5rem;
     right: -1rem;
     transform: rotate(90deg) translate(0, 100%);
@@ -490,7 +527,7 @@ section {
   -webkit-backdrop-filter: blur(3px);
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 568px) {
   .maintenance-container--form {
     width: 100%;
   }
@@ -674,8 +711,10 @@ section {
 
 .maintenance--form-title-h3 {
   font-size: 13px;
-  line-height: 130%;
+  line-height: 100%;
   padding: 0.5rem;
+  width: fit-content;
+  white-space: nowrap;
 }
 
 .maintenance--time {
@@ -698,24 +737,16 @@ section {
   align-items: flex-start;
   gap: 0.5rem;
   flex-direction: row;
-  position: absolute;
-  bottom: 0;
-  left: 0;
   width: fit-content;
   height: fit-content;
   justify-content: space-between;
-  padding: 1rem;
 }
 
 .maintenance--version-container {
   display: flex;
-  position: absolute;
-  bottom: 0;
-  right: 0;
   width: fit-content;
   height: fit-content;
   justify-content: space-between;
-  padding: 1rem;
 }
 
 @media only screen and (max-width: 640px) {
@@ -734,15 +765,9 @@ section {
 
 .container-maintenance--contact {
   display: flex;
-  align-items: flex-end;
   flex-direction: column;
-  position: absolute;
-  right: 1rem;
-  top: 1rem;
-  width: 42px;
   height: fit-content;
   cursor: pointer;
-  z-index: 1;
 }
 
 .container-maintenance--contact:hover .maintenance--contact-h3 {
@@ -753,7 +778,6 @@ section {
 @media only screen and (max-width: 640px) {
   .container-maintenance--contact {
     align-items: center;
-    top: 1rem;
     border-radius: 0.5rem;
     border: 1px solid white;
     padding: 0.5rem;
@@ -805,10 +829,30 @@ section {
   display: grid;
   grid-template-columns: 1fr min-content;
   gap: 0;
+  overflow: hidden;
+}
+
+.maintenance--marquee-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.maintenance--marquee-svg-container {
+  display: flex;
+  height: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  border-radius: 0.5rem;
+  border: 1px solid #ffffff00;
+  padding: 0.5rem;
+  width: fit-content;
 }
 
 .maintenance--form-marquee-text {
-  width: 100%;
+  width: fit-content;
 }
 
 .maintenance--svg-container {
@@ -857,8 +901,7 @@ section {
   background-color: #ffffffa6;
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
-  color: #000;
-  font-weight: 600;
+  color: #001eff;
   font-size: 13px;
 }
 
