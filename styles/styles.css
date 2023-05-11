@@ -3,6 +3,7 @@
   padding: 0;
   list-style: none;
   box-sizing: border-box;
+  border-radius: 0;
 }
 
 :root {
@@ -951,4 +952,21 @@ form input[type="email"] {
 
 form label {
   pointer-events: none;
+}
+
+textarea, input {
+  background-color: transparent!important;
+  color: white!important;
+  border-radius: 0!important;
+  border-top-left-radius: 0!important;
+  border-top-right-radius: 0!important;
+  border-bottom-right-radius: 0!important;
+  border-bottom-left-radius: 0!important;
+}
+
+input:autofill {
+  background-color: transparent!important;
+  background-image: transparent!important;
+  color: white!important;
+  border-radius: 0!important;
 }
