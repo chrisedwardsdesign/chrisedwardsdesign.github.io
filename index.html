@@ -4,11 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <meta http-equiv='cache-control' content='no-cache'> 
     <meta http-equiv='expires' content='0'> 
     <meta http-equiv='pragma' content='no-cache'>
-
     <title>© Copyright 2023 Chris Edwards / Design Animation UX Code</title>
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/cdev-grid-boiler-plate.css">
@@ -19,73 +17,85 @@
     <script src="maintenance-game.js"></script>
 </head>
 <body class="main-content">
-    <header class="section sec1 header active">
-    </header>
-    <main>
-        <section class="container-maintenance">
-            <div class="maintenance--info">
-                <div class="maintenance--content">
-                    <h1 class="maintenance--title">CHRIS EDWARDS</h1>
-                    <h1 class="maintenance--title">DESIGN + ANIMATION + UX + CODE</h1>
-                </div>
-                <div class="maintenance--content-2">
-                    <!-- <p class="maintenance--message">UNDER MAINTENANCE</p> -->
-                    <div class="container-countdown--mob">
-                        <h2 class="maintenance--title-h2">LIVE:</h2>
-                        <div id="countdownTimerMob" class="maintenance--time"></div>
-                    </div>
-                </div>
+  <header class="container--header">
+    <nav class="container--nav">
+      <div class="maintenance--content">
+        <div class="maintenance--title-content">
+          <h1 class="maintenance--title">CHRIS EDWARDS</h1>
+          <h1 class="maintenance--title">DESIGN + ANIMATION + UX + CODE</h1>
+        </div>
+        <div class="maintenance--announcement">
+          <div class="container-countdown--mob">
+            <h2 class="maintenance--title-h2">LIVE:</h2>
+            <div id="countdownTimerMob" class="maintenance--time"></div>
+          </div>
+        </div>
+      </div>
+      <div id="formTriggerOpen" class="container-maintenance--contact">
+        <h3 class="maintenance--contact-h3">CONTACT</h3>
+        <!-- hamburger menu -->
+        <svg id="burgerOpen" class="maintenance--svg-close" width="14" height="14" viewBox="0 0 14 14" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M14 7.5H0V6.5H14V7.5Z" fill="inherit"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M14 14H0V13H14V14Z" fill="inherit"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M14 1H0V0H14V1Z" fill="inherit"/>
+          </svg>
+        <svg id="burgerClose" class="maintenance--svg-close-2 svg-hide" width="15" height="14" viewBox="0 0 15 14" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M13.2789 14.0012L0 0.722279L0.722279 0L14.0012 13.2789L13.2789 14.0012Z" fill="inherit"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M7.3742e-07 13.2789L13.2789 -3.15629e-08L14.0012 0.722279L0.722281 14.0012L7.3742e-07 13.2789Z" fill="inherit"/>
+        </svg>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="container-maintenance">
+        <div id="contParent" class="maintenance--game-container">
+          <span id="contMove" class="maintenance--game-btn">COMING SOON</span>
+        </div>
+        <form id="formPosition" class="maintenance-container--form form-slide-left" action="https://formspree.io/f/mzbqwbol" method="POST">
+          <div id="maintenance--svg-trigger-1" class="maintenance--input maintenance--input-header-bg-scolor maintenance--form-marquee-container">
+            <div class="maintenance--marquee-container">
+              <h3 id="formTitleMarquee" class="maintenance--form-title-h3 maintenance--uppercase maintenance--form-marque">ALL ENQUIRIES: chris@chrisedwardsdesign.com</h3>
             </div>
-            <div id="contParent" class="maintenance--game-container">
-                <span id="contMove" class="maintenance--game-btn">COMING SOON</span>
+            <div id="formTriggerTwo" class="maintenance--marquee-svg-container">
+              <svg id="closeMinus" class="maintenance--svg-close-2 svg-hide" width="15" height="14" viewBox="0 0 15 14" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M13.2789 14.0012L0 0.722279L0.722279 0L14.0012 13.2789L13.2789 14.0012Z" fill="inherit"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M7.3742e-07 13.2789L13.2789 -3.15629e-08L14.0012 0.722279L0.722281 14.0012L7.3742e-07 13.2789Z" fill="inherit"/>
+              </svg>
+              <svg id="minusClose" class="maintenance--svg-close" width="14" height="2" viewBox="0 0 14 2" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M14 1.52344H0V0.523438H14V1.52344Z" fill="#151714"/>
+              </svg>
             </div>
-            
-            <form id="formPosition" class="maintenance-container--form form-slide-left" action="https://formspree.io/f/mzbqwbol" method="POST">
-              <div id="maintenance--svg-trigger-1" class="maintenance--input maintenance--input-header-bg-scolor maintenance--form-marquee-container">
-                <h3 class="maintenance--form-title-h3 maintenance--uppercase maintenance--form-marque">ALL ENQUIRIES: chris@chrisedwardsdesign.com</h3>
-              </div>
-              <div class="maintenance--input">
-                <input class="" type="text" id="name" name="name" placeholder="NAME *" user-scalable="no" required>
-                <label for="name">NAME</label>
-              </div>
-              <div class="maintenance--input">
-                <input class="" type="email" id="email" name="email" placeholder="EMAIL ADDRESS *" user-scalable="no" equired>
-                <label for="email">EMAIL</label>
-              </div>
-              <div class="maintenance--input">
-                <textarea id="message" class="" name="message" placeholder="GET IN TOUCH *" user-scalable="no" required></textarea>
-                <label for="message" class="maintenance--input--message">MESSAGE</label>
-              </div>
-              <div class="maintenance--input">
-                <button id="maintenance--form-submit" class="maintenance--uppercase" user-scalable="no" type="submit">SUBMIT</button>
-              </div>
-            </form> 
-            
-            <div id="formOverlay" class="maintenance--form-overlay form-hide"></div>
-            <div class="container-countdown--desk">
-                <div id="countdownTimerDesk" class="maintenance--time"></div>
-                <h2 class="maintenance--title-h2">/ LIVE</h2>
-            </div>
-            <div id="formTriggerOpen" class="container-maintenance--contact">
-                <h3 class="maintenance--contact-h3">CONTACT</h3>
-                <!-- hamburger menu -->
-                <svg id="burgerOpen" class="maintenance--svg-close" width="14" height="14" viewBox="0 0 14 14" fill="inherit" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M14 7.5H0V6.5H14V7.5Z" fill="inherit"/>
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M14 14H0V13H14V14Z" fill="inherit"/>
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M14 1H0V0H14V1Z" fill="inherit"/>
-                  </svg>
-                <svg id="burgerClose" class="maintenance--svg-close-2 svg-hide" width="15" height="14" viewBox="0 0 15 14" fill="inherit" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M13.2789 14.0012L0 0.722279L0.722279 0L14.0012 13.2789L13.2789 14.0012Z" fill="inherit"/>
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M7.3742e-07 13.2789L13.2789 -3.15629e-08L14.0012 0.722279L0.722281 14.0012L7.3742e-07 13.2789Z" fill="inherit"/>
-                </svg>
-              </div>
-            <copyright class="container-maintenance--copyright">
-              <p class="maintenance--message">* UNDER MAINTENANCE</p>
-              <p class="maintenance--copyright-p">© Copyright 2023 Chris Edwards Design</p>
-            </copyright>
-            <div class="maintenance--version-container">
-              <p class="maintenance--version-history">CDAUX V1.0</p>
-            </div>
-        </section>
+          </div>
+          <div class="maintenance--input">
+            <input class="" type="text" id="name" name="name" placeholder="NAME *" user-scalable="no" required>
+            <label for="name">NAME</label>
+          </div>
+          <div class="maintenance--input">
+            <input class="" type="email" id="email" name="email" placeholder="EMAIL ADDRESS *" user-scalable="no" equired>
+            <label for="email">EMAIL</label>
+          </div>
+          <div class="maintenance--input">
+            <textarea id="message" class="" name="message" placeholder="GET IN TOUCH *" user-scalable="no" required></textarea>
+            <label for="message" class="maintenance--input--message">MESSAGE</label>
+          </div>
+          <div class="maintenance--input">
+            <button id="maintenance--form-submit" class="maintenance--uppercase" user-scalable="no" type="submit">SUBMIT</button>
+          </div>
+        </form> 
+        <div id="formOverlay" class="maintenance--form-overlay form-hide"></div>
+        <div class="container-countdown--desk">
+          <div id="countdownTimerDesk" class="maintenance--time"></div>
+          <h2 class="maintenance--title-h2">/ LIVE</h2>
+        </div>
+    </section>
+    <footer class="container--footer">
+      <copyright class="container-maintenance--copyright">
+        <p class="maintenance--copyright-p">© Copyright 2023 Chris Edwards Design</p>
+        <p class="maintenance--message">* Website under maintenance</p>
+      </copyright>
+      <div class="maintenance--version-container">
+        <p class="maintenance--version-history">CDAUX V1.0</p>
+      </div>
+    </footer>
 </body>
 </html>
