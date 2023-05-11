@@ -79,7 +79,6 @@ function clickRandomWord() {
   }, 2500);
 }
 
-
   contMove.addEventListener("click", function() {
     clearTimeout(autoAnimateTimeout);
     contMove.style.visibility = "visible"; // set visibility property to "visible"
