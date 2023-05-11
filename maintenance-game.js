@@ -164,7 +164,7 @@ document.addEventListener("DOMContentLoaded", function() {
   function animate(element, container) {
     let baseValue = 0;
     function step() {
-      baseValue -= 2; // decrease baseValue by 2 pixels on each frame
+      baseValue -= 1.5; // decrease baseValue by 2 pixels on each frame
       element.style.marginLeft = baseValue + "px";
       if (baseValue <= -marqueeTextWidth) {
         baseValue = marqueeParentWidth;
