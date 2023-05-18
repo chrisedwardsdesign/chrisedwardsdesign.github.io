@@ -172,7 +172,7 @@ section {
 
 @media only screen and (max-width: 640px) {
   section {
-    min-height: calc(100dvh - var(--header-height-mobile));
+    min-height: calc(100vh - var(--header-height-mobile));
   }
 }
 
@@ -286,7 +286,7 @@ section {
 
 @media only screen and (max-width: 640px) {
   .container-maintenance {
-    min-height: 100dvh;
+    min-height: 100vh;
   }
 }
 
@@ -409,7 +409,7 @@ section {
 
 @media only screen and (max-width: 640px) {
   .maintenance--game-container {
-    height: calc(100dvh - var(--header-footer-height-mob));
+    height: calc(100vh - var(--header-footer-height-mob));
     top: calc(var(--header-footer-height-mob) / 2);
   }
 }
@@ -459,7 +459,7 @@ section {
 
 @media only screen and (max-width: 640px) {
   .maintenance--form-overlay {
-    min-height: 100dvh;
+    min-height: 100vh;
   }
 }
 
@@ -643,19 +643,6 @@ section {
   outline-color: -webkit-focus-ring-color;
   outline-style: none;
   outline-width: 0;
-}
-
-.container-countdown--desk {
-  display: none;
-  flex-direction: row;
-  gap: 0.5REM;
-  align-items: flex-end;
-  position: absolute;
-  right: 1rem;
-  top: 1rem;
-  width: fit-content;
-  height: fit-content;
-  text-align: right;
 }
 
 .container-countdown--mob {
@@ -1086,7 +1073,7 @@ input:autofill {
 
 @media only screen and (max-width: 640px) {
   .section--two-column {
-    min-height: calc(100dvh - var(--footer-height-mob) + 1rem + 3px);
+    min-height: calc(100vh - var(--footer-height-mob) + 1rem + 3px);
   }
 }
 
