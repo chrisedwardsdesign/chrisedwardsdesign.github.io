@@ -39,13 +39,13 @@ html {
   --color-highlight-1: #001eff;
   --color-highlight-1-transp: #001eff7a;
 
-  --color-primary: #0E1419;
-  --color-secondary: #f3f3f3;
-  --color-game-text-1: #f3f3f3;
-  --background-color-primary: #f3f3f3;
-  --background-color-primary-transp: #0E1419a6;
-  --background-color-primary-transp-glass: #0e141900;
-  --background-color-primary-transp-glass-2: #f3f3f3CF;
+  --color-primary: #f3f3f3;
+  --color-secondary: #0E1419;
+  --color-game-text-1: #f3f3f3;  
+  --background-color-primary: #0E1419;
+  --background-color-primary-transp: #f3f3f3a6;
+  --background-color-primary-transp-glass: #f3f3f300;
+  --background-color-primary-transp-glass-2: #f3f3f300;
   --background-color-secondary: #f3f3f3;
   --background-color-secondary-transp: #f3f3f3a6;
   --game-btn-outline: #0E1419;
