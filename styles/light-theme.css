@@ -1,0 +1,14 @@
+:root {
+  --color-primary: #0E1419;
+  --color-secondary: #f3f3f3;  
+  --background-color-primary: #f3f3f3;
+  --background-color-primary-transp: #0E1419a6;
+  --background-color-primary-transp-glass: #0e141900;
+  --background-color-primary-transp-glass-2: #f3f3f3CF;
+  --background-color-secondary: #f3f3f3;
+  --background-color-secondary-transp: #f3f3f3a6;
+  --game-btn-outline: #0E1419;
+  --link-hover: 0.5;
+  --link-visited: #f3f3f3;
+  --link-active: #f3f3f3;
+}
