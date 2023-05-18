@@ -266,16 +266,12 @@ const countdownInterval = setInterval(function() {
   const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   // Update the countdown timer elements with the time remaining
-  const countdownTimerDesk = document.getElementById("countdownTimerDesk");
-  countdownTimerDesk.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-
-  const countdownTimerMob = document.getElementById("countdownTimerMob");
-  countdownTimerMob.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+  const countdownTimerMain = document.getElementById("countdownTimerMain");
+  countdownTimerMain.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 
   // If the countdown has ended, display a message and clear the countdown interval
   if (distance < 0) {
     clearInterval(countdownInterval);
-    countdownTimerDesk.textContent = "EXPIRED";
-    countdownTimerMob.textContent = "EXPIRED";
+    countdownTimerMain.textContent = "EXPIRED";
   }
 }, 1000);
