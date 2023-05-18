@@ -1,9 +1,74 @@
+// header
+window.addEventListener('DOMContentLoaded', (event) => {
+  const headerContainer = document.getElementById('header--container');
+  const mainContainer = document.getElementById('contMain');
+  let previousScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+  let isScrollingUp = false;
+
+  window.addEventListener('scroll', function() {
+    const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollPositionChange = currentScrollPosition - previousScrollPosition;
+
+    if (scrollPositionChange < -2) {
+      // Scrolling up
+      if (!isScrollingUp) {
+        headerContainer.style.zIndex = '8';
+        headerContainer.style.opacity = '1';
+        headerContainer.style.borderBottom = '1px solid var(--color-primary)'; // add border-bottom
+        mainContainer.style.top = '-1px'; // move down 1px account for border-bottom overlap
+        isScrollingUp = true;
+      }
+    } else if (scrollPositionChange > 2) {
+      // Scrolling down
+      headerContainer.style.zIndex = '0';
+      headerContainer.style.opacity = '0';
+      headerContainer.style.borderBottom = 'none'; // add border-bottom
+      mainContainer.style.top = '0px'; // move down 1px account for border-bottom overlap
+      isScrollingUp = false;
+    }
+
+    previousScrollPosition = currentScrollPosition;
+  });
+});
+
+// dark / light mode
+window.addEventListener('DOMContentLoaded', (event) => {
+  document.getElementById('toggleBtn').addEventListener('click', function() {
+    const body = document.querySelector('body');
+    const themeStyle = document.getElementById('theme-style');
+    const darkText = document.getElementById('darkText');
+    const lightText = document.getElementById('lightText');
+    const ledRight = document.getElementById('ledRight');
+    const ledLeft = document.getElementById('ledLeft');
+  
+    body.classList.toggle('light-mode');
+    body.classList.toggle('dark-mode');
+    darkText.classList.toggle('toggle-text-switch');
+    lightText.classList.toggle('toggle-text-switch');
+    ledRight.classList.toggle('mode-switch--btn--visible');
+    ledLeft.classList.toggle('mode-switch--btn--visible');
+  
+    if (body.classList.contains('dark-mode')) {
+      themeStyle.href = 'styles/dark-theme.css';
+    } else {
+      themeStyle.href = 'styles/light-theme.css';
+    }
+  });
+});
+
+window.addEventListener('DOMContentLoaded', (event) => {
+  const navBar = document.getElementById('navBar');
+  const navBarHeight = navBar.offsetHeight;
+
+  console.log('Navigation bar height:', navBarHeight);
+});
+
 document.addEventListener("DOMContentLoaded", function() {
   const contMove = document.getElementById("contMove");
-  const contParent = document.getElementById("contParent");
+  const contGame = document.getElementById("contGame");
 
 //   const storedColors = ["#f000ff", "#001eff", "#FF5F1F", "#FFFFFF"]; // pink, blue, orange, white
-  const storedColors = ["#FFFFFF","#001eff"]; // white, blue
+  const storedColors = ["var(--color-primary)","var(--color-highlight-1)"]; // white, blue
   const storedWords = ["DESIGN", "ANIMATION", "UX", "CODE", "COMING SOON"];
 
   let lastColor;
@@ -13,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function() {
   let isFirstRandomColor = true; // Add a flag to check if it's the first time the function is called
 
 function clickRandomColor() {
-  const white = "#FFFFFF";
+  const white = "var(--color-primary)";
   let randomColor;
   
   // Exclude the last color in the array if it's the first time the function is called
@@ -32,9 +97,9 @@ function clickRandomColor() {
   contMove.style.backgroundColor = randomColor;
 
   if (randomColor === white) {
-    contMove.style.color = "#000000"; // set text color to black
+    contMove.style.color = "var(--color-secondary)"; // set text color to black
   } else {
-    contMove.style.color = "#FFFFFF"; // set text color to white
+    contMove.style.color = "var(--color-game-text-1)"; // set text color to white
   }
 }
 
@@ -58,8 +123,8 @@ function clickRandomWord() {
 }
 
   function randomMove() {
-    let x = Math.floor(Math.random() * (contParent.offsetWidth - contMove.offsetWidth));
-    let y = Math.floor(Math.random() * (contParent.offsetHeight - contMove.offsetHeight));
+    let x = Math.floor(Math.random() * (contGame.offsetWidth - contMove.offsetWidth));
+    let y = Math.floor(Math.random() * (contGame.offsetHeight - contMove.offsetHeight));
     let rotation = Math.floor(Math.random() * 90) - 45; // select random rotation angle between -45 and 45 degrees
     contMove.style.left = x + "px";
     contMove.style.top = y + "px";
@@ -99,6 +164,7 @@ function clickRandomWord() {
 // modal slide
 document.addEventListener("DOMContentLoaded", function() {
   const formTrigger = document.getElementById('formTriggerOpen'),
+    formTriggerThree = document.getElementById('formTriggerThree'),
     formTriggerTwo = document.getElementById('formTriggerTwo'),
     formPosition = document.getElementById('formPosition'),
     burgerOpen = document.getElementById('burgerOpen'),
@@ -119,6 +185,7 @@ document.addEventListener("DOMContentLoaded", function() {
   formTrigger.addEventListener('click', formToggle);
   formOverlay.addEventListener('click', formToggle);
   formTriggerTwo.addEventListener('click', formToggle);
+  formTriggerThree.addEventListener('click', formToggle);
 
   // form
   document.querySelector("#formPosition").addEventListener("submit", function(event) {
@@ -181,7 +248,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // countdown timer
 // Set the date and time to count down to
-const countdownDate = new Date("2023-05-15T23:59:59Z").getTime();
+const countdownDate = new Date("2023-05-20T23:59:59Z").getTime();
 
 // Update the countdown every second
 const countdownInterval = setInterval(function() {
