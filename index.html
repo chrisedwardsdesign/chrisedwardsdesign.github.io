@@ -7,116 +7,133 @@
     <meta http-equiv='cache-control' content='no-cache'> 
     <meta http-equiv='expires' content='0'> 
     <meta http-equiv='pragma' content='no-cache'>
-    <title>ChrisEdwardsDesign / Design Animation UX Code © Copyright 2023</title>
+    <title>© Copyright 2023 Chris Edwards / Design Animation UX Code</title>
     <link rel="stylesheet" href="styles/styles.css">
-    <link rel="stylesheet" href="styles/cdev-grid-boiler-plate.css">
+    <link rel="stylesheet" href="styles/dark-theme.css" id="theme-style">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="maintenance-game.js"></script>
 </head>
-<body class="main-content">
-  <header class="container--header">
-    <nav class="container--nav">
-      <div class="maintenance--content">
-        <div class="maintenance--title-content">
-          <h1 class="maintenance--title">CHRIS EDWARDS</h1>
-          <h1 class="maintenance--title">DESIGN + ANIMATION + UX + CODE</h1>
+<body class="body-content dark-mode">
+  <header id="header--container" class="header--container">
+    <!-- nav -->
+    <nav id="navBar" class="container--nav">
+      <h1 class="maintenance--logo">CHRIS EDWARDS</h1>
+      <h2 class="maintenance--title">DESIGN + ANIMATION + UX + CODE</h2>
+    <div class="content--right">
+      <button id="toggleBtn" class="container--mode-switch">
+        <div class="mode-switch-btn--container">
+          <div id="ledRight" class="mode-switch--btn"></div>
+          <div id="ledLeft" class="mode-switch--btn mode-switch--btn--visible"></div>
         </div>
-        <div class="maintenance--announcement">
-          <div class="container-countdown--mob">
-            <h2 class="maintenance--title-h2">LIVE:</h2>
-            <div id="countdownTimerMob" class="maintenance--time"></div>
-          </div>
-        </div>
-      </div>
+        <h4 id="darkText" label="light mode" class="mode-switch--btn-text">DARK</h4>
+        <h4 id="lightText" label="light mode" class="mode-switch--btn-text toggle-text-switch">LIGHT</h4>
+      </button>
       <div id="formTriggerOpen" class="container-maintenance--contact">
-        <h3 class="maintenance--contact-h3">MESSAGE ME</h3>
+        <h3 class="maintenance--contact-h3">MENU</h3>
         <!-- hamburger menu -->
-        <svg id="burgerOpen" class="maintenance--svg-close" width="14" height="14" viewBox="0 0 14 14" fill="inherit" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M14 7.5H0V6.5H14V7.5Z" fill="inherit"/>
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M14 14H0V13H14V14Z" fill="inherit"/>
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M14 1H0V0H14V1Z" fill="inherit"/>
-          </svg>
-        <svg id="burgerClose" class="maintenance--svg-close-2 svg-hide" width="15" height="14" viewBox="0 0 15 14" fill="inherit" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M13.2789 14.0012L0 0.722279L0.722279 0L14.0012 13.2789L13.2789 14.0012Z" fill="inherit"/>
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M7.3742e-07 13.2789L13.2789 -3.15629e-08L14.0012 0.722279L0.722281 14.0012L7.3742e-07 13.2789Z" fill="inherit"/>
+        <svg id="burgerOpen" class="maintenance--svg-close" width="17" height="18" viewBox="0 0 17 18" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0.307617 9H16.3076" stroke="inherit"/>
+          <path d="M0.307617 17H16.3076" stroke="inherit"/>
+          <path d="M0.307617 1H16.3076" stroke="inherit"/>
+        </svg>
+        <svg id="burgerClose" class="maintenance--svg-close-2 svg-hide" width="18" height="18" viewBox="0 0 18 18" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17 17L1 1" stroke="inherit"/>
+          <path d="M1 17L17 1" stroke="inherit"/>
         </svg>
       </div>
+    </div>
     </nav>
   </header>
-  <main>
-    <section class="container-maintenance">
-        <div id="contParent" class="maintenance--game-container">
-          <span id="contMove" class="maintenance--game-btn">COMING SOON</span>
+  <main id="contMain">
+    <!-- temp content -->
+    <!-- form content -->
+    <div class="maintenance--form-holder 
+     form-slide-left" id="formPosition">
+      <form class="maintenance-container--form" action="https://formspree.io/f/mzbqwbol" method="POST">
+        <div id="maintenance--svg-trigger-1" class="maintenance--input maintenance--input-header-bg-scolor maintenance--form-marquee-container">
+          <div class="maintenance--marquee-container">
+            <h3 id="formTitleMarquee" class="maintenance--form-title-h3 maintenance--uppercase maintenance--form-marque">SITE UNDER MAINTENANCE ALL ENQUIRIES: chris@chrisedwardsdesign.com</h3>
+          </div>
+          <div id="formTriggerTwo" class="maintenance--marquee-svg-container">
+            <svg id="closeMinus"class="maintenance--svg-close-2 svg-hide" width="18" height="18" viewBox="0 0 18 18" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17 17L1 1" stroke="inherit"/>
+              <path d="M1 17L17 1" stroke="inherit"/>
+            </svg>
+            <svg id="minusClose" class="maintenance--svg-close-minus" width="16" height="2" viewBox="0 0 16 2" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 1.44922H16" stroke="inherit"/>
+            </svg>
+          </div>
         </div>
-        <form id="formPosition" class="maintenance-container--form form-slide-left" action="https://formspree.io/f/mzbqwbol" method="POST">
-          <div id="maintenance--svg-trigger-1" class="maintenance--input maintenance--input-header-bg-scolor maintenance--form-marquee-container">
-            <div class="maintenance--marquee-container">
-              <h3 id="formTitleMarquee" class="maintenance--form-title-h3 maintenance--uppercase maintenance--form-marque">ALL ENQUIRIES: chris@chrisedwardsdesign.com</h3>
-            </div>
-            <div id="formTriggerTwo" class="maintenance--marquee-svg-container">
-              <svg id="closeMinus" class="maintenance--svg-close-2 svg-hide" width="15" height="14" viewBox="0 0 15 14" fill="inherit" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M13.2789 14.0012L0 0.722279L0.722279 0L14.0012 13.2789L13.2789 14.0012Z" fill="inherit"/>
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M7.3742e-07 13.2789L13.2789 -3.15629e-08L14.0012 0.722279L0.722281 14.0012L7.3742e-07 13.2789Z" fill="inherit"/>
-              </svg>
-              <svg id="minusClose" class="maintenance--svg-close" width="14" height="2" viewBox="0 0 14 2" fill="inherit" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M14 1.52344H0V0.523438H14V1.52344Z" fill="#151714"/>
-              </svg>
-            </div>
-          </div>
-          <div class="maintenance--input">
-            <input class="" type="text" id="name" name="name" placeholder="Name *" user-scalable="no" required>
-            <label for="name">NAME</label>
-          </div>
-          <div class="maintenance--input">
-            <input class="" type="email" id="email" name="email" placeholder="Email Address *" user-scalable="no" required>
-            <label for="email">EMAIL</label>
-          </div>
-          <div class="maintenance--input">
-            <textarea id="message" class="" name="message" placeholder="Say hello. Let's work together. *" user-scalable="no" required></textarea>
-            <label for="message" class="maintenance--input--message">MESSAGE</label>
-          </div>
-          <div class="maintenance--input">
-            <button id="maintenance--form-submit" class="maintenance--uppercase" user-scalable="no" type="submit">SUBMIT</button>
-          </div>
-        </form> 
-        <div id="formOverlay" class="maintenance--form-overlay form-hide"></div>
+        <div class="maintenance--input">
+          <input class="" type="text" id="name" name="name" placeholder="Name *" user-scalable="no" required>
+          <label for="name">NAME</label>
+        </div>
+        <div class="maintenance--input">
+          <input class="" type="email" id="email" name="email" placeholder="Email Address *" user-scalable="no" required>
+          <label for="email">EMAIL</label>
+        </div>
+        <div class="maintenance--input">
+          <textarea id="message" class="" name="message" placeholder="Say hello. Let's work together. *" user-scalable="no" required></textarea>
+          <label for="message" class="maintenance--input--message">MESSAGE</label>
+        </div>
+        <div class="maintenance--input">
+          <button id="maintenance--form-submit" class="maintenance--uppercase" user-scalable="no" type="submit">SUBMIT</button>
+        </div>
+      </form> 
+    </div>  
+    <section id="formOverlay" class="maintenance--form-overlay form-hide"></section>
+    <div id="contGame" class="maintenance--game-container">
+      <span id="contMove" class="maintenance--game-btn">COMING SOON</span>
+    </div>
+    <section id="contParent" class="container-maintenance ">
         <div class="container-countdown--desk">
           <div id="countdownTimerDesk" class="maintenance--time"></div>
           <h2 class="maintenance--title-h2">/ LIVE</h2>
         </div>
     </section>
+    <!-- work -->
+    <section class="maintenance--announcement">
+      <div class="container-countdown--mob">
+        <h2 class="maintenance--title-h2">LIVE:</h2>
+        <div id="countdownTimerMob" class="maintenance--time"></div>
+      </div>
+    </section>
+    <section class="section--two-column">
+      <div class="two-column--content">
+        <p class="opener">
+          Manchester-based digital designer specialising in digital and graphic design, animation, and UX. With experience in HTML, CSS, and JavaScript. With 5+ years of varied industry experience, I excel at creating functional and impactful designs that prioritise clarity and effectiveness. Let's work together to bring your vision to life. Feel free to explore my portfolio and reach out for freelance opportunities.      </div>
+    </section>
+     <!-- footer -->
     <footer class="container--footer">
-      <div class="footer--col grid-col-1">
-        <ul class="container-maintenance--ul">
-          <li class="footer--info-li uppercase">phone</li>
-          <li class="footer--info-li"><a title="Mobile Contact" href="tel:07506583276">+44 (0) 7506-583-276</a></li>
-        </ul>
-        <ul class="container-maintenance--ul">
-          <li class="footer--info-li uppercase">email</li>
-          <li class="footer--info-li"><a href="mailto:chris@chrisedwardsdesign.com" title="Email">chris@chrisedwardsdesign.com</a></li>
-        </ul>
-      </div>
-      <div class="footer--col grid-col-2">
-        <ul class="container-maintenance--ul">
-          <li class="footer--info-li uppercase">LINKEDIN</li>
-          <li class="footer--info-li"><a href="https://www.linkedin.com/in/chris-edwards-b97488276" title="LinkedIn External Link" target="_blank">/chris-edwards-b97488276</a></li>
-        </ul>
-        <ul class="container-maintenance--ul">
-          <li class="footer--info-li uppercase">RESUME</li>
-<!--           <li class="footer--info-li"><a href="#" title="Download attached file" target="_blank">Download CV / Resume</a></li> -->
-            <li class="footer--info-li"><a href="#" title="Download attached file">Download CV / Resume</a></li>
-        </ul>
-        <!-- <ul class="container-maintenance--ul">
-          <li class="footer--info-li uppercase">instagram</li>
-          <li class="footer--info-li"><a href="/chrisedwardsdesign" title="LinkedIn External Link" target="_blank">/chrisedwardsdesign</a></li>
-        </ul> -->
-      </div>
-      <div class="maintenance--version-container grid-col-4">
-        <p class="maintenance--version-history uppercase">CDAUX V1.0</p>
-        <p class="footer--info-li">© Copyright 2023 Chris Edwards Design</p>
+      <div class="footer--content">
+        <div class="footer--col grid-col-1">
+          <ul id="formTriggerThree" class="container-maintenance--ul cursor-pointer">
+            <li class="footer--info-li uppercase">CONTACT</li>
+            <li class="footer--info-li">Send me a message</li>
+          </ul>
+          <ul class="container-maintenance--ul">
+            <li class="footer--info-li uppercase">email</li>
+            <li class="footer--info-li"><a href="mailto:chris@chrisedwardsdesign.com" title="Email">chris@chrisedwardsdesign.com</a></li>
+          </ul>
+        </div>
+        <div class="footer--col grid-col-2">
+          <ul class="container-maintenance--ul">
+            <li class="footer--info-li uppercase">LINKEDIN</li>
+            <li class="footer--info-li"><a href="https://www.linkedin.com/in/chris-edwards-b97488276" title="LinkedIn External Link" target="_blank">/chris-edwards-b97488276</a></li>
+          </ul>
+          <ul class="container-maintenance--ul">
+            <li class="footer--info-li uppercase">RESUME</li>
+            <li class="footer--info-li"><a href="#" title="Download attached file" target="_blank">Download CV / Resume</a></li>
+          </ul>
+        </div>
+        <p class="footer--info-li--copyright-desk">© Copyright 2023 Chris Edwards Design</p>
+        <div class="maintenance--version-container">
+          <p class="maintenance--version-history grid-col-3">Website under maintenance</p>
+          <p class="footer--info-li--copyright-mob">© Copyright 2023 Chris Edwards Design</p>
+        </div>
       </div>
     </footer>
 </body>
