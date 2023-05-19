@@ -1,35 +1,35 @@
 // header
-window.addEventListener('DOMContentLoaded', (event) => {
-  const headerContainer = document.getElementById('header--container');
-  const mainContainer = document.getElementById('contMain');
-  let previousScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-  let isScrollingUp = false;
+// window.addEventListener('DOMContentLoaded', (event) => {
+//   const headerContainer = document.getElementById('header--container');
+//   const mainContainer = document.getElementById('contMain');
+//   let previousScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+//   let isScrollingUp = false;
 
-  window.addEventListener('scroll', function() {
-    const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-    const scrollPositionChange = currentScrollPosition - previousScrollPosition;
+//   window.addEventListener('scroll', function() {
+//     const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+//     const scrollPositionChange = currentScrollPosition - previousScrollPosition;
 
-    if (scrollPositionChange < -6) {
-      // Scrolling up
-      if (!isScrollingUp) {
-        headerContainer.style.zIndex = '8';
-        headerContainer.style.opacity = '1';
-        headerContainer.style.borderBottom = 'var(--section-border-width) solid var(--color-primary)'; // add border-bottom
-        mainContainer.style.top = 'var(--section-border-width-minus)'; // move down 1px account for border-bottom overlap
-        isScrollingUp = true;
-      }
-    } else if (scrollPositionChange > 2) {
-      // Scrolling down
-      headerContainer.style.zIndex = '0';
-      headerContainer.style.opacity = '0';
-      headerContainer.style.borderBottom = 'none'; // add border-bottom
-      mainContainer.style.top = '0px'; // move down 1px account for border-bottom overlap
-      isScrollingUp = false;
-    }
+//     if (scrollPositionChange < -6) {
+//       // Scrolling up
+//       if (!isScrollingUp) {
+//         headerContainer.style.zIndex = '8';
+//         headerContainer.style.opacity = '1';
+//         headerContainer.style.borderBottom = 'var(--section-border-width) solid var(--color-primary)'; // add border-bottom
+//         mainContainer.style.top = 'var(--section-border-width-minus)'; // move down 1px account for border-bottom overlap
+//         isScrollingUp = true;
+//       }
+//     } else if (scrollPositionChange > 2) {
+//       // Scrolling down
+//       headerContainer.style.zIndex = '0';
+//       headerContainer.style.opacity = '0';
+//       headerContainer.style.borderBottom = 'none'; // add border-bottom
+//       mainContainer.style.top = '0px'; // move down 1px account for border-bottom overlap
+//       isScrollingUp = false;
+//     }
 
-    previousScrollPosition = currentScrollPosition;
-  });
-});
+//     previousScrollPosition = currentScrollPosition;
+//   });
+// });
 
 // dark / light mode
 window.addEventListener('DOMContentLoaded', (event) => {
@@ -248,7 +248,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // countdown timer
 // Set the date and time to count down to
-const countdownDate = new Date("2023-05-20T23:59:59Z").getTime();
+const countdownDate = new Date("2023-05-22T23:59:59Z").getTime();
 
 // Update the countdown every second
 const countdownInterval = setInterval(function() {
