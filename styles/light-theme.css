@@ -1,4 +1,12 @@
 :root {
+  --section-border-width: 1.5px;
+  --section-border-width-minus: -1.5px;
+
+
+  --font-weight-base: 500;
+  --font-weight-medium: 600;
+  --font-weight-bold: 700;
+
   --color-primary: #0E1419;
   --color-secondary: #f3f3f3;  
   --background-color-primary: #f3f3f3;
