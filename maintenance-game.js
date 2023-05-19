@@ -9,13 +9,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
     const scrollPositionChange = currentScrollPosition - previousScrollPosition;
 
-    if (scrollPositionChange < -2) {
+    if (scrollPositionChange < -6) {
       // Scrolling up
       if (!isScrollingUp) {
         headerContainer.style.zIndex = '8';
         headerContainer.style.opacity = '1';
-        headerContainer.style.borderBottom = '1px solid var(--color-primary)'; // add border-bottom
-        mainContainer.style.top = '-1px'; // move down 1px account for border-bottom overlap
+        headerContainer.style.borderBottom = 'var(--section-border-width) solid var(--color-primary)'; // add border-bottom
+        mainContainer.style.top = 'var(--section-border-width-minus)'; // move down 1px account for border-bottom overlap
         isScrollingUp = true;
       }
     } else if (scrollPositionChange > 2) {
