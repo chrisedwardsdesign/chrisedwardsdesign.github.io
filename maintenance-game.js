@@ -4,6 +4,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
   const pageWrapper = document.getElementById('page-wrapper');
   let previousScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
   let isScrollingUp = false;
+  let timeout;
 
   window.addEventListener('scroll', function() {
     const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
@@ -26,11 +27,20 @@ window.addEventListener('DOMContentLoaded', (event) => {
       headerContainer.style.borderBottom = 'none'; // add border-bottom
       pageWrapper.style.position = 'relative'; // move down 1px account for border-bottom overlap
       isScrollingUp = false;
+
+      // Clear any previously scheduled timeout
+      clearTimeout(timeout);
+
+      // Add a timeout function to bring the header back to opacity 1
+      timeout = setTimeout(() => {
+        headerContainer.style.opacity = '1';
+      }, 500); // Adjust the delay (in milliseconds) as per your preference
     }
 
     previousScrollPosition = currentScrollPosition;
   });
 });
+
 
 // dark / light mode
 window.addEventListener('DOMContentLoaded', (event) => {
