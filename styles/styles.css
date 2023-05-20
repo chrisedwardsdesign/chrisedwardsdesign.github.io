@@ -305,6 +305,7 @@ section {
 
 @media only screen and (max-width: 520px) {
   .logotype--svg-container {
+    padding-top: 1.35rem;
     padding-bottom: calc(var(--footer-height-mob) - 0.5rem);
   }
 }
