@@ -31,6 +31,11 @@
   font-weight: var(--font-weight-medium);
 }
 
+.intro-text {
+  font-size: 1.4rem;
+  color: var(--color-highlight-2);
+}
+
 .section--two-column--container {
   background-color: #77797c;
 }
