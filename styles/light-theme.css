@@ -35,10 +35,6 @@
   background-color: #77797c;
 }
 
-.intro-text {
-  font-size: 1.4rem;
-}
-
 .logotype--svg {
   fill: var(--color-secondary);
 }
