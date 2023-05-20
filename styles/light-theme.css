@@ -1,4 +1,6 @@
 :root {
+  --color-highlight-2: #0E1419;
+
   --section-border-width: 1.5px;
   --section-border-width-minus: -1.5px;
 
@@ -19,4 +21,12 @@
   --link-hover: 0.5;
   --link-visited: #f3f3f3;
   --link-active: #f3f3f3;
+}
+
+.mode-switch--btn-text {
+  font-weight: var(--font-weight-medium);
+}
+
+.section--two-column--container {
+  background-color: pink;
 }
