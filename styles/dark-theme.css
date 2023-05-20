@@ -1,4 +1,6 @@
 :root {
+  --color-highlight-2: #646464;
+  
   --color-primary: #f3f3f3;
   --color-secondary: #0E1419;  
   --background-color-primary: #0E1419;
@@ -14,5 +16,5 @@
 }
 
 .intro-text {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
 }
