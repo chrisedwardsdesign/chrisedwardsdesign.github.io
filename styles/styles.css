@@ -314,7 +314,7 @@ section {
   background-color: var(--background-color-primary);
   opacity: 1;
   top: 0;
-  transition: opacity 0.5s ease-in-out, top 0.5s ease-in-out; /* Add easing effect for a smoother transition */
+  transition: opacity 0.35s ease-in-out, top 0.35s ease-in-out; /* Add easing effect for a smoother transition */
 }
 
 .container--nav {
