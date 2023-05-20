@@ -68,4 +68,15 @@
 
 .footer--container {
   border: 1.5px solid var(--color-primary);
+  background-color: var(--color-primary);
+  color: var(--background-color-primary);
+  font-weight: 400;
+}
+
+.footer--info-li {
+  color: inherit;
+}
+
+.footer--info-link {
+  color: #646464;
 }
