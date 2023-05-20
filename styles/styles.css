@@ -232,6 +232,11 @@ section {
   color: var(--color-primary);
 }
 
+.intro-text {
+  font-size: 1.5rem;
+  color: var(--color-highlight-2);
+}
+
 .section--two-column--container {
   display: flex;
   flex-direction: column;
@@ -596,9 +601,9 @@ section {
 .maintenance--game-btn {
   position: absolute;
   display: flex;
-  padding: 0.5rem 1rem;
+  padding: 1rem 1.5rem;
   text-transform: uppercase;
-  font-size: 1.5rem;
+  font-size: 2rem;
   border-radius: 100px;
   border: var(--section-border-width) solid var(--game-btn-outline);
   width: fit-content;
