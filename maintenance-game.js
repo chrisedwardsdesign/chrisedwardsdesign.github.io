@@ -1,3 +1,38 @@
+// header
+window.addEventListener('DOMContentLoaded', (event) => {
+  const headerContainer = document.getElementById('header--container');
+  const pageWrapper = document.getElementById('page-wrapper');
+  let previousScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+  let isScrollingUp = false;
+
+  window.addEventListener('scroll', function() {
+    const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollPositionChange = currentScrollPosition - previousScrollPosition;
+
+    if (scrollPositionChange < -6) {
+      // Scrolling up
+      if (!isScrollingUp) {
+        headerContainer.style.zIndex = '8';
+        headerContainer.style.opacity = '1';
+        headerContainer.style.borderBottom = 'var(--section-border-width) solid var(--color-primary)'; // add border-bottom
+        pageWrapper.style.position = 'relative'; // move down 1px account for border-bottom overlap
+        pageWrapper.style.top = 'var(--section-border-width-minus)'; // move down 1px account for border-bottom overlap
+        isScrollingUp = true;
+      }
+    } else if (scrollPositionChange > 2) {
+      // Scrolling down
+      headerContainer.style.zIndex = '0';
+      headerContainer.style.opacity = '0';
+      headerContainer.style.borderBottom = 'none'; // add border-bottom
+      pageWrapper.style.position = 'relative'; // move down 1px account for border-bottom overlap
+      isScrollingUp = false;
+    }
+
+    previousScrollPosition = currentScrollPosition;
+  });
+});
+
+// dark / light mode
 window.addEventListener('DOMContentLoaded', (event) => {
   document.getElementById('toggleBtn').addEventListener('click', function() {
     const body = document.querySelector('body');
