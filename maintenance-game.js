@@ -34,7 +34,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
       // Add a timeout function to bring the header back to opacity 1
       timeout = setTimeout(() => {
         headerContainer.style.opacity = '1';
-      }, 1); // Adjust the delay (in milliseconds) as per your preference
+      }, 250); // Adjust the delay (in milliseconds) as per your preference
     }
 
     previousScrollPosition = currentScrollPosition;
