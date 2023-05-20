@@ -30,3 +30,7 @@
 .section--two-column--container {
   background-color: pink;
 }
+
+.intro-text {
+  font-size: 1.5rem;
+}
