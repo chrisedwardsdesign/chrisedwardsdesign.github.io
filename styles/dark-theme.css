@@ -12,3 +12,7 @@
   --link-visited: #f3f3f3;
   --link-active: #f3f3f3;
 }
+
+.intro-text {
+  font-size: 1.4rem;
+}
