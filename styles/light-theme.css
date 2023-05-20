@@ -1,5 +1,9 @@
 :root {
+  /* --section-border-width: 0!important;
+  --section-border-width-minus: 0!important; */
+
   --color-highlight-2: #0E1419;
+  --color-highlight-3: #fb5d03;
 
   --section-border-width: 1.5px;
   --section-border-width-minus: -1.5px;
@@ -28,9 +32,40 @@
 }
 
 .section--two-column--container {
-  background-color: pink;
+  background-color: #77797c;
 }
 
 .intro-text {
   font-size: 1.5rem;
+}
+
+.logotype--svg {
+  fill: var(--color-secondary);
+}
+
+.maintenance--announcement {
+  /* color: var(--color-secondary); */
+  background-color: var(--color-highlight-3)
+}
+
+@media only screen and (max-width: 640px) {
+  .container-maintenance--contact {
+  border: 1.5px solid var(--color-primary);
+  }
+}
+
+.mode-switch-btn--container {
+  border: 1.5px solid var(--color-primary);
+}
+
+.mode-switch--btn {
+  border: 1.5px solid var(--color-primary);
+}
+
+.maintenance--svg-close {
+  stroke-width: 1.5px;
+}
+
+.footer--container {
+  border: 1.5px solid var(--color-primary);
 }
