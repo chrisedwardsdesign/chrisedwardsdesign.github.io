@@ -265,14 +265,13 @@ section {
   min-height: fit-content;
   height: fit-content;
   transition: position 0.3s ease-in-out;
-  padding-top: 0;
 }
 
-/* @media only screen and (max-width: 640px) {
+@media only screen and (max-width: 640px) {
   .two-column--container {
     padding-top: 0;
   }
-} */
+}
 
 .two-column--content {
   display: grid;
