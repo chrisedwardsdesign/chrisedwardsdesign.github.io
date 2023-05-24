@@ -1,16 +1,14 @@
 :root {
-  /* --section-border-width: 0!important;
-  --section-border-width-minus: 0!important; */
-
   --color-highlight-2: #0E1419;
   --color-highlight-3: #fb5d03;
 
-  --section-border-width: 1.5px;
-  --section-border-width-minus: -1.5px;
-
-
+  --section-border-width: 0;
+  --section-border-width-minus: -1px;
+  
+  --component-border-width: 1px;
+  
   --font-weight-base: 500;
-  --font-weight-medium: 600;
+  --font-weight-medium: 500;
   --font-weight-bold: 700;
 
   --color-primary: #0E1419;
@@ -27,13 +25,17 @@
   --link-active: #f3f3f3;
 }
 
-.mode-switch--btn-text {
-  font-weight: var(--font-weight-medium);
+body {
+  background-color: var(--color-primary);
 }
 
-.intro-text {
-  font-size: 1.4rem;
-  color: var(--color-highlight-2);
+.maintenance-container--form {
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+.mode-switch--btn-text {
+  font-weight: var(--font-weight-medium);
 }
 
 .section--two-column--container {
@@ -41,34 +43,23 @@
 }
 
 .logotype--svg {
-  fill: var(--color-secondary);
-}
-
-.maintenance--announcement {
-  /* color: var(--color-secondary); */
-  background-color: var(--color-highlight-3)
-}
-
-@media only screen and (max-width: 640px) {
-  .container-maintenance--contact {
-  border: 1.5px solid var(--color-primary);
-  }
+  fill: var(--color-primary);
 }
 
 .mode-switch-btn--container {
-  border: 1.5px solid var(--color-primary);
+  border: var(--component-border-width) solid var(--color-primary);
 }
 
 .mode-switch--btn {
-  border: 1.5px solid var(--color-primary);
+  border: var(--component-border-width) solid var(--color-primary);
 }
 
 .maintenance--svg-close {
-  stroke-width: 1.5px;
+  stroke-width: var(--component-border-width);
 }
 
 .footer--container {
-  border: 1.5px solid var(--color-primary);
+  border: var(--section-border-width) solid var(--color-primary);
   background-color: var(--color-primary);
   color: var(--background-color-primary);
   font-weight: 400;
@@ -80,4 +71,16 @@
 
 .footer--info-link {
   color: #646464;
+}
+
+.maintenance-container--form input::placeholder,
+.maintenance-container--form textarea::placeholder,
+.maintenance-container--form input::-webkit-input-placeholder,
+.maintenance-container--form textarea::-webkit-input-placeholder,
+.maintenance-container--form label {
+  color: var(--color-primary);
+}
+
+.two-column--content-text {
+  background-color: var(--background-color-secondary-transp-2);
 }
