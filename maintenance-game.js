@@ -1,5 +1,82 @@
+document.addEventListener('DOMContentLoaded', function() {
+  const centerElement = document.getElementById('logotypeSvgWidthCenter');
+  const topElement = document.getElementById('logotypeSvgWidthTop');
+  const bottomElement = document.getElementById('logotypeSvgWidthBottom');
+  
+  // Update centerElement width and height
+  centerElement.style.width = '100%';
+  centerElement.style.height = 'fit-content';
+
+  function updateHeight() {
+    const centerHeight = window.getComputedStyle(centerElement).height;
+    topElement.style.height = centerHeight;
+    bottomElement.style.height = centerHeight;
+  }
+
+  // Initial height update
+  updateHeight();
+
+  // Recalculate height on window resize
+  window.addEventListener('resize', updateHeight);
+});
+
+// video
+document.addEventListener("DOMContentLoaded", function() {
+  var playButton = document.getElementById("play-button");
+  var video = document.getElementById("video");
+
+  playButton.addEventListener("click", function() {
+    playVideo();
+  });
+
+  function playVideo() {
+    playButton.style.display = "none";
+    video.style.display = "block";
+    video.play();
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+  let element = document.getElementById('two-column--container');
+  let footer = document.getElementById('footer--container');
+  let scrollThresholdPercentage = 0.1; // Adjust this value to set the scroll threshold percentage
+  let resizeTimer;
+
+  function updateElementPosition() {
+    let scrollThreshold = window.innerHeight * scrollThresholdPercentage;
+
+    if (window.pageYOffset >= scrollThreshold) {
+      element.style.position = 'relative';
+      element.style.top = '1px';
+      element.style.borderBottom = 'var(--section-border-width) solid var(--color-primary)';
+    } else {
+      element.style.position = 'sticky';
+      element.style.top = '0';
+      // element.style.paddingTop = '1rem';
+      element.style.borderBottom = 'none';
+    }
+    
+    // Update footer position
+    footer.style.position = 'sticky';
+    footer.style.bottom = '0';
+  }
+
+  function handleWindowResize() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function() {
+      updateElementPosition();
+    }, 200); // Adjust the delay as needed (in milliseconds)
+  }
+
+  window.addEventListener('scroll', updateElementPosition);
+  window.addEventListener('resize', handleWindowResize);
+
+  // Initial position update on page load
+  updateElementPosition();
+});
+
 // header
-window.addEventListener('DOMContentLoaded', (event) => {
+document.addEventListener("DOMContentLoaded", function() {
   const headerContainer = document.getElementById('header--container');
   const pageWrapper = document.getElementById('page-wrapper');
   let previousScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
@@ -43,7 +120,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 
 // dark / light mode
-window.addEventListener('DOMContentLoaded', (event) => {
+document.addEventListener("DOMContentLoaded", function() {
   document.getElementById('toggleBtn').addEventListener('click', function() {
     const body = document.querySelector('body');
     const themeStyle = document.getElementById('theme-style');
@@ -67,13 +144,15 @@ window.addEventListener('DOMContentLoaded', (event) => {
   });
 });
 
-window.addEventListener('DOMContentLoaded', (event) => {
+//nav height calc
+document.addEventListener("DOMContentLoaded", function() {
   const navBar = document.getElementById('navBar');
   const navBarHeight = navBar.offsetHeight;
 
   console.log('Navigation bar height:', navBarHeight);
 });
 
+// game
 document.addEventListener("DOMContentLoaded", function() {
   const contMove = document.getElementById("contMove");
   const contGame = document.getElementById("contGame");
@@ -88,89 +167,89 @@ document.addEventListener("DOMContentLoaded", function() {
   let isFirstRandomWord = true; // Add a flag to check if it's the first time the function is called
   let isFirstRandomColor = true; // Add a flag to check if it's the first time the function is called
 
-function clickRandomColor() {
-  const white = "var(--color-primary)";
-  let randomColor;
-  
-  // Exclude the last color in the array if it's the first time the function is called
-  if (isFirstRandomColor) {
-    randomColor = storedColors[Math.floor(Math.random() * (storedColors.length - 1))];
-    isFirstRandomColor = false;
-  } else {
-    randomColor = storedColors[Math.floor(Math.random() * storedColors.length)];
+  function clickRandomColor() {
+    const white = "var(--color-primary)";
+    let randomColor;
+    
+    // Exclude the last color in the array if it's the first time the function is called
+    if (isFirstRandomColor) {
+      randomColor = storedColors[Math.floor(Math.random() * (storedColors.length - 1))];
+      isFirstRandomColor = false;
+    } else {
+      randomColor = storedColors[Math.floor(Math.random() * storedColors.length)];
+    }
+
+    if (randomColor === lastColor) {
+      return clickRandomColor();
+    }
+
+    lastColor = randomColor;
+    contMove.style.backgroundColor = randomColor;
+
+    if (randomColor === white) {
+      contMove.style.color = "var(--color-secondary)"; // set text color to black
+    } else {
+      contMove.style.color = "var(--color-game-text-1)"; // set text color to white
+    }
   }
 
-  if (randomColor === lastColor) {
-    return clickRandomColor();
+  function clickRandomWord() {
+    let randomWord;
+    
+    // Exclude the last word in the array if it's the first time the function is called
+    if (isFirstRandomWord) {
+      randomWord = storedWords[Math.floor(Math.random() * (storedWords.length - 1))];
+      isFirstRandomWord = false;
+    } else {
+      randomWord = storedWords[Math.floor(Math.random() * storedWords.length)];
+    }
+
+    if (randomWord === lastWord) {
+      return clickRandomWord();
+    }
+
+    lastWord = randomWord;
+    contMove.textContent = randomWord;
   }
 
-  lastColor = randomColor;
-  contMove.style.backgroundColor = randomColor;
+    function randomMove() {
+      let x = Math.floor(Math.random() * (contGame.offsetWidth - contMove.offsetWidth));
+      let y = Math.floor(Math.random() * (contGame.offsetHeight - contMove.offsetHeight));
+      let rotation = Math.floor(Math.random() * 90) - 45; // select random rotation angle between -45 and 45 degrees
+      contMove.style.left = x + "px";
+      contMove.style.top = y + "px";
+      contMove.style.transform = "rotate(" + rotation + "deg)"; // apply rotation to element
+    };
 
-  if (randomColor === white) {
-    contMove.style.color = "var(--color-secondary)"; // set text color to black
-  } else {
-    contMove.style.color = "var(--color-game-text-1)"; // set text color to white
-  }
-}
-
-function clickRandomWord() {
-  let randomWord;
-  
-  // Exclude the last word in the array if it's the first time the function is called
-  if (isFirstRandomWord) {
-    randomWord = storedWords[Math.floor(Math.random() * (storedWords.length - 1))];
-    isFirstRandomWord = false;
-  } else {
-    randomWord = storedWords[Math.floor(Math.random() * storedWords.length)];
-  }
-
-  if (randomWord === lastWord) {
-    return clickRandomWord();
-  }
-
-  lastWord = randomWord;
-  contMove.textContent = randomWord;
-}
-
-  function randomMove() {
-    let x = Math.floor(Math.random() * (contGame.offsetWidth - contMove.offsetWidth));
-    let y = Math.floor(Math.random() * (contGame.offsetHeight - contMove.offsetHeight));
-    let rotation = Math.floor(Math.random() * 90) - 45; // select random rotation angle between -45 and 45 degrees
-    contMove.style.left = x + "px";
-    contMove.style.top = y + "px";
-    contMove.style.transform = "rotate(" + rotation + "deg)"; // apply rotation to element
-  };
-
-  function startAutoAnimate() {
-  autoAnimateTimeout = setTimeout(function() {
-    contMove.classList.add("hidden"); // add 'hidden' class to element
-    setTimeout(function() { // wait for transition to complete
-      clickRandomColor();
-      clickRandomWord();
-      randomMove();
-      contMove.classList.remove("hidden"); // remove 'hidden' class from element
-    }, 200);
-    startAutoAnimate();
-  }, 2500);
-}
-
-  contMove.addEventListener("click", function() {
-    clearTimeout(autoAnimateTimeout);
-    contMove.style.visibility = "visible"; // set visibility property to "visible"
-    contMove.classList.add("hidden"); // add 'hidden' class to element
-    setTimeout(function() { // wait for transition to complete
-      clickRandomColor();
-      clickRandomWord();
-      randomMove();
-      contMove.classList.remove("hidden"); // remove 'hidden' class from element
+    function startAutoAnimate() {
+    autoAnimateTimeout = setTimeout(function() {
+      contMove.classList.add("hidden"); // add 'hidden' class to element
+      setTimeout(function() { // wait for transition to complete
+        clickRandomColor();
+        clickRandomWord();
+        randomMove();
+        contMove.classList.remove("hidden"); // remove 'hidden' class from element
+      }, 200);
       startAutoAnimate();
-    }, 200);
-  });
+    }, 2500);
+  }
 
-  contMove.style.visibility = "visible"; // set visibility property to "visible"
-  startAutoAnimate();
-});
+    contMove.addEventListener("click", function() {
+      clearTimeout(autoAnimateTimeout);
+      contMove.style.visibility = "visible"; // set visibility property to "visible"
+      contMove.classList.add("hidden"); // add 'hidden' class to element
+      setTimeout(function() { // wait for transition to complete
+        clickRandomColor();
+        clickRandomWord();
+        randomMove();
+        contMove.classList.remove("hidden"); // remove 'hidden' class from element
+        startAutoAnimate();
+      }, 200);
+    });
+
+    contMove.style.visibility = "visible"; // set visibility property to "visible"
+    startAutoAnimate();
+  });
 
 // modal slide
 document.addEventListener("DOMContentLoaded", function() {
@@ -201,12 +280,18 @@ document.addEventListener("DOMContentLoaded", function() {
   // form
   document.querySelector("#formPosition").addEventListener("submit", function(event) {
     event.preventDefault();
-    
-    var formData = new FormData(this);
+  
+    var formElement = event.target; // Get the form element
+    if (!(formElement instanceof HTMLFormElement)) {
+      console.error("Element is not a form.");
+      return;
+    }
+  
+    var formData = new FormData(formElement);
     var submitButton = document.querySelector("#maintenance--form-submit");
-    
-    fetch(this.action, {
-      method: this.method,
+  
+    fetch(formElement.action, {
+      method: formElement.method,
       body: formData,
       headers: {
         "Accept": "application/json"
@@ -214,7 +299,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }).then(response => {
       if (response.ok) {
         submitButton.textContent = "Message sent!";
-        this.reset();
+        formElement.reset();
         // Wait for 2 seconds, then close the form
         setTimeout(formToggle, 2000);
       } else {
@@ -224,9 +309,9 @@ document.addEventListener("DOMContentLoaded", function() {
       submitButton.textContent = "Error!";
       console.error(error);
     });
-  });
+  });  
   
-})
+});
 
 // marquee
 document.addEventListener("DOMContentLoaded", function() {
@@ -257,31 +342,42 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // countdown timer
-// Set the date and time to count down to
-const countdownDate = new Date("2023-05-22T23:59:59Z").getTime();
+document.addEventListener("DOMContentLoaded", function() {
+  // Countdown timer for desktop
+  const countdownDateDesktop = new Date("2023-05-26T23:59:59Z").getTime();
+  const countdownTimerDesktop = document.getElementById("countdownTimerDesktop");
 
-// Update the countdown every second
-const countdownInterval = setInterval(function() {
+  setInterval(function() {
+    const now = new Date().getTime();
+    const distance = countdownDateDesktop - now;
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    countdownTimerDesktop.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 
-  // Get the current date and time
-  const now = new Date().getTime();
+    if (distance < 0) {
+      clearInterval(countdownIntervalDesktop);
+      countdownTimerDesktop.textContent = "EXPIRED";
+    }
+  }, 1000);
 
-  // Calculate the difference between the countdown date and the current date
-  const distance = countdownDate - now;
+  // Countdown timer for mobile
+  const countdownDateMobile = new Date("2023-05-26T23:59:59Z").getTime();
+  const countdownTimerMobile = document.getElementById("countdownTimerMobile");
 
-  // Calculate the time remaining in days, hours, minutes, and seconds
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  setInterval(function() {
+    const now = new Date().getTime();
+    const distance = countdownDateMobile - now;
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    countdownTimerMobile.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 
-  // Update the countdown timer elements with the time remaining
-  const countdownTimerMain = document.getElementById("countdownTimerMain");
-  countdownTimerMain.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-
-  // If the countdown has ended, display a message and clear the countdown interval
-  if (distance < 0) {
-    clearInterval(countdownInterval);
-    countdownTimerMain.textContent = "EXPIRED";
-  }
-}, 1000);
+    if (distance < 0) {
+      clearInterval(countdownIntervalMobile);
+      countdownTimerMobile.textContent = "EXPIRED";
+    }
+  }, 1000);
+});
