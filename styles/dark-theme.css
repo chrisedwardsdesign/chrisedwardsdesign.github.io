@@ -14,3 +14,8 @@
   --link-visited: #f3f3f3;
   --link-active: #f3f3f3;
 }
+
+.maintenance-container--form {
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
