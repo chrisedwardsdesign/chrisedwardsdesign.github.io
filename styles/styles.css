@@ -1323,6 +1323,7 @@ section {
   -webkit-backdrop-filter: blur(3px);
   color: var(--color-primary);
   font-size: var(--base-text);
+  font-weight: var(--font-weight-base);
 }
 
 .maintenance--input button:hover {
