@@ -247,7 +247,13 @@ section {
 }
 
 .intro-text {
-  font-size: 1.35rem;
+  font-size: 1.3rem;
+}
+
+@media only screen and (max-width: 640px) {
+  .intro-text {
+    padding: 1rem 0;
+  }
 }
 
 .two-column--container {
@@ -259,6 +265,7 @@ section {
   min-height: fit-content;
   height: fit-content;
   transition: position 0.3s ease-in-out;
+  padding-top: 0;
 }
 
 /* @media only screen and (max-width: 640px) {
@@ -566,7 +573,7 @@ section {
   display: flex;
   padding: 1rem;
   width: 100%;
-  min-height: fit-content;
+  min-height: var(--section-height-sm);
   align-items: center;
   background-color: var(--background-color-primary);
 }
