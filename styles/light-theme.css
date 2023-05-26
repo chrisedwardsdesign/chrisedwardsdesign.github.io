@@ -84,3 +84,15 @@ body {
 .two-column--content-text {
   background-color: var(--background-color-secondary-transp-2);
 }
+
+.credits-content {
+  background-color: #ffffffad;
+}
+
+@media only screen and (max-width: 640px) {
+  .logotype--svg-container {
+    background-color: var(--background-color-primary-transp-glass-2);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+  }
+}
