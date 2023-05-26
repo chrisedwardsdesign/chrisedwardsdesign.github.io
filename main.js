@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
+  const copyrightLinkMob = document.getElementById('copyrightLinkMob');
   const copyrightLink = document.getElementById('copyrightLink');
   const copyrightMessageToggle = document.getElementById('copyrightMessageToggle');
   const copyrightMessageOpen = document.getElementById('copyrightMessageOpen');
@@ -36,6 +37,14 @@ document.addEventListener('DOMContentLoaded', function() {
   const copyrightContent = document.getElementById('copyrightContent');
 
   copyrightLink.addEventListener('click', function(event) {
+    event.preventDefault();
+    copyrightOverlay.classList.toggle('show');
+    copyrightContent.classList.toggle('show');
+    copyrightMessageOpen.classList.toggle('svg-hide');
+    copyrightMessageClose.classList.toggle('svg-hide');
+  });
+
+  copyrightLinkMob.addEventListener('click', function(event) {
     event.preventDefault();
     copyrightOverlay.classList.toggle('show');
     copyrightContent.classList.toggle('show');
