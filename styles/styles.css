@@ -199,8 +199,8 @@ a {
 }
 
 .link--main-svg {
-  height: 16px;
-  width: 16px;
+  height: 13px;
+  width: 13px;
   rotate: 45deg;
   stroke: var(--color-primary);
   stroke-width: var(--component-border-width);
