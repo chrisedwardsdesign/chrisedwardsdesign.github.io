@@ -1,4 +1,4 @@
-// copyright popup
+// credits popup
 document.addEventListener('DOMContentLoaded', function() {
   const creditsLink = document.getElementById('creditsLink');
   const creditsMessageToggle = document.getElementById('creditsMessageToggle');
@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 });
 
-// scroll switch position
+// scroll threshold position switch
 document.addEventListener("DOMContentLoaded", function() {
   let element = document.getElementById('columns--container');
   let footer = document.getElementById('footer--container');
@@ -417,10 +417,11 @@ document.addEventListener("DOMContentLoaded", function() {
 // countdown timer
 document.addEventListener("DOMContentLoaded", function() {
   // Countdown timer for desktop
-  const countdownDateDesktop = new Date("2023-05-26T23:59:59Z").getTime();
+  const countdownDateDesktop = new Date("2023-05-31T23:59:59Z").getTime();
   const countdownTimerDesktop = document.getElementById("countdownTimerDesktop");
+  let countdownIntervalDesktop; // Declare countdown interval variable
 
-  setInterval(function() {
+  countdownIntervalDesktop = setInterval(function() {
     const now = new Date().getTime();
     const distance = countdownDateDesktop - now;
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -436,10 +437,11 @@ document.addEventListener("DOMContentLoaded", function() {
   }, 1000);
 
   // Countdown timer for mobile
-  const countdownDateMobile = new Date("2023-05-26T23:59:59Z").getTime();
+  const countdownDateMobile = new Date("2023-05-31T23:59:59Z").getTime();
   const countdownTimerMobile = document.getElementById("countdownTimerMobile");
+  let countdownIntervalMobile; // Declare countdown interval variable
 
-  setInterval(function() {
+  countdownIntervalMobile = setInterval(function() {
     const now = new Date().getTime();
     const distance = countdownDateMobile - now;
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
