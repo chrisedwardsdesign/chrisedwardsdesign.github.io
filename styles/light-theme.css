@@ -96,3 +96,9 @@ body {
     -webkit-backdrop-filter: blur(25px);
   }
 }
+
+@media only screen and (max-width: 640px) {
+  .two-column--container {
+    padding-bottom: 1rem;
+  }
+}
