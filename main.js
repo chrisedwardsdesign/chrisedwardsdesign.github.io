@@ -1,3 +1,4 @@
+// copyright popup
 document.addEventListener('DOMContentLoaded', function() {
   const creditsLink = document.getElementById('creditsLink');
   const creditsMessageToggle = document.getElementById('creditsMessageToggle');
@@ -27,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
   creditsOverlay.addEventListener('click', creditsToggle);
 });
 
-// copyright
+// copyright popup
 document.addEventListener('DOMContentLoaded', function() {
   const copyrightLinkMob = document.getElementById('copyrightLinkMob');
   const copyrightLink = document.getElementById('copyrightLink');
@@ -103,6 +104,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 });
 
+// scroll switch position
 document.addEventListener("DOMContentLoaded", function() {
   let element = document.getElementById('columns--container');
   let footer = document.getElementById('footer--container');
