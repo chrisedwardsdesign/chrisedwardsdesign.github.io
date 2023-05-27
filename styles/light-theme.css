@@ -102,3 +102,12 @@ body {
     padding-bottom: 1rem;
   }
 }
+
+.credits-title--container:hover {
+  color: var(--color-primary);
+  background-color: var(--background-color-primary);
+}
+
+.credits-title--container:hover .maintenance--svg-close-minus path {
+  stroke: var(--color-primary);
+}
