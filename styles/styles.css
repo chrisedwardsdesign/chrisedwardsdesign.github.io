@@ -1863,6 +1863,10 @@ input:autofill {
   padding: 1rem;
 }
 
+#creditsContent .credits-title {
+  border-bottom: var(--component-border-width) solid var(--color-primary);
+}
+
 .credits-message--container{
   width: 100%;
   height: fit-content;
