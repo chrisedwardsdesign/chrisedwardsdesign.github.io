@@ -2635,6 +2635,10 @@ input:autofill {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: fit-content;
+  height: fit-content;
+  min-width: 18px!important;
+  min-height: 18px!important;
 }
 
 #mobileMenuDropDown .download-svg--container svg{
@@ -2642,6 +2646,7 @@ input:autofill {
   height: 100%!important;
   min-width: 18px!important;
   min-height: 18px!important;
+  line-height: var(--caps-line-height);
 }
 
 .menu--subheader h3 {
