@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Your collection grid description">
+  <title>Collection</title>
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="styles/dark-theme.css" id="theme-style">
+  <link rel="stylesheet" href="https://use.typekit.net/wod0krg.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&family=Space+Mono:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="license" href="/license.txt">
+  <script src="main.js"></script>
+</head>
+<body class="body-content dark-mode">
+  <header id="header--container" class="header--container">
+    <!-- menu -->
+    <div class="mobile-menu-overlay--container none">
+      <div class="mobile-menu--inner">
+        <div class="accordion">
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <h3 class="accordion-title">Section 1</h3>
+              <button class="accordion-toggle"></button>
+            </div>
+            <div class="accordion-content">
+              <p>Content of Section 1</p>
+            </div>
+          </div>
+    
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <h3 class="accordion-title">Section 2</h3>
+              <button class="accordion-toggle"></button>
+            </div>
+            <div class="accordion-content">
+              <p>Content of Section 2</p>
+            </div>
+          </div>
+          
+          <!-- Add more accordion items as needed -->
+        </div>
+      </div>
+    </div>
+    <!-- nav logo -->
+    <nav id="navBar" class="container--nav">
+    <div class="nav--logo-container cursor-pointer ">  
+      <a href="index.html" title="Homepage">
+        <h1 class="nav--logo">CHRIS EDWARDS DESIGN</h1>
+      </a>
+    </div>
+
+    <!-- timer desktop -->
+    <ul class="timer-container-desk">
+      <!-- <li class="live-bullet"></li>   -->
+      <li class="countdown--title-desk">LIVE:</li>
+      <li id="countdownTimerMobile" class="maintenance--time"></li>
+    </ul>
+
+    <!-- nav links left -->
+    <ul class="nav--links-left--desk cursor-pointer">
+      <li>
+        <a href="#" title="Homepage">
+          <h2 class="nav--link">DESIGN</h2>
+        </a> 
+      </li>
+      <li>
+        <a href="#" title="Animation">
+          <h2 class="nav--link">ANIMATION</h2>
+        </a>
+      </li>
+      <li>
+        <a href="#" title="UX">
+          <h2 class="nav--link">UX</h2>
+        </a>
+      </li>
+      <li>
+        <a href="#" title="Code">
+          <h2 class="nav--link">CODE</h2>
+        </a>
+      </li>
+    </ul>
+
+    <!-- nav links right -->
+      <div class="content--right">
+        <button id="toggleBtn" class="container--mode-switch">
+          <div class="mode-switch-btn--container">
+            <div id="ledRight" class="mode-switch--btn"></div>
+            <div id="ledLeft" class="mode-switch--btn mode-switch--btn--visible"></div>
+          </div>
+        <div id="darkText" class="container-mode-switch--btn-text">
+          <h4 label="light mode" class="mode-switch--btn-text">DARK</h4>
+        </div>
+        <div id="lightText" class="container-mode-switch--btn-text toggle-text-switch">
+          <h4 label="light mode" class="mode-switch--btn-text">LIGHT</h4>
+        </div>
+        </button>
+
+        <!-- menu -->
+        <div id="formTriggerOpen" class="container-maintenance--contact">
+          <h3 class="maintenance--contact-h3">MENU</h3>
+          
+          <!-- hamburger menu -->
+          <svg id="burgerOpen" class="maintenance--svg-close" width="18" height="18" viewBox="0 0 18 18" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0.686279 9.16797H18.6853M9.68579 0.167969L9.68579 18.167" stroke="#151714"/>
+          </svg>        
+          <svg id="burgerClose" class="maintenance--svg-close-2 svg-hide" width="18" height="2" viewBox="0 0 16 2" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 1.44922H16" stroke="inherit"/>
+          </svg>
+        </div>
+
+      </div>
+    </nav>
+  </header>
+
+  <!-- form -->
+  <div class="maintenance--form-holder form-slide-left" id="formPosition">
+    <form class="maintenance-container--form" action="https://formspree.io/f/mzbqwbol" method="POST">
+      <div id="maintenance--svg-trigger-1" class="maintenance--input maintenance--input-header-bg-scolor maintenance--form-marquee-container">
+        <div class="maintenance--marquee-container">
+          <h3 id="formTitleMarquee" class="maintenance--form-title-h3 maintenance--uppercase maintenance--form-marque">SITE UNDER MAINTENANCE ALL ENQUIRIES: chris@chrisedwardsdesign.com</h3>
+        </div>
+        <div id="formTriggerTwo" class="maintenance--marquee-svg-container">
+          <svg id="closeMinus"class="maintenance--svg-close-2 svg-hide" width="18" height="18" viewBox="0 0 18 18" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17 17L1 1" stroke="inherit"/>
+            <path d="M1 17L17 1" stroke="inherit"/>
+          </svg>
+          <svg id="minusClose" class="maintenance--svg-close-minus" width="16" height="2" viewBox="0 0 16 2" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 1.44922H16" stroke="inherit"/>
+          </svg>
+        </div>
+      </div>
+      <div class="maintenance--input">
+        <input class="placeholder-color" type="text" id="name" name="name" placeholder="Name*" user-scalable="no" required>
+        <label for="name">NAME</label>
+      </div>
+      <div class="maintenance--input">
+        <input class="placeholder-color" type="email" id="email" name="email" placeholder="Email Address*" user-scalable="no" required>
+        <label for="email">EMAIL</label>
+      </div>
+      <div class="maintenance--input">
+        <textarea id="message" class="placeholder-color" name="message" placeholder="Say hello. Let's work together.*" user-scalable="no" required></textarea>
+        <label for="message" class="maintenance--input--message">MESSAGE</label>
+      </div>
+      <div class="maintenance--input">
+        <button id="maintenance--form-submit" class="maintenance--uppercase" user-scalable="no" type="submit">SUBMIT</button>
+      </div>
+    </form> 
+  </div>  
+  <!-- form overlay -->
+  <section id="formOverlay" class="maintenance--form-overlay form-hide"></section>
+  <!-- credits overlay -->
+  <section id="creditsOverlay" class="credits-overlay"></section>
+  <!-- credits popup -->
+  <section id="creditsContent" class="credits-content">
+    <div id="creditsMessageToggle" class="credits-title--container">
+      <p class="">Acknowledgements:</p>
+      <svg id="creditsMessageOpen" class="maintenance--svg-close-minus svg-hide" width="18" height="18" viewBox="0 0 18 18" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17 17L1 1" stroke="inherit"/>
+        <path d="M1 17L17 1" stroke="inherit"/>
+      </svg>
+      <svg id="creditsMessageClose" class="maintenance--svg-close-minus" width="16" height="2" viewBox="0 0 16 2" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 1.44922H16" stroke="inherit"/>
+      </svg>
+    </div>
+    <div class="credits-detials--container">
+      <p class="credits-details">This website has been fully customised and developed by myself, in an attempt to showcase my skills and creativity in design, user experience, and web development. From the visual design to the user interface, every aspect of this site reflects my dedication to creating an engaging and intuitive online experience.</p>
+      <p class="credits-details">Hosted on GitHub Pages. Thank you for visiting and exploring my website.</p>
+    </div>
+    <p class="credits-title">Credits:</p>
+    <div class="credits-message--container">
+      <p class="credits-message">Special thanks to all my close friends and family for your constant support.</p>
+    </div>
+  </section>
+  <!-- copyright overlay -->
+  <section id="copyrightOverlay" class="credits-overlay"></section>
+  <!-- credits overlay -->
+  <section id="copyrightContent" class="credits-content">
+    <div id="copyrightMessageToggle" class="credits-title--container">
+      <p class="">Copyright:</p>
+      <svg id="copyrightMessageOpen" class="maintenance--svg-close-minus svg-hide" width="18" height="18" viewBox="0 0 18 18" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17 17L1 1" stroke="inherit"/>
+        <path d="M1 17L17 1" stroke="inherit"/>
+      </svg>
+      <svg id="copyrightMessageClose" class="maintenance--svg-close-minus" width="16" height="2" viewBox="0 0 16 2" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 1.44922H16" stroke="inherit"/>
+      </svg>
+    </div>
+    <div class="credits-detials--container">
+      <p class="credits-details">All content on this portfolio website is owned by Chris Edwards Design. Unauthorized reproduction or use without permission is prohibited.</p>
+      <p class="credits-details">© Copyright 2023, Chris Edwards Design</p>
+    </div>
+  </section>
+  <div id="page-wrapper" class="page-wrapper">
+    <main id="contMain" class="main--wrapper">
+      <div class="main-wrapper">
+        <div id="innerWrapper" class="inner-wrapper">
+          <!-- content mob -->
+          <section id="columns--container" class="columns--container">
+            <div class="columns--content">
+              <!-- intro text mob -->
+              <div class="column--content-text--desktop">
+                <p class="intro-text-desktop">
+                  Manchester-based digital designer specialising in web design, animation and UX. With a good foundation in HTML, CSS, JavaScript and Shopify Liquid as well as some experience in 3D modeling packages including Cinema 4D and Blender. Check out my portfolio and reach out for freelance opportunities.
+                </p>
+                <a href="#" class="link--main-2 uppercase">
+                  <svg class="link--main-svg" width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 1.35156L16 9.35156L8 17.3516" stroke="inherit" stroke-miterlimit="10"/>
+                    <path d="M0 9.35156H16" stroke="inherit" stroke-miterlimit="10"/>
+                  </svg>
+                  <p>Explore My Portfolio</p>
+                </a>
+              </div>
+              <!-- intro content list -->
+              <div class="intro-list--container">
+                <ul class="intro-list--row-1">
+                <li><p>Currently:</p><p>Freelance</p></li>
+                <li><p>Previously:</p><p>Digital Media Team Ltd.</p></li>
+                <li><p>Education:</p><p>Manchester Metropolition University</p></li>
+                </ul>
+                <ul class="intro-list--row-2">
+                <li><p>Features:</p><p>Project 1</p></li>
+                <li><p>Project 2</p></li>
+                <li><p>Project 4</p></li>
+                </ul>
+                <a href="#" class="link--main uppercase">
+                <svg class="link--main-svg" width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 1.35156L16 9.35156L8 17.3516" stroke="inherit" stroke-miterlimit="10"/>
+                    <path d="M0 9.35156H16" stroke="inherit" stroke-miterlimit="10"/>
+                </svg>
+                <p>Explore My Portfolio</p>
+                </a>
+              </div>
+            </div>
+          </section>
+          <footer id="footer--container" class="footer--container">
+            <div class="footer--content">
+              <div class="footer--col-1">
+                <ul id="formTriggerThree" class="container-maintenance--ul cursor-pointer">
+                  <li class="footer--info-li uppercase">CONTACT</li>
+                  <li class="footer--info-link">Send me a message</li>
+                </ul>
+                <a href="mailto:chris@chrisedwardsdesign.com" title="Email">
+                  <ul class="container-maintenance--ul">
+                    <li class="footer--info-li uppercase">email</li>
+                    <li class="footer--info-link">chris@chrisedwardsdesign.com</li>
+                  </ul>
+                </a>
+              </div>
+              <div class="footer--col-2">
+                <a href="https://www.linkedin.com/in/chris-edwards-b97488276" title="LinkedIn External Link" target="_blank">
+                  <ul class="container-maintenance--ul">
+                    <li class="footer--info-li uppercase">LINKEDIN</li>
+                    <li class="footer--info-link">/chris-edwards-b97488276</li>
+                  </ul>
+                </a>
+                <a href="#" title="Download attached file">
+                  <ul class="container-maintenance--ul">
+                    <li class="footer--info-li uppercase">RESUME</li>
+                    <li class="footer--info-link">Download CV / RESUME</li>
+                  </ul>
+                </a>
+              </div>
+                <p id="copyrightLink" class="footer--info-li--copyright-desk cursor-pointer"><a href="/license.txt" title="License">© Copyright 2023 Chris Edwards Design</a></p>
+                <a id="creditsLink" href="/credits.txt" class="maintenance--version-history credits-link">Acknowledgements</a>
+                <div class="maintenance--version-container">
+                <p id="copyrightLinkMob" class="footer--info-li--copyright-mob cursor-pointer"><a href="/license.txt" title="Credits">© Copyright 2023, Chris Edwards Design</a></p>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </main>
+</body>
+</html>
