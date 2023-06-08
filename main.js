@@ -53,7 +53,8 @@ document.addEventListener('DOMContentLoaded', function() {
       loop: true,
       mute: true,
       autoplay: true,
-      hideControls: true
+      hideControls: true,
+      playsInline: true
     },
   }).mount(window.splide.Extensions);
 
@@ -197,9 +198,8 @@ document.addEventListener('DOMContentLoaded', function() {
   window.addEventListener('resize', updateHeight);
 });
 
-
+// mobile menu
 document.addEventListener('DOMContentLoaded', function() {
-
 let menuIsVisible = false; // Variable to track menu visibility
 
 // mobile menu
