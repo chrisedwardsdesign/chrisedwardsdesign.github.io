@@ -60,7 +60,21 @@ document.addEventListener('DOMContentLoaded', function() {
       playsInline: true,
       playerOptions: {
         htmlVideo: {
-          playsInline: true
+          autoplay: true,
+          // controls: true,
+          // crossOrigin: true,
+          // currentTime: true,
+          // disablePictureInPicture: true,
+          // disableRemotePlayback: true,
+          height: true,
+          loop: true,
+          muted: true,
+          // playbackRate: true,
+          playsInline: true,
+          poster: true,
+          // preload: true,
+          width: true,
+          volume: false
         }
       }
     },
