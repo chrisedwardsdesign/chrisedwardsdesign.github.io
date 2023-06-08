@@ -948,6 +948,10 @@ section {
   .footer--content a:last-child {
     color: var(--color-primary)!important;
   }
+  #creditsLink {
+    font-size: var(--base-text-sm);
+    text-transform: uppercase;
+  }
 }
 
 .nav--logotype {
