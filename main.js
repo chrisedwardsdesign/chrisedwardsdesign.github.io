@@ -56,6 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
       mute: true,
       autoplay: true,
       hideControls: true,
+      disableOverlayUI: true,
       playsInline: true,
       playerOptions: {
         htmlVideo: {
