@@ -1,6 +1,7 @@
 // about me
 document.addEventListener('DOMContentLoaded', function() {
   const aboutTrigger = document.getElementById('aboutTrigger');
+  const aboutTriggerLogoHome = document.getElementById('aboutTriggerLogoHome');
   const sectionContent = document.getElementById('sectionContent');
   let timeOutAbout;
 
@@ -12,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
         clearTimeout(timeOutAbout); // Clear any existing timeouts to avoid conflicts
         timeOutAbout = setTimeout(() => {
           sectionContent.style.display = "none";
-        }, 500); // Use at least your transition time
+        }, 250); // Use at least your transition time
       } else {
         clearTimeout(timeOutAbout); // Clear any existing timeouts to avoid conflicts
         sectionContent.style.display = "grid";
@@ -24,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   aboutTrigger.addEventListener('click', toggleContent);
+  aboutTriggerLogoHome.addEventListener('click', toggleContent);
   
   window.addEventListener('resize', function() {
     if (window.innerWidth < 640 || window.innerWidth > 1360) {
@@ -107,6 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
+// svg color change on scroll
 document.addEventListener("DOMContentLoaded", function(event) {
   const logoSvgPaths = document.querySelectorAll('.logotype--svg-inner svg path');
   const transitionToggle = document.getElementById('toggleBtn');
@@ -156,23 +159,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
   window.addEventListener('resize', handleScroll);
   transitionToggle.addEventListener('click', handleToggle);
   handleScroll();
-});
-
-
-
-// last updated
-document.addEventListener('DOMContentLoaded', function() {
-  fetch('https://api.github.com/repos/chrisedwardsdesign/chrisedwardsdesign.github.io/commits')
-  .then(response => response.json())
-  .then(data => {
-    const lastCommitDate = new Date(data[0].commit.author.date);
-    const formattedDate = lastCommitDate.toLocaleDateString();
-    const notificationElements = document.querySelectorAll('.last-updated');
-    notificationElements.forEach(element => {
-      element.innerText = `Updated: ${formattedDate}`;
-    });
-  })
-  .catch(error => console.error('Error fetching commit data:', error));
 });
 
 // svg resize
@@ -230,44 +216,48 @@ menuOverlay.addEventListener('click', function() {
 });
 
 // accordion
-  let accordionItems = Array.from(document.querySelectorAll('.accordion-item'));
+let accordionItems = Array.from(document.querySelectorAll('.accordion-item'));
 
-  accordionItems.forEach(function(item) {
-    let header = item.querySelector('.accordion-header');
-    let content = item.querySelector('.accordion-content');
-    let toggle = item.querySelector('.accordion-toggle-one');
-    let toggleTwo = item.querySelector('.accordion-toggle-two');
+accordionItems.forEach(function(item) {
+  let header = item.querySelector('.accordion-header');
+  let content = item.querySelector('.accordion-content');
+  let toggle = item.querySelector('.accordion-toggle-one');
+  let toggleTwo = item.querySelector('.accordion-toggle-two');
 
-    
-    header.addEventListener('click', function() {
-      // Close all other items
-      accordionItems.forEach(function(otherItem) {
-        if(otherItem !== item) {
-          let otherContent = otherItem.querySelector('.accordion-content');
-          let otherToggle = otherItem.querySelector('.accordion-toggle-one');
-          let otherToggleTwo = otherItem.querySelector('.accordion-toggle-two');
-  
-          otherContent.style.maxHeight = null;
-          if(otherToggle) {
-            otherToggle.classList.remove('svg-hide');
-            otherToggleTwo.classList.add('svg-hide');
-          }
+  header.addEventListener('click', function() {
+    // Close all other items
+    accordionItems.forEach(function(otherItem) {
+      if(otherItem !== item) {
+        let otherContent = otherItem.querySelector('.accordion-content');
+        let otherToggle = otherItem.querySelector('.accordion-toggle-one');
+        let otherToggleTwo = otherItem.querySelector('.accordion-toggle-two');
+
+        otherContent.style.maxHeight = null;
+        if(otherToggle) {
+          otherToggle.classList.remove('svg-hide');
+          otherToggleTwo.classList.add('svg-hide');
         }
-      });
-  
-      // Toggle the clicked item
-      if(content.style.maxHeight && content.style.maxHeight !== "0px") {
-        content.style.maxHeight = null;
-        toggle.classList.remove('svg-hide');
-        toggleTwo.classList.add('svg-hide');
-
-      } else {
-        content.style.maxHeight = content.scrollHeight + "px";
-        toggle.classList.add('svg-hide');
-        toggleTwo.classList.remove('svg-hide');
       }
     });
+
+    // Toggle the clicked item
+    if(content.style.maxHeight && content.style.maxHeight !== "0px") {
+      content.style.maxHeight = null;
+      toggle.classList.remove('svg-hide');
+      toggleTwo.classList.add('svg-hide');
+
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+      toggle.classList.add('svg-hide');
+      toggleTwo.classList.remove('svg-hide');
+    }
   });
+});
+
+// Open the accordion with id 'accordionOpenDefaultResume' by default
+let accordionDefault = document.querySelector('#accordionOpenDefaultResume .accordion-header');
+if (accordionDefault) accordionDefault.click();
+
 
   // Scroll effect
   // const headerContainer = document.getElementById('header--container');
@@ -592,7 +582,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Count the number of li tags present inside `paginationItems` and save this as a const variable `counterCalc`.
   const counterCalc = paginationItems.getElementsByTagName('li').length;
-  console.log("counterCalc:", counterCalc);
+  // console.log("counterCalc:", counterCalc);
 
   // Then add a new style rule to the document head.
   const style = document.createElement('style');
@@ -602,4 +592,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   `;
   document.head.appendChild(style);
+});
+
+// last updated
+document.addEventListener('DOMContentLoaded', function() {
+  fetch('https://api.github.com/repos/chrisedwardsdesign/chrisedwardsdesign.github.io/commits')
+  .then(response => response.json())
+  .then(data => {
+    const lastCommitDate = new Date(data[0].commit.author.date);
+    const formattedDate = lastCommitDate.toLocaleDateString();
+    const notificationElements = document.querySelectorAll('.last-updated');
+    notificationElements.forEach(element => {
+      element.innerText = `Updated: ${formattedDate}`;
+    });
+  })
+  .catch(error => console.error('Error fetching commit data:', error));
 });
