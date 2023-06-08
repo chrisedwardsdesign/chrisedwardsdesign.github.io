@@ -2411,7 +2411,7 @@ input:autofill {
   border: var(--component-border-width) solid var(--color-primary);
   background-color: #0e1419ad;
   backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(20px);
   opacity: 0.8;
   font-size: var(--base-text);
   line-height: var(--caps-line-height);
