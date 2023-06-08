@@ -128,12 +128,12 @@ main {
   flex-direction: column;
 }
 
-.sections-wrapper {
+/* .sections-wrapper {
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
-}
+} */
 
 @media only screen and (max-width: 640px) {
   main {
@@ -2540,6 +2540,7 @@ input:autofill {
   background-color: var(--background-color-primary);
   z-index: 0;
   min-height: fit-content;
+  height: fit-content;
   width: 100%;
   padding: 0 1rem 1rem;
   
