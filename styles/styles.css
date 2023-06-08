@@ -529,7 +529,7 @@ section {
   margin: 0;
   min-height: fit-content;
   grid-column: 1 / 5;
-  transition: max-height 0.5s ease;
+  transition: max-height 0.25s ease-in;
   max-height: 0; /* initial state, fully hidden */
   overflow: hidden; /* ensure the extra content is not visible */
   padding: 0 1rem;
@@ -1844,10 +1844,13 @@ input:autofill {
   justify-self: self-end;
 }
 
-@media only screen and (max-width: 840px) {
+@media only screen and (max-width: 950px) {
   .nav--links-left--desk {
     display: none;
   }
+}
+
+@media only screen and (max-width: 840px) {
   .timer-container-desk {
     grid-column: 3 / 4;
   } 
@@ -2622,6 +2625,19 @@ input:autofill {
   align-items: center
 }
 
+#mobileMenuDropDown .download-svg--container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#mobileMenuDropDown .download-svg--container svg{
+  width: 100%!important;
+  height: 100%!important;
+  min-width: 18px!important;
+  min-height: 18px!important;
+}
+
 .menu--subheader h3 {
   line-height: var(--default-line-height);
 }
@@ -2684,7 +2700,7 @@ input:autofill {
   padding-top: 1rem;
 }
 
-@media (min-width: 840px) {
+@media (min-width: 950px) {
   .mobile-menu, .mobile-menu-overlay--container {
     display: none;
   }
