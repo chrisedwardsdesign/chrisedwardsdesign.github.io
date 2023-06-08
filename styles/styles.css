@@ -254,6 +254,7 @@ a:link {
 
 a:visited {
   color: inherit;
+  opacity: 1;
 }
 
 a:focus {
