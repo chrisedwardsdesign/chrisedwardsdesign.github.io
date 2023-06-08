@@ -1085,7 +1085,7 @@ section {
   .maintenance--version-history {
     position: absolute;
     bottom: 0.5rem;
-    right: 0;
+    right: 0.25rem;
     transform: rotate(90deg) translate(0, 100%);
     transform-origin: top right;
     line-height: 100%;
