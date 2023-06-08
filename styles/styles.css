@@ -2631,7 +2631,7 @@ input:autofill {
   align-items: center
 }
 
-#mobileMenuDropDown .download-svg--container {
+.download-svg--container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2641,7 +2641,7 @@ input:autofill {
   min-height: 18px!important;
 }
 
-#mobileMenuDropDown .download-svg--container svg{
+.download-svg--container--svg {
   width: 100%!important;
   height: 100%!important;
   min-width: 18px!important;
