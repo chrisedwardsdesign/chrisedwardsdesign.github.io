@@ -257,6 +257,11 @@ a:visited {
   opacity: 1;
 }
 
+.nav--logotype-container a:visited {
+  color: inherit;
+  opacity: 1!important;
+}
+
 a:focus {
   text-decoration: none;
   background: transparent;
