@@ -56,7 +56,12 @@ document.addEventListener('DOMContentLoaded', function() {
       mute: true,
       autoplay: true,
       hideControls: true,
-      playsInline: true
+      playsInline: true,
+      playerOptions: {
+        htmlVideo: {
+          playsInline: true
+        }
+      }
     },
   }).mount(window.splide.Extensions);
 
