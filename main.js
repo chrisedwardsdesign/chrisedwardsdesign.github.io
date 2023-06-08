@@ -71,7 +71,6 @@ document.addEventListener('DOMContentLoaded', function() {
           muted: true,
           // playbackRate: true,
           playsInline: true,
-          poster: true,
           // preload: true,
           width: true,
           volume: false
