@@ -56,11 +56,11 @@ document.addEventListener('DOMContentLoaded', function() {
       mute: true,
       autoplay: true,
       hideControls: true,
-      disableOverlayUI: false,
+      // disableOverlayUI: true,
       playsInline: true,
       playerOptions: {
         htmlVideo: {
-          autoplay: true,
+          // autoplay: true,
           // controls: true,
           // crossOrigin: true,
           // currentTime: true,
