@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
       mute: true,
       autoplay: true,
       hideControls: true,
-      // disableOverlayUI: true,
+      disableOverlayUI: true,
       playsInline: true,
       playerOptions: {
         htmlVideo: {
@@ -78,6 +78,25 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     },
   }).mount(window.splide.Extensions);
+
+  // const splide = new Splide('.splide', {
+  //   type: 'loop',
+  //   perPage: 1,
+  //   autoplay: true,
+  //   speed: 1500,
+  //   interval: 7000,
+  //   pauseOnHover: false,
+  //   pauseOnFocus: false,
+  //   resetProgress: false,
+  //   arrows: true,
+  //   video: {
+  //     loop: true,
+  //     mute: true,
+  //     autoplay: true,
+  //     hideControls: true,
+  //     playsInline: true
+  //   },
+  // }).mount(window.splide.Extensions);
 
   // Function to create custom content
   function createCustomContent() {
