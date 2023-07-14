@@ -1,4 +1,15 @@
 All content on this portfolio website is owned by Chris Edwards Design.
 Unauthorized reproduction or use without permission is prohibited.
 
-© Copyright 2023, Chris Edwards Design
+—
+
+This website has been fully customised and developed by myself, in an attempt to showcase my skills and creativity in design, user experience, and web development. From the visual design to the user interface, every aspect of this site reflects my dedication to creating an engaging and intuitive online experience.
+Hosted on GitHub Pages for free. Thank you for visiting and exploring my website.
+
+Credits:
+
+Special thanks to all my close friends and family.
+
+—
+
+© Copyright 2023, Chris Edwards design
