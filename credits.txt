@@ -1,19 +1,6 @@
 This website has been fully customised and developed by myself, in an attempt to showcase my skills and creativity in design, user experience, and web development. From the visual design to the user interface, every aspect of this site reflects my dedication to creating an engaging and intuitive online experience.
-Hosted on GitHub Pages. Thank you for visiting and exploring my website.
+Hosted on GitHub Pages for free. Thank you for visiting and exploring my website.
 
 Credits:
 
-- Zari,
-- Al,
-- Mickey,
-- Dai,
-- Tom,
-- Jack,
-- Zach,
-- Mat,
-- Phil,
-- Ann,
-- Alan,
-- Faye
-
-Special thanks to all my close friends and family.</p>
+Special thanks to all my close friends and family.
