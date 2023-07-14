@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv='cache-control' content='no-cache'> 
+    <meta http-equiv='expires' content='0'> 
+    <meta http-equiv='pragma' content='no-cache'>
+    <title>Chris Edwards Design</title>
+    <meta name="description" content="Digital Design / Multi-disciplinary Design / Graphic Design / UX / Animation / Junior Web Dev. Check out my portfolio.">
+    <link rel="canonical" href="https://www.chrisedwardsdesign.com/">
+    <meta property="og:locale" content="en_UK">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Chris Edwards - Multi-disciplinary Designer">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/dark-theme.css" id="theme-style">
+    <link rel="stylesheet" href="https://use.typekit.net/wod0krg.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&family=Space+Mono:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="splide-extension-video-master/dist/css/splide-extension-video.min.css">
+    <link rel="stylesheet" href="splide/dist/css/splide.min.css">
+    <link rel="stylesheet" href="splide-extension-video-master/dist/css/splide-extension-video.min.css">
+    <link rel="license" href="/license.txt">
+    <script src="splide/dist/js/splide.min.js" defer></script>
+    <script src="splide-extension-video-master/dist/js/splide-extension-video.min.js" defer></script>
+    <script src="main.js" type="module" defer></script>
+</head>
+<body class="dark-mode">
+  <div id="sessionOverlay">
+    <div class="nav--logotype-container cursor-none" title="Page title: CV RÉSUMÉ">
+      <h1 class="nav--logotype uppercase">Chris Edwards Design</h1>
+      <span class="uppercase none">/</span>
+      <h1 class="nav--logotype uppercase none">Design</h1>
+    </div>
+  </div>
+  <header id="header--container">
+    <!-- desktop menu -->
+    <!-- nav logo -->
+    <nav id="navBar" aria-label="Desktop navigation menu" class="container--nav">
+      <div id="aboutTriggerTabletLogoHome" class="nav--logo-container cursor-pointer ">  
+        <a class="nav--logotype-container" href="index.html" title="Homepage">
+          <h1 class="nav--logotype">CHRIS EDWARDS DESIGN</h1>
+          <div class="nav--logo-line none"></div>
+          <h1 class="nav--title none">DESIGN</h1>
+        </a>
+      </div>
+      <ul class="nav--links-left--desk">
+        <li>
+          <a href="design.html" title="Link to design collection page">
+            <h2 class="nav--link cursor-pointer">DESIGN</h2>
+          </a> 
+        </li>
+        <li>
+          <a href="animation.html" title="Link to animation collection page">
+            <h2 class="nav--link cursor-pointer">ANIMATION</h2>
+          </a>
+        </li>
+        <li>
+          <a href="ux-code.html" title="Link to ux-code collection page">
+            <h2 class="nav--link cursor-pointer">UX / CODE</h2>
+          </a>
+        </li>
+      </ul>
+      <button id="toggleBtnDesktop" aria-label="Switch to toggle Dark and light mode" class="mode-switch--container cursor-pointer lg:grid-col-3-4 grid-row-1 hide-on-mob">
+        <div id="darkTextDesktop" class="mode-switch--text-container">
+          <h2 aria-label="Switch to light mode" class="mode-switch--btn-text">DARK</h2>
+        </div>
+        <div id="lightTextDesktop" class="mode-switch--text-container toggle-text-switch">
+          <h2 aria-label="Switch to dark mode" class="mode-switch--btn-text">LIGHT</h2>
+        </div>
+        <div class="mode-switch-btn--container">
+          <div id="ledRightDesktop" class="mode-switch--btn"></div>
+          <div id="ledLeftDesktop" class="mode-switch--btn mode-switch--btn--visible"></div>
+        </div>
+      </button>      
+    <!-- nav links right -->
+      <div class="nav--content-right">
+        <button id="toggleBtnMobile" aria-label="Switch to toggle Dark and light mode" class="mode-switch--container cursor-pointer lg:grid-col-3-4 grid-row-1 hide-on-desktop">
+          <div class="mode-switch-btn--container">
+            <div id="ledRightMobile" class="mode-switch--btn"></div>
+            <div id="ledLeftMobile" class="mode-switch--btn mode-switch--btn--visible"></div>
+          </div>
+          <div id="darkTextMobile" class="mode-switch--text-container">
+            <h2 aria-label="Switch to light mode" class="mode-switch--btn-text">DARK</h2>
+          </div>
+          <div id="lightTextMobile" class="mode-switch--text-container toggle-text-switch">
+            <h2 aria-label="Switch to dark mode" class="mode-switch--btn-text">LIGHT</h2>
+          </div>
+        </button>        
+        <div class="hide-on-mob grid-row-1">
+          <a href="cv.html" title="Link to CV page">
+            <h2 class="nav--link cursor-pointer">CV</h2>
+          </a> 
+        </div>
+
+        <div aria-label="About me" id="aboutTriggerTablet" class="nav--about-container cursor-pointer grid-row-1">
+          <h2 class="nav--contact-h2">ABOUT</h2>
+          <svg id="accordionPlusOpen" class="menu--svg-arrow-up" width="10" height="18" viewBox="0 0 10 18" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.68521 16.6553L1.02513 8.99521L8.68522 1.33513" stroke="inherit" stroke-miterlimit="10"></path>
+          </svg>
+          <svg id="accordionPlusClose" class="menu--svg-arrow-down svg-hide" width="10" height="18" viewBox="0 0 10 18" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.68521 16.6553L1.02513 8.99521L8.68522 1.33513" stroke="inherit" stroke-miterlimit="10"></path>
+          </svg>
+        </div>
+        <div aria-label="About me" id="aboutTriggerDesktop" class="nav--about-container grid-row-1">
+          <h2 class="nav--contact-h2">ABOUT</h2>
+          <svg id="contactChevronOpenDesktop" class="menu--svg-arrow-up" width="10" height="18" viewBox="0 0 10 18" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.68521 16.6553L1.02513 8.99521L8.68522 1.33513" stroke="inherit" stroke-miterlimit="10"></path>
+          </svg>
+          <svg id="contactChevronCloseDesktop" class="menu--svg-arrow-down svg-hide" width="10" height="18" viewBox="0 0 10 18" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.68521 16.6553L1.02513 8.99521L8.68522 1.33513" stroke="inherit" stroke-miterlimit="10"></path>
+          </svg>
+        </div>
+        <!-- contact form -->
+        <div id="formTriggerOpen" aria-label="Contact information and CV / RÉSUME" class="nav--contact-container">
+          <h2 class="nav--contact-h2">CONTACT</h2>
+          <svg id="contactChevronOpen" class="menu--svg-arrow-up" width="10" height="18" viewBox="0 0 10 18" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.68521 16.6553L1.02513 8.99521L8.68522 1.33513" stroke="inherit" stroke-miterlimit="10"></path>
+          </svg>
+          <svg id="contactChevronClose" class="menu--svg-arrow-down svg-hide" width="10" height="18" viewBox="0 0 10 18" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.68521 16.6553L1.02513 8.99521L8.68522 1.33513" stroke="inherit" stroke-miterlimit="10"></path>
+          </svg>
+        </div>
+        <div id="menu-button" aria-label="Menu open or collapse" class="mobile-menu grid-row-1">
+          <h2 class="nav--contact-h2">MENU</h2>
+          <svg id="menuPlusOpen" class="nav--menu-svg-close" width="18" height="18" viewBox="0 0 18 18" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0.686279 9.16797H18.6853M9.68579 0.167969L9.68579 18.167" stroke="#151714"/>
+          </svg>        
+          <svg id="menuPlusClose" class="nav--menu-svg-close-2 svg-hide" width="18" height="2" viewBox="0 0 16 2" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 1.44922H16" stroke="inherit"/>
+          </svg>
+        </div>
+      </div>
+    </nav>
+    <!-- mobile menu -->
+    <nav id="mobileMenuDropDown" aria-label="Mobile navigation menu" class="mobile-menu--container">
+      <div class="mobile-menu--inner">
+        <div class="accordion--container">
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <h3 class="accordion-title">WORK</h3>
+              <svg id="" class="nav--menu-svg-close accordion-toggle-one accordion-item-svg-open" width="18" height="18" viewBox="0 0 18 18" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.686279 9.16797H18.6853M9.68579 0.167969L9.68579 18.167" stroke="#151714"/>
+              </svg>        
+              <svg id="" class="nav--menu-svg-close-2 svg-hide accordion-toggle-two accordion-item-svg-close" width="18" height="2" viewBox="0 0 16 2" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 1.44922H16" stroke="inherit"/>
+              </svg>
+            </div>
+            <div class="accordion-content">
+              <a href="design.html" title="Design" class="uppercase">
+                <span>
+                  <div class="menu--subheader">
+                    <svg class="menu--svg-box none" width="18" height="18" viewBox="0 0 18 18" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="1.10808" y="0.856018" width="16" height="16" stroke="inherit"/>
+                    </svg>                      
+                    <h3>DESIGN</h3>
+                  </div>
+                </span>
+                <span>
+                  <svg class="menu--svg-arrow-right" width="10" height="18" viewBox="0 0 10 18" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8.68521 16.6553L1.02513 8.99521L8.68522 1.33513" stroke="inherit" stroke-miterlimit="10"></path>
+                  </svg>
+              </a>
+              <a href="animation.html" title="Animtion" class="uppercase">
+                <span>
+                  <div class="menu--subheader">
+                    <svg class="menu--svg-box none" width="18" height="18" viewBox="0 0 18 18" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="1.10808" y="0.856018" width="16" height="16" stroke="inherit"/>
+                    </svg>                      
+                    <h3>ANIMATION</h3>
+                  </div>
+                </span>
+                <span>
+                  <svg class="menu--svg-arrow-right" width="10" height="18" viewBox="0 0 10 18" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.68521 16.6553L1.02513 8.99521L8.68522 1.33513" stroke="inherit" stroke-miterlimit="10"></path>
+                </svg>
+              </a>
+              <a href="ux-code.html" title="UX / Code" class="uppercase">
+                <span>
+                  <div class="menu--subheader">
+                    <svg class="menu--svg-box none" width="18" height="18" viewBox="0 0 18 18" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="1.10808" y="0.856018" width="16" height="16" stroke="inherit"/>
+                    </svg>                      
+                    <h3>UX / CODE</h3>
+                  </div>
+                </span>
+                <span>
+                  <svg class="menu--svg-arrow-right" width="10" height="18" viewBox="0 0 10 18" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.68521 16.6553L1.02513 8.99521L8.68522 1.33513" stroke="inherit" stroke-miterlimit="10"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <h3 class="accordion-title uppercase">Contact</h3>
+              <svg id="" class="nav--menu-svg-close accordion-toggle-one accordion-item-svg-open" width="18" height="18" viewBox="0 0 18 18" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.686279 9.16797H18.6853M9.68579 0.167969L9.68579 18.167" stroke="#151714"/>
+              </svg>        
+              <svg id="" class="nav--menu-svg-close-2 svg-hide accordion-toggle-two accordion-item-svg-close" width="18" height="2" viewBox="0 0 16 2" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 1.44922H16" stroke="inherit"/>
+              </svg>
+            </div>
+            <div class="accordion-content">
+                <form id="contact-form-menu" class="contact-form" action="https://formspree.io/f/mzbqwbol" method="POST">
+                  <div class="contact-form--input contact-form--input-header-bg-scolor contact-form--marquee-container">
+                    <div id="contact-form-menu" class="contact-form--marquee-container">
+                      <h3 id="contactFormMarqueeTitleTwo" class="" style="margin-left: 39px;">ALL ENQUIRIES: chris@chrisedwardsdesign.com</h3>
+                    </div>
+                  </div>
+                  <div class="contact-form--input">
+                    <input class="contact-form--input-placeholder-color" type="text" id="name" name="name" placeholder="Name*" user-scalable="no" autocomplete="name" required="">
+                    <label for="name">NAME</label>
+                  </div>
+                  <div class="contact-form--input">
+                    <input class="contact-form--input-placeholder-color" type="email" id="email" name="email" placeholder="Email Address*" user-scalable="no" autocomplete="email" required="">
+                    <label for="email">EMAIL</label>
+                  </div>
+                  <div class="contact-form--input contact-form--input--message-container">
+                    <textarea id="message" class="contact-form--input-placeholder-color" name="message" placeholder="Send me a message*" user-scalable="no" required=""></textarea>
+                    <label for="message" class="contact-form--input--message">MESSAGE</label>
+                  </div>
+                  <div class="contact-form--input">
+                    <button id="contact-form--submit-two" user-scalable="no" type="submit">SUBMIT</button>
+                  </div>
+                </form>
+            </div>
+          </div>
+          <div id="accordionOpenDefaultRÉSUMÉ" class="accordion-item">
+            <div class="accordion-header">
+              <h3 class="accordion-title uppercase">About</h3>
+              <svg id="" class="nav--menu-svg-close accordion-toggle-one accordion-item-svg-open" width="18" height="18" viewBox="0 0 18 18" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.686279 9.16797H18.6853M9.68579 0.167969L9.68579 18.167" stroke="#151714"/>
+              </svg>        
+              <svg id="" class="nav--menu-svg-close-2 svg-hide accordion-toggle-two accordion-item-svg-close" width="18" height="2" viewBox="0 0 16 2" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 1.44922H16" stroke="inherit"/>
+              </svg>
+            </div>
+            <div class="accordion-content">
+              <div class="mobile-menu--cv">
+                <p class="border-bottom-unset">Say hello, let's work together.</p>
+                <p class="">
+                  Manchester-based multi-disciplinary designer specialising in web design, animation and UX. With a good foundation in HTML, CSS, JavaScript and Shopify Liquid as well as some experience in 3D modeling packages including Cinema 4D and Blender. Check out my portfolio.
+                </p>
+                <a href="cv.html" class="border-top--one-dashed--grey" title="Link to cv page">
+                <span class="uppercase">CV / RÉSUMÉ</span>
+                <span class="contact-form--intro-container--svg download-svg--container">
+                  <svg class="menu--svg-arrow-right" width="10" height="18" viewBox="0 0 10 18" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8.68521 16.6553L1.02513 8.99521L8.68522 1.33513" stroke="inherit" stroke-miterlimit="10"></path>
+                  </svg>
+                </svg>
+                </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- form -->
+  <div class="contact--form-container form-slide-left" id="formPosition">
+    <div class="contact-form--info">
+      <div id="contactFormTriggerTwo" class="contact-form--info-header">
+        <h2 class="nav--logo">CONTACT:</h2>
+        <div class="contact-form--marquee-svg-container">
+          <svg id="closeMinus" class="nav--menu-svg-close-2 svg-hide" width="18" height="18" viewBox="0 0 18 18" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17 17L1 1" stroke="inherit"/>
+            <path d="M1 17L17 1" stroke="inherit"/>
+          </svg>
+          <svg id="minusClose" class="nav--menu-svg-close-minus" width="16" height="2" viewBox="0 0 16 2" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 1.44922H16" stroke="inherit"/>
+          </svg>
+        </div>
+      </div>
+      <div class="contact-form--intro-container">
+        <div class="contact-form--intro--text-container border-bottom--one-dashed--grey">
+          <p class="contact-form--intro--p">Say hello, let's work together.</p>
+          <p class="contact-form--intro--p">Manchester-based multi-disciplinary designer specialising in web design, animation and UX. Check out my portfolio.</p>
+        </div>
+        <a id="mailTo" href="mailto:chris@chrisedwardsdesign.com?subject=Hello&body=Hi%20there!" class="contact-form--intro--list-container border-bottom--one-dashed--grey" title="Direct email link">
+          <div class="contact-form--intro--list">
+            <span class="uppercase">CONTACT</span>
+            <span class="">/</span>
+            <span class="">chris@chrisedwardsdesign.com</span>
+          </div>
+          <svg class="menu--svg-arrow-right" width="10" height="18" viewBox="0 0 10 18" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.68521 16.6553L1.02513 8.99521L8.68522 1.33513" stroke="inherit" stroke-miterlimit="10"></path>
+          </svg>
+        </a>
+        <a id="linkedInLinkContactMenu" href="https://www.linkedin.com/in/chris-edwards-b97488276" class="contact-form--intro--list-container border-bottom--one-dashed--grey" title="linkedIn Page External link to page" target="_blank">
+          <div class="contact-form--intro--list">
+            <span class="uppercase">LINKEDIN</span>
+            <span class="">/</span>
+            <span class="">chris-edwards-b97488276</span>
+          </div>
+          <svg class="menu--svg-arrow-right" width="10" height="18" viewBox="0 0 10 18" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.68521 16.6553L1.02513 8.99521L8.68522 1.33513" stroke="inherit" stroke-miterlimit="10"></path>
+          </svg>
+        </a>
+        <a href="cv.html" class="contact-form--intro--list-container" title="Link to CV page">
+          <div class="contact-form--intro--list">
+            <span class="uppercase">CV / RÉSUMÉ</span>
+          </div>
+          <svg class="menu--svg-arrow-right" width="10" height="18" viewBox="0 0 10 18" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.68521 16.6553L1.02513 8.99521L8.68522 1.33513" stroke="inherit" stroke-miterlimit="10"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <form class="contact-form" action="https://formspree.io/f/mzbqwbol" method="POST">
+      <div id="contact-form--svg-trigger-1" class="contact-form--input contact-form--input-header-bg-scolor contact-form--marquee-container">
+        <div id="contact-form-footer" class="contact-form--marquee-container">
+          <h3 id="contactFormMarqueeTitle" class="">ALL ENQUIRIES: chris@chrisedwardsdesign.com</h3>
+        </div>
+      </div>
+      <div class="contact-form--input">
+        <input class="contact-form--input-placeholder-color" type="text" id="name" name="name" placeholder="Name*" user-scalable="no" autocomplete="name" required>
+        <label for="name">NAME</label>
+      </div>
+      <div class="contact-form--input">
+        <input class="contact-form--input-placeholder-color" type="email" id="email" name="email" placeholder="Email Address*" user-scalable="no" autocomplete="email" required>
+        <label for="email">EMAIL</label>
+      </div>
+      <div class="contact-form--input contact-form--input--message-container">
+        <textarea id="message" class="contact-form--input-placeholder-color" name="message" placeholder="Write me a message*" user-scalable="no" required></textarea>
+        <label for="message" class="contact-form--input--message">MESSAGE</label>
+      </div>
+      <div class="contact-form--input">
+        <button id="contact-form--submit" user-scalable="no" type="submit">SUBMIT</button>
+      </div>
+    </form> 
+  </div>  
+  <!-- form overlay -->
+  <section id="formOverlay" class="form-overlay form-hide"></section>
+  <!-- menu overlay -->
+  <section id="menuOverlay" class="form-overlay form-hide"></section>
+  <!-- credits overlay -->
+  <section id="creditsOverlay" class="credits-overlay"></section>
+  <!-- copyright overlay -->
+  <section id="copyrightOverlay" class="credits-overlay"></section>
+  <!-- credits popup -->
+  <section id="copyrightContent" class="credits-content">
+    <div id="copyrightMessageToggle" class="credits-title--container">
+      <p class="">License:</p>
+      <svg id="copyrightMessageOpen" class="nav--menu-svg-close-minus svg-hide" width="18" height="18" viewBox="0 0 18 18" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17 17L1 1" stroke="inherit"/>
+        <path d="M1 17L17 1" stroke="inherit"/>
+      </svg>
+      <svg id="copyrightMessageClose" class="nav--menu-svg-close-minus" width="16" height="2" viewBox="0 0 16 2" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 1.44922H16" stroke="inherit"/>
+      </svg>
+    </div>
+    <div class="credits-detials--container">
+      <p class="credits-details">This website has been customised and developed by myself, in an attempt to showcase my skills and creativity in design, user experience, and web development. From the visual design to the user interface, every aspect of this site reflects my dedication to creating an engaging and intuitive online portfolio.</p>
+      <p class="credits-details pb-s border-bottom--one-dashed">Hosted free on GitHub Pages for free. Thank you for visiting and exploring my website.</p>
+      <p class="credits-details">All content on this portfolio website is owned by Chris Edwards Design. Unauthorized reproduction or use without permission is prohibited.</p>
+      <p class="credits-details">© Copyright 2023, Chris Edwards Design</p>
+    </div>
+  </section>
+  <div id="page-wrapper" class="page-wrapper">
+    <main class="main--wrapper">
+        <div id="innerWrapper" class="inner-wrapper">
+          
+          <section id="sectionContent" class="content-s">
+            <div class="content--text-desktop-pages">
+              <p class="intro-text-desktop">
+                Manchester-based digital designer specialising in web design, animation and UX. With a good foundation in HTML, CSS, JavaScript and Shopify Liquid as well as some experience in 3D modeling packages including Cinema 4D and Blender. Check out my portfolio.
+              </p>
+              <div class="intro-list--container-about">
+                <ul class="intro-list--row-1">
+                  <li><p>Currently:</p><p>Freelance</p></li>
+                  <li><p>Previously:</p><p>Digital Media Team Ltd.</p></li>
+                  <li><p>Education:</p><p>Manchester Metropolition University</p></li>
+                </ul>
+                <ul class="intro-list--row-2">
+                  <li><p>Features:</p><p>Project 1</p></li>
+                  <li><p>Project 2</p></li>
+                  <li><p>Project 4</p></li>
+                </ul>
+                <a id="cvLink" href="assets/Chris-Edwards-CV-3.pdf" class="link--main uppercase mt-s-xs pt-xs pr-s pb-xs pl-s border-outline--one-solid-grey border-radius-half mb-component-border-width" target="_blank">
+                  <svg class="contact-form--link--svg" width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 1.35156L16 9.35156L8 17.3516" stroke="inherit" stroke-miterlimit="10"/>
+                    <path d="M0 9.35156H16" stroke="inherit" stroke-miterlimit="10"/>
+                  </svg>
+                  <p>Download CV</p>
+                </a>
+              </div>
+            </div>
+          </section>
+
+          <section id="content--container" class="content--container--grid-pages">
+
+            <div id="contentXl" class="content-xl-pages">
+              <div class="content--text-desktop-pages">
+                <p class="intro-text-desktop-pages">
+                  Manchester-based digital designer specialising in web design, animation and UX. With a good foundation in HTML, CSS, JavaScript and Shopify Liquid as well as some experience in 3D modeling packages including Cinema 4D and Blender. Check out my portfolio.
+                </p>
+                <div class="intro-list--container-about">
+                  <ul class="intro-list--row-1">
+                    <li><p>Currently:</p><p>Freelance</p></li>
+                    <li><p>Previously:</p><p>Digital Media Team Ltd.</p></li>
+                    <li><p>Education:</p><p>Manchester Metropolition University</p></li>
+                  </ul>
+                  <ul class="intro-list--row-2">
+                    <li><p>Features:</p><p>Project 1</p></li>
+                    <li><p>Project 2</p></li>
+                    <li><p>Project 4</p></li>
+                  </ul>
+                  <a id="cvLink" href="assets/Chris-Edwards-CV-3.pdf" class="link--main uppercase mt-s-xs pt-xs pr-s pb-xs pl-s border-outline--one-solid-grey border-radius-half mb-component-border-width" target="_blank">
+                    <svg class="contact-form--link--svg" width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M8 1.35156L16 9.35156L8 17.3516" stroke="inherit" stroke-miterlimit="10"/>
+                      <path d="M0 9.35156H16" stroke="inherit" stroke-miterlimit="10"/>
+                    </svg>
+                    <p>Download CV</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        <!-- paralax-->
+          <section class="paralax--section-container pt-header-height">
+            <div class="parallax-content--container">
+              <div class="parallax-content--text--container">
+                <div class="span-text-flex--inline-start line-height--standard-caps uppercase">
+                  <span class="none">/</span>
+                  <span class="">
+                    <h3 class="text-l">Design</h3>
+                  </span>
+                </div>
+                  <p class="collection-info">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo</p>
+                  <h3 class="hidden-off-screen uppercase" aria-label="Tag list Header">Tags:</h3>
+                  <ul class="cv-tag-list" aria-label="Tag list">
+                    <!-- <li class="cv-bulleted-list--li-span"><span>HTML</span><span>·</span><span>CSS</span><span>·</span><span>Javascript</span><span>·</span><span>Shopify Liquid</span></li> -->
+                    <li class="archive-tags-list--li-span pt-xs" aria-label="Tags for content type">
+                      <span class="pt-xs pr-xs pb-xs pl-xs border-outline--one-solid-grey border-radius-half"><h3 class="text-sm">Branding</h3></span>
+                      <span class="pt-xs pr-xs pb-xs pl-xs border-outline--one-solid-grey border-radius-half"><h3 class="text-sm">Posters</h3></span>
+                      <span class="pt-xs pr-xs pb-xs pl-xs border-outline--one-solid-grey border-radius-half"><h3 class="text-sm">Packaging</h3></span>
+                      <span class="pt-xs pr-xs pb-xs pl-xs border-outline--one-solid-grey border-radius-half"><h3 class="text-sm">Print</h3></span>
+                      <span class="pt-xs pr-xs pb-xs pl-xs border-outline--one-solid-grey border-radius-half"><h3 class="text-sm">Lookbooks</h3></span>
+                      <span class="pt-xs pr-xs pb-xs pl-xs border-outline--one-solid-grey border-radius-half"><h3 class="text-sm">Zines</h3></span>
+                    </li>
+                  </ul>
+              </div>
+              <div class="parallax-content--img--container">
+
+                <div class="parallax--img--container top-base pb-header-height none">
+                  <div class="container--video grid-col-1-3" data-video="1">
+                    <video class="video video-content lg:aspect-ratio-16-9 md:aspect-ratio-16-9 cursor-pointer" loop autoplay muted playsinline>
+                      <source class="hero-video--main" src="assets/video/test-video.mp4" type="video/mp4">
+                      <source class="hero-video--main" src="assets/video/test-video.webm" type="video/webm">
+                    </video>
+                    <img class="thumbnail video-hero-thumbnail lg:aspect-ratio-16-9 md:aspect-ratio-16-9 cursor-pointer" src="assets/images/text.jpg" alt="Video Thumbnail" loading="lazy">
+                    <div class="play-button uppercase">
+                      <svg width="9" height="17" viewBox="0 0 9 17" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.0415039 0.351562L8.0415 8.35156L0.0415039 16.3516" fill="inherit"/>
+                      </svg>
+                      <span class="text-container">
+                        <span class="old-text">Play</span>
+                        <span class="new-text">Play</span>
+                      </span>
+                    </div>
+                  </div>      
+                  <div class="parallax-content--img--text-container grid-col-1-3">
+                    <div class="span-text-flex--inline-start grid-col-1">
+                      <span class="">
+                        <h3 class="line-height--standard-caps uppercase">Beyond 90</h3>
+                      </span>
+                    </div>
+                    <div class="span-text-flex--inline-start flex-end grid-col-3-4">
+                      <span class="line-height--standard-caps">/</span>
+                      <span class="">
+                        <p class="line-height--standard-caps">2015</p>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="parallax--img--container pt-s pb-header-height none">
+                  <div class="container--video grid-col-1-3" data-video="1">
+                    <video class="video video-content lg:aspect-ratio-16-9 md:aspect-ratio-16-9 cursor-pointer" loop autoplay muted playsinline>
+                      <source class="hero-video--main" src="assets/video/test-video.mp4" type="video/mp4">
+                      <source class="hero-video--main" src="assets/video/test-video.webm" type="video/webm">
+                    </video>
+                    <img class="thumbnail video-hero-thumbnail lg:aspect-ratio-16-9 md:aspect-ratio-16-9 cursor-pointer" src="assets/images/text.jpg" alt="Video Thumbnail" loading="lazy">
+                    <div class="play-button uppercase">
+                      <svg width="9" height="17" viewBox="0 0 9 17" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.0415039 0.351562L8.0415 8.35156L0.0415039 16.3516" fill="inherit"/>
+                      </svg>
+                      <span class="text-container">
+                        <span class="old-text">Play</span>
+                        <span class="new-text">Play</span>
+                      </span>
+                    </div>
+                  </div>      
+                  <div class="parallax-content--img--text-container grid-col-1-3">
+                    <div class="span-text-flex--inline-start grid-col-1">
+                      <span class="">
+                        <h3 class="line-height--standard-caps uppercase">Beyond 90</h3>
+                      </span>
+                    </div>
+                    <div class="span-text-flex--inline-start flex-end grid-col-3-4">
+                      <span class="line-height--standard-caps">/</span>
+                      <span class="">
+                        <p class="line-height--standard-caps">2015</p>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="parallax--img--container pt-s pb-header-height">
+                  <div class="parallax--img--holder grid-col-1-3 splide-design">
+                    <!-- splide -->
+                    <div class="splide">
+                      <div class="splide__track grid-col-1-4 md:grid-col-1-3 grid-row-1">
+                        <ul class="splide__list">
+                          <li class="splide__slide">
+                            <img class="grid-col-1-3 hide-on-mob md:grid-col-1-2" src="assets/images/gfn-ultraviolet-banner-ipadPro.jpg" alt="Image 1">
+                            <img class="aspect-ratio-1-1 grid-col-1-3 hide-on-desktop md:grid-col-1-2" src="assets/images/gfn-ultraviolet-banner-ipadPro-mob.jpg" alt="Good For Nothing Clothing Ltd. / Video / Animation / Branding / Social Media / Grpahic Design">
+                            <p class="splide--titles hide-on-mob grid-col-1-3 md:grid-col-1-2 grid-row-2">GOODFORNOTHING<sup class="text-sup">Ⓡ</sup><span class="hide-on-mob pr-xs pl-xs">/</span><span class="hide-on-mob">Lookbook</span></p>
+                            <p class="splide--titles hide-on-desktop grid-col-1-3 md:grid-col-1-2 grid-row-2">GOODFORNOTHING<sup class="text-sup">Ⓡ</sup></p>
+                          </li>
+                          <li class="splide__slide">
+                            <img class="grid-col-1-3 hide-on-mob md:grid-col-1-2" src="assets/images/GFN-Ultraviolet-2-transparent-desk-3.png" alt="Image 1">
+                            <img class="aspect-ratio-1-1 grid-col-1-3 hide-on-desktop md:grid-col-1-2" src="assets/images/GFN-Ultraviolet-2-transparent.png" alt="Good For Nothing Clothing Ltd. / Video / Animation / Branding / Social Media / Grpahic Design">
+                            <p class="splide--titles hide-on-mob grid-col-1-3 md:grid-col-1-2 grid-row-2">GOODFORNOTHING<sup class="text-sup">Ⓡ</sup><span class="hide-on-mob pr-xs pl-xs">/</span><span class="hide-on-mob">Lookbook</span></p>
+                            <p class="splide--titles hide-on-desktop grid-col-1-3 md:grid-col-1-2 grid-row-2">GOODFORNOTHING<sup class="text-sup">Ⓡ</sup></p>
+                          </li>
+                          <li class="splide__slide">
+                            <img class="grid-col-1-3 hide-on-mob md:grid-col-1-2" src="assets/images/Joy-Banner-1.png" alt="Image 1">
+                            <img class="aspect-ratio-1-1 grid-col-1-3 hide-on-desktop md:grid-col-1-2" src="assets/images/Joy-Banner-transparent-desk-2.png" alt="Joy Social / Poster / Branding / Social Media / Grpahic Design">
+                            <p class="splide--titles hide-on-mob grid-col-1-3 md:grid-col-1-2 grid-row-2">Joy Socsia<span class="hide-on-mob pr-xs pl-xs">/</span><span class="hide-on-mob">Social</span></p>
+                            <p class="splide--titles hide-on-desktop grid-col-1-3 md:grid-col-1-2 grid-row-2">Joy Socsial</p>
+                          </li>
+                          <li class="splide__slide">
+                            <img class="grid-col-1-3 hide-on-mob md:grid-col-1-2" src="assets/images/GFN-LB-Cover-main-desk.png" alt="Image 1">
+                            <img class="aspect-ratio-1-1 grid-col-1-3 hide-on-desktop md:grid-col-1-2" src="assets/images/GFN-LB-Cover-main-mob.png" alt="Image 2">
+                            <p class="splide--titles hide-on-mob grid-col-1-3 md:grid-col-1-2 grid-row-2">GOODFORNOTHING<sup class="text-sup">Ⓡ</sup><span class="hide-on-mob pr-xs pl-xs">/</span><span class="hide-on-mob">Lookbook</span></p>
+                            <p class="splide--titles hide-on-desktop grid-col-1-3 md:grid-col-1-2 grid-row-2">GOODFORNOTHING<sup class="text-sup">Ⓡ</sup></p>
+                          </li>
+                          <li class="splide__slide">
+                            <img class="grid-col-1-3 hide-on-mob md:grid-col-1-2" src="assets/images/gfn-lb-47.jpg" alt="Image 2">
+                            <img class="aspect-ratio-1-1 grid-col-1-3 hide-on-desktop md:grid-col-1-2" src="assets/images/Frame 62.jpg" alt="Image 2">
+                            <p class="splide--titles hide-on-mob grid-col-1-3 md:grid-col-1-2 grid-row-2">GOODFORNOTHING<sup class="text-sup">Ⓡ</sup><span class="hide-on-mob pr-xs pl-xs">/</span><span class="hide-on-mob">Lookbook</span></p>
+                            <p class="splide--titles hide-on-desktop grid-col-1-3 md:grid-col-1-2 grid-row-2">GOODFORNOTHING<sup class="text-sup">Ⓡ</sup></p>
+                          </li>
+                        </ul>
+                      </div>
+                      <!-- <div class="span-text-flex--inline-start grid-col-1-2 grid-row-2">
+                        <h3 class="line-height--standard-caps uppercase">GOODFORNOTHING<sup class="text-sup">Ⓡ</sup></h3>
+                      </div> -->
+                      <div class="splide-design--pagination-arrows grid-col-3-4 md:grid-col-2-3 grid-row-2">
+                        <div class="span-text-flex--inline-start relative" style="right: 4.5rem">
+                          <span class="line-height--standard-caps">/</span>
+                          <span class="">
+                            <p class="line-height--standard-caps">Mix
+                              <span class="line-height--standard-caps">:</span>
+                            </p>
+                          </span>
+                        </div>
+                        <ul class="splide__pagination"></ul>
+                        <div class="splide__arrows">
+                          <button class="splide__arrow splide__arrow--prev">
+                            <svg width="10" height="18" viewBox="0 0 10 18" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M8.68521 16.6553L1.02513 8.99521L8.68522 1.33513" stroke="inherit" stroke-miterlimit="10"/>
+                            </svg>
+                          </button>
+                          <button class="splide__arrow splide__arrow--next">
+                            <svg width="10" height="18" viewBox="0 0 10 18" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M8.68521 16.6553L1.02513 8.99521L8.68522 1.33513" stroke="inherit" stroke-miterlimit="10"/>
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- end of splide -->
+                  </div>
+                </div>
+
+                <div class="parallax--img--container pt-s pb-header-height">
+                  <div class="parallax--img--container pt-s pb-header-height">
+                    <div class="parallax--img--holder grid-col-1-5">
+                      <img id=""
+                           class="parallax--img-4-5 grid-col-1-3"
+                           srcset="assets/images/GFN_ULTRAVIOLET-TEXT-TEST_SMOKE_1_SQUARE-portfolio.jpg 640w, 
+                                   assets/images/GFN_ULTRAVIOLET-TEXT-TEST_SMOKE_1_SQUARE-portfolio.jpg 1080w, 
+                                   assets/images/GFN_ULTRAVIOLET-TEXT-TEST_SMOKE_1_SQUARE-portfolio.jpg 1600w"
+                           sizes="(max-width: 760px) 640px,
+                                  (max-width: 1360px) 1080px,
+                                  1600px"
+                           src="assets/images/GFN_ULTRAVIOLET-TEXT-TEST_SMOKE_1_SQUARE-portfolio.jpg"
+                           alt="Good For Nothing Clothing Ltd. Ultraviolet Design Concept / Branding / Video / Animation / Motion / Graphics"
+                           loading="lazy"
+                           width="400"
+                           height="500"
+                      >
+                      <div class="parallax-content--img--text-container grid-col-1-3">
+                        <div class="span-text-flex--inline-start grid-col-1 md:grid-col-1-3">
+                          <span class="display-flex flex-row wfit">
+                            <h3 class="line-height--standard-caps uppercase line-height--standard-caps">GOODFORNOTHING</h3>
+                            <sup class="text-sup line-height--standard-caps">Ⓡ</sup>
+                          </span>
+                        </div>
+                        <div class="span-text-flex--inline-start md:flex-start lg:flex-end grid-col-3-4 md:grid-col-1-3">
+                          <span class="line-height--standard-caps">/</span>
+                          <span class="">
+                            <p class="line-height--standard-caps">2021</p>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="parallax--img--holder grid-col-5-9">
+                      <img id=""
+                           class="parallax--img-4-5 grid-col-1-3"
+                           srcset="assets/images/GFN_ULTRAVIOLET_END-COVER-1-WITH-TEXT_PORTRAIT_w2160px-portfolio.jpg 640w, 
+                                   assets/images/GFN_ULTRAVIOLET_END-COVER-1-WITH-TEXT_PORTRAIT_w2160px-portfolio.jpg 1080w, 
+                                   assets/images/GFN_ULTRAVIOLET_END-COVER-1-WITH-TEXT_PORTRAIT_w2160px-portfolio.jpg 1600w"
+                           sizes="(max-width: 760px) 640px,
+                                  (max-width: 1360px) 1080px,
+                                  1600px"
+                           src="assets/images/GFN_ULTRAVIOLET_END-COVER-1-WITH-TEXT_PORTRAIT_w2160px-portfolio.jpg"
+                           alt="Good For Nothing Clothing Ltd. Ultraviolet Design Concept / Branding / Video / Animation / Motion / Graphics"
+                           loading="lazy"
+                           width="400"
+                           height="500"
+                      >
+                      <div class="parallax-content--img--text-container grid-col-1-3">
+                        <div class="span-text-flex--inline-start grid-col-1 md:grid-col-1-3">
+                          <span class="display-flex flex-row wfit">
+                            <h3 class="line-height--standard-caps uppercase line-height--standard-caps">GOODFORNOTHING</h3>
+                            <sup class="text-sup line-height--standard-caps">Ⓡ</sup>
+                          </span>
+                        </div>
+                        <div class="span-text-flex--inline-start md:flex-start lg:flex-end grid-col-3-4 md:grid-col-1-3">
+                          <span class="line-height--standard-caps">/</span>
+                          <span class="">
+                            <p class="line-height--standard-caps">2021</p>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="parallax--img--container pt-s pb-header-height">
+                  <div class="parallax--img--holder grid-col-1-3">
+                    <img id=""
+                         class="parallax--img-16-9 grid-col-1-3"
+                         srcset="assets/images/beyond-90.jpg 640w, 
+                                 assets/images/beyond-90.jpg 1080w, 
+                                 assets/images/beyond-90.jpg 1600w"
+                         sizes="(max-width: 760px) 640px,
+                                (max-width: 1360px) 1080px,
+                                1600px"
+                         src="assets/images/beyond-90.jpg"
+                         alt="Beyon 90 Buissness Cards Hero Image"
+                         loading="lazy"
+                         width="1600"
+                         height="900"
+                    >
+                    <div class="parallax-content--img--text-container grid-col-1-3">
+                      <div class="span-text-flex--inline-start grid-col-1">
+                        <span class="">
+                          <h3 class="line-height--standard-caps uppercase">Beyond 90</h3>
+                        </span>
+                      </div>
+                      <div class="span-text-flex--inline-start flex-end grid-col-3-4">
+                        <span class="line-height--standard-caps">/</span>
+                        <span class="">
+                          <p class="line-height--standard-caps">2015</p>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="parallax--img--container pt-s pb-header-height">
+                  <div class="parallax--img--holder grid-col-1-5">
+                    <img id=""
+                         class="parallax--img-4-5 grid-col-1-3"
+                         srcset="assets/images/rebrand-god-03.jpg 640w, 
+                                 assets/images/rebrand-god-03.jpg 1080w, 
+                                 assets/images/rebrand-god-03.jpg 1600w"
+                         sizes="(max-width: 760px) 640px,
+                                (max-width: 1360px) 1080px,
+                                1600px"
+                         src="assets/images/rebrand-god-03.jpg"
+                         alt="Rebrand God — design poster based off an Ian Anderson Design Brief"
+                         loading="lazy"
+                         width="400"
+                         height="500"
+                    >
+                    <div class="parallax-content--img--text-container grid-col-1-3">
+                      <div class="span-text-flex--inline-start grid-col-1 md:grid-col-1-3">
+                        <span class="">
+                          <h3 class="line-height--standard-caps uppercase">Rebrand God</h3>
+                        </span>
+                      </div>
+                      <div class="span-text-flex--inline-start md:flex-start lg:flex-end grid-col-3-4 md:grid-col-1-3">
+                        <span class="line-height--standard-caps">/</span>
+                        <span class="">
+                          <p class="line-height--standard-caps">2016</p>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="parallax--img--holder grid-col-5-9">
+                    <img id=""
+                         class="parallax--img-4-5 grid-col-1-3"
+                         srcset="assets/images/joy-image-01.jpg 640w, 
+                                 assets/images/joy-image-01.jpg 1080w, 
+                                 assets/images/joy-image-01.jpg 1600w"
+                         sizes="(max-width: 760px) 640px,
+                                (max-width: 1360px) 1080px,
+                                1600px"
+                         src="assets/images/joy-image-01.jpg"
+                         alt="Joy Social Club night — design poster"
+                         loading="lazy"
+                         width="400"
+                         height="500"
+                    >
+                    <div class="parallax-content--img--text-container grid-col-1-3">
+                      <div class="span-text-flex--inline-start grid-col-1 md:grid-col-1-3">
+                        <span class="">
+                          <h3 class="line-height--standard-caps uppercase">Joy Social</h3>
+                        </span>
+                      </div>
+                      <div class="span-text-flex--inline-start md:flex-start lg:flex-end grid-col-3-4 md:grid-col-1-3">
+                        <span class="line-height--standard-caps">/</span>
+                        <span class="">
+                          <p class="line-height--standard-caps">2013</p>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="parallax--img--container pt-s pb-header-height">
+                  <div class="parallax--img--holder grid-col-1-5">
+                    <img id=""
+                         class="parallax--img-4-5 grid-col-1-3 grid-row-1-3"
+                         srcset="assets/images/socialist-main-01.jpg 640w, 
+                                 assets/images/socialist-main-01.jpg 1080w, 
+                                 assets/images/socialist-main-01.jpg 1600w"
+                         sizes="(max-width: 760px) 640px,
+                                (max-width: 1360px) 1080px,
+                                1600px"
+                         src="assets/images/socialist-main-01.jpg"
+                         alt="Personal work — How I Became a Socialist, printed booklet, essay — front cover"
+                         loading="lazy"
+                         width="400"
+                         height="500"
+                    >
+                    <img id=""
+                         class="parallax--img-16-9 grid-col-3-5 grid-row-1"
+                         srcset="assets/images/socialist-03.jpg 640w, 
+                                 assets/images/socialist-03.jpg 1080w, 
+                                 assets/images/socialist-03.jpg 1600w"
+                         sizes="(max-width: 760px) 640px,
+                                (max-width: 1360px) 1080px,
+                                1600px"
+                         src="assets/images/socialist-03.jpg"
+                         alt="Personal work — How I Became a Socialist, printed booklet, essay — inner pages 1"
+                         loading="lazy"
+                         width="1600"
+                         height="900"
+                    >
+                    <img id=""
+                         class="parallax--img-16-9 grid-col-3-5 grid-row-2"
+                         srcset="assets/images/socialist-04.jpg 640w, 
+                                 assets/images/socialist-04.jpg 1080w, 
+                                 assets/images/socialist-04.jpg 1600w"
+                         sizes="(max-width: 760px) 640px,
+                                (max-width: 1360px) 1080px,
+                                1600px"
+                         src="assets/images/socialist-03.jpg"
+                         alt="Personal work — How I Became a Socialist, printed booklet, essay — inner pages 2"
+                         loading="lazy"
+                         width="1600"
+                         height="900"
+                    >
+                    <div class="parallax-content--img--text-container grid-col-1-5">
+                      <div class="span-text-flex--inline-start grid-col-1 md:grid-col-1-3">
+                        <span class="">
+                          <h3 class="line-height--standard-caps uppercase">Personal Work</h3>
+                        </span>
+                      </div>
+                      <div class="span-text-flex--inline-start flex-end grid-col-3 md:grid-col-1-3-4">
+                        <span class="line-height--standard-caps">/</span>
+                        <span class="">
+                          <p class="line-height--standard-caps">Circa 2016</p>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="parallax--img--container top-base pt-s pb-header-height lg:height-100vh">
+                  <div class="parallax--img--holder grid-col-1-3">
+                    <img id=""
+                         class="parallax--img-16-9 grid-col-1-3"
+                         srcset="assets/images/parklife-01.jpg 640w, 
+                                 assets/images/parklife-01.jpg 1080w, 
+                                 assets/images/parklife-01.jpg 1600w"
+                         sizes="(max-width: 760px) 640px,
+                                (max-width: 1360px) 1080px,
+                                1600px"
+                         src="assets/images/parklife-01.jpg"
+                         alt="ParkLife 2015 Artist Wristbands - photo of all wristbands from the event"
+                         loading="lazy"
+                         width="1600"
+                         height="900"
+                    >
+                    <div class="parallax-content--img--text-container grid-col-1-3">
+                      <div class="span-text-flex--inline-start grid-col-1-3">
+                        <span class="">
+                          <h3 class="line-height--standard-caps uppercase">ParkLife—Artist Wristbands</h3>
+                        </span>
+                      </div>
+                      <div class="span-text-flex--inline-start flex-end grid-col-3-4">
+                        <span class="line-height--standard-caps">/</span>
+                        <span class="">
+                          <p class="line-height--standard-caps">2015</p>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        <!-- end of paralax-->
+
+        </div>
+        <footer id="footer--container" class="footer--container">
+          <div class="footer--content">
+            <div class="footer--col">
+              <a href="mailto:chris@chrisedwardsdesign.com?subject=Hello&body=Hi%20there!" class="cursor-pointer hide-on-mob">
+                <ul class="cursor-none">
+                  <li class="footer--info-li-color">© 2023</li>
+                </ul>
+              </a>
+              <a id="formTriggerThree" href="mailto:chris@chrisedwardsdesign.com?subject=Hello&body=Hi%20there!" class="cursor-pointer hide-on-desktop">
+                <ul class="cursor-pointer">
+                  <li class="footer--info-li-color uppercase">Contact</li>
+                  <li class="footer--info-link-color">chris@chrisedwardsdesign.com</li>
+                </ul>
+              </a>
+            </div>
+            <div class="footer--col">
+              <a id="formTriggerThreeDesktop" href="mailto:chris@chrisedwardsdesign.com?subject=Hello&body=Hi%20there!" class="cursor-pointer hide-on-mob">
+                <ul>
+                  <li class="footer--info-li-color uppercase">Contact</li>
+                </ul>
+              </a>
+              <a href="cv.html" title="Link to CV page" class="hide-on-desktop">
+                <ul>
+                  <li class="footer--info-li-color uppercase">RÉSUMÉ</li>
+                  <li class="footer--info-link-color">CV / RÉSUMÉ</li>
+                </ul>
+              </a>
+            </div>
+            <div class="footer--col">
+              <a id="linkedInLinkFooter" href="https://www.linkedin.com/in/chris-edwards-b97488276" class="cursor-pointer hide-on-mob" title="LinkedIn External Link" target="_blank">
+                <ul>
+                  <li class="footer--info-li-color uppercase">LINKEDIN</li>
+                </ul>
+              </a>
+              <a id="linkedInLinkFooter" href="https://www.linkedin.com/in/chris-edwards-b97488276" class="cursor-pointer hide-on-desktop" title="LinkedIn External Link" target="_blank">
+                <ul>
+                  <li class="footer--info-li-color uppercase">LINKEDIN</li>
+                  <li class="footer--info-link-color">/chris-edwards-b97488276</li>
+                </ul>
+              </a>
+            </div>
+            <div class="footer--col">
+              <a id="copyrightLink" href="/license.txt" class="credits-link cursor-pointer hide-on-tablet uppercase">
+                <ul>
+                  <div class="maintenance--version-history credits-link last-updated cursor-pointer"></div>
+                </ul>
+              </a>
+              <a id="copyrightLinkTwo" href="/license.txt" class="credits-link cursor-pointer hide-on-desktop">
+                <ul>
+                  <div class="maintenance--version-history credits-link last-updated cursor-pointer uppercase"></div>
+                  <p class="footer--info-li--copyright-desk copyright-header-color cursor-pointer">© 2023 Chris Edwards Design</p>
+                </ul>
+              </a>
+            </div>
+          </div>
+        </footer>
+    </main>
+</body>
+</html>
