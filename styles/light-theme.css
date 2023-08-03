@@ -15,22 +15,30 @@
   --font-weight-bold: 700;
 
   --color-primary: #0E1419;
-  --color-secondary: #ececec;  
+  --color-secondary: #dddddd;  
   --color-primary-rgba: rgba(var(--color-primary-rgb), 0); /* Initial RGBA value with 0 opacity */
 
-  --background-color-primary--muted: #E0E0E1;
+  --background-color-primary--muted: #cfcfcf;
 
-  --background-color-primary: #ececec;
+  --background-color-primary: #dddddd;
   --background-color-primary-transp: #0E1419a6;
+
+  --background-color-primary-glass-form: #dddddd;
+
   --background-color-primary-transp-glass: #0e141900;
   --background-color-primary-transp-glass-2: #f3f3f3CF;
+  --background-color-primary-transp-glass-3: #ddddddb3;
+
   --background-color-primary-transp-3: #f3f3f300;
   --background-color-secondary: #0E1419;
   --background-color-secondary-transp: #f3f3f3a6;
+
+  --transparent: #ffffff00;
+
   --game-btn-outline: #0E1419;
   --link-hover: 0.5;
-  --link-visited: #ececec;
-  --link-active: #ececec;
+  --link-visited: #dddddd;
+  --link-active: #dddddd;
 }
 
 body {
@@ -191,9 +199,23 @@ body {
 }
 
 .contact-form--info-header {
-  color: var(--color-primary);
-  background-color: var(--color-secondary);
+  color: var(--color-secondary);
+  background-color: var(--color-primary);
 }
+
+/* .contact-form--info-header:hover {
+  color: var(--color-primary);
+  background-color: var(--background-color-primary);
+  font-weight: var(--font-weight-base);
+}
+
+.contact-form--info-header #closeMinus.nav--menu-svg-close-2 path {
+  stroke: var(--color-secondary)!important;
+}
+
+.contact-form--info-header:hover #closeMinus.nav--menu-svg-close-2 path {
+  stroke: var(--color-primary)!important;
+} */
 
 .contact-form--intro--cv-link {
   /* color: var(--color-secondary)!important; */
@@ -279,12 +301,123 @@ body {
 
 #contact-form--submit:hover{
   background-color: var(--color-highlight-5)!important;
+  color: var(--color-secondary)!important;
 }
 
 .cv-bulleted-list li, .intro-text-desktop-about {
   font-weight: 400;
 }
 
+.intro-text-desktop {
+  font-weight: 400;
+}
+
 .cv-text-background.strenghts {
   font-weight: 400;
+}
+
+.splide-design .splide__pagination__page:before {
+  counter-increment: pagination-num;
+  content: counter( pagination-num );
+  height: 1rem;
+  background: unset;
+  color: var(--color-primary);
+  background: unset;
+  font-size: var(--base-text);
+  font-family: var(--secondary-font-family);
+  font-weight: 500;
+}
+
+@media only screen and (max-width: 640px) {
+  .splide-design .splide__pagination__page:before {
+      font-size: var(--base-text-sm);
+  }
+}
+
+.bg-color--primary {
+  background-color: var(--background-color-primary);
+}
+
+#cvAccordionLink .mobile-menu--cv a {
+  border-top: none!important;
+}
+
+.text--grey {
+  color: unset;
+}
+
+.link--home-page {
+  background-color: var(--transparent);
+}
+
+.link--home-page p {
+  font-weight: 500;
+}
+
+.link--home-page:hover p {
+  font-weight: 400;
+}
+
+.link--cv-page p,
+.link--cv-page-mob p {
+  font-weight: 400;
+}
+
+.link--cv-page:hover p,
+.link--cv-page-mob:hover p {
+  font-weight: 500;
+}
+
+.glass {
+  background: var(--background-color-primary-transp-glass-3);
+}
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .glass {
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+  }
+}
+
+.video-opacity {
+  opacity: 1;
+}
+
+.animated-gradient-fallback {
+  background: rgb(221, 221, 221);
+  background: radial-gradient(circle, rgba(221, 221, 221, 1) 20%, rgba(14, 20, 25, 1) 35%);
+}
+
+#page-wrapper-trigger {
+  display: none;
+}
+
+#canvasRipple {
+  display: none;
+}
+
+.container--video--overlay {
+  opacity: 0.1;
+}
+
+.play-button:hover ~ .container--video--overlay {
+  opacity: 0.275;
+}
+
+.play-button--color-alt {
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+}
+
+.play-button--color-alt:hover {
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+}
+
+.play-button--color-alt svg {
+  fill: var(--color-primary);
+}
+
+.play-button--color-alt:hover svg {
+  fill: var(--color-secondary);
 }
