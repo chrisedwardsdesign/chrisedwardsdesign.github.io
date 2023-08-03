@@ -1,10 +1,10 @@
-All content on this portfolio website is owned by Chris Edwards Design.
-Unauthorized reproduction or use without permission is prohibited.
+All content on this portfolio website is the property of Chris Edwards Design and is intended solely for portfolio and display purposes on GitHub Pages. Please note that this website is not used for business; it is hosted on a free plan and any unauthorized reproduction or commercial use is strictly prohibited.
 
 —
 
-This website has been fully customised and developed by myself, in an attempt to showcase my skills and creativity in design, user experience, and web development. From the visual design to the user interface, every aspect of this site reflects my dedication to creating an engaging and intuitive online experience.
-Hosted on GitHub Pages for free. Thank you for visiting and exploring my website.
+This website has been customised and developed by myself, in an attempt to showcase my skills and creativity in design, user experience, and web development. From the visual design to the user interface, every aspect of this site reflects my dedication to creating an engaging and intuitive online portfolio.
+
+Hosted free on GitHub Pages. Thank you for visiting and exploring my website.
 
 Credits:
 
