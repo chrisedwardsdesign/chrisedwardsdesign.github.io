@@ -1,13 +1,3 @@
-// window.addEventListener('DOMContentLoaded', function() {
-//   document.body.classList.add('opacity-zero');
-
-//   setTimeout(function() {
-//     document.body.classList.remove('opacity-zero');
-//     document.body.classList.add('body-fade-in');
-//   }, 750); // 750 ms delay before the transition starts
-// });
-
-
 document.addEventListener("DOMContentLoaded", function(event) {
   const body = document.querySelector('body');
   const themeStyle = document.getElementById('theme-style');
@@ -15,13 +5,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
   const lightTextDesktop = document.getElementById('lightTextDesktop');
   const ledRightDesktop = document.getElementById('ledRightDesktop');
   const ledLeftDesktop = document.getElementById('ledLeftDesktop');
-  const darkTextMobile = document.getElementById('darkTextMobile');
-  const lightTextMobile = document.getElementById('lightTextMobile');
-  const ledRightMobile = document.getElementById('ledRightMobile');
-  const ledLeftMobile = document.getElementById('ledLeftMobile');
 
   const transitionToggleDesktop = document.getElementById('toggleBtnDesktop');
-  const transitionToggleMobile = document.getElementById('toggleBtnMobile');
   const logoSvgPaths = document.querySelectorAll('.logotype--svg-inner svg path');
 
   function hexToRgb(hex) {
@@ -39,7 +24,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
   }
 
   function toggleDesktopMode() {
-    // document.body.classList.add('body-fade-in');
     body.classList.toggle('light-mode');
     body.classList.toggle('dark-mode');
     toggleMode(darkTextDesktop, 'darkTextDesktop', 'toggle-text-switch');
@@ -48,26 +32,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
     toggleMode(ledLeftDesktop, 'ledLeftDesktop', 'mode-switch--btn--visible');
 
     themeStyle.href = body.classList.contains('dark-mode') ? 'styles/dark-theme.css' : 'styles/light-theme.css';
-    sessionStorage.setItem('desktopMode', body.classList.contains('dark-mode') ? 'dark' : 'light');
-  }
-
-  function toggleMobileMode() {
-    // document.body.classList.add('body-fade-in');
-    body.classList.toggle('light-mode');
-    body.classList.toggle('dark-mode');
-    toggleMode(darkTextMobile, 'darkTextMobile', 'toggle-text-switch');
-    toggleMode(lightTextMobile, 'lightTextMobile', 'toggle-text-switch');
-    toggleMode(ledRightMobile, 'ledRightMobile', 'mode-switch--btn--visible');
-    toggleMode(ledLeftMobile, 'ledLeftMobile', 'mode-switch--btn--visible');
-
-    themeStyle.href = body.classList.contains('dark-mode') ? 'styles/dark-theme.css' : 'styles/light-theme.css';
-    sessionStorage.setItem('mobileMode', body.classList.contains('dark-mode') ? 'dark' : 'light');
+    sessionStorage.setItem('themeMode', body.classList.contains('dark-mode') ? 'dark' : 'light');
   }
 
   function handleScroll() {
-    if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+    if ((window.location.pathname === '/' || window.location.pathname === '/index.html') && window.innerWidth < 640) {
       const logoElement = document.querySelector('.logotype--svg-inner svg path');
-      // const textColor = document.querySelector('.logotype--svg-inner svg');
       const colorPrimary = getComputedStyle(logoElement).getPropertyValue('--color-primary').trim();
       const colorSecondary = getComputedStyle(body).getPropertyValue('--color-secondary').trim();
       const primaryRGB = hexToRgb(colorPrimary);
@@ -124,34 +94,20 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }
   }
 
-  // // Initial body state with zero opacity
-  // document.body.classList.add('opacity-zero');
-
-  // // Remove zero opacity and add fade-in effect after 750 ms
-  // setTimeout(function() {
-  //   document.body.classList.remove('opacity-zero');
-  //   document.body.classList.add('body-fade-in');
-  // }, 750);
-
   // Event listeners
   transitionToggleDesktop.addEventListener('click', () => {
     toggleDesktopMode();
     handleToggle();
   });
 
-  transitionToggleMobile.addEventListener('click', () => {
-    toggleMobileMode();
-    handleToggle();
-  });
-
   window.addEventListener('scroll', handleScroll);
   window.addEventListener('resize', handleScroll);
-  
-  const desktopMode = sessionStorage.getItem('desktopMode');
-  console.log('Retrieved desktop mode:', desktopMode); // Add this line
-  if (desktopMode) {
+
+  const themeMode = sessionStorage.getItem('themeMode');
+  console.log('Retrieved theme mode:', themeMode);
+  if (themeMode) {
     const darkModeSet = body.classList.contains('dark-mode');
-    if ((desktopMode === 'dark' && !darkModeSet) || (desktopMode === 'light' && darkModeSet)) {
+    if ((themeMode === 'dark' && !darkModeSet) || (themeMode === 'light' && darkModeSet)) {
       toggleDesktopMode();
     }
     setTimeout(function() {
@@ -160,53 +116,34 @@ document.addEventListener("DOMContentLoaded", function(event) {
         handleScroll();
       });
     }, 750);
-
+    
     // Update the --color-primary value in session storage
     if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
-
-    const logoElement = document.querySelector('.logotype--svg-inner svg');
-    const colorPrimary = getComputedStyle(body).getPropertyValue('--color-primary').trim();
-    sessionStorage.setItem('--color-primary', colorPrimary);
+      const logoElement = document.querySelector('.logotype--svg-inner svg');
+      const colorPrimary = getComputedStyle(body).getPropertyValue('--color-primary').trim();
+      sessionStorage.setItem('--color-primary', colorPrimary);
     }
   }
 
-    const mobileMode = sessionStorage.getItem('mobileMode');
-    console.log('Retrieved mobile mode:', mobileMode); // Add this line
-    if (mobileMode) {
-      const darkModeSet = body.classList.contains('dark-mode');
-      if ((mobileMode === 'dark' && !darkModeSet) || (mobileMode === 'light' && darkModeSet)) {
-        toggleMobileMode();
-      }
-      setTimeout(function() {
-        ['darkTextMobile', 'lightTextMobile', 'ledRightMobile', 'ledLeftMobile'].forEach((elementId) => {
-          handleSessionStorage(elementId);
-        });
-      }, 750);
-    }
-
+  setTimeout(function() {
+    sessionOverlay.style.opacity = '0';
+    // Add this to prevent clicking on the elements in the overlay after it fades out
     setTimeout(function() {
-      sessionOverlay.style.opacity = '0';
-      // Add this to prevent clicking on the elements in the overlay after it fades out
-      setTimeout(function() {
-        sessionOverlay.style.zIndex = '-1';
-      }, 750); // This should match the transition time in your CSS
-    }, 1000);
+      sessionOverlay.style.zIndex = '-1';
+    }, 750); // This should match the transition time in your CSS
+  }, 1000);
     
   handleScroll();
   handleToggle();
 
-});
-
-
-// splide video
-document.addEventListener('DOMContentLoaded', function() {
-  if (window.location.pathname === '/' || window.location.pathname === '/index.html' || window.location.pathname === '/design.html' || window.location.pathname === '/animation.html') {
+  // splide video
+  if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
     splide = new Splide('.splide', {
       type: 'loop',
       perPage: 1,
       autoplay: true,
       speed: 1500,
-      interval: 10000,
+      interval: 6000,
       pauseOnHover: false,
       pauseOnFocus: false,
       resetProgress: false,
@@ -234,77 +171,75 @@ document.addEventListener('DOMContentLoaded', function() {
     }).mount(window.splide.Extensions);
     
 
-  // Function to create custom content
-  function createCustomContent() {
-    var playButton = document.createElement('div');
-    playButton.id = 'play-button';
-    playButton.className = 'play-button uppercase';
-
-    var svgElem = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    svgElem.setAttributeNS(null, 'width', '9');
-    svgElem.setAttributeNS(null, 'height', '17');
-    svgElem.setAttributeNS(null, 'viewBox', '0 0 9 17');
-    svgElem.setAttributeNS(null, 'fill', 'inherit');
-
-    var pathElem = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-    pathElem.setAttributeNS(null, 'd', 'M0.0415039 0.351562L8.0415 8.35156L0.0415039 16.3516');
-    pathElem.setAttributeNS(null, 'fill', 'inherit');
-
-    svgElem.appendChild(pathElem);
-    playButton.appendChild(svgElem);
-
-    var textContainer = document.createElement('span');
-    textContainer.className = 'text-container';
-
-    var oldText = document.createElement('span');
-    oldText.className = 'old-text';
-    oldText.innerText = 'Play';
-
-    var newText = document.createElement('span');
-    newText.className = 'new-text';
-    newText.innerText = 'Play';
-
-    textContainer.appendChild(oldText);
-    textContainer.appendChild(newText);
-
-    playButton.appendChild(textContainer);
-
-    return playButton;
-  }
-
-  // Get all the .splide__video__play elements
-  let splideVideoPlayElements = document.querySelectorAll('.splide__video__play');
-  // Find the element with class `.splide__pagination` and save as a const variable `paginationItems`.
-  const paginationItems = document.querySelector('.splide__pagination');
-  // Count the number of li tags present inside `paginationItems` and save this as a const variable `counterCalc`.
-  const counterCalc = paginationItems.getElementsByTagName('li').length;
-  // console.log("counterCalc:", counterCalc);
-  // Then add a new style rule to the document head.
-  const style = document.createElement('style');
-
-  // Loop over the elements and append the custom content to each
-  splideVideoPlayElements.forEach(function(splideVideoPlay) {
-    let customContent = createCustomContent();
-    splideVideoPlay.appendChild(customContent);
-  });
-
-  style.textContent = `
-    .media .splide__pagination > *:last-child::after {
-      content: "/ of ${counterCalc}";
+    function createCustomContent() {
+      const playButton = document.createElement('div');
+      playButton.id = 'play-button';
+      playButton.className = 'play-button uppercase';
+    
+      const svgElem = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      svgElem.setAttribute('width', '9');
+      svgElem.setAttribute('height', '17');
+      svgElem.setAttribute('viewBox', '0 0 9 17');
+      svgElem.setAttribute('fill', 'inherit');
+    
+      const pathElem = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      pathElem.setAttribute('d', 'M0.0415039 0.351562L8.0415 8.35156L0.0415039 16.3516');
+      pathElem.setAttribute('fill', 'inherit');
+    
+      svgElem.appendChild(pathElem);
+      playButton.appendChild(svgElem);
+    
+      const textContainer = document.createElement('span');
+      textContainer.className = 'text-container';
+    
+      const oldText = document.createElement('span');
+      oldText.className = 'old-text';
+      oldText.innerText = 'Play';
+    
+      const newText = document.createElement('span');
+      newText.className = 'new-text';
+      newText.innerText = 'Play';
+    
+      textContainer.appendChild(oldText);
+      textContainer.appendChild(newText);
+    
+      playButton.appendChild(textContainer);
+    
+      return playButton;
     }
-  `;
-  document.head.appendChild(style);
+    
 
-    // Recalculate Splide video size when the container's size changes
-    function recalculateSplideSize() {
-      splide.refresh();
+
+    let splideVideoPlayElements = document.querySelectorAll('.splide__video__play');
+    const paginationItems = document.querySelector('.splide__pagination');
+    const counterCalc = paginationItems.getElementsByTagName('li').length;
+    const style = document.createElement('style');
+
+    splideVideoPlayElements.forEach(function(splideVideoPlay) {
+      let customContent = createCustomContent();
+      splideVideoPlay.appendChild(customContent);
+    });
+
+    style.textContent = `
+      .media .splide__pagination > *:last-child::after {
+        content: "/ of ${counterCalc}";
+      }
+    `;
+    document.head.appendChild(style);
+
+      function recalculateSplideSize() {
+        console.log('resize event fired');
+        splide.refresh();
+      }
+      
+      console.log('Before adding event listener');
+      window.addEventListener('resize', recalculateSplideSize);
+      console.log('After adding event listener');
+
     }
-
-    recalculateSplideSize();
-  }
-
+    
   else if (window.location.pathname === '/design.html' || 
-           window.location.pathname === '/animation.html' || 
+          //  window.location.pathname === '/animation.html' || 
            window.location.pathname === '/ux-code.html') {
     // Initialize regular Splide
     const splideDesign = new Splide('.splide', {
@@ -312,16 +247,16 @@ document.addEventListener('DOMContentLoaded', function() {
       perPage: 1,
       autoplay: true,
       speed: 2000,
-      interval: 4000,
+      interval: 3500,
       pauseOnHover: false,
       pauseOnFocus: false,
-      resetProgress: false,
+      resetProgress: true,
       arrows: true,
       width: '100%',
     }).mount();
   }
 
-// custom reusable accordion logic
+  // custom reusable accordion logic
   let timeOuts = {};
 
   const toggleContent = function(elementId) {
@@ -358,6 +293,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (svgClose) {
       svgClose.classList.toggle('svg-hide');
+    }
+  };
+
+  // Add setSvgState function here
+  const setSvgState = function(svgOpenId, svgCloseId, contentId) {
+    const svgOpen = document.getElementById(svgOpenId);
+    const svgClose = document.getElementById(svgCloseId);
+    const content = document.getElementById(contentId);
+  
+    if (content && svgOpen && svgClose) {
+      if (content.style.display !== "none") {  // content is open
+        svgOpen.classList.add('svg-hide');
+        svgClose.classList.remove('svg-hide');
+      } else {  // content is closed
+        svgOpen.classList.remove('svg-hide');
+        svgClose.classList.add('svg-hide');
+      }
     }
   };
 
@@ -432,7 +384,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let splideListContainer;
     let refreshTimeout;
     let resizeTimeout;
-    const observationDuration = 750; // Duration in milliseconds
+    const observationDuration = 750;
 
     const startObservation = () => {
       if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
@@ -492,7 +444,7 @@ document.addEventListener('DOMContentLoaded', function() {
           if (svg) {
               toggleSvg(svg.open, svg.close);
           }
-        }  else if (window.location.pathname === '/' || window.location.pathname === '/design.html' || window.location.pathname === '/cv.html') {
+        }  else if (window.location.pathname === '/' || window.location.pathname === '/design.html' || window.location.pathname === '/cv.html' || window.location.pathname === '/ux-code.html' || window.location.pathname === '/animation.html') {
           if (svg) {
             toggleSvg(svg.close, svg.open);
           }
@@ -500,7 +452,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     window.addEventListener('resize', () => {
-      clearTimeout(resizeTimeout); // Clear the previous timeout
+      clearTimeout(resizeTimeout);
   
       resizeTimeout = setTimeout(() => {
         if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
@@ -522,323 +474,444 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-// Open element by default 'aboutTriggerDesktop'
-const aboutTriggerDesktopElement = document.getElementById('aboutTriggerDesktop');
-if (aboutTriggerDesktopElement) {
-  if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
-    toggleContent('contentXl');
-    toggleSvg('contactChevronOpenDesktop', 'contactChevronCloseDesktop');
+  // Open element by default 'aboutTriggerDesktop'
+  const aboutTriggerDesktopElement = document.getElementById('aboutTriggerDesktop');
+  const contentElement = document.getElementById('contentXl');
+  const chevronOpen = document.getElementById('contactChevronOpenDesktop');
+  const chevronClose = document.getElementById('contactChevronCloseDesktop');
+
+  if (aboutTriggerDesktopElement) {
+    if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+      toggleContent('contentXl');
+    } else if (window.location.pathname === '/cv.html') {
+      toggleContent('contentXl');
+      toggleContent('sectionContent');
+      toggleSvg('contactChevronOpenDesktop', 'contactChevronCloseDesktop');
+      toggleSvg('accordionPlusOpen', 'accordionPlusClose');
+    } else {
+      // When on other pages, except 'cv.html'
+      if (contentElement) {
+        contentElement.style.maxHeight = "0px";
+        contentElement.style.display = "none";
+      }
+      if (chevronOpen && !chevronOpen.classList.contains('svg-hide')) {
+        chevronOpen.classList.remove('svg-hide');
+      }
+      if (chevronClose && chevronClose.classList.contains('svg-hide')) {
+        chevronClose.classList.add('svg-hide');
+      }
+    }
   }
 
-  else if (window.location.pathname === '/cv.html') {
-    toggleContent('contentXl');
-    toggleContent('sectionContent');
-    toggleSvg('contactChevronOpenDesktop', 'contactChevronCloseDesktop');
-  }
-  
-  else {
-    // When on other pages
-    const contentElement = document.getElementById('contentXl');
-    if (contentElement) {
-      // Ensure 'contentXl' is collapsed
-      contentElement.style.maxHeight = "0px";
-      contentElement.style.display = "none";
+  window.addEventListener('resize', () => {
+    if (window.location.pathname === '/cv.html') {
+      closeContentOnResize(triggersAndElements.filter(item => item.element1 === 'sectionContent' || 'contentXl'));
+      openContentOnResize(triggersAndElements.filter(item => item.element1 === 'sectionContent' || 'contentXl'));
+      setSvgState('contactChevronOpenDesktop', 'contactChevronCloseDesktop', 'contentXl');
+      setSvgState('accordionPlusOpen', 'accordionPlusClose', 'sectionContent');
+    } else if (window.location.pathname === '/design.html' || window.location.pathname === '/animation.html' || window.location.pathname === '/ux-code.html') {
+      closeContentOnResize(triggersAndElements.filter(item => item.element1 === 'sectionContent' || 'contentXl'));
     }
-    // Ensure the chevron is in the correct state
-    const chevronOpen = document.getElementById('contactChevronOpenDesktop');
-    const chevronClose = document.getElementById('contactChevronCloseDesktop');
-    if (chevronOpen && !chevronOpen.classList.contains('svg-hide')) {
-      // If chevronOpen is not hidden, hide it
-      chevronOpen.classList.add('svg-hide');
-    }
-    if (chevronClose && chevronClose.classList.contains('svg-hide')) {
-      // If chevronClose is hidden, show it
-      chevronClose.classList.remove('svg-hide');
-    }
-  }
-  if (window.location.pathname === '/design.html') {
-    toggleSvg('contactChevronOpenDesktop', 'contactChevronCloseDesktop');
+  });
+
+
+  // video
+// function checkViewport() {
+//   return window.innerWidth > 640;
+// }
+
+
+function playVideo(video, thumbnail, playButton, videoOverlay) {
+  video.play().then(function() {
+    thumbnail.style.display = "none";
+    playButton.style.display = "none";
+    videoOverlay.style.display = "none";
+  }).catch(function(error) {
+    console.log("Autoplay was prevented:", error);
+    thumbnail.style.display = "flex";
+    playButton.style.display = "flex";
+    videoOverlay.style.display = "flex";
+  });
+}
+
+// Array to store videos that were playing when the tab became inactive
+let videosPlayingWhenTabInactive = [];
+
+function autoplayAllVideos(videoContainers) {
+  // if (window.location.pathname === '/animation.html' && checkViewport()) {
+  if (window.location.pathname === '/animation.html') {
+    videoContainers.forEach(container => {
+      let video = container.querySelector(".video-content");
+      let thumbnail = container.querySelector(".thumbnail");
+      let playButton = container.querySelector(".play-button");
+      let videoOverlay = container.querySelector(".container--video--overlay");
+
+      let observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            playVideo(video, thumbnail, playButton, videoOverlay);
+          } else if (!video.paused) {
+            video.pause();
+            thumbnail.style.display = "flex";
+            playButton.style.display = "flex";
+            videoOverlay.style.display = "flex";
+          }
+        });
+      }, { threshold: 0.1 });
+
+      observer.observe(video);
+    });
   }
 }
 
-  window.addEventListener('resize', () => {
-    if (window.location.pathname === '/' || window.location.pathname === '/index.html' || window.location.pathname === '/cv.html') {
-      closeContentOnResize(triggersAndElements.filter(item => item.element1 === 'sectionContent' || 'contentXl'));
-      openContentOnResize(triggersAndElements.filter(item => item.element1 === 'sectionContent' || 'contentXl'));
-      toggleSvg('contactChevronOpenDesktop', 'contactChevronCloseDesktop');
-    }
-  });
-});
 
-// video
-document.addEventListener("DOMContentLoaded", function() {
-  if (window.location.pathname === '/design.html' || window.location.pathname === '/animation.html' || window.location.pathname === '/ux-code.html') {
+function autoplayFirstVideo(videoContainers) {
+  // if ((window.location.pathname === '/design.html' || window.location.pathname === '/ux-code.html') && checkViewport()) {
+  if ((window.location.pathname === '/design.html' || window.location.pathname === '/ux-code.html')) {
+    let video = videoContainers[0].querySelector(".video-content");
+    let thumbnail = videoContainers[0].querySelector(".thumbnail");
+    let playButton = videoContainers[0].querySelector(".play-button");
+    let videoOverlay = videoContainers[0].querySelector(".container--video--overlay");
 
-    var videoContainers = document.querySelectorAll(".container--video");
+    playVideo(video, thumbnail, playButton, videoOverlay);
+  }
+}
 
-    videoContainers.forEach((container) => {
-      var video = container.querySelector(".video-content");
-      var thumbnail = container.querySelector(".thumbnail");
-      var playButton = container.querySelector(".play-button");
+if (window.location.pathname === '/index.html' || window.location.pathname === '/design.html' || window.location.pathname === '/animation.html' || window.location.pathname === '/ux-code.html') {
 
-      function playVideo() {
-        video.play().then(function() {
-          thumbnail.style.display = "none";
-          playButton.style.display = "none";
-        }).catch(function(error) {
-          console.log("Autoplay was prevented:", error);
-          thumbnail.style.display = "block";
-          playButton.style.display = "block";
-        });
-      }
+  const videoContainers = document.querySelectorAll(".container--video");
 
-      function lazyLoadVideo() {
-        if ('IntersectionObserver' in window) {
-          var observer = new IntersectionObserver(function(entries, observer) {
-            entries.forEach(function(entry) {
-              if (entry.isIntersecting) {
-                var sourceElements = entry.target.querySelectorAll("source");
-                sourceElements.forEach(function(source) {
-                  if (!source.src) {
-                    source.src = source.dataset.src;
-                  }
-                });
-                observer.unobserve(entry.target);
-              }
-            });
-          });
+  videoContainers.forEach((container) => {
+    const video = container.querySelector(".video-content");
+    const thumbnail = container.querySelector(".thumbnail");
+    const playButton = container.querySelector(".play-button");
+    const videoOverlay = container.querySelector(".container--video--overlay");
 
-          observer.observe(video);
-        } else {
-          var sourceElements = video.querySelectorAll("source");
-          sourceElements.forEach(function(source) {
-            if (!source.src) {
-              source.src = source.dataset.src;
+    function lazyLoadVideo() {
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              let sourceElements = entry.target.querySelectorAll("source");
+              sourceElements.forEach(function(source) {
+                if (!source.src) {
+                  source.src = source.dataset.src;
+                }
+              });
+              observer.unobserve(entry.target);
             }
           });
-        }
-      }
+        });
 
-      function handlePlayButtonClick() {
-        playVideo();
-      }
-
-      function handleVideoClick() {
-        if (video.paused) {
-          playVideo();
-        } else {
-          video.pause();
-          thumbnail.style.display = "flex";
-          playButton.style.display = "flex";
-        }
-      }
-
-      function handleVideoEnded() {
-        video.currentTime = 0;
-        video.play();
-      }
-
-      lazyLoadVideo();
-      playButton.addEventListener("click", handlePlayButtonClick);
-      video.addEventListener("click", handleVideoClick);
-      video.addEventListener("ended", handleVideoEnded);
-    });
-  }
-});
-
-// Preconnect to video source
-document.addEventListener("DOMContentLoaded", function() {
-  if (window.location.pathname === '/design.html' || window.location.pathname === '/animation.html' || window.location.pathname === '/ux-code.html') {
-
-    if ("connection" in navigator) {
-      const videoSource = document.querySelector("#video source");
-      if (videoSource) {
-        const videoUrl = videoSource.src;
-        const urlObj = new URL(videoUrl);
-        const origin = urlObj.origin;
-        navigator.connection.addEventListener("change", function() {
-          const effectiveType = navigator.connection.effectiveType;
-          if (effectiveType === "4g" || effectiveType === "3g") {
-            const link = document.createElement("link");
-            link.rel = "preconnect";
-            link.href = origin;
-            document.head.appendChild(link);
+        observer.observe(video);
+      } else {
+        const sourceElements = video.querySelectorAll("source");
+        sourceElements.forEach(function(source) {
+          if (!source.src) {
+            source.src = source.dataset.src;
           }
         });
       }
     }
 
-  }
-});
-
-// svg resize
-document.addEventListener('DOMContentLoaded', function() {
-  if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
-    const centerElement = document.getElementById('logotypeSvgWidthCenter');
-    const topElement = document.getElementById('logotypeSvgWidthTop');
-    const bottomElement = document.getElementById('logotypeSvgWidthBottom');
-    
-    // Update centerElement width and height
-    centerElement.style.width = '100%';
-    centerElement.style.height = 'fit-content';
-
-    function updateHeight() {
-      const centerHeight = window.getComputedStyle(centerElement).height;
-      topElement.style.height = centerHeight;
-      bottomElement.style.height = centerHeight;
+    function handlePlayButtonClick() {
+      playVideo(video, thumbnail, playButton, videoOverlay);
     }
 
-    // Initial height update
-    updateHeight();
+    function handleVideoClick() {
+      if (video.paused) {
+        playVideo(video, thumbnail, playButton, videoOverlay);
+      } else {
+        video.pause();
+        thumbnail.style.display = "flex";
+        playButton.style.display = "flex";
+        videoOverlay.style.display = "flex";
+      }
+    }
 
-    // Recalculate height on window resize
-    window.addEventListener('resize', updateHeight);
-  }
-});
+    function handleVideoEnded() {
+      video.currentTime = 0;
+      video.play();
+    }
 
-// mobile menu
-document.addEventListener('DOMContentLoaded', function() {
-let menuIsVisible = false; // Variable to track menu visibility
+    lazyLoadVideo();
+    playButton.addEventListener("click", handlePlayButtonClick);
+    video.addEventListener("click", handleVideoClick);
+    video.addEventListener("ended", handleVideoEnded);
 
-// mobile menu
-const menuButton = document.getElementById('menu-button'); // Store menu button
-const headerContainer = document.getElementById('header--container');
-const menuOverlay = document.getElementById('menuOverlay');
-const menu = document.querySelector('.mobile-menu--container');
+  });
 
+  autoplayAllVideos(videoContainers);
+  autoplayFirstVideo(videoContainers);
+}
 
-menuButton.addEventListener('click', function() {
-  headerContainer.style.zIndex = '8';
-  menu.classList.toggle('visible');
-  menuIsVisible = menu.classList.contains('visible'); // Update variable
-  // menuPlusOpen.classList.toggle('svg-hide');
-  // menuPlusClose.classList.toggle('svg-hide');
-  menuOverlay.classList.toggle('form-hide');
-  menuOverlay.classList.toggle('z-index-3');
-  // toggleMenuSvg();
-});
+// Preconnect to video source
+if (window.location.pathname === '/design.html' || window.location.pathname === '/animation.html' || window.location.pathname === '/ux-code.html') {
 
-menuOverlay.addEventListener('click', function() {
-  menu.classList.remove('visible');
-  menuOverlay.classList.toggle('form-hide');
-  menuOverlay.classList.toggle('z-index-3');
-});
-
-// accordion menu
-let accordionItems = Array.from(document.querySelectorAll('.accordion-item'));
-
-accordionItems.forEach(function(item) {
-  let header = item.querySelector('.accordion-header');
-  let content = item.querySelector('.accordion-content');
-  let toggle = item.querySelector('.accordion-toggle-one');
-  let toggleTwo = item.querySelector('.accordion-toggle-two');
-
-  header.addEventListener('click', function() {
-    // Close all other items
-    accordionItems.forEach(function(otherItem) {
-      if(otherItem !== item) {
-        let otherContent = otherItem.querySelector('.accordion-content');
-        let otherToggle = otherItem.querySelector('.accordion-toggle-one');
-        let otherToggleTwo = otherItem.querySelector('.accordion-toggle-two');
-
-        otherContent.style.maxHeight = null;
-        if(otherToggle) {
-          otherToggle.classList.remove('svg-hide');
-          otherToggleTwo.classList.add('svg-hide');
+  if ("connection" in navigator) {
+    const videoSource = document.querySelector("#video source");
+    if (videoSource) {
+      const videoUrl = videoSource.src;
+      const urlObj = new URL(videoUrl);
+      const origin = urlObj.origin;
+      navigator.connection.addEventListener("change", function() {
+        const effectiveType = navigator.connection.effectiveType;
+        if (effectiveType === "4g" || effectiveType === "3g") {
+          const link = document.createElement("link");
+          link.rel = "preconnect";
+          link.href = origin;
+          document.head.appendChild(link);
         }
+      });
+    }
+  }
+}
+
+// Listen for visibility changes
+document.addEventListener('visibilitychange', function() {
+  if (document.hidden) {
+    // The tab is not active, pause all videos that are playing and remember them
+    videosPlayingWhenTabInactive = []; // Clear the array
+    videoContainers.forEach(container => {
+      const video = container.querySelector(".video-content");
+      if (!video.paused) {
+        video.pause();
+        videosPlayingWhenTabInactive.push(video); // Remember this video was playing
       }
     });
-
-    // Toggle the clicked item
-    if(content.style.maxHeight && content.style.maxHeight !== "0px") {
-      content.style.maxHeight = null;
-      toggle.classList.remove('svg-hide');
-      toggleTwo.classList.add('svg-hide');
-
-    } else {
-      content.style.maxHeight = content.scrollHeight + "px";
-      toggle.classList.add('svg-hide');
-      toggleTwo.classList.remove('svg-hide');
-    }
-  });
+  } else {
+    // The tab is active again, resume videos that were playing
+    videosPlayingWhenTabInactive.forEach(video => {
+      const thumbnail = video.parentElement.querySelector(".thumbnail");
+      const playButton = video.parentElement.querySelector(".play-button");
+      const videoOverlay = videoContainers[0].querySelector(".container--video--overlay");
+      playVideo(video, thumbnail, playButton, videoOverlay);
+    });
+  }
 });
 
-// Open the accordion with id 'accordionOpenDefaultResume' by default
-// let accordionDefault = document.querySelector('#accordionOpenDefaultRÉSUMÉ .accordion-header');
-// if (accordionDefault) accordionDefault.click();
 
+  // mobile menu
+  let menuIsVisible = false; // Variable to track menu visibility
+
+  // mobile menu
+  const menuButton = document.getElementById('menu-button'); // Store menu button
+  const headerContainer = document.getElementById('header--container');
+  const menuOverlay = document.getElementById('menuOverlay');
+  const menu = document.querySelector('.mobile-menu--container');
+
+
+  menuButton.addEventListener('click', function() {
+    headerContainer.style.zIndex = '8';
+    menu.classList.toggle('visible');
+    menuIsVisible = menu.classList.contains('visible'); // Update variable
+    menuOverlay.classList.toggle('form-hide');
+    menuOverlay.classList.toggle('z-index-3');
+  });
+
+  menuOverlay.addEventListener('click', function() {
+    menu.classList.remove('visible');
+    menuOverlay.classList.toggle('form-hide');
+    menuOverlay.classList.toggle('z-index-3');
+  });
+
+  // accordion menu
+  let accordionItems = Array.from(document.querySelectorAll('.accordion-item'));
+
+  accordionItems.forEach(function(item) {
+    let header = item.querySelector('.accordion-header');
+    let content = item.querySelector('.accordion-content');
+    let toggle = item.querySelector('.accordion-toggle-one');
+    let toggleTwo = item.querySelector('.accordion-toggle-two');
+
+    header.addEventListener('click', function() {
+      // Close all other items
+      accordionItems.forEach(function(otherItem) {
+        if(otherItem !== item) {
+          let otherContent = otherItem.querySelector('.accordion-content');
+          let otherToggle = otherItem.querySelector('.accordion-toggle-one');
+          let otherToggleTwo = otherItem.querySelector('.accordion-toggle-two');
+
+          otherContent.style.maxHeight = null;
+          if(otherToggle) {
+            otherToggle.classList.remove('svg-hide');
+            otherToggleTwo.classList.add('svg-hide');
+          }
+        }
+      });
+
+      // Toggle the clicked item
+      if(content.style.maxHeight && content.style.maxHeight !== "0px") {
+        content.style.maxHeight = null;
+        toggle.classList.remove('svg-hide');
+        toggleTwo.classList.add('svg-hide');
+
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+        toggle.classList.add('svg-hide');
+        toggleTwo.classList.remove('svg-hide');
+      }
+    });
+  });
+
+  // Open the accordion with id 'accordionOpenDefaultResume' by default
+  // let accordionDefault = document.querySelector('#accordionOpenDefaultRÉSUMÉ .accordion-header');
+  // if (accordionDefault) accordionDefault.click();
 
   // Scroll effect
-  // const headerContainer = document.getElementById('header--container');
-  const pageWrapper = document.getElementById('page-wrapper');
-  let previousScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-  let isScrollingUp = false;
-  let timeout;
+  function runScript() {
+    const pageWrapper = document.getElementById('page-wrapper');
+    const footerScrollEffect = document.getElementById('footer--container');
+    const sectionGraphicScrollEffect = document.getElementById('sectionGrapahic');
+    let previousScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+    let isScrollingUp = false;
+    let timeout;
 
-  window.addEventListener('scroll', function() {
-    const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-    const scrollPositionChange = currentScrollPosition - previousScrollPosition;
-
-    if (scrollPositionChange < -6) {
-      // Scrolling up
-      if (!isScrollingUp) {
-        headerContainer.style.zIndex = '8';
-        headerContainer.style.opacity = '1';
-        headerContainer.style.borderBottom = 'var(--section-border-width) solid var(--color-primary)'; // add border-bottom
-        pageWrapper.style.position = 'relative'; // move down 1px account for border-bottom overlap
-        pageWrapper.style.top = 'var(--section-border-width-minus)'; // move down 1px account for border-bottom overlap
-        isScrollingUp = true;
-      }
-    } else if (scrollPositionChange > 2 && !menuIsVisible) {
-      // Scrolling down
-      headerContainer.style.zIndex = '0';
-      headerContainer.style.opacity = '0';
-      headerContainer.style.borderBottom = 'none'; // remove border-bottom
-      pageWrapper.style.position = 'relative'; // move down 1px account for border-bottom overlap
-      isScrollingUp = false;
-
-      // Clear any previously scheduled timeout
-      clearTimeout(timeout);
-
-      // Add a timeout function to bring the header back to opacity 1
-      timeout = setTimeout(() => {
-        headerContainer.style.opacity = '1';
-      }, 150); // Adjust the delay (in milliseconds) as per your preference
+    function isHomepageAndLargeScreenWidth() {
+      return (window.location.pathname === '/' || window.location.pathname === '/index.html') && window.innerWidth > 640;
+    }
+    
+    function isHomepageAndLargeScreenHeight() {
+      return (window.location.pathname === '/' || window.location.pathname === '/index.html') && window.innerHeight > 1000;
     }
 
-    adjustCSSForMenuVisibility();
+    function headerHomepageAboveSmallScreens() {
+      if (isHomepageAndLargeScreenWidth()) {
+        headerContainer.style.position = 'fixed';
+        headerContainer.style.zIndex = '3';
 
-    previousScrollPosition = currentScrollPosition;
+        pageWrapper.style.position = 'fixed';
+        pageWrapper.style.display = 'flex';
+        pageWrapper.style.flexDirection = 'column';
+        pageWrapper.style.width = '100%';
+
+        sectionGraphicScrollEffect.style.top = 'var(--header-height-desktop)';
+        sectionGraphicScrollEffect.style.backdropFilter = 'blur(0)';
+
+
+        footerScrollEffect.style.zIndex = '3';
+        footerScrollEffect.style.zIndex = '2';
+      }
+      else if (isHomepageAndLargeScreenHeight()) {
+        sectionGraphicScrollEffect.style.minHeight = 'calc(100vh - var(--header-height-desktop) - var(--footer-height-mob) - 0.5rem)';
+      } else {
+        headerContainer.style.position = '';
+        headerContainer.style.zIndex = '';
+    
+        pageWrapper.style.position = '';
+        pageWrapper.style.display = '';
+        pageWrapper.style.flexDirection = '';
+        pageWrapper.style.width = '';
+
+        if (sectionGraphicScrollEffect) {
+          sectionGraphicScrollEffect.style.top = '';
+          sectionGraphicScrollEffect.style.backdropFilter = '';
+          sectionGraphicScrollEffect.style.minHeight = '';
+        }
+    
+        footerScrollEffect.style.zIndex = '';
+        footerScrollEffect.style.zIndex = '';
+      }
+    }
+
+    function resetHeaderStyles() {
+      if (isHomepageAndLargeScreenWidth()) {
+          headerContainer.style.zIndex = '';
+          headerContainer.style.opacity = '';
+          headerContainer.style.borderBottom = '';
+      }
+    }
+
+    window.addEventListener('scroll', function() {
+      const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+      const scrollPositionChange = currentScrollPosition - previousScrollPosition;
+
+      if (isHomepageAndLargeScreenWidth() && isHomepageAndLargeScreenHeight()) return;
+
+      if (scrollPositionChange < -6) {
+        // Scrolling up
+        if (!isScrollingUp) {
+          headerContainer.style.zIndex = '8';
+          headerContainer.style.opacity = '1';
+          headerContainer.style.borderBottom = 'var(--section-border-width) solid var(--color-primary)'; // add border-bottom
+          pageWrapper.style.position = 'relative'; // move down 1px account for border-bottom overlap
+          pageWrapper.style.top = 'var(--section-border-width-minus)'; // move down 1px account for border-bottom overlap
+          isScrollingUp = true;
+        }
+      } else if (scrollPositionChange > 2 && !menuIsVisible) {
+        // Scrolling down
+        headerContainer.style.zIndex = '0';
+        headerContainer.style.opacity = '0';
+        headerContainer.style.borderBottom = 'none'; // remove border-bottom
+        pageWrapper.style.position = 'relative'; // move down 1px account for border-bottom overlap
+        isScrollingUp = false;
+
+        // Clear any previously scheduled timeout
+        clearTimeout(timeout);
+
+        // Add a timeout function to bring the header back to opacity 1
+        timeout = setTimeout(() => {
+          headerContainer.style.opacity = '1';
+        }, 150); // Adjust the delay (in milliseconds) as per your preference
+      }
+
+      adjustCSSForMenuVisibility();
+
+      previousScrollPosition = currentScrollPosition;
+    });
+
+    function adjustCSSForMenuVisibility() {
+      // Check menu visibility and adjust CSS
+      if (menuIsVisible && window.innerWidth < 1100) {
+        pageWrapper.style.top = 'var(--header-height-mob)';
+        headerContainer.style.position = 'fixed';
+        headerContainer.style.zIndex = '8';
+      } else {
+        pageWrapper.style.top = 'var(--section-border-width-minus)';
+        headerContainer.style.position = '';
+
+        timeout = setTimeout(() => {
+          headerContainer.style.position = '';
+        }, 150); // Adjust the delay (in milliseconds) as per your preference
+      }
+    }
+
+    function adjustCSSForMenuVisibilityDesktop() {
+      // Check menu visibility and adjust CSS
+      if (menuIsVisible && window.innerWidth > 1100) {
+        menu.classList.remove('visible');
+        menuOverlay.classList.add('form-hide');
+        menuOverlay.classList.remove('z-index-3');
+      }
+    }
+
+    // Listen for window resize events
+    // window.addEventListener('resize', adjustCSSForMenuVisibility);
+    // window.addEventListener('resize', adjustCSSForMenuVisibilityDesktop);
+    window.addEventListener('resize', function() {
+      if (isHomepageAndLargeScreenWidth() && isHomepageAndLargeScreenHeight()) {
+        resetHeaderStyles();
+        headerHomepageAboveSmallScreens();
+        return;
+      }
+      
+      adjustCSSForMenuVisibility();
+      adjustCSSForMenuVisibilityDesktop();
+      headerHomepageAboveSmallScreens(); // Call it here
+
+    });
+
+    headerHomepageAboveSmallScreens();
+  }
+
+  runScript();  // Run the script initially
+
+  window.addEventListener('resize', function() {
+    runScript();  // Run the script again whenever the window is resized
   });
 
-  function adjustCSSForMenuVisibility() {
-    // Check menu visibility and adjust CSS
-    if (menuIsVisible && window.innerWidth < 1100) {
-      pageWrapper.style.top = 'var(--header-height-mob)';
-      headerContainer.style.position = 'fixed';
-      headerContainer.style.zIndex = '8';
-    } else {
-      pageWrapper.style.top = 'var(--section-border-width-minus)';
-      headerContainer.style.position = 'sticky';
-    }
-  }
 
-  function adjustCSSForMenuVisibilityDesktop() {
-    // Check menu visibility and adjust CSS
-    if (menuIsVisible && window.innerWidth > 1100) {
-      menu.classList.remove('visible');
-      menuOverlay.classList.add('form-hide');
-      menuOverlay.classList.remove('z-index-3');
-    }
-  }
-
-  // Listen for window resize events
-  window.addEventListener('resize', adjustCSSForMenuVisibility);
-  window.addEventListener('resize', adjustCSSForMenuVisibilityDesktop);
-});
-
-// modal slide
-document.addEventListener("DOMContentLoaded", function() {
+  // modal slide
   const formTrigger = document.getElementById('formTriggerOpen');
   const  formTriggerThree = document.getElementById('formTriggerThree');
   const  formTriggerThreeDesktop = document.getElementById('formTriggerThreeDesktop');
@@ -865,6 +938,7 @@ document.addEventListener("DOMContentLoaded", function() {
     event.preventDefault();
     formToggle();
   });
+
   formOverlay.addEventListener('click', formToggle);
   contactFormTriggerTwo.addEventListener('click', formToggle);
   formTriggerThree.addEventListener('click', formToggle);
@@ -939,12 +1013,9 @@ document.addEventListener("DOMContentLoaded", function() {
       submitButton.textContent = "Error!";
       console.error(error);
     });
-  });  
-  
-});
+  });    
 
-// copyright popup
-document.addEventListener('DOMContentLoaded', function() {
+  // copyright popup
   const copyrightLink = document.getElementById('copyrightLink');
   const copyrightLinkTwo = document.getElementById('copyrightLinkTwo');
   const copyrightMessageToggle = document.getElementById('copyrightMessageToggle');
@@ -980,70 +1051,136 @@ document.addEventListener('DOMContentLoaded', function() {
 
   copyrightMessageToggle.addEventListener('click', creditsToggle);
   copyrightOverlay.addEventListener('click', creditsToggle);
-});
 
-// marquees
-document.addEventListener("DOMContentLoaded", function() {
   // Marquee 1
-  const marqueeText1 = document.getElementById("contactFormMarqueeTitle");
-  const marqueeContainer1 = document.getElementById("contact-form-footer");
-  let marqueeTextWidth1 = marqueeText1.offsetWidth;
-  let marqueeParentWidth1 = marqueeContainer1.offsetWidth;
-  const formPositionElement = document.getElementById("formPosition");
+  // const marqueeText1 = document.getElementById("contactFormMarqueeTitle");
+  // const marqueeContainer1 = document.getElementById("contact-form-footer");
+  // let marqueeTextWidth1 = marqueeText1.offsetWidth;
+  // let marqueeParentWidth1 = marqueeContainer1.offsetWidth;
+  // const formPositionElement = document.getElementById("formPosition");
 
-  const formTriggerOpenClick = document.getElementById("formTriggerOpen");
-  const formTriggerThreeClick = document.getElementById("formTriggerThree");
-  const formTriggerThreeClose = document.getElementById("contactFormTriggerTwo");
-  let shouldMarquee1Animate = false;
+  // const formTriggerOpenClick = document.getElementById("formTriggerOpen");
+  // const formTriggerThreeClick = document.getElementById("formTriggerThree");
+  // const formTriggerThreeClose = document.getElementById("contactFormTriggerTwo");
+  // let shouldMarquee1Animate = false;
 
-  formTriggerOpenClick.addEventListener("click", function() {
-    shouldMarquee1Animate = true;
-  });
+  // formTriggerOpenClick.addEventListener("click", function() {
+  //   shouldMarquee1Animate = true;
+  // });
 
-  formTriggerThreeClick.addEventListener("click", function() {
-    shouldMarquee1Animate = true;
-  });
+  // formTriggerThreeClick.addEventListener("click", function() {
+  //   shouldMarquee1Animate = true;
+  // });
 
-  formTriggerThreeClose.addEventListener("click", function() {
-    shouldMarquee1Animate = false;
-  });
+  // formTriggerThreeClose.addEventListener("click", function() {
+  //   shouldMarquee1Animate = false;
+  // });
 
-  animate(marqueeText1, marqueeContainer1, () => marqueeTextWidth1, () => marqueeParentWidth1, () => !formPositionElement.classList.contains("slide-left") && shouldMarquee1Animate);
+  // animate(marqueeText1, marqueeContainer1, () => marqueeTextWidth1, () => marqueeParentWidth1, () => !formPositionElement.classList.contains("slide-left") && shouldMarquee1Animate);
 
-  // Marquee 2
-  const marqueeText2 = document.getElementById("contactFormMarqueeTitleTwo");
-  const marqueeContainer2 = document.getElementById("contact-form-menu");
-  let marqueeTextWidth2 = marqueeText2.offsetWidth;
-  let marqueeParentWidth2 = marqueeContainer2.offsetWidth;
-  const mobileMenuDropDown = document.getElementById("mobileMenuDropDown");
+  // // Marquee 2
+  // const marqueeText2 = document.getElementById("contactFormMarqueeTitleTwo");
+  // const marqueeContainer2 = document.getElementById("contact-form-menu");
+  // let marqueeTextWidth2 = marqueeText2.offsetWidth;
+  // let marqueeParentWidth2 = marqueeContainer2.offsetWidth;
+  // const mobileMenuDropDown = document.getElementById("mobileMenuDropDown");
 
-  animate(marqueeText2, marqueeContainer2, () => marqueeTextWidth2, () => marqueeParentWidth2, () => mobileMenuDropDown.classList.contains("visible"));
+  // animate(marqueeText2, marqueeContainer2, () => marqueeTextWidth2, () => marqueeParentWidth2, () => mobileMenuDropDown.classList.contains("visible"));
 
-  function animate(element, container, getTextWidth, getParentWidth, shouldAnimate) {
-    let baseValue = 0;
-    function step() {
-      if (shouldAnimate()) {
-        baseValue -= 2; // decrease baseValue by 2 pixels on each frame
-        element.style.marginLeft = baseValue + "px";
-        if (baseValue <= -getTextWidth()) {
-          baseValue = getParentWidth();
-        }
-      }
-      requestAnimationFrame(step);
+  // function animate(element, container, getTextWidth, getParentWidth, shouldAnimate) {
+  //   let baseValue = 0;
+  //   function step() {
+  //     if (shouldAnimate()) {
+  //       baseValue -= 2; // decrease baseValue by 2 pixels on each frame
+  //       element.style.marginLeft = baseValue + "px";
+  //       if (baseValue <= -getTextWidth()) {
+  //         baseValue = getParentWidth();
+  //       }
+  //     }
+  //     requestAnimationFrame(step);
+  //   }
+  //   requestAnimationFrame(step);
+  // }
+
+  // window.addEventListener("resize", function() {
+  //   marqueeTextWidth1 = marqueeText1.offsetWidth;
+  //   marqueeParentWidth1 = marqueeContainer1.offsetWidth;
+  //   marqueeTextWidth2 = marqueeText2.offsetWidth;
+  //   marqueeParentWidth2 = marqueeContainer2.offsetWidth;
+  // });
+
+  // svg resize
+  if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+    const centerElement = document.getElementById('logotypeSvgWidthCenter');
+    const topElement = document.getElementById('logotypeSvgWidthTop');
+    const bottomElement = document.getElementById('logotypeSvgWidthBottom');
+    
+    // Update centerElement width and height
+    centerElement.style.width = '100%';
+    centerElement.style.height = 'fit-content';
+    topElement.style.width = 'fit-content%';
+    topElement.style.height = 'fit-content';
+    bottomElement.style.width = 'fit-content%';
+    bottomElement.style.height = 'fit-content';
+
+    function updateHeight() {
+      // Calculate centerHeight based on the first SVG inside the centerElement
+      const centerHeight = window.getComputedStyle(centerElement.querySelector('.logotype--svg')).height;
+      // console.log('Calculated centerHeight:', centerHeight);
+    
+      // Apply the height to all SVGs in each anchor tag
+      [topElement, centerElement, bottomElement].forEach(el => {
+        // console.log('Setting height for SVGs in element:', el.id);
+    
+        el.querySelectorAll('.logotype--svg').forEach(svg => {
+          // console.log('Before setting height for SVG:', svg.id, 'current height is:', svg.style.height);
+          svg.style.height = centerHeight;
+          // console.log('After setting height for SVG:', svg.id, 'current height is:', svg.style.height);
+        });
+      });
     }
-    requestAnimationFrame(step);
+
+    window.addEventListener('resize', () => {
+      // Reset the heights before updating
+      [topElement, centerElement, bottomElement].forEach(el => {
+        el.querySelectorAll('.logotype--svg').forEach(svg => {
+          svg.style.height = '';
+        });
+      });
+    
+      // Now call the updateHeight function to set the new heights
+      updateHeight();
+    });
+    
+
+  // Delayed initial height update
+    setTimeout(updateHeight, 500); // Delay execution by 500ms
   }
 
-  window.addEventListener("resize", function() {
-    marqueeTextWidth1 = marqueeText1.offsetWidth;
-    marqueeParentWidth1 = marqueeContainer1.offsetWidth;
-    marqueeTextWidth2 = marqueeText2.offsetWidth;
-    marqueeParentWidth2 = marqueeContainer2.offsetWidth;
-  });
-});
+  document.querySelectorAll(".logotype--a-top, .logotype--a-center, .logotype--a-bottom").forEach(el => {
+    const svgs = el.querySelectorAll('.logotype--svg');
+    const originalAnimationDurations = new Map();
 
-// last updated
-document.addEventListener('DOMContentLoaded', function() {
+    svgs.forEach(svg => {
+      let animationDuration = window.getComputedStyle(svg).animationDuration;
+      originalAnimationDurations.set(svg, animationDuration);
+    });
+
+    el.addEventListener("mouseover", () => {
+      svgs.forEach(svg => {
+        svg.style.animation = `slide ${originalAnimationDurations.get(svg)} linear infinite`;
+      });
+    });
+    
+    el.addEventListener("mouseleave", () => {
+      svgs.forEach(svg => {
+        svg.style.animation = `slideBack 0.35s forwards`;
+      });
+    });
+  });
+  
+
+  // last updated
   fetch('https://api.github.com/repos/chrisedwardsdesign/chrisedwardsdesign.github.io/commits')
   .then(response => response.json())
   .then(data => {
@@ -1051,7 +1188,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const formattedDate = lastCommitDate.toLocaleDateString();
     const notificationElements = document.querySelectorAll('.last-updated');
     notificationElements.forEach(element => {
-      element.innerText = `Updated: ${formattedDate}`;
+      element.innerText = `Edited: ${formattedDate}`;
     });
   })
   .catch(error => console.error('Error fetching commit data:', error));
