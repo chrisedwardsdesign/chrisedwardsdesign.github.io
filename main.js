@@ -174,7 +174,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     function createCustomContent() {
       const playButton = document.createElement('div');
       playButton.id = 'play-button';
-      playButton.className = 'play-button uppercase';
+      playButton.className = 'play-button play-button--color-alt uppercase';
     
       const svgElem = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
       svgElem.setAttribute('width', '9');
