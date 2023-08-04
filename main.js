@@ -516,179 +516,173 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 
   // video
-function checkViewport() {
-  return window.innerWidth > 640;
-}
+  let videoContainers; // Declare videoContainers variable at the start
 
+  function checkViewport() {
+    return window.innerWidth > 640;
+  }
 
-function playVideo(video, thumbnail, playButton, videoOverlay) {
-  video.play().then(function() {
-    thumbnail.style.display = "none";
-    playButton.style.display = "none";
-    videoOverlay.style.display = "none";
-  }).catch(function(error) {
-    console.log("Autoplay was prevented:", error);
-    thumbnail.style.display = "flex";
-    playButton.style.display = "flex";
-    videoOverlay.style.display = "flex";
-  });
-}
-
-// Array to store videos that were playing when the tab became inactive
-let videosPlayingWhenTabInactive = [];
-
-function autoplayAllVideos(videoContainers) {
-  if (window.location.pathname === '/animation.html' && checkViewport()) {
-    videoContainers.forEach(container => {
-      let video = container.querySelector(".video-content");
-      let thumbnail = container.querySelector(".thumbnail");
-      let playButton = container.querySelector(".play-button");
-      let videoOverlay = container.querySelector(".container--video--overlay");
-
-      let observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            playVideo(video, thumbnail, playButton, videoOverlay);
-          } else if (!video.paused) {
-            video.pause();
-            thumbnail.style.display = "flex";
-            playButton.style.display = "flex";
-            videoOverlay.style.display = "flex";
-          }
-        });
-      }, { threshold: 0.1 });
-
-      observer.observe(video);
+  function playVideo(video, thumbnail, playButton, videoOverlay) {
+    video.play().then(function() {
+      thumbnail.style.display = "none";
+      playButton.style.display = "none";
+      videoOverlay.style.display = "none";
+    }).catch(function(error) {
+      console.log("Autoplay was prevented:", error);
+      thumbnail.style.display = "flex";
+      playButton.style.display = "flex";
+      videoOverlay.style.display = "flex";
     });
   }
-}
 
+  let videosPlayingWhenTabInactive = [];
 
-function autoplayFirstVideo(videoContainers) {
-  if ((window.location.pathname === '/design.html' || window.location.pathname === '/ux-code.html') && checkViewport()) {
-  // if ((window.location.pathname === '/design.html' || window.location.pathname === '/ux-code.html')) {
-    let video = videoContainers[0].querySelector(".video-content");
-    let thumbnail = videoContainers[0].querySelector(".thumbnail");
-    let playButton = videoContainers[0].querySelector(".play-button");
-    let videoOverlay = videoContainers[0].querySelector(".container--video--overlay");
+  function autoplayAllVideos(videoContainers) {
+    if (window.location.pathname === '/animation.html' && checkViewport()) {
+      videoContainers.forEach(container => {
+        let video = container.querySelector(".video-content");
+        let thumbnail = container.querySelector(".thumbnail");
+        let playButton = container.querySelector(".play-button");
+        let videoOverlay = container.querySelector(".container--video--overlay");
 
-    playVideo(video, thumbnail, playButton, videoOverlay);
-  }
-}
-
-if (window.location.pathname === '/index.html' || window.location.pathname === '/design.html' || window.location.pathname === '/animation.html' || window.location.pathname === '/ux-code.html') {
-
-  const videoContainers = document.querySelectorAll(".container--video");
-
-  videoContainers.forEach((container) => {
-    const video = container.querySelector(".video-content");
-    const thumbnail = container.querySelector(".thumbnail");
-    const playButton = container.querySelector(".play-button");
-    const videoOverlay = container.querySelector(".container--video--overlay");
-
-    function lazyLoadVideo() {
-      if ('IntersectionObserver' in window) {
-        const observer = new IntersectionObserver(function(entries, observer) {
+        let observer = new IntersectionObserver(function(entries) {
           entries.forEach(function(entry) {
             if (entry.isIntersecting) {
-              let sourceElements = entry.target.querySelectorAll("source");
-              sourceElements.forEach(function(source) {
-                if (!source.src) {
-                  source.src = source.dataset.src;
-                }
-              });
-              observer.unobserve(entry.target);
+              playVideo(video, thumbnail, playButton, videoOverlay);
+            } else if (!video.paused) {
+              video.pause();
+              thumbnail.style.display = "flex";
+              playButton.style.display = "flex";
+              videoOverlay.style.display = "flex";
             }
           });
-        });
+        }, { threshold: 0.1 });
 
         observer.observe(video);
-      } else {
-        const sourceElements = video.querySelectorAll("source");
-        sourceElements.forEach(function(source) {
-          if (!source.src) {
-            source.src = source.dataset.src;
-          }
-        });
-      }
-    }
-
-    function handlePlayButtonClick() {
-      playVideo(video, thumbnail, playButton, videoOverlay);
-    }
-
-    function handleVideoClick() {
-      if (video.paused) {
-        playVideo(video, thumbnail, playButton, videoOverlay);
-      } else {
-        video.pause();
-        thumbnail.style.display = "flex";
-        playButton.style.display = "flex";
-        videoOverlay.style.display = "flex";
-      }
-    }
-
-    function handleVideoEnded() {
-      video.currentTime = 0;
-      video.play();
-    }
-
-    lazyLoadVideo();
-    playButton.addEventListener("click", handlePlayButtonClick);
-    video.addEventListener("click", handleVideoClick);
-    video.addEventListener("ended", handleVideoEnded);
-
-  });
-
-  autoplayAllVideos(videoContainers);
-  autoplayFirstVideo(videoContainers);
-}
-
-// Preconnect to video source
-if (window.location.pathname === '/design.html' || window.location.pathname === '/animation.html' || window.location.pathname === '/ux-code.html') {
-
-  if ("connection" in navigator) {
-    const videoSource = document.querySelector("#video source");
-    if (videoSource) {
-      const videoUrl = videoSource.src;
-      const urlObj = new URL(videoUrl);
-      const origin = urlObj.origin;
-      navigator.connection.addEventListener("change", function() {
-        const effectiveType = navigator.connection.effectiveType;
-        if (effectiveType === "4g" || effectiveType === "3g") {
-          const link = document.createElement("link");
-          link.rel = "preconnect";
-          link.href = origin;
-          document.head.appendChild(link);
-        }
       });
     }
   }
-}
 
-// Listen for visibility changes
-document.addEventListener('visibilitychange', function() {
-  if (document.hidden) {
-    // The tab is not active, pause all videos that are playing and remember them
-    videosPlayingWhenTabInactive = []; // Clear the array
-    videoContainers.forEach(container => {
+  function autoplayFirstVideo(videoContainers) {
+    if ((window.location.pathname === '/design.html' || window.location.pathname === '/ux-code.html') && checkViewport()) {
+      let video = videoContainers[0].querySelector(".video-content");
+      let thumbnail = videoContainers[0].querySelector(".thumbnail");
+      let playButton = videoContainers[0].querySelector(".play-button");
+      let videoOverlay = videoContainers[0].querySelector(".container--video--overlay");
+
+      playVideo(video, thumbnail, playButton, videoOverlay);
+    }
+  }
+
+  // Check the pathname and then define videoContainers if it matches
+  if (window.location.pathname === '/index.html' || window.location.pathname === '/design.html' || window.location.pathname === '/animation.html' || window.location.pathname === '/ux-code.html') {
+    videoContainers = document.querySelectorAll(".container--video");
+  }
+
+  if (videoContainers) {
+    videoContainers.forEach((container) => {
       const video = container.querySelector(".video-content");
-      if (!video.paused) {
-        video.pause();
-        videosPlayingWhenTabInactive.push(video); // Remember this video was playing
+      const thumbnail = container.querySelector(".thumbnail");
+      const playButton = container.querySelector(".play-button");
+      const videoOverlay = container.querySelector(".container--video--overlay");
+
+      function lazyLoadVideo() {
+        if ('IntersectionObserver' in window) {
+          const observer = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(function(entry) {
+              if (entry.isIntersecting) {
+                let sourceElements = entry.target.querySelectorAll("source");
+                sourceElements.forEach(function(source) {
+                  if (!source.src) {
+                    source.src = source.dataset.src;
+                  }
+                });
+                observer.unobserve(entry.target);
+              }
+            });
+          });
+
+          observer.observe(video);
+        } else {
+          const sourceElements = video.querySelectorAll("source");
+          sourceElements.forEach(function(source) {
+            if (!source.src) {
+              source.src = source.dataset.src;
+            }
+          });
+        }
+      }
+
+      function handlePlayButtonClick() {
+        playVideo(video, thumbnail, playButton, videoOverlay);
+      }
+
+      function handleVideoClick() {
+        if (video.paused) {
+          playVideo(video, thumbnail, playButton, videoOverlay);
+        } else {
+          video.pause();
+          thumbnail.style.display = "flex";
+          playButton.style.display = "flex";
+          videoOverlay.style.display = "flex";
+        }
+      }
+
+      function handleVideoEnded() {
+        video.currentTime = 0;
+        video.play();
+      }
+
+      lazyLoadVideo();
+      playButton.addEventListener("click", handlePlayButtonClick);
+      video.addEventListener("click", handleVideoClick);
+      video.addEventListener("ended", handleVideoEnded);
+
+    });
+
+    autoplayAllVideos(videoContainers);
+    autoplayFirstVideo(videoContainers);
+  }
+
+  if (window.location.pathname === '/design.html' || window.location.pathname === '/animation.html' || window.location.pathname === '/ux-code.html') {
+    if ("connection" in navigator) {
+      const videoSource = document.querySelector("#video source");
+      if (videoSource) {
+        const videoUrl = videoSource.src;
+        const urlObj = new URL(videoUrl);
+        const origin = urlObj.origin;
+        navigator.connection.addEventListener("change", function() {
+          const effectiveType = navigator.connection.effectiveType;
+          if (effectiveType === "4g" || effectiveType === "3g") {
+            const link = document.createElement("link");
+            link.rel = "preconnect";
+            link.href = origin;
+            document.head.appendChild(link);
+          }
+        });
+      }
+    }
+
+    document.addEventListener('visibilitychange', function() {
+      if (document.hidden) {
+        videosPlayingWhenTabInactive = [];
+        videoContainers.forEach(container => {
+          const video = container.querySelector(".video-content");
+          if (!video.paused) {
+            video.pause();
+            videosPlayingWhenTabInactive.push(video);
+          }
+        });
+      } else {
+        videosPlayingWhenTabInactive.forEach(video => {
+          const thumbnail = video.parentElement.querySelector(".thumbnail");
+          const playButton = video.parentElement.querySelector(".play-button");
+          const videoOverlay = videoContainers[0].querySelector(".container--video--overlay");
+          playVideo(video, thumbnail, playButton, videoOverlay);
+        });
       }
     });
-  } else {
-    // The tab is active again, resume videos that were playing
-    videosPlayingWhenTabInactive.forEach(video => {
-      const thumbnail = video.parentElement.querySelector(".thumbnail");
-      const playButton = video.parentElement.querySelector(".play-button");
-      const videoOverlay = videoContainers[0].querySelector(".container--video--overlay");
-      playVideo(video, thumbnail, playButton, videoOverlay);
-    });
-  }
-});
-
+}
 
   // mobile menu
   let menuIsVisible = false; // Variable to track menu visibility
