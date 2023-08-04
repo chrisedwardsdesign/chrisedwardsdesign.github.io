@@ -516,9 +516,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 
   // video
-// function checkViewport() {
-//   return window.innerWidth > 640;
-// }
+function checkViewport() {
+  return window.innerWidth > 640;
+}
 
 
 function playVideo(video, thumbnail, playButton, videoOverlay) {
@@ -538,8 +538,7 @@ function playVideo(video, thumbnail, playButton, videoOverlay) {
 let videosPlayingWhenTabInactive = [];
 
 function autoplayAllVideos(videoContainers) {
-  // if (window.location.pathname === '/animation.html' && checkViewport()) {
-  if (window.location.pathname === '/animation.html') {
+  if (window.location.pathname === '/animation.html' && checkViewport()) {
     videoContainers.forEach(container => {
       let video = container.querySelector(".video-content");
       let thumbnail = container.querySelector(".thumbnail");
@@ -566,8 +565,8 @@ function autoplayAllVideos(videoContainers) {
 
 
 function autoplayFirstVideo(videoContainers) {
-  // if ((window.location.pathname === '/design.html' || window.location.pathname === '/ux-code.html') && checkViewport()) {
-  if ((window.location.pathname === '/design.html' || window.location.pathname === '/ux-code.html')) {
+  if ((window.location.pathname === '/design.html' || window.location.pathname === '/ux-code.html') && checkViewport()) {
+  // if ((window.location.pathname === '/design.html' || window.location.pathname === '/ux-code.html')) {
     let video = videoContainers[0].querySelector(".video-content");
     let thumbnail = videoContainers[0].querySelector(".thumbnail");
     let playButton = videoContainers[0].querySelector(".play-button");
