@@ -162,7 +162,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       perPage: 1,
       autoplay: true,
       speed: 1500,
-      interval: 15000,
+      interval: 14000,
       pauseOnHover: false,
       pauseOnFocus: false,
       resetProgress: false,
