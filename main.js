@@ -1,4 +1,23 @@
 document.addEventListener("DOMContentLoaded", function(event) {
+  window.onload = function() {
+    if (window.location.pathname === '/index.html') {
+      let sectionMediaHeight = document.getElementById('sectionMedia');
+      let computedStyle = window.getComputedStyle(sectionMediaHeight);
+      let sectionMediaheightCalc = parseFloat(computedStyle.getPropertyValue('height'));
+      
+      console.log('Computed Height of sectionMedia:', sectionMediaheightCalc);
+      document.documentElement.style.setProperty('--sectionMedia-height', sectionMediaheightCalc + 'px');
+
+      let elementSectionGraphic = document.getElementById('sectionGraphic');
+      let elementSectionGraphiccomputedStyle = window.getComputedStyle(elementSectionGraphic);
+      let elementSectionGraphiccomputedStyleCalc = parseFloat(elementSectionGraphiccomputedStyle.getPropertyValue('height'));
+      
+      console.log('Computed Height of sectionMedia:', elementSectionGraphiccomputedStyleCalc);
+      
+      document.documentElement.style.setProperty('--section-graphic-height', elementSectionGraphiccomputedStyleCalc + 'px');
+    }
+  }
+
   const body = document.querySelector('body');
   const themeStyle = document.getElementById('theme-style');
   const darkTextDesktop = document.getElementById('darkTextDesktop');
@@ -143,7 +162,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       perPage: 1,
       autoplay: true,
       speed: 1500,
-      interval: 6000,
+      interval: 15000,
       pauseOnHover: false,
       pauseOnFocus: false,
       resetProgress: false,
@@ -239,22 +258,22 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }
     
   else if (window.location.pathname === '/design.html' || 
-          //  window.location.pathname === '/animation.html' || 
-           window.location.pathname === '/ux-code.html') {
+    // window.location.pathname === '/animation.html' || 
+    window.location.pathname === '/ux-code.html') {
     // Initialize regular Splide
-    const splideDesign = new Splide('.splide', {
-      type: 'loop',
-      perPage: 1,
-      autoplay: true,
-      speed: 2000,
-      interval: 3500,
-      pauseOnHover: false,
-      pauseOnFocus: false,
-      resetProgress: true,
-      arrows: true,
-      width: '100%',
-    }).mount();
-  }
+      const splideDesign = new Splide('.splide', {
+        type: 'loop',
+        perPage: 1,
+        autoplay: true,
+        speed: 2000,
+        interval: 3500,
+        pauseOnHover: false,
+        pauseOnFocus: false,
+        resetProgress: true,
+        arrows: true,
+        width: '100%',
+      }).mount();
+    }
 
   // custom reusable accordion logic
   let timeOuts = {};
@@ -516,30 +535,45 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 
   // video
-  let videoContainers; // Declare videoContainers variable at the start
+let videoContainers; // Declare videoContainers variable at the start
 
-  function checkViewport() {
-    return window.innerWidth > 640;
+const PATHS = {
+  INDEX: '/index.html',
+  DESIGN: '/design.html',
+  ANIMATION: '/animation.html',
+  UX_CODE: '/ux-code.html',
+};
+
+function checkViewport() {
+  return window.innerWidth > 0;
+}
+
+async function playVideo(video, thumbnail, playButton, videoOverlay) {
+  try {
+    if (video.readyState < 2) {  // Check if video metadata has loaded
+      await new Promise((resolve, reject) => {
+        video.addEventListener('loadedmetadata', resolve);
+        video.addEventListener('error', reject);
+      });
+    }
+
+    await video.play();
+
+    thumbnail.style.display = "none";
+    playButton.style.display = "none";
+    videoOverlay.style.display = "none";
+  } catch (error) {
+    console.error("Error playing video: ", error);
+    // consider providing more user-friendly error handling here
   }
+}
 
-  function playVideo(video, thumbnail, playButton, videoOverlay) {
-    video.play().then(function() {
-      thumbnail.style.display = "none";
-      playButton.style.display = "none";
-      videoOverlay.style.display = "none";
-    }).catch(function(error) {
-      console.log("Autoplay was prevented:", error);
-      thumbnail.style.display = "flex";
-      playButton.style.display = "flex";
-      videoOverlay.style.display = "flex";
-    });
-  }
+let videosPlayingWhenTabInactive = [];
 
-  let videosPlayingWhenTabInactive = [];
-
-  function autoplayAllVideos(videoContainers) {
-    if (window.location.pathname === '/animation.html' && checkViewport()) {
-      videoContainers.forEach(container => {
+function autoplayAllVideos(videoContainers) {
+  if (window.location.pathname === PATHS.ANIMATION && checkViewport()) {
+    setTimeout(() => {
+      videoContainers.forEach((container, index) => {
         let video = container.querySelector(".video-content");
         let thumbnail = container.querySelector(".thumbnail");
         let playButton = container.querySelector(".play-button");
@@ -556,35 +590,29 @@ document.addEventListener("DOMContentLoaded", function(event) {
               videoOverlay.style.display = "flex";
             }
           });
-        }, { threshold: 0.1 });
+        }, { threshold: 0.1, rootMargin: '200px 0px' }); // Start loading the video a bit before it enters the viewport
 
         observer.observe(video);
+
+        // Autoplay first video when page loads
+        if (container.getAttribute("data-video") === "1") {
+          playVideo(video, thumbnail, playButton, videoOverlay);
+        }
       });
-    }
+    }, 2000); // Add a delay here
   }
+}
 
-  function autoplayFirstVideo(videoContainers) {
-    if ((window.location.pathname === '/design.html' || window.location.pathname === '/ux-code.html') && checkViewport()) {
-      let video = videoContainers[0].querySelector(".video-content");
-      let thumbnail = videoContainers[0].querySelector(".thumbnail");
-      let playButton = videoContainers[0].querySelector(".play-button");
-      let videoOverlay = videoContainers[0].querySelector(".container--video--overlay");
+if ([PATHS.INDEX, PATHS.DESIGN, PATHS.ANIMATION, PATHS.UX_CODE].includes(window.location.pathname)) {
+  videoContainers = document.querySelectorAll(".container--video");
+}
 
-      playVideo(video, thumbnail, playButton, videoOverlay);
-    }
-  }
-
-  // Check the pathname and then define videoContainers if it matches
-  if (window.location.pathname === '/index.html' || window.location.pathname === '/design.html' || window.location.pathname === '/animation.html' || window.location.pathname === '/ux-code.html') {
-    videoContainers = document.querySelectorAll(".container--video");
-  }
-
-  if (videoContainers) {
-    videoContainers.forEach((container) => {
-      const video = container.querySelector(".video-content");
-      const thumbnail = container.querySelector(".thumbnail");
-      const playButton = container.querySelector(".play-button");
-      const videoOverlay = container.querySelector(".container--video--overlay");
+if (videoContainers) {
+  videoContainers.forEach((container) => {
+    const video = container.querySelector(".video-content");
+    const thumbnail = container.querySelector(".thumbnail");
+    const playButton = container.querySelector(".play-button");
+    const videoOverlay = container.querySelector(".container--video--overlay");
 
       function lazyLoadVideo() {
         if ('IntersectionObserver' in window) {
@@ -641,7 +669,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     });
 
     autoplayAllVideos(videoContainers);
-    autoplayFirstVideo(videoContainers);
+    // autoplayFirstVideo(videoContainers);
   }
 
   if (window.location.pathname === '/design.html' || window.location.pathname === '/animation.html' || window.location.pathname === '/ux-code.html') {
@@ -682,7 +710,19 @@ document.addEventListener("DOMContentLoaded", function(event) {
         });
       }
     });
-}
+
+      window.onload = function() {
+        // Check if the user's device is an iPhone or iPad
+        if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) {
+            // Select all videos
+            const videos = document.querySelectorAll('.video-content');
+            videos.forEach(video => {
+                video.click();
+            });
+        }
+    };
+
+  }
 
   // mobile menu
   let menuIsVisible = false; // Variable to track menu visibility
@@ -755,7 +795,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   function runScript() {
     const pageWrapper = document.getElementById('page-wrapper');
     const footerScrollEffect = document.getElementById('footer--container');
-    const sectionGraphicScrollEffect = document.getElementById('sectionGrapahic');
+    const sectionGraphicScrollEffect = document.getElementById('sectionGraphic');
     let previousScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
     let isScrollingUp = false;
     let timeout;
