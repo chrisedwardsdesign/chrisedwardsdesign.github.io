@@ -4393,8 +4393,8 @@ svg#contactChevronClose.menu--svg-arrow-down {
   color: var(--color-secondary);
   background-color: var(--background-color-secondary);
   border: none!important;
-  transition: background-color 0.15s ease-out;
-
+  /* transition: background-color 0.15s ease-out; */
+  opacity: 1!important;
 }
 
 .accordion-content--link:hover svg {
