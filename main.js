@@ -161,8 +161,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
       type: 'loop',
       perPage: 1,
       autoplay: true,
-      speed: 1500,
-      interval: 14000,
+      speed: 1400,
+      interval: 15000,
       pauseOnHover: false,
       pauseOnFocus: false,
       resetProgress: false,
@@ -257,23 +257,22 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     }
     
-  else if (window.location.pathname === '/design.html' || 
-    // window.location.pathname === '/animation.html' || 
-    window.location.pathname === '/ux-code.html') {
-    // Initialize regular Splide
-      const splideDesign = new Splide('.splide', {
-        type: 'loop',
-        perPage: 1,
-        autoplay: true,
-        speed: 2000,
-        interval: 3500,
-        pauseOnHover: false,
-        pauseOnFocus: false,
-        resetProgress: true,
-        arrows: true,
-        width: '100%',
-      }).mount();
-    }
+  // else if (window.location.pathname === '/design.html'|| window.location.pathname === '/ui-code.html') {
+  else if (window.location.pathname === '/design.html') {
+  // Initialize regular Splide
+    const splideDesign = new Splide('.splide', {
+      type: 'loop',
+      perPage: 1,
+      autoplay: true,
+      speed: 2000,
+      interval: 3500,
+      pauseOnHover: false,
+      pauseOnFocus: false,
+      resetProgress: true,
+      arrows: true,
+      width: '100%',
+    }).mount();
+  }
 
   // custom reusable accordion logic
   let timeOuts = {};
@@ -463,7 +462,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
           if (svg) {
               toggleSvg(svg.open, svg.close);
           }
-        }  else if (window.location.pathname === '/' || window.location.pathname === '/design.html' || window.location.pathname === '/cv.html' || window.location.pathname === '/ux-code.html' || window.location.pathname === '/animation.html') {
+        }  else if (window.location.pathname === '/' || window.location.pathname === '/design.html' || window.location.pathname === '/cv.html' || window.location.pathname === '/ui-code.html' || window.location.pathname === '/animation.html') {
           if (svg) {
             toggleSvg(svg.close, svg.open);
           }
@@ -528,7 +527,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       openContentOnResize(triggersAndElements.filter(item => item.element1 === 'sectionContent' || 'contentXl'));
       setSvgState('contactChevronOpenDesktop', 'contactChevronCloseDesktop', 'contentXl');
       setSvgState('accordionPlusOpen', 'accordionPlusClose', 'sectionContent');
-    } else if (window.location.pathname === '/design.html' || window.location.pathname === '/animation.html' || window.location.pathname === '/ux-code.html') {
+    } else if (window.location.pathname === '/design.html' || window.location.pathname === '/animation.html' || window.location.pathname === '/ui-code.html') {
       closeContentOnResize(triggersAndElements.filter(item => item.element1 === 'sectionContent' || 'contentXl'));
     }
   });
@@ -541,7 +540,7 @@ const PATHS = {
   INDEX: '/index.html',
   DESIGN: '/design.html',
   ANIMATION: '/animation.html',
-  UX_CODE: '/ux-code.html',
+  UI_CODE: '/ui-code.html',
 };
 
 function checkViewport() {
@@ -572,6 +571,8 @@ let videosPlayingWhenTabInactive = [];
 
 function autoplayAllVideos(videoContainers) {
   if (window.location.pathname === PATHS.ANIMATION && checkViewport()) {
+  // if ((window.location.pathname === PATHS.ANIMATION || window.location.pathname === PATHS.UI_CODE) && checkViewport()) {
+
     setTimeout(() => {
       videoContainers.forEach((container, index) => {
         let video = container.querySelector(".video-content");
@@ -603,7 +604,7 @@ function autoplayAllVideos(videoContainers) {
   }
 }
 
-if ([PATHS.INDEX, PATHS.DESIGN, PATHS.ANIMATION, PATHS.UX_CODE].includes(window.location.pathname)) {
+if ([PATHS.INDEX, PATHS.DESIGN, PATHS.ANIMATION, PATHS.UI_CODE].includes(window.location.pathname)) {
   videoContainers = document.querySelectorAll(".container--video");
 }
 
@@ -672,7 +673,7 @@ if (videoContainers) {
     // autoplayFirstVideo(videoContainers);
   }
 
-  if (window.location.pathname === '/design.html' || window.location.pathname === '/animation.html' || window.location.pathname === '/ux-code.html') {
+  if (window.location.pathname === '/design.html' || window.location.pathname === '/animation.html' || window.location.pathname === '/ui-code.html') {
     if ("connection" in navigator) {
       const videoSource = document.querySelector("#video source");
       if (videoSource) {
@@ -811,7 +812,7 @@ if (videoContainers) {
     function headerHomepageAboveSmallScreens() {
       if (isHomepageAndLargeScreenWidth()) {
         headerContainer.style.position = 'fixed';
-        headerContainer.style.zIndex = '3';
+        headerContainer.style.zIndex = '4';
 
         pageWrapper.style.position = 'fixed';
         pageWrapper.style.display = 'flex';
