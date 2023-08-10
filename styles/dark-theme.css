@@ -27,3 +27,7 @@ body {
   /* opacity: 0; */
   /* transition: opacity 0.350s ease-in-out; */
 }
+
+.bg-color--primary {
+  background-color: var(--background-color-primary);
+}
