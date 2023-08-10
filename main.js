@@ -990,7 +990,7 @@ if (videoContainers) {
     }
   
     var formData = new FormData(formElement);
-    var submitButton = document.querySelector("#maintenance--form-submit");
+    var submitButton = document.querySelector("#contact-form--submit");
   
     fetch(formElement.action, {
       method: formElement.method,
