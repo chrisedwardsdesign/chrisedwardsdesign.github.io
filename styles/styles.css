@@ -56,6 +56,10 @@
   --background-color-primary: #0E1419;
 
   --background-color-primary--muted: #14191d;
+  --background-color-primary--muted-2: #cfcfcf;
+
+  --background-color-primary--muted-ui: #192025;
+  --background-color-primary--muted-dot-ui: #383f44;
 
   --background-color-primary-transp: #0e1419b3;
   --background-color-primary-transp-2: #0e141936;
@@ -241,6 +245,48 @@ a {
 img {
   width: 100%;
   height: 100%;
+}
+
+.link--cv {
+  text-decoration: underline;
+}
+
+.link--cv:hover {
+  text-decoration: underline;
+}
+
+.link--cv:visited {
+  text-decoration: underline;
+}
+
+.link--certificate {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  height: fit-content;
+  width: fit-content;
+  align-items: center;
+  justify-self: start;
+  align-self: end;
+  position: sticky;
+  top: 1rem;
+  border: var(--component-border-width) solid var(--color-primary)!important;
+  background-color: transparent;
+  color: var(--color-primary);
+}
+
+.link--certificate svg {
+  stroke: var(--color-primary);
+}
+
+.link--certificate:hover {
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  opacity: 1;
+}
+
+.link--certificate:hover svg {
+  stroke: var(--color-secondary);
 }
 
 .link--main, .link--main--cv {
@@ -2628,6 +2674,42 @@ input:autofill {
 }
 /* end of cv link buttons */
 
+/* video ui elements */
+
+.border-top-right-left-s {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.custom--ui-mockup {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: fit-content;
+  padding: 0.75rem;
+  background-color: var(--background-color-primary--muted-ui);
+  z-index: 3;
+}
+
+.custom--ui-mockup--dot--container {
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  height: fit-content;
+  gap: 0.5rem;
+}
+
+.custom--ui-mockup--dot--container span {
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: var(--background-color-primary--muted-dot-ui);
+  border-radius: 0.5rem;
+}
+
+/* end of video ui elements */
+
 .grid-col-1 {
   grid-column: 1;
 }
@@ -2685,6 +2767,11 @@ input:autofill {
 .grid-row-2 {
   grid-row: 2;
 }
+
+.grid-row-2--important {
+  grid-row: 2!important;
+}
+
 
 .grid-row-3 {
   grid-row: 3;
@@ -3398,7 +3485,7 @@ input:autofill {
   aspect-ratio: 16 / 9;
   opacity: 1;
   transition: all 0.35s;
-  background-color: var(--background-color-primary--muted);
+  /* background-color: var(--background-color-primary--muted); */
 }
 
 .media .splide__slide__container {
@@ -3438,8 +3525,17 @@ input:autofill {
   gap: 0;
 }
 
+.gap-s {
+  gap: 1rem;
+
+}
+
 .gap-none--important {
   gap: 0!important;
+}
+
+.row-gap-s {
+  row-gap: 1rem;
 }
 
 .row-gap-none {
@@ -4371,7 +4467,19 @@ svg#contactChevronClose.menu--svg-arrow-down {
 }
 
 .color-bg-grey {
-  background-color: var(--background-color-grey)!important;
+  background-color: var(--background-color-grey);
+}
+
+.color-bg-grey--muted {
+  background-color: var(--background-color-primary--muted);
+}
+
+.color-bg-grey--muted-2 {
+  background-color: var(--background-color-primary--muted-2);
+}
+
+.color-bg-grey--muted-3 {
+  background-color: var(--background-color-primary--muted);
 }
 
 .mt-xs {
@@ -4428,6 +4536,18 @@ svg#contactChevronClose.menu--svg-arrow-down {
 
 .mb-xl {
   margin-bottom: 4rem;
+}
+
+.section--ui-padding {
+  padding: 4rem;
+}
+
+.section--ui-column-gap {
+  column-gap: 4rem;
+}
+
+.p-m {
+  padding: 2rem;
 }
 
 .pt-xxs {
@@ -4610,6 +4730,11 @@ svg#contactChevronClose.menu--svg-arrow-down {
   background-color: var(--background-color-secondary);
 }
 
+.bg-color--unset {
+  background-color: unset;
+}
+
+
 .border-radius-max {
   border-radius: 1rem;
 }
@@ -4628,6 +4753,10 @@ svg#contactChevronClose.menu--svg-arrow-down {
 
 .border-top--none {
   border-top: none;
+}
+
+.border-top--none-important {
+  border-top: none!important;
 }
 
 .border-top--one {
@@ -4709,12 +4838,20 @@ svg#contactChevronClose.menu--svg-arrow-down {
   justify-self: flex-end;
 }
 
+.justify-items-center {
+  justify-items: center;
+}
+
 .align-self-end {
   align-self: end;
 }
 
 .flex-start {
   align-items: flex-start;
+}
+
+.flex-grow-1 {
+  flex-grow: 1;
 }
 
 .align-base {
@@ -4769,6 +4906,14 @@ svg#contactChevronClose.menu--svg-arrow-down {
   height: 100vh;
 }
 
+.height-auto {
+  height: auto;
+}
+
+.width-auto {
+  width: auto;
+}
+
 .max-height--header-height {
   max-height: var(--header-height-desktop);
 }
@@ -4781,12 +4926,20 @@ svg#contactChevronClose.menu--svg-arrow-down {
   position: relative;
 }
 
+.absolute {
+  position: absolute;
+}
+
 .overflow-unset {
   overflow: unset;
 }
 
 .overflow-hiden {
   overflow: hidden;
+}
+
+.overflow-y-scroll {
+  overflow-y: scroll;
 }
 
 .opacity-zero {
@@ -4820,6 +4973,10 @@ svg#contactChevronClose.menu--svg-arrow-down {
 
 .grid-auto-rows-minmax {
   grid-auto-rows: minmax(auto, 1fr);
+}
+
+.grid-auto-rows--min-content {
+  grid-auto-rows: min-content;
 }
 
 .grid-cols--unset {
@@ -4958,6 +5115,93 @@ svg#contactChevronClose.menu--svg-arrow-down {
 }
 
 @media only screen and (max-width: 640px) {
+  .md\:row-gap-s {
+    row-gap: 1rem;
+  }
+  .md\:row-gap-m {
+    row-gap: 2rem;
+  }
+  .md\:pt-s {
+    padding-top: 1rem;
+  }
+  .md\:pb-s {
+    padding-bottom: 1rem;
+  }
+  .md\:pr-s {
+    padding-right: 1rem;
+  }
+  .md\:pl-s {
+    padding-left: 1rem;
+  }
+  .md\:pt-m {
+    padding-top: 2rem;
+  }
+  .md\:pb-m {
+    padding-bottom: 2rem;
+  }
+  .md\:pr-m {
+    padding-right: 2rem;
+  }
+  .md\:pl-m {
+    padding-left: 2rem;
+  }
+  .md\:p-m {
+    padding: 2rem;
+  }
+  .md\:w100 {
+    width: 100%!important;
+  }
+  .md\:h100 {
+    width: 100%!important;
+  }
+  .md\:wfit {
+    width: fit-content!important;
+  }
+  .md\:hfit {
+    width: fit-content!important;
+  }
+  .md\:mt-s {
+    margin-top: 1rem;
+  }
+  .md\:mr-s {
+    margin-right: 1rem;
+  }
+  .md\:mb-s {
+    margin-bottom: 1rem;
+  }
+  .md\:ml-s {
+    margin-left: 1rem;
+  }
+  .md\:mt-m {
+    margin-top: 2rem;
+  }
+  .md\:mr-m {
+    margin-right: 2rem;
+  }
+  .md\:mb-m {
+    margin-bottom: 2rem;
+  }
+  .md\:ml-m {
+    margin-left: 2rem;
+  }
+  .md\:mt-l {
+    margin-top: 3rem;
+  }
+  .md\:mb-l {
+    margin-bottom: 3rem;
+  }
+  .md\:mr-l {
+    margin-right: 3rem;
+  }
+  .md\:ml-l {
+    margin-left: 3rem;
+  }
+  .md\:section--ui-padding {
+    padding: 3rem;
+  }
+  .md\:section--ui-column-gap {
+    column-gap: 3rem;
+  }
   .md\:relative {
     position: relative;
   }
@@ -5106,6 +5350,10 @@ svg#contactChevronClose.menu--svg-arrow-down {
 
   .md\:aspect-ratio-4-5 {
     aspect-ratio: 4 / 5!important;
+  }
+
+  .md\:aspect-ratio-2-3 {
+    aspect-ratio: 2 / 3!important;
   }
 
   .md\:aspect-ratio-1-1 {
@@ -5279,6 +5527,18 @@ svg#contactChevronClose.menu--svg-arrow-down {
 }
 
 @media only screen and (max-width: 760px) {
+  .mdt\:w100 {
+    width: 100%;
+  }
+  .mdt\:h100 {
+    width: 100%;
+  }
+  .mdt\:wfit {
+    width: fit-content;
+  }
+  .mdt\:hfit {
+    width: fit-content;
+  }
   .mdt\:relative {
     position: relative;
   }
@@ -5371,6 +5631,14 @@ svg#contactChevronClose.menu--svg-arrow-down {
   .mdt\:grid-row-2 {
     grid-row: 2;
   }
+
+  .mdt\:grid-row-1--important {
+    grid-row: 1!important;
+  }
+  
+  .mdt\:grid-row-2--important {
+    grid-row: 2!important;
+  }
   
   .mdt\:grid-row-3 {
     grid-row: 3;
@@ -5395,8 +5663,17 @@ svg#contactChevronClose.menu--svg-arrow-down {
   .mdt\:grid-row-8 {
     grid-row: 8;
   }
-  .mdt\:grid-col-1-3 {
+  .mdt\:grid-col-1-2{
+    grid-column: 1 / 2;
+  }
+  .mdt\:grid-col-1-2--important {
+    grid-column: 1 / 2!important;
+  }
+  .mdt\:grid-col-1-3{
     grid-column: 1 / 3;
+  }
+  .mdt\:grid-col-1-3-important {
+    grid-column: 1 / 3!important;
   }
   .mdt\:grid-col-1-5 {
     grid-column: 1 / 5;
@@ -5470,6 +5747,24 @@ svg#contactChevronClose.menu--svg-arrow-down {
 }
 
 @media only screen and (min-width: 640px) {
+  .lg\:w100 {
+    width: 100%;
+  }
+  .lg\:h100 {
+    width: 100%;
+  }
+  .lg\:wfit {
+    width: fit-content;
+  }
+  .lg\:hfit {
+    width: fit-content;
+  }
+  .lg\:section--ui-padding {
+    padding: 4rem;
+  }
+  .lg\:section--ui-column-gap {
+    column-gap: 4rem;
+  }
   .lg\:pb-0 {
     padding-bottom: 0;
   }
@@ -5633,6 +5928,10 @@ svg#contactChevronClose.menu--svg-arrow-down {
     aspect-ratio: 16 / 9!important;
   }
 
+  .lg\:aspect-ratio-2-3 {
+    aspect-ratio: 2 / 3!important;
+  }
+
   .lg\:aspect-ratio-4-5 {
     aspect-ratio: 4 / 5!important;
   }
@@ -5691,6 +5990,10 @@ svg#contactChevronClose.menu--svg-arrow-down {
 
   .lg\:grid-col-1-5 {
     grid-column: 1 / 5;
+  }
+
+  .lg\:grid-col-2-5 {
+    grid-column: 2 / 5;
   }
 
   .lg\:grid-col-1-9 {
@@ -6069,6 +6372,21 @@ svg#contactChevronClose.menu--svg-arrow-down {
   }
 }
 
+@media only screen and (max-width: 1100px) {
+  .lgma\:gap-xs {
+    gap: 0.5rem;
+  }
+  .lgma\:justify-content-start {
+    justify-content: flex-start;
+  }
+  .lgma\:grid-row-2 {
+    grid-row: 2;
+  }
+  .lgma\:grid-col-1-3 {
+    grid-column: 1 / 3;
+  }
+}
+
 @media only screen and (min-width: 1100px) {
   .lgm\:height-100vh {
     height: 100vh;
@@ -6162,7 +6480,16 @@ svg#contactChevronClose.menu--svg-arrow-down {
   }
 }
 
+@media only screen and (max-width: 1280px) {
+  .lgbta\:grid-col-1-3 {
+    grid-column: 1 / 3;
+  }
+}
+
 @media only screen and (min-width: 1280px) {
+  .lgbt\:100vh {
+    height: 100vh;
+  }
   .lgbt\:height-100vh {
     height: 100vh;
   }
@@ -6243,7 +6570,19 @@ svg#contactChevronClose.menu--svg-arrow-down {
   }
 }
 
+@media only screen and (max-width: 1440px) {
+  .lgba\:grid-col-1-3 {
+    grid-column: 1 / 3;
+  }
+}
+
 @media only screen and (min-width: 1360px) {
+  .lgb\:100vh {
+    height: 100vh;
+  }
+  .lgb\:aspect-ratio-9-4 {
+    aspect-ratio: 9 / 4;
+  }
   .lgb\:grid-auto-cols--minmax {
     grid-auto-columns: minmax(auto, 1fr);
   }
@@ -6333,7 +6672,10 @@ svg#contactChevronClose.menu--svg-arrow-down {
   }
 }
 
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1601px) {
+  .lgbg\:height-fit {
+    height: fit-content;
+  }
   .lgbg\:grid-auto-cols--minmax {
     grid-auto-columns: minmax(auto, 1fr);
   }
@@ -6445,9 +6787,12 @@ svg#contactChevronClose.menu--svg-arrow-down {
 }
 
 /* LARGEST SIZE */
-@media only screen and (min-width: 1441px) {
+@media only screen and (min-width: 1602px) {
   .lgbgb\:height-fit {
     height: fit-content;
+  }
+  .lgbgb\:100vh {
+    height: 100vh;
   }
   .lgbgb\:grid-auto-cols--minmax {
     grid-auto-columns: minmax(auto, 1fr);
