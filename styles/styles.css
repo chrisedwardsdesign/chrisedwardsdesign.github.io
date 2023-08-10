@@ -2486,12 +2486,12 @@ section {
   position: relative;
 }
 
-@media only screen and (max-width: 640px) {
+/* @media only screen and (max-width: 640px) {
   #menuPlusOpen.nav--menu-svg-close,
   #menuPlusClose.nav--menu-svg-close-2 {
     display: none;
   }
-}
+} */
 
 .nav--menu-svg-close-2 {
   width: 18px;
@@ -3527,7 +3527,6 @@ input:autofill {
 
 .gap-s {
   gap: 1rem;
-
 }
 
 .gap-none--important {
@@ -4195,9 +4194,22 @@ input:autofill {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 18px;
-  height: 18px;
+  /* width: 18px; */
+  height: fit-content;
   cursor: pointer;
+  gap: 0.5rem;
+}
+
+@media only screen and (max-width: 640px) {
+  .mobile-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    gap: 1rem;
+  }
 }
 
 @media only screen and (min-width: 640px) and (max-width: 1100px) {
@@ -4206,7 +4218,7 @@ input:autofill {
   }
 }
 
-@media only screen and (min-width: 640px) {
+@media only screen and (min-width: 960px) {
   #menuPlusOpen.nav--menu-svg-close, #menuPlusClose.nav--menu-svg-close-2 {
     display: none;
   }
@@ -4289,7 +4301,8 @@ input:autofill {
 
 svg#accordionPlusOpen.menu--svg-arrow-up,
 svg#contactChevronOpenDesktop.menu--svg-arrow-up,
-svg#contactChevronOpen.menu--svg-arrow-up {
+svg#contactChevronOpen.menu--svg-arrow-up,
+svg#menuPlusOpen.menu--svg-arrow-up {
   stroke: var(--color-primary);
   height: 1rem;
   width: 1rem;
@@ -4301,7 +4314,8 @@ svg#contactChevronOpen.menu--svg-arrow-up {
 
 svg#accordionPlusClose.menu--svg-arrow-down,
 svg#contactChevronCloseDesktop.menu--svg-arrow-down,
-svg#contactChevronClose.menu--svg-arrow-down {
+svg#contactChevronClose.menu--svg-arrow-down,
+svg#menuPlusClose.menu--svg-arrow-down {
   stroke: var(--color-primary);
   height: 1rem;
   width: 1rem;
@@ -5125,6 +5139,18 @@ svg#contactChevronClose.menu--svg-arrow-down {
   }
 }
 
+@media only screen and (max-width: 840px) {
+  .hide-on-mini {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .hide-on-macbook {
+    display: none;
+  }
+}
+
 @media only screen and (min-width: 641px) {
   .hide-on-desktop {
     display: none;
@@ -5135,6 +5161,9 @@ svg#contactChevronClose.menu--svg-arrow-down {
 }
 
 @media only screen and (max-width: 640px) {
+  .md\:gap-s {
+    gap: 1rem;
+  }
   .md\:row-gap-s {
     row-gap: 1rem;
   }
@@ -5248,7 +5277,7 @@ svg#contactChevronClose.menu--svg-arrow-down {
   }
   .md\:toggle-mobile-adjust {
     position: relative;
-    right: calc(40px + 1rem);
+    right: calc(69.9px + 1rem);
   }
   .md\:justify-self-end {
     justify-self: flex-end;
