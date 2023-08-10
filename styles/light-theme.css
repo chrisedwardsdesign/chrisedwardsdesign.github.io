@@ -23,6 +23,10 @@
   --background-color-primary: #dddddd;
   --background-color-primary-transp: #0E1419a6;
 
+  --background-color-primary--muted-ui: #dcdcdc;
+  --background-color-primary--muted-dot-ui: #bdbdbd;
+
+
   --background-color-primary-glass-form: #dddddd;
 
   --background-color-primary-transp-glass: #0e141900;
@@ -334,6 +338,10 @@ body {
   }
 }
 
+.color-bg-grey {
+  background-color: var(--background-color-grey)!important;
+}
+
 .bg-color--primary {
   background-color: var(--background-color-primary);
 }
@@ -420,4 +428,12 @@ body {
 
 .play-button--color-alt:hover svg {
   fill: var(--color-secondary);
+}
+
+.color-bg-grey--muted {
+  background-color: var(--background-color-primary--muted);
+}
+
+.color-bg-grey--muted-3 {
+  background-color: #e8e7e7;
 }
