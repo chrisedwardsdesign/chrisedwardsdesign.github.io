@@ -4389,6 +4389,18 @@ svg#contactChevronClose.menu--svg-arrow-down {
   flex-direction: column;
 }
 
+.accordion-content--link:hover {
+  color: var(--color-secondary);
+  background-color: var(--background-color-secondary);
+  border: none!important;
+  transition: background-color 0.15s ease-out;
+
+}
+
+.accordion-content--link:hover svg {
+  stroke: var(--color-secondary)!important;
+}
+
 .mobile-menu--cv {
   display: flex;
   flex-direction: column;
