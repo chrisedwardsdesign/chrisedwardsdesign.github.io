@@ -726,28 +726,57 @@ if (videoContainers) {
   }
 
   // mobile menu
-  let menuIsVisible = false; // Variable to track menu visibility
+let menuIsVisible = false; // Variable to track menu visibility
 
-  // mobile menu
-  const menuButton = document.getElementById('menu-button'); // Store menu button
-  const headerContainer = document.getElementById('header--container');
-  const menuOverlay = document.getElementById('menuOverlay');
-  const menu = document.querySelector('.mobile-menu--container');
+// Store menu button
+const menuButton = document.getElementById('menu-button');
+const headerContainer = document.getElementById('header--container');
+const menuOverlay = document.getElementById('menuOverlay');
+const menu = document.querySelector('.mobile-menu--container');
 
+// Store SVG icons
+const menuPlusOpen = document.getElementById('menuPlusOpen');
+const menuPlusClose = document.getElementById('menuPlusClose');
+const menuPlusOpenTwo = document.getElementById('menuPlusOpenTwo');
+const menuPlusCloseTwo = document.getElementById('menuPlusCloseTwo');
 
-  menuButton.addEventListener('click', function() {
-    headerContainer.style.zIndex = '8';
-    menu.classList.toggle('visible');
-    menuIsVisible = menu.classList.contains('visible'); // Update variable
-    menuOverlay.classList.toggle('form-hide');
-    menuOverlay.classList.toggle('z-index-3');
-  });
+// Function to update SVG icon states
+function updateSvgIcons() {
+  if (menuIsVisible) {
+    menuPlusOpen.classList.add('svg-hide');
+    menuPlusClose.classList.remove('svg-hide');
+    menuPlusOpenTwo.classList.add('svg-hide');
+    menuPlusCloseTwo.classList.remove('svg-hide');
+  } else {
+    menuPlusOpen.classList.remove('svg-hide');
+    menuPlusClose.classList.add('svg-hide');
+    menuPlusOpenTwo.classList.remove('svg-hide');
+    menuPlusCloseTwo.classList.add('svg-hide');
+  }
+}
 
-  menuOverlay.addEventListener('click', function() {
-    menu.classList.remove('visible');
-    menuOverlay.classList.toggle('form-hide');
-    menuOverlay.classList.toggle('z-index-3');
-  });
+// Toggle menu visibility on menu button click
+menuButton.addEventListener('click', function() {
+  headerContainer.style.zIndex = '8';
+  menu.classList.toggle('visible');
+  menuIsVisible = menu.classList.contains('visible');
+  updateSvgIcons(); // Update SVG icon states
+  menuOverlay.classList.toggle('form-hide');
+  menuOverlay.classList.toggle('z-index-3');
+});
+
+// Toggle menu and overlay on overlay click
+menuOverlay.addEventListener('click', function() {
+  menu.classList.remove('visible');
+  menuIsVisible = false; // Update menu visibility variable
+  updateSvgIcons(); // Update SVG icon states
+  menuOverlay.classList.toggle('form-hide');
+  menuOverlay.classList.toggle('z-index-3');
+});
+
+// Call the update function initially
+updateSvgIcons();
+
 
   // accordion menu
   let accordionItems = Array.from(document.querySelectorAll('.accordion-item'));
