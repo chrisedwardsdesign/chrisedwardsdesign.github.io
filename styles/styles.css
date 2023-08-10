@@ -4397,6 +4397,10 @@ svg#contactChevronClose.menu--svg-arrow-down {
   opacity: 1!important;
 }
 
+.accordion-content--link:visited {
+  opacity: 1!important;
+}
+
 .accordion-content--link:hover svg {
   stroke: var(--color-secondary)!important;
 }
