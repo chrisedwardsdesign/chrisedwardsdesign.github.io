@@ -1539,9 +1539,10 @@ section {
   }
 }
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 640px) {
   .logotype--svg-container {
     grid-column: 1 / 3!important;
+    margin-top: 0.5rem!important;
   }
 }
 
