@@ -1326,6 +1326,12 @@ section {
   }
 }
 
+@media only screen and (max-width: 760px) {
+  logotype--svg-container {
+    grid-column: 1 / 2!important;
+  }
+}
+
 @media only screen and (max-width: 690px) {
   #aboutTriggerTablet {
     display: none;
