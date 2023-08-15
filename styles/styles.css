@@ -1670,7 +1670,7 @@ section {
   }
 }
 
-@media only screen and (min-width: 1100px) and (max-width: 1360px) and (min-height: 760px) {
+@media only screen and (min-width: 1360px) and (max-width: 1360px) and (min-height: 760px) {
   .intro-text-desktop {
     font-size: 1.25rem;
   }
