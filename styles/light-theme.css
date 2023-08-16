@@ -320,6 +320,10 @@ body {
   font-weight: 400;
 }
 
+.font--intro {
+  font-weight: 500;
+}
+
 .splide-design .splide__pagination__page:before {
   counter-increment: pagination-num;
   content: counter( pagination-num );
