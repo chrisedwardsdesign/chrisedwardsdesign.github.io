@@ -283,16 +283,7 @@ body {
   .content--container--grid {
       padding: 0 1rem 1rem;
   }
-  .footer--container {
-    /* border-top: var(--component-border-width) solid var(--color-primary); */
-  }
 }
-
-/* @media only screen and (max-width: 760px) {
-  .footer--container {
-    border-top: var(--component-border-width) solid var(--color-primary);
-  }
-} */
 
 .contact-form--marquee-container #contactFormMarqueeTitle {
   color: var(--color-secondary);
