@@ -1534,7 +1534,7 @@ section {
   }
 }
 
-@media only screen and (min-width: 640px) and (max-width: 840px) and (max-height: 760px) {
+@media only screen and (min-width: 640px) and (max-width: 1100px) and (max-height: 760px) {
   .logotype--svg-container {
     opacity: 0;
   }
