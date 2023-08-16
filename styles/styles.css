@@ -1220,6 +1220,12 @@ section {
   grid-column: 2 / 5;
 }
 
+@media only screen and (max-width: 640px) {
+  .logotype--svg-inner {
+    gap: 0.5rem;
+  }
+}
+
 @media only screen and (min-width: 1440px) {
 .logotype--svg-inner {
     grid-column: 1 / 2;
@@ -1707,6 +1713,9 @@ section {
 @media only screen and (min-width: 1360px) and (max-height: 640px) {
   .logotype--svg-container {
     grid-column: 3 / 5!important;
+  }
+  .logotype--svg-inner {
+    gap: 0.5rem;
   }
 }
 
