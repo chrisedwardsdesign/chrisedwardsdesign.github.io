@@ -5328,6 +5328,10 @@ svg#menuPlusClose.menu--svg-arrow-down {
   font-weight: 400;
 }
 
+.font--intro {
+  font-weight: 400;
+}
+
 .italic {
   font-style: italic;
 }
