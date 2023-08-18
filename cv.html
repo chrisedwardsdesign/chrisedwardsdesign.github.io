@@ -23,16 +23,70 @@
     <link rel="stylesheet" href="splide-extension-video-master/dist/css/splide-extension-video.min.css">
     <link rel="license" href="/license.txt">
     <!-- Preload important scripts -->
-    <link rel="preload" href="splide/dist/js/splide.min.js" as="script">
-    <link rel="preload" href="splide-extension-video-master/dist/js/splide-extension-video.min.js" as="script">
+    <!-- <link rel="preload" href="splide/dist/js/splide.min.js" as="script">
+    <link rel="preload" href="splide-extension-video-master/dist/js/splide-extension-video.min.js" as="script"> -->
     <!-- Defer loading non-essential scripts -->
-    <script async src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
-    <script src="main.js" type="module" defer></script>
+    <!-- <script async src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+    <script src="main.js" type="module" defer></script> -->
     <!-- Defer loading essential scripts -->
-    <script src="splide/dist/js/splide.min.js" defer></script>
-    <script src="splide-extension-video-master/dist/js/splide-extension-video.min.js" defer></script>
+    <!-- <script src="splide/dist/js/splide.min.js" defer></script>
+    <script src="splide-extension-video-master/dist/js/splide-extension-video.min.js" defer></script> -->
   </head>
-  <body class="dark-mode">
+  <body class="dark-mode fixed">
+
+    <div class="site--maintenance-container display-flex fixed height-100vh w100">
+      <div class="site--maintenance--message grid justify-content-center align-items-center height-100 w100 gap-one">
+        <div class="w100 hfit grid-col-1 site--maintenance--text-color">
+          <h1 class="uppercase">Chris Edwards</h1>
+        </div>
+        <div class="display-flex flex-row gap-s wfit hfit grid-col-1 site--maintenance--text-color">
+          <div class="display-flex flex-row gap-xs">
+            <h3 class="uppercase">UI</h3>
+            <span class="uppercase">+</span>
+            <h3 class="uppercase">Code</h3>
+          </div>
+          <span class="uppercase">/</span>
+          <div class="display-flex flex-row gap-s">
+            <h3 class="uppercase">Animation</h3>
+          </div>
+          <span class="uppercase">/</span>
+          <div class="display-flex flex-row gap-xs">
+            <h3 class="uppercase">Design</h3>
+          </div>
+        </div>
+        <div class="display-flex flex-column w100 hfit gap-s align-flex-start grid-col-1 site--maintenance--text-color pb-xs">
+          <p class="intro-text-mob mdt:pt-s lg:pt-0 mdt:border-top--one-maintenance--text-color lg:border-top--one-maintenance--text-color text-l">
+            Manchester-based multidisciplinary designer with a strong focus in UI, digital, and motion design. My skillset also includes a good foundation in HTML, CSS, JavaScript, and Shopify Liquid, as well as some experience and a keen interest in 3D software.
+          </p>
+          <div class="intro-list--container-2">
+            <ul class="intro-list--row-1">
+              <li><p>Currently:</p><p>Freelance</p></li>
+              <li><p>Previously:</p><p>Digital Media Team Ltd.</p></li>
+              <li><p>Education:</p><p>Manchester Metropolition University</p></li>
+            </ul>
+          </div>
+          <a href="design.html" class="link--main-mob uppercase none">
+            <svg class="contact-form--link--svg" width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 1.35156L16 9.35156L8 17.3516" stroke="inherit" stroke-miterlimit="10"/>
+              <path d="M0 9.35156H16" stroke="inherit" stroke-miterlimit="10"/>
+            </svg>
+            <p>Explore My Portfolio</p>
+          </a>
+        </div>
+        <div class="display-flex flex-row gap-xs wfit hfit grid-col-1">
+          <span>
+            <p class="uppercase">Back soon</p>
+          </span>
+          <span>
+            <p class="">(website under maintenance).</p>
+          </span>
+        </div>
+        <div class="wfit hfit align-self-end grid-col-1 site--maintenance--text-color">
+          <p class="uppercase">© Copyright 2023</p>
+        </div>
+      </div>
+    </div>
+
     <div id="sessionOverlay">
       <div class="nav--logotype-container cursor-none" title="Page title: CV RÉSUMÉ">
         <h1 class="nav--logotype uppercase">Chris Edwards Design</h1>
@@ -40,7 +94,7 @@
         <h1 class="nav--logotype uppercase">CV RÉSUMÉ</h1>
       </div>
     </div>
-    <header id="header--container">
+    <header id="header--container none">
       <!-- desktop menu -->
       <!-- nav logo -->
       <nav id="navBar" aria-label="Desktop navigation menu" class="container--nav md:grid-auto-cols--minmax md:grid-cols--unset lgbgb:grid-auto-cols--minmax lgbgb:grid-cols--unset">
@@ -412,7 +466,7 @@
         <p class="credits-details">© Copyright 2023, Chris Edwards Design</p>
       </div>
     </section>
-    <div id="page-wrapper" class="page-wrapper">
+    <div id="page-wrapper" class="page-wrapper none">
       <main class="main--wrapper">
           <div id="innerWrapper" class="inner-wrapper">
             
