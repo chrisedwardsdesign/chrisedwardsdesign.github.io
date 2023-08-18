@@ -88,6 +88,8 @@
   --element-height-calc-divide-three-mulptiple-two: calc(var(--element-height-calc-divide-three) * 2);
 
   --element-section-graphic: var(--section-graphic-height);
+
+  --site-maintenance-text-color: #495861;
 }
 
 * {
@@ -3747,6 +3749,10 @@ input:autofill {
   gap: 0;
 }
 
+.gap-xs {
+  gap: 0.5rem;
+}
+
 .gap-s {
   gap: 1rem;
 }
@@ -5058,12 +5064,20 @@ svg#menuPlusClose.menu--svg-arrow-down {
   align-self: start;
 }
 
+.align-items-center {
+  align-items: center;
+}
+
 .justify-content-start {
   justify-content: flex-start;
 }
 
 .justify-self-end {
   justify-self: flex-end;
+}
+
+.justify-content-center {
+  justify-content: center;
 }
 
 .justify-items-center {
@@ -5801,6 +5815,9 @@ svg#menuPlusClose.menu--svg-arrow-down {
   
   .md\:grid-row-8 {
     grid-row: 8;
+  }
+  .md\:position-fixed--important {
+    position: fixed!important;
   }
 }
 
@@ -7198,5 +7215,60 @@ svg#menuPlusClose.menu--svg-arrow-down {
 @media only screen and (min-width: 1681px) {
   .lgbgbb\:grid-auto-rows--auto-min-content {
     grid-auto-rows: auto min-content;
+  }
+}
+
+/* site under maintenance */
+
+.site--maintenance--text-color {
+  color: var(--site-maintenance-text-color);
+}
+
+.border-top--one-maintenance--text-color {
+  border-top: var(--component-border-width) solid var(--site-maintenance-text-color);
+}
+
+.site--maintenance-container {
+  z-index: 99;
+  background-color: var(--background-color-primary);
+  padding: 1rem;
+}
+
+.site--maintenance-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+}
+
+.site--maintenance--message {
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: min-content min-content min-content min-content auto;
+}
+
+@media only screen and (max-width: 760px) {
+  .site--maintenance--message {
+    grid-template-columns: 1fr;
+    /* grid-auto-rows: min-content min-content min-content auto; */
+  }
+
+  .mdt\:border-top--one-maintenance--text-color {
+    border-top: var(--component-border-width) solid var(--site-maintenance-text-color);
+  }
+}
+
+@media only screen and (min-width: 760px) and (max-width: 1360px) {
+  .site--maintenance--message {
+    grid-template-columns: 1fr 1fr;
+    /* grid-auto-rows: min-content min-content min-content auto; */
+  }
+  .mdt\:border-top--one-maintenance--text-color {
+    border-top: none;
+  }
+}
+
+@media only screen and (min-width: 760px) {
+  .lg\:border-top--one-maintenance--text-color {
+    border-top: none;
   }
 }
