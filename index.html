@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- cv page -->
+<!-- homepage -->
 <html lang="en">
   <head>
     <meta charset="UTF-8">
@@ -34,7 +34,7 @@
   </head>
   <body class="dark-mode fixed">
 
-    <div class="site--maintenance-container display-flex fixed height-100vh w100">
+    <div class="site--maintenance-container display-flex fixed w100 h100">
       <div class="site--maintenance--message grid justify-content-center align-items-center height-100 w100 gap-one">
         <div class="w100 hfit grid-col-1 site--maintenance--text-color">
           <h1 class="uppercase">Chris Edwards</h1>
@@ -82,30 +82,42 @@
           </span>
         </div>
         <div class="wfit hfit align-self-end grid-col-1 site--maintenance--text-color">
-          <p class="uppercase">© Copyright 2023</p>
+          <p class="uppercase">© Copyright 2023, CUI</p>
         </div>
       </div>
     </div>
 
-    <div id="sessionOverlay">
-      <div class="nav--logotype-container cursor-none" title="Page title: CV RÉSUMÉ">
-        <h1 class="nav--logotype uppercase">Chris Edwards Design</h1>
-        <span class="uppercase">/</span>
-        <h1 class="nav--logotype uppercase">CV RÉSUMÉ</h1>
-      </div>
+    <div id="sessionOverlay" class="none">
+      <a class="nav--logotype-container" href="index.html" title="Homepage">
+        <div class="nav--logotype-container cursor-none" title="Page title: CV RÉSUMÉ">
+          <h1 class="nav--logotype uppercase">Chris Edwards Design</h1>
+        </div>
+      </a>
+
+      <section class="credits-content display-flex none">
+        <div class="credits-detials--container">
+          <h1 class="nav--logotype">CHRIS EDWARDS DESIGN</h1>
+
+          <p class="credits-details">This website has been customised and developed by myself, in an attempt to showcase my skills and creativity in design, user experience, and web development. From the visual design to the user interface, every aspect of this site reflects my dedication to creating an engaging and intuitive online portfolio.</p>
+          <p class="credits-details pb-s border-bottom--one-dashed">Hosted free on GitHub Pages. Thank you for visiting and exploring my website.</p>
+          <p class="credits-details">All content on this portfolio website is the property of Chris Edwards Design and is intended solely for portfolio and display purposes on GitHub Pages. Please note that this website is not used for business; it is hosted on a free plan and any unauthorized reproduction or commercial use is strictly prohibited</p>
+          <p class="credits-details">© Copyright 2023, Chris Edwards Design</p>
+        </div>
+      </section>
     </div>
-    <header id="header--container none">
+
+    <header id="header--container" class="lg:position-fixed--important lg:opacity-1-important bg-transparent--important none">
       <!-- desktop menu -->
       <!-- nav logo -->
-      <nav id="navBar" aria-label="Desktop navigation menu" class="container--nav md:grid-auto-cols--minmax md:grid-cols--unset lgbgb:grid-auto-cols--minmax lgbgb:grid-cols--unset">
-        <div id="aboutTriggerTabletLogoHome" class="nav--logo-container cursor-pointer lgbg:grid-col-1-3 grid-row-1">  
+      <nav id="navBar" aria-label="Desktop navigation menu" class="container--nav md:grid-auto-cols--minmax md:grid-cols--unset">
+        <div id="aboutTriggerTabletLogoHome" class="nav--logo-container cursor-pointer grid-row-1">  
           <a class="nav--logotype-container" href="index.html" title="Homepage">
             <h1 class="nav--logotype">CHRIS EDWARDS DESIGN</h1>
             <div class="nav--logo-line none"></div>
             <h1 class="nav--title none">DESIGN</h1>
           </a>
         </div>
-        <ul class="nav--links-left--desk lg:grid-col-3-5 lgb:grid-col-2-4 lgbg:grid-col-3-5">
+        <ul class="nav--links-left--desk lg:grid-col-3-5">
           <li>
             <a href="ui-code.html" title="Link to ux-code collection page">
               <h2 class="nav--link cursor-pointer">UI / CODE</h2>
@@ -122,7 +134,7 @@
             </a>
           </li>
         </ul>
-        <button id="toggleBtnDesktop" aria-label="Switch to toggle Dark and light mode" class="mode-switch--container cursor-pointer lgmm:grid-col-2-3 grid-row-1 md:toggle-mobile-adjust md:justify-self-end md:grid-col-2-3 lgbgb:grid-col-5-6">
+        <button id="toggleBtnDesktop" aria-label="Switch to toggle Dark and light mode" class="mode-switch--container cursor-pointer lgmm:grid-col-2-3 grid-row-1 md:toggle-mobile-adjust md:justify-self-end md:grid-col-2-3">
           <div id="darkTextDesktop" class="mode-switch--text-container none">
             <h2 aria-label="Switch to light mode" class="mode-switch--btn-text">DARK</h2>
           </div>
@@ -135,7 +147,7 @@
           </div>
         </button>      
       <!-- nav links right -->
-      <div class="nav--content-right lgbg:grid-col-7-9 md:width-fit">
+      <div class="nav--content-right md:width-fit">
         <button id="toggleBtnMobile" aria-label="Switch to toggle Dark and light mode" class="mode-switch--container cursor-pointer lg:grid-col-3-4 grid-row-1 hide-on-desktop hide-on-mob">
           <div class="mode-switch-btn--container">
             <div id="ledRightMobile" class="mode-switch--btn"></div>
@@ -147,62 +159,65 @@
           <div id="lightTextMobile" class="mode-switch--text-container toggle-text-switch">
             <h2 aria-label="Switch to dark mode" class="mode-switch--btn-text">LIGHT</h2>
           </div>
-        </button>        
-        <div class="hide-on-mob hide-on-mini grid-row-1">
+        </button>      
+        <div class="hide-on-mob grid-row-1">
           <a href="cv.html" title="Link to CV page">
             <h2 class="nav--link cursor-pointer">CV</h2>
           </a> 
         </div>
-        <div class="hide-on-mob hide-on-mini hide-on-macbook grid-row-1">
+        <div class="hide-on-mob grid-row-1">
           <a href="https://www.linkedin.com/in/chrisedwardsdesign" title="linkedIn Page External link to page" target="_blank">
             <h2 class="nav--link cursor-pointer uppercase">LinkedIn</h2>
           </a> 
         </div>
 
-          <div aria-label="About me" id="aboutTriggerTablet" class="nav--about-container cursor-pointer grid-row-1">
-            <h2 class="nav--contact-h2">ABOUT</h2>
-            <svg id="accordionPlusOpen" class="menu--svg-arrow-up" width="10" height="18" viewBox="0 0 10 18" fill="inherit" xmlns="http://www.w3.org/2000/svg">
-              <path d="M8.68521 16.6553L1.02513 8.99521L8.68522 1.33513" stroke="inherit" stroke-miterlimit="10"></path>
-            </svg>
-            <svg id="accordionPlusClose" class="menu--svg-arrow-down svg-hide" width="10" height="18" viewBox="0 0 10 18" fill="inherit" xmlns="http://www.w3.org/2000/svg">
-              <path d="M8.68521 16.6553L1.02513 8.99521L8.68522 1.33513" stroke="inherit" stroke-miterlimit="10"></path>
-            </svg>
-          </div>
-          <div aria-label="About me" id="aboutTriggerDesktop" class="nav--about-container grid-row-1">
-            <h2 class="nav--contact-h2">ABOUT</h2>
-            <svg id="contactChevronOpenDesktop" class="menu--svg-arrow-up" width="10" height="18" viewBox="0 0 10 18" fill="inherit" xmlns="http://www.w3.org/2000/svg">
-              <path d="M8.68521 16.6553L1.02513 8.99521L8.68522 1.33513" stroke="inherit" stroke-miterlimit="10"></path>
-            </svg>
-            <svg id="contactChevronCloseDesktop" class="menu--svg-arrow-down svg-hide" width="10" height="18" viewBox="0 0 10 18" fill="inherit" xmlns="http://www.w3.org/2000/svg">
-              <path d="M8.68521 16.6553L1.02513 8.99521L8.68522 1.33513" stroke="inherit" stroke-miterlimit="10"></path>
-            </svg>
-          </div>
-          <!-- contact form -->
-          <div id="formTriggerOpen" aria-label="Contact information and CV / RÉSUME" class="nav--contact-container">
-            <h2 class="nav--contact-h2">CONTACT</h2>
-            <svg id="contactChevronOpen" class="menu--svg-arrow-up" width="10" height="18" viewBox="0 0 10 18" fill="inherit" xmlns="http://www.w3.org/2000/svg">
-              <path d="M8.68521 16.6553L1.02513 8.99521L8.68522 1.33513" stroke="inherit" stroke-miterlimit="10"></path>
-            </svg>
-            <svg id="contactChevronClose" class="menu--svg-arrow-down svg-hide" width="10" height="18" viewBox="0 0 10 18" fill="inherit" xmlns="http://www.w3.org/2000/svg">
-              <path d="M8.68521 16.6553L1.02513 8.99521L8.68522 1.33513" stroke="inherit" stroke-miterlimit="10"></path>
-            </svg>
-          </div>
-          <div id="menu-button" aria-label="Menu open or collapse svg-hide" class="mobile-menu grid-row-1 md:gap-s">
-            <h2 class="nav--contact-h2">MENU</h2>
-            <svg id="menuPlusOpen" class="menu--svg-arrow-up svg-hide hide-on-mob" width="10" height="18" viewBox="0 0 10 18" fill="inherit" xmlns="http://www.w3.org/2000/svg">
-              <path d="M8.68521 16.6553L1.02513 8.99521L8.68522 1.33513" stroke="inherit" stroke-miterlimit="10"></path>
-            </svg>
-            <svg id="menuPlusClose" class="menu--svg-arrow-down hide-on-mob" width="10" height="18" viewBox="0 0 10 18" fill="inherit" xmlns="http://www.w3.org/2000/svg">
-              <path d="M8.68521 16.6553L1.02513 8.99521L8.68522 1.33513" stroke="inherit" stroke-miterlimit="10"></path>
-            </svg>
-  
-            <svg id="menuPlusOpenTwo" class="nav--menu-svg-close hide-on-desktop" width="18" height="18" viewBox="0 0 18 18" fill="inherit" xmlns="http://www.w3.org/2000/svg">
-              <path d="M0.686279 9.16797H18.6853M9.68579 0.167969L9.68579 18.167" stroke="#151714"/>
-            </svg>        
-            <svg id="menuPlusCloseTwo" class="nav--menu-svg-close-2 svg-hide hide-on-desktop" width="18" height="2" viewBox="0 0 16 2" fill="inherit" xmlns="http://www.w3.org/2000/svg">
-              <path d="M0 1.44922H16" stroke="inherit"/>
-            </svg>
-          </div>
+        <div aria-label="About me" id="aboutTriggerTablet" class="nav--about-container cursor-pointer grid-row-1 none">
+          <h2 class="nav--contact-h2">ABOUT</h2>
+          <svg id="accordionPlusOpen" class="menu--svg-arrow-up" width="10" height="18" viewBox="0 0 10 18" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.68521 16.6553L1.02513 8.99521L8.68522 1.33513" stroke="inherit" stroke-miterlimit="10"></path>
+          </svg>
+          <svg id="accordionPlusClose" class="menu--svg-arrow-down svg-hide" width="10" height="18" viewBox="0 0 10 18" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.68521 16.6553L1.02513 8.99521L8.68522 1.33513" stroke="inherit" stroke-miterlimit="10"></path>
+          </svg>
+        </div>
+        <div aria-label="About me" id="aboutTriggerDesktop" class="nav--about-container grid-row-1 none">
+          <h2 class="nav--contact-h2">ABOUT</h2>
+          <svg id="contactChevronOpenDesktop" class="menu--svg-arrow-up" width="10" height="18" viewBox="0 0 10 18" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.68521 16.6553L1.02513 8.99521L8.68522 1.33513" stroke="inherit" stroke-miterlimit="10"></path>
+          </svg>
+          <svg id="contactChevronCloseDesktop" class="menu--svg-arrow-down svg-hide" width="10" height="18" viewBox="0 0 10 18" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.68521 16.6553L1.02513 8.99521L8.68522 1.33513" stroke="inherit" stroke-miterlimit="10"></path>
+          </svg>
+        </div>
+
+        <!-- contact form trigger -->
+        <div id="formTriggerOpen" aria-label="Contact information and CV / RÉSUME" class="nav--contact-container">
+          <h2 class="nav--contact-h2">CONTACT</h2>
+          <svg id="contactChevronOpen" class="menu--svg-arrow-up" width="10" height="18" viewBox="0 0 10 18" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.68521 16.6553L1.02513 8.99521L8.68522 1.33513" stroke="inherit" stroke-miterlimit="10"></path>
+          </svg>
+          <svg id="contactChevronClose" class="menu--svg-arrow-down svg-hide" width="10" height="18" viewBox="0 0 10 18" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.68521 16.6553L1.02513 8.99521L8.68522 1.33513" stroke="inherit" stroke-miterlimit="10"></path>
+          </svg>
+        </div>
+
+        <div id="menu-button" aria-label="Menu open or collapse svg-hide" class="mobile-menu grid-row-1 md:gap-s">
+          <h2 class="nav--contact-h2">MENU</h2>
+          <svg id="menuPlusOpen" class="menu--svg-arrow-up svg-hide hide-on-mob" width="10" height="18" viewBox="0 0 10 18" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.68521 16.6553L1.02513 8.99521L8.68522 1.33513" stroke="inherit" stroke-miterlimit="10"></path>
+          </svg>
+          <svg id="menuPlusClose" class="menu--svg-arrow-down hide-on-mob" width="10" height="18" viewBox="0 0 10 18" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.68521 16.6553L1.02513 8.99521L8.68522 1.33513" stroke="inherit" stroke-miterlimit="10"></path>
+          </svg>
+
+          <svg id="menuPlusOpenTwo" class="nav--menu-svg-close hide-on-desktop" width="18" height="18" viewBox="0 0 18 18" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0.686279 9.16797H18.6853M9.68579 0.167969L9.68579 18.167" stroke="#151714"/>
+          </svg>        
+          <svg id="menuPlusCloseTwo" class="nav--menu-svg-close-2 svg-hide hide-on-desktop" width="18" height="2" viewBox="0 0 16 2" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 1.44922H16" stroke="inherit"/>
+          </svg>
+        </div>
+
         </div>
       </nav>
       <!-- mobile menu -->
@@ -438,7 +453,7 @@
           <button id="contact-form--submit" user-scalable="no" type="submit">SUBMIT</button>
         </div>
       </form> 
-    </div>   
+    </div>  
     <!-- form overlay -->
     <section id="formOverlay" class="form-overlay form-hide"></section>
     <!-- menu overlay -->
@@ -466,19 +481,29 @@
         <p class="credits-details">© Copyright 2023, Chris Edwards Design</p>
       </div>
     </section>
-    <div id="page-wrapper" class="page-wrapper none">
-      <main class="main--wrapper">
-          <div id="innerWrapper" class="inner-wrapper">
-            
-            <section id="sectionContent" class="content-s hide-on-mob--important">
-              <div class="grid grid-auto-cols--minmax gap-one grid-col-1-3 pt-header-height">
-                <div class="content--text-desktop-pages grid-auto-cols--minmax md:pt-s lg:pt-s lgbg:pt-none md:border-top--one lg:border-top--one lgbg:border-top--none">
-                  <h3 class="line-height--standard-caps md:text-xl lg:text-2xl lgmm:text-2xl mdta:grid-col-1-2 lgta:grid-col-1-3 md:grid-row-1 lg:grid-row-1 md:text-m uppercase">Background</h3>
-                  <p class="intro-text-desktop mdta:grid-col-2-3 lgta:grid-col-3-5 mdta:grid-row-1 lgta:grid-row-1 lgta:grid-row-1 md:text-m lg:text-m lgbt:text-l">
-                    Manchester-based multidisciplinary designer with a strong focus in UI, digital, and motion design. My skillset also includes a good foundation in HTML, CSS, JavaScript, and Shopify Liquid, as well as some experience and a keen interest in 3D software packages like Blender and Cinema 4D.
-                  </p>
-                  <a href="assets/Chris-Edwards-CV.pdf" class="link--cv-page link--main mdta:grid-col-2-3 lgta:grid-col-3-5 mdta:grid-row-2 lgta:grid-row-2 uppercase mt-xs pt-xs pr-s pb-xs pl-s border-outline--one-solid border-radius-half mb-component-border-width" target="_blank">
-                    <svg class="cv-link--hover contact-form--link--svg" width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+    <div id="page-wrapper" class="page-wrapper lg:position-fixed--important lg:height-100vh lg:pointer-events-none lg:z-index-2 none">
+      <main class="main--wrapper lg:bg-transparent">
+          <div id="innerWrapper" class="inner-wrapper lg:position-fixed--important md:bg-transparent--important lg:bg-transparent--important md:min-height-fit">
+
+            <section id="sectionContent" class="content-s">
+              <div class="content--text-desktop">
+                <p class="intro-text-desktop">
+                  Manchester-based multidisciplinary designer with a strong focus in UI, digital, and motion design. My skillset also includes a good foundation in HTML, CSS, JavaScript, and Shopify Liquid, as well as some experience and a keen interest in 3D software packages like Blender and Cinema 4D. Check out my portfolio or <a href="/cv.html" class="link--cv" title="Link to cv page cursor-pointer">CV / Résumé page.</a>
+                </p>
+                <div class="intro-list--container-about">
+                  <ul class="intro-list--row-1">
+                    <li><p>Currently:</p><p>Freelance</p></li>
+                    <li><p>Previously:</p><p>Digital Media Team Ltd.</p></li>
+                    <li><p>Education:</p><p>Manchester Metropolition University</p></li>
+                  </ul>
+                  <ul class="intro-list--row-2">
+                    <li><p>Features:</p><p>Project 1</p></li>
+                    <li><p>Project 2</p></li>
+                    <li><p>Project 4</p></li>
+                  </ul>
+                  <a href="assets/Chris-Edwards-CV.pdf" class="link--home-page link--main uppercase mt-s-xs pt-xs pr-s pb-xs pl-s border-outline--one-solid border-radius-half mb-component-border-width" target="_blank">
+                    <svg class="contact-form--link--svg" width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M8 1.35156L16 9.35156L8 17.3516" stroke="inherit" stroke-miterlimit="10"/>
                       <path d="M0 9.35156H16" stroke="inherit" stroke-miterlimit="10"/>
                     </svg>
@@ -488,373 +513,202 @@
               </div>
             </section>
 
-            <section id="content--container" class="content--container--grid-pages">
-              <div id="contentXl" class="content-xl-pages">
-                <div class="grid grid-auto-cols--minmax gap-one grid-col-1-9 height-fit lg:mt-header-height--plus-1rem">
-                  <div class="content--text-desktop-pages lg:pt-s lg:pt-none lg:border-top--one">
-                    <h3 class="line-height--standard-caps md:text-xl lg:text-2xl lgmm:text-2xl lg:grid-col-1-2 lgmm:grid-col-1-3 lgbgb:grid-col-1-2 md:text-m grid-row-1 uppercase">Background</h3>
-                    <p class="intro-text-desktop lg:grid-col-1-2 lgmm:grid-col-3-5 lgbg:grid-col-3-5 lgbgb:grid-col-3-5 md:text-m lg:text-m lgbt:text-l">
-                      Manchester-based multidisciplinary designer with a strong focus in UI, digital, and motion design. My skillset also includes a good foundation in HTML, CSS, JavaScript, and Shopify Liquid, as well as some experience and a keen interest in 3D software packages like Blender and Cinema 4D.
-                    </p>
-                    <a href="assets/Chris-Edwards-CV.pdf" class="link--cv-page link--main lg:grid-col-1-2 lgmm:grid-col-3-5 lgbgb:grid-col-3-5 lgbg:grid-col-3-5 uppercase mt-xs pt-xs pr-s pb-xs pl-s border-outline--one-solid border-radius-half mb-component-border-width" target="_blank">
-                    <svg class="cv-link--hover svg--hover contact-form--link--svg" width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M8 1.35156L16 9.35156L8 17.3516" stroke="inherit" stroke-miterlimit="10"/>
-                      <path d="M0 9.35156H16" stroke="inherit" stroke-miterlimit="10"/>
-                    </svg>
-                    <p>Download CV</p>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </section>
+            <section id="content--container" class="content--container--grid md:gap-2rem bg-transparent--important md:row-gap-none">
 
-          <!-- CV -->
-            <section class="paralax--section-container pt-header-height">
-              <div class="cv-section--container">
-                <div class="cv-content lg:pt-s lg:border-top--one">
+              <div id="sectionMedia" class="media hide-on-desktop--important bg-color--primary md:pb-s pointer-events-visible">
 
-                  <!-- <div class="parallax--cv-header--container top-base hide-on-mob none">
-                    <div class="cv-title">
-                      <h3 class="uppercase">CV</h3>
-                      <span class="uppercase">/</span>
-                      <h3 class="uppercase">RÉSUMÉ</h3>
+                <div class="splide">
+                  <div class="splide__track">
+                    <div class="splide__arrows">
+                      <button class="splide__arrow splide__arrow--prev">
+                        <svg width="10" height="18" viewBox="0 0 10 18" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M8.68521 16.6553L1.02513 8.99521L8.68522 1.33513" stroke="inherit" stroke-miterlimit="10"/>
+                        </svg>
+                      </button>
+                      <button class="splide__arrow splide__arrow--next">
+                        <svg width="10" height="18" viewBox="0 0 10 18" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M8.68521 16.6553L1.02513 8.99521L8.68522 1.33513" stroke="inherit" stroke-miterlimit="10"/>
+                        </svg>
+                      </button>
                     </div>
-                  </div> -->
-
-                  <div class="parallax--cv-sub-header--container top-base grid-row-1 md:pt-s md:border-top--one hide-on-desktop">
-                    <div class="cv-title">
-                      <span class="cv-header uppercase hide-on-mob line-height--caps">/</span>
-                      <h3 class="cv-header uppercase wfit md:text-xl lg:text-2xl lgmm:text-2xl line-height--caps">Background</h3>
-                    </div>
-                  </div>
-                  <div class="parallax--cv-experience--container md:pt-s pb-s pb-header-height hide-on-desktop">
-                    <div class="cv-experience--container">
-                      <div class="cv-bulleted-list">
-                        <p class="cv-text-background">Manchester-based multidisciplinary designer with a strong focus in UI, digital, and motion design. My skillset also includes a good foundation in HTML, CSS, JavaScript, and Shopify Liquid, as well as some experience and a keen interest in 3D software packages like Blender and Cinema 4D.</p>
-                        <a href="assets/Chris-Edwards-CV.pdf" class="link--cv-page-mob link--main--cv link-cv-mobile align-self-start uppercase mt-s-xs pt-xs pr-s pb-xs pl-s border-outline--one-solid border-radius-half" target="_blank">
+                    <ul class="splide__list">
+                      <li class="splide__slide" data-splide-html-video="assets/video/gfn--ui-homepage-mob--animate-2.mp4">
+                        <div class="splide__slide__container">
+                          <img src="assets/images/gfn--ui-homepage-hero--poster--1.jpg" alt="UI + Code Hero Image / UI + Code Collection Page">
+                        </div>
+                        <a href="ui-code.html" title="Link to UI / Code collection">
                           <svg class="contact-form--link--svg" width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M8 1.35156L16 9.35156L8 17.3516" stroke="inherit" stroke-miterlimit="10"/>
                             <path d="M0 9.35156H16" stroke="inherit" stroke-miterlimit="10"/>
                           </svg>
-                          <p class="line-height--caps">Download CV</p>
+                          <p class="splide--titles hide-on-mob">Explore: UI / Code Collection</p>
+                          <p class="splide--titles hide-on-desktop uppercase">UI / Code</p>
                         </a>
-                      </div>
-                    </div>
+                      </li>
+                      <li class="splide__slide" data-splide-html-video="assets/video/cdev-animation--gfn-hompage-hero-2.mp4">
+                        <div class="splide__slide__container">
+                          <img src="assets/images/cdev-hero-2.jpg" alt="Animation Hero Image / Animation Collection Page">
+                        </div>
+                        <a href="animation.html" title="Link to Animation collection">
+                          <svg class="contact-form--link--svg" width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 1.35156L16 9.35156L8 17.3516" stroke="inherit" stroke-miterlimit="10"/>
+                            <path d="M0 9.35156H16" stroke="inherit" stroke-miterlimit="10"/>
+                          </svg>
+                          <p class="splide--titles hide-on-mob">Explore: Animation Collection</p>
+                          <p class="splide--titles hide-on-desktop uppercase">Animation</p>
+                        </a>
+                      </li>
+                      <li class="splide__slide">
+                        <img class="grid-col-1-3 hide-on-mob md:grid-col-1-2" src="assets/images/GFN_ULTRAVIOLET_END-COVER-1-WITH-TEXT_PORTRAIT_w2000.jpg" alt="Design Hero Image / Design Collection Page">
+                        <img class="aspect-ratio-4-5 grid-col-1-3 hide-on-desktop md:grid-col-1-2 height-fit" src="assets/images/GFN_ULTRAVIOLET_END-COVER-1-WITH-TEXT_PORTRAIT_w2000.jpg" alt="Good For Nothing Clothing Ltd. / Video / Animation / Branding / Social Media / Grpahic Design">
+                        <a href="design.html" title="Link to Design collection">
+                          <svg class="contact-form--link--svg" width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 1.35156L16 9.35156L8 17.3516" stroke="inherit" stroke-miterlimit="10"/>
+                            <path d="M0 9.35156H16" stroke="inherit" stroke-miterlimit="10"/>
+                          </svg>
+                          <p class="splide--titles hide-on-mob">Explore: Design Collection</p>
+                          <p class="splide--titles hide-on-desktop uppercase">Design</p>
+                        </a>
+                      </li>
+                    </ul>
                   </div>
-
-                  <div class="parallax--cv-sub-header--container lg:top-base lg:pb-header-height--plus-1rem md:pt-s">
-                    <div class="cv-title md:pt-s md:border-top--one">
-                      <span class="cv-header uppercase hide-on-mob md:text-xl lg:text-2xl lgmm:text-2xl line-height--caps none">/</span>
-                      <h3 class="cv-header uppercase wfit md:text-xl lg:text-2xl lgmm:text-2xl line-height--caps">Experience</h3>
-                    </div>
-                  </div>
-
-                  <div class="parallax--cv-experience--container lgbgb:grid-col-3-5 md:pt-s pb-s">
-                    <div class="cv-experience--container">
-                      <div class="cv-title--container">
-                        <div class="cv-title">
-                          <h3 class="wfit md:text-m lg:text-m lgbt:text-l line-height--caps">Freelance Graphic Designer</h3>
-                        </div>
-                        <div class="cv-date">
-                          <h3 class="wfit md:text-m lg:text-m lgbt:text-l line-height--caps">Chris Edwards Design</h3>
-                          <span class="">/</span>
-                          <h3 class="text--grey font-weight-400 wfit line-height--caps">Apr—present</h3>
-                        </div>
-                      </div>
-                      <ul class="cv-bulleted-list">
-                        <li>
-                          <p class="md:text-m lg:text-m lgbt:text-l">Delivering high-quality design solutions to a diverse range of clients. Utilising industry-standard design tools and technologies, to create visually appealing and user-centered creative across various digital platforms.</p>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div class="parallax--cv-experience--container lgbgb:grid-col-3-5 pt-s pb-s">   
-                    <div class="cv-experience--container">
-                      <div class="cv-title--container">
-                        <div class="cv-title">
-                          <h3 class="wfit md:text-m lg:text-m lgbt:text-l line-height--caps">Junior Frontend Developer</h3>
-                        </div>
-                        <div class="cv-date">
-                          <h3 class="wfit md:text-m lg:text-m lgbt:text-l line-height--caps">Digital Media Team Ltd</h3>
-                          <span class="">/</span>
-                          <h3 class="text--grey font-weight-400 wfit line-height--caps">Oct 2022—Mar 2023</h3>
-                        </div>
-                      </div>
-                      <ul class="cv-bulleted-list">
-                        <li>
-                          <p class="md:text-m lg:text-m lgbt:text-l">Experience in wire-framing, prototyping, and conducting usability testing for client Shopify websites. Additionally, I assisted in audits to improve performance, accessibility, and code quality. My skills include writing efficient and maintainable HTML, CSS, JavaScript, and Shopify Liquid code. I stay updated with industry trends and conduct thorough testing and debugging to ensure a seamless user experience.</p>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div class="parallax--cv-experience--container lgbgb:grid-col-3-5 pt-s pb-s">   
-                    <div class="cv-experience--container">
-                      <div class="cv-title--container">
-                        <div class="cv-title">
-                          <h3 class="wfit md:text-m lg:text-m lgbt:text-l line-height--caps">Digital Designer</h3>
-                        </div>
-                        <div class="cv-date">
-                          <h3 class="wfit md:text-m lg:text-m lgbt:text-l line-height--caps">Good For Nothing Clothing Ltd.</h3>
-                          <span class="">/</span>
-                          <h3 class="text--grey font-weight-400 wfit line-height--caps">Jan 2018—Oct 2022</h3>
-                        </div>
-                      </div>
-                      <ul class="cv-bulleted-list">
-                        <li>
-                          <p class="md:text-m lg:text-m lgbt:text-l">Responsible for overseeing website development and maintenance, including designing and implementing front-end elements to enhance user experience. Collaborating closely with other departments, I ensured a cohesive brand aesthetic across all platforms. My contributions included producing creative output for branding, packaging, marketing, email, social, and digital ads. Additionally, I provided valuable support in video post-production, encompassing editing and animated motion graphics.</p>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div class="parallax--cv-experience--container lgbgb:grid-col-3-5 pt-s pb-s">   
-                    <div class="cv-experience--container">
-                      <div class="cv-title--container">
-                        <div class="cv-title">
-                          <h3 class="wfit md:text-m lg:text-m lgbt:text-l line-height--caps">Graphic Design Internship</h3>
-                        </div>
-                        <div class="cv-date">
-                          <h3 class="wfit md:text-m lg:text-m lgbt:text-l line-height--caps">Primary Engineer</h3>
-                          <span class="">/</span>
-                          <h3 class="text--grey font-weight-400 wfit line-height--caps">Mar 2017—Nov 2017</h3>
-                        </div>
-                      </div>
-                      <ul class="cv-bulleted-list">
-                        <li>
-                          <p class="md:text-m lg:text-m lgbt:text-l">Design for educational documentation as well as video editing with animation to showcase student inventions. My duties were to provide support for student shows, contributing to the successful execution of exhibitions by assisting with mounting and displaying artworks.</p>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div class="parallax--cv-experience--container lgbgb:grid-col-3-5 pt-s pb-s">   
-                    <div class="cv-experience--container">
-                      <div class="cv-title--container">
-                        <div class="cv-title">
-                          <h3 class="wfit md:text-m lg:text-m lgbt:text-l line-height--caps">Junior Freelance Graphic Designer</h3>
-                        </div>
-                        <div class="cv-date">
-                          <h3 class="wfit md:text-m lg:text-m lgbt:text-l line-height--caps">Contract: MMS Media Ltd.</h3>
-                          <span class="">/</span>
-                          <h3 class="text--grey font-weight-400 wfit line-height--caps">Jul 2015—Oct 2015</h3>
-                        </div>
-                      </div>
-                      <ul class="cv-bulleted-list">
-                        <li>
-                          <p class="md:text-m lg:text-m lgbt:text-l">Design for event nights in and around Manchester including posters, flyers, banners and social content.</p>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div class="parallax--cv-experience--container lgbgb:grid-col-3-5 pt-s pb-s">   
-                    <div class="cv-experience--container">
-                      <div class="cv-title--container">
-                        <div class="cv-title">
-                          <h3 class="wfit md:text-m lg:text-m lgbt:text-l line-height--caps">Junior Freelance Graphic Designer</h3>
-                        </div>
-                        <div class="cv-date">
-                          <h3 class="wfit md:text-m lg:text-m lgbt:text-l line-height--caps">Ground Control Productions</h3>
-                          <span class="">/</span>
-                          <h3 class="text--grey font-weight-400 wfit line-height--caps">Jan 2015—Oct 2015</h3>
-                        </div>
-                      </div>
-                      <ul class="cv-bulleted-list">
-                        <li>
-                          <p class="md:text-m lg:text-m lgbt:text-l">Parklife Artist wristbands, lanyards, tokens and printed ephemera. Company business cards and infographics.</p>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div class="parallax--cv-experience--container lgbgb:grid-col-3-5 pt-s pb-header-height--plus-1rem">   
-                    <div class="cv-experience--container">
-                      <div class="cv-title--container">
-                        <div class="cv-title">
-                          <h3 class="wfit md:text-m lg:text-m lgbt:text-l line-height--caps">Design Team Assistant</h3>
-                        </div>
-                        <div class="cv-date">
-                          <h3 class="wfit md:text-m lg:text-m lgbt:text-l line-height--caps">Ear To The Ground</h3>
-                          <span class="">/</span>
-                          <h3 class="text--grey font-weight-400 wfit line-height--caps">May 2014—Mar 2015</h3>
-                        </div>
-                      </div>
-                      <ul class="cv-bulleted-list">
-                        <li>
-                          <p class="md:text-m lg:text-m lgbt:text-l">Assisting with presentations, case studies and design asset management. Digital Storyboarding with CAD mockups and infographics.</p>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                          
                 </div>
 
-                <div class="cv-content lg:pt-s lg:border-top--one">
+              </div>
 
-                  <div class="parallax--cv-sub-header--container lg:pb-header-height--plus-1rem">
-                    <div class="cv-title md:pt-s md:border-top--one">
-                      <span class="cv-header uppercase hide-on-mob md:text-xl lg:text-2xl lgmm:text-2xl line-height--caps none">/</span>
-                      <h3 class="cv-header uppercase wfit md:text-xl lg:text-2xl lgmm:text-2xl line-height--caps">Education</h3>
-                    </div>
+              <div id="sectionGraphic" class="graphic--container lg:grid-row-1 md:pb-s">
+                <!-- desktop about -->
+                <div class="intro-text-container grid gap-one position-relative height-fit align-self-start lg:pt-header-height g:pt-s z-index-2 hide-on-mob--important">
+                  <p class="intro-text-desktop font--intro lg:grid-col-1-2 grid-row-1 pointer-events-visible">
+                    Manchester-based multidisciplinary designer with a strong focus in UI, digital, and motion design. My skillset also includes a good foundation in HTML, CSS, JavaScript, and Shopify Liquid, as well as some experience and a keen interest in 3D software packages like Blender and Cinema 4D. Check out my portfolio or <a href="/cv.html" class="link--cv" title="Link to cv page cursor-pointer">CV / Résumé page.</a>
+                  </p>
+                  <div class="intro-list--container lg:grid-col-1-2 grid-row-2 pointer-events-visible">
+                    <ul class="intro-list--row-1">
+                      <li><p>Currently:</p><p>Freelance</p></li>
+                      <li><p>Previously:</p><p>Digital Media Team Ltd.</p></li>
+                      <li><p>Education:</p><p>Manchester Metropolition University</p></li>
+                    </ul>
+                    <ul class="intro-list--row-2 pointer-events-visible">
+                      <li><p>Features:</p><p>Project 1</p></li>
+                      <li><p>Project 2</p></li>
+                      <li><p>Project 4</p></li>
+                    </ul>
                   </div>
-
-                  <div class="parallax--cv-experience--container lgbgb:grid-col-3-5 top-base md:pt-s pb-header-height--plus-1rem">
-                    <div class="cv-experience--container">
-                      <div class="cv-title--container">
-                        <div class="cv-date">
-                          <h3 class="wfit md:text-m lg:text-m lgbt:text-l line-height--caps">Manchester Metropolitan University</h3>
-                          <span class="">/</span>
-                          <h3 class="text--grey font-weight-400 wfit line-height--caps">Sept 2006—Jul 2009</h3>
-                        </div>
-                      </div>
-                      <ul class="cv-bulleted-list">
-                        <li>
-                          <p class="md:text-m lg:text-m lgbt:text-l">Bachelor of Arts (B.A Hons) Degree: Illustration with Animation</p>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-        
+                  <a href="assets/Chris-Edwards-CV.pdf" class="link--home-page link--main-2 uppercase mt-xsm pt-xs pr-s pb-xs pl-s border-outline--one-solid border-radius-half mb-component-border-width lg:grid-col-1-2 grid-row-3 pointer-events-visible" target="_blank">
+                    <svg class="contact-form--link--svg" width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M8 1.35156L16 9.35156L8 17.3516" stroke="inherit" stroke-miterlimit="10"/>
+                      <path d="M0 9.35156H16" stroke="inherit" stroke-miterlimit="10"/>
+                    </svg>
+                    <p>Download CV</p>
+                  </a>
                 </div>
-
-                <div class="cv-content lg:pt-s lg:border-top--one">
-
-                  <div class="parallax--cv-sub-header--container lg:pb-header-height--plus-1rem">
-                    <div class="cv-title md:pt-s md:border-top--one">
-                      <span class="cv-header uppercase hide-on-mob md:text-xl lg:text-2xl lgmm:text-2xl line-height--caps none">/</span>
-                      <h3 class="cv-header uppercase wfit md:text-xl lg:text-2xl lgmm:text-2xl line-height--caps">Software</h3>
-                    </div>
-                  </div>
-
-                  <div class="parallax--cv-experience--container lgbgb:grid-col-3-5 top-base md:pt-s pb-header-height--plus-1rem">
-                    <div class="cv-experience--container">
-                      <div class="cv-title--container">
-                        <div class="cv-date">
-                          <h3 class="text--grey font-weight-400 wfit line-height--caps">Proficient:</h3>
-                        </div>
+                <!-- end of desktop about -->
+                <div id="logotype--svg-container" class="logotype--svg-container md:grid-col-1-2 md:pt-0 md:pb-s height-fit lg:align-self-start lgmm:pb-header-height-minus-1rem">
+                  <div class="logotype--svg-inner">
+                    <!-- mobile about -->
+                    <div class="intro-text--container-mob">
+                      <p class="intro-text-mob md:pt-s md:border-top--one">
+                        Manchester-based multidisciplinary designer with a strong focus in UI, digital, and motion design. My skillset also includes a good foundation in HTML, CSS, JavaScript, and Shopify Liquid, as well as some experience and a keen interest in 3D software packages like Blender and Cinema 4D. Check out my portfolio or <a href="/cv.html" class="link--cv" title="Link to cv page cursor-pointer">CV / Résumé page.</a>
+                      </p>
+                      <div class="intro-list--container-2">
+                        <ul class="intro-list--row-1">
+                          <li><p>Currently:</p><p>Freelance</p></li>
+                          <li><p>Previously:</p><p>Digital Media Team Ltd.</p></li>
+                          <li><p>Education:</p><p>Manchester Metropolition University</p></li>
+                        </ul>
                       </div>
-                      <ul class="cv-tag-list overflow-unset">
-                        <li class="cv-bulleted-list--li-span md:text-s lg:text-m lgbt:text-l line-height--caps"><span>InDesign</span><span>·</span><span>Illustrator</span><span>·</span><span>Photoshop</span><span>·</span><span>Figma</span></li>
-                      </ul>
-                      <ul class="cv-tag-list overflow-unset">
-                        <li class="cv-bulleted-list--li-span md:text-s lg:text-m lgbt:text-l line-height--caps"><span>XD</span><span>·</span><span>After Effects</span><span>·</span><span>Shopify</span></li>
-                      </ul>
-                      <div class="cv-title--container">
-                        <div class="cv-date">
-                          <h3 class="text--grey font-weight-400 wfit line-height--caps">Good Foundation:</h3>
-                        </div>
-                      </div>
-                      <ul class="cv-tag-list overflow-unset">
-                        <li class="cv-bulleted-list--li-span md:text-s lg:text-m lgbt:text-l line-height--caps"><span>Visual Studio Code</span><span>·</span><span>Blender</span><span>·</span><span>Cinemea 4D</span></li>
-                      </ul>
-                      <ul class="cv-tag-list overflow-unset">
-                        <li class="cv-bulleted-list--li-span md:text-s lg:text-m lgbt:text-l line-height--caps"><span>Klaviyo</span><span>·</span><span>Processing</span><span>·</span><span>Office 365</span></li>
-                      </ul>
+                      <a href="design.html" class="link--main-mob uppercase none">
+                        <svg class="contact-form--link--svg" width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M8 1.35156L16 9.35156L8 17.3516" stroke="inherit" stroke-miterlimit="10"/>
+                          <path d="M0 9.35156H16" stroke="inherit" stroke-miterlimit="10"/>
+                        </svg>
+                        <p>Explore My Portfolio</p>
+                      </a>
                     </div>
+                    <!-- end of mobile about -->
+                    <!-- UI / Code svg header -->
+                    <a id="logotypeSvgWidthBottom" class="logotype--a-bottom pointer-events-visible" href="ui-code.html" title="User interface Design">
+
+                      <svg id="svgThreeAnimate" class="logotype--svg cursor-pointer" width="348.5" height="73" viewBox="0 0 348 73" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M27.4 72.8C21.67 72.8 16.75 71.75 12.65 69.65C8.55 67.55 5.42 64.55 3.25 60.65C1.08 56.75 0 52.13 0 46.8V1.40002H13.2V47.2C13.2 51.47 14.41 54.83 16.85 57.3C19.28 59.77 22.8 61 27.4 61C32 61 35.52 59.77 37.95 57.3C40.38 54.84 41.6 51.47 41.6 47.2V1.40002H54.8V46.8C54.8 52.13 53.72 56.75 51.55 60.65C49.38 64.55 46.25 67.55 42.15 69.65C38.05 71.75 33.13 72.8 27.4 72.8Z" fill="inherit"/>
+                        <path d="M62.96 71.4V1.40002H76.16V71.4H62.96Z" fill="inherit"/>
+                        <path d="M81.98 71.4L104.85 1.40002H117.45L94.58 71.4H81.98Z" fill="inherit"/>
+                        <path d="M145.1 72.8C136.43 72.8 129.57 70.38 124.5 65.55C119.43 60.72 116.9 53.8 116.9 44.8V28C116.9 19 119.43 12.08 124.5 7.25C129.57 2.42 136.43 0 145.1 0C153.77 0 160.35 2.35 165.05 7.05C169.75 11.75 172.1 18.2 172.1 26.4V27H159.1V26C159.1 21.87 157.95 18.47 155.65 15.8C153.35 13.13 149.83 11.8 145.1 11.8C140.37 11.8 136.77 13.23 134.1 16.1C131.43 18.97 130.1 22.87 130.1 27.8V45C130.1 49.87 131.43 53.75 134.1 56.65C136.77 59.55 140.43 61 145.1 61C149.77 61 153.35 59.65 155.65 56.95C157.95 54.25 159.1 50.87 159.1 46.8V45H172.1V46.4C172.1 54.6 169.75 61.05 165.05 65.75C160.35 70.45 153.7 72.8 145.1 72.8Z" fill="inherit"/>
+                        <path d="M206.48 72.8C197.68 72.8 190.68 70.38 185.48 65.55C180.28 60.72 177.68 53.8 177.68 44.8V28C177.68 19 180.28 12.08 185.48 7.25C190.68 2.42 197.68 0 206.48 0C215.28 0 222.28 2.42 227.48 7.25C232.68 12.08 235.28 19 235.28 28V44.8C235.28 53.8 232.68 60.72 227.48 65.55C222.28 70.38 215.28 72.8 206.48 72.8ZM206.48 61C211.41 61 215.25 59.57 217.98 56.7C220.71 53.83 222.08 50 222.08 45.2V27.6C222.08 22.8 220.71 18.97 217.98 16.1C215.25 13.23 211.41 11.8 206.48 11.8C201.55 11.8 197.8 13.23 195.03 16.1C192.26 18.97 190.88 22.8 190.88 27.6V45.2C190.88 50 192.26 53.83 195.03 56.7C197.8 59.57 201.61 61 206.48 61Z" fill="inherit"/>
+                        <path d="M238.24 71.4V59.8H247.44V13H238.24V1.40002H267.04C276.44 1.40002 283.59 3.78002 288.49 8.55002C293.39 13.32 295.84 20.4 295.84 29.8V43C295.84 52.4 293.39 59.48 288.49 64.25C283.59 69.02 276.44 71.4 267.04 71.4H238.24ZM260.64 59.4H267.24C272.57 59.4 276.47 58 278.94 55.2C281.41 52.4 282.64 48.47 282.64 43.4V29.4C282.64 24.27 281.41 20.32 278.94 17.55C276.47 14.78 272.57 13.4 267.24 13.4H260.64V59.4Z" fill="inherit"/>
+                        <path d="M302.41 71.4V1.40002H347.41V13.4H315.61V30.1H347.41V42.1H315.61V59.4H347.41V71.4H302.41Z" fill="inherit"/>
+                      </svg>
+
+                      <svg id="svgThreeAnimateDup" class="logotype--svg cursor-pointer hide-on-mob" width="348.5" height="73" viewBox="0 0 348 73" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M27.4 72.8C21.67 72.8 16.75 71.75 12.65 69.65C8.55 67.55 5.42 64.55 3.25 60.65C1.08 56.75 0 52.13 0 46.8V1.40002H13.2V47.2C13.2 51.47 14.41 54.83 16.85 57.3C19.28 59.77 22.8 61 27.4 61C32 61 35.52 59.77 37.95 57.3C40.38 54.84 41.6 51.47 41.6 47.2V1.40002H54.8V46.8C54.8 52.13 53.72 56.75 51.55 60.65C49.38 64.55 46.25 67.55 42.15 69.65C38.05 71.75 33.13 72.8 27.4 72.8Z" fill="inherit"/>
+                        <path d="M62.96 71.4V1.40002H76.16V71.4H62.96Z" fill="inherit"/>
+                        <path d="M81.98 71.4L104.85 1.40002H117.45L94.58 71.4H81.98Z" fill="inherit"/>
+                        <path d="M145.1 72.8C136.43 72.8 129.57 70.38 124.5 65.55C119.43 60.72 116.9 53.8 116.9 44.8V28C116.9 19 119.43 12.08 124.5 7.25C129.57 2.42 136.43 0 145.1 0C153.77 0 160.35 2.35 165.05 7.05C169.75 11.75 172.1 18.2 172.1 26.4V27H159.1V26C159.1 21.87 157.95 18.47 155.65 15.8C153.35 13.13 149.83 11.8 145.1 11.8C140.37 11.8 136.77 13.23 134.1 16.1C131.43 18.97 130.1 22.87 130.1 27.8V45C130.1 49.87 131.43 53.75 134.1 56.65C136.77 59.55 140.43 61 145.1 61C149.77 61 153.35 59.65 155.65 56.95C157.95 54.25 159.1 50.87 159.1 46.8V45H172.1V46.4C172.1 54.6 169.75 61.05 165.05 65.75C160.35 70.45 153.7 72.8 145.1 72.8Z" fill="inherit"/>
+                        <path d="M206.48 72.8C197.68 72.8 190.68 70.38 185.48 65.55C180.28 60.72 177.68 53.8 177.68 44.8V28C177.68 19 180.28 12.08 185.48 7.25C190.68 2.42 197.68 0 206.48 0C215.28 0 222.28 2.42 227.48 7.25C232.68 12.08 235.28 19 235.28 28V44.8C235.28 53.8 232.68 60.72 227.48 65.55C222.28 70.38 215.28 72.8 206.48 72.8ZM206.48 61C211.41 61 215.25 59.57 217.98 56.7C220.71 53.83 222.08 50 222.08 45.2V27.6C222.08 22.8 220.71 18.97 217.98 16.1C215.25 13.23 211.41 11.8 206.48 11.8C201.55 11.8 197.8 13.23 195.03 16.1C192.26 18.97 190.88 22.8 190.88 27.6V45.2C190.88 50 192.26 53.83 195.03 56.7C197.8 59.57 201.61 61 206.48 61Z" fill="inherit"/>
+                        <path d="M238.24 71.4V59.8H247.44V13H238.24V1.40002H267.04C276.44 1.40002 283.59 3.78002 288.49 8.55002C293.39 13.32 295.84 20.4 295.84 29.8V43C295.84 52.4 293.39 59.48 288.49 64.25C283.59 69.02 276.44 71.4 267.04 71.4H238.24ZM260.64 59.4H267.24C272.57 59.4 276.47 58 278.94 55.2C281.41 52.4 282.64 48.47 282.64 43.4V29.4C282.64 24.27 281.41 20.32 278.94 17.55C276.47 14.78 272.57 13.4 267.24 13.4H260.64V59.4Z" fill="inherit"/>
+                        <path d="M302.41 71.4V1.40002H347.41V13.4H315.61V30.1H347.41V42.1H315.61V59.4H347.41V71.4H302.41Z" fill="inherit"/>
+                      </svg>
+                        
+                    </a>
+                    <!-- animation svg header -->
+                    <a id="logotypeSvgWidthCenter" class="logotype--a-center pointer-events-visible" href="animation.html" title="Animtion">
+
+                      <svg id="svgTwoAnimate" class="logotype--svg cursor-pointer" width="478" height="73" viewBox="0 0 479 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 71.4L18.4 1.40002H41.4L59.8 71.4H46.2L42.4 56H17.4L13.6 71.4H0ZM20.5 43.8H39.3L30.8 9.70002H29L20.5 43.8Z" fill="inherit"/>
+                        <path d="M64.85 71.4V1.40002H89.95L103.85 62.4H105.65V1.40002H118.65V71.4H93.55L79.65 10.4H77.85V71.4H64.85Z" fill="inherit"/>
+                        <path d="M126.92 71.4V1.40002H140.12V71.4H126.92Z" fill="inherit"/>
+                        <path d="M148.39 71.4V1.40002H172.89L184.99 62.4H186.79L198.89 1.40002H223.39V71.4H210.59V11.1H208.79L196.79 71.4H174.99L162.99 11.1H161.19V71.4H148.39Z" fill="inherit"/>
+                        <path d="M228.49 71.4L246.89 1.40002H269.89L288.29 71.4H274.69L270.89 56H245.89L242.09 71.4H228.49ZM248.99 43.8H267.79L259.29 9.70002H257.49L248.99 43.8Z" fill="inherit"/>
+                        <path d="M301.4 71.4V13.4H281V1.40002H335V13.4H314.6V71.4H301.4Z" fill="inherit"/>
+                        <path d="M340.65 71.4V1.40002H353.85V71.4H340.65Z" fill="inherit"/>
+                        <path d="M388.98 72.8C380.18 72.8 373.18 70.38 367.98 65.55C362.78 60.72 360.18 53.8 360.18 44.8V28C360.18 19 362.78 12.08 367.98 7.25C373.18 2.42 380.18 0 388.98 0C397.78 0 404.78 2.42 409.98 7.25C415.18 12.08 417.78 19 417.78 28V44.8C417.78 53.8 415.18 60.72 409.98 65.55C404.78 70.38 397.78 72.8 388.98 72.8ZM388.98 61C393.91 61 397.75 59.57 400.48 56.7C403.21 53.83 404.58 50 404.58 45.2V27.6C404.58 22.8 403.21 18.97 400.48 16.1C397.75 13.23 393.91 11.8 388.98 11.8C384.05 11.8 380.3 13.23 377.53 16.1C374.76 18.97 373.38 22.8 373.38 27.6V45.2C373.38 50 374.76 53.83 377.53 56.7C380.3 59.57 384.11 61 388.98 61Z" fill="inherit"/>
+                        <path d="M424.12 71.4V1.40002H449.22L463.12 62.4H464.92V1.40002H477.92V71.4H452.82L438.92 10.4H437.12V71.4H424.12Z" fill="inherit"/>
+                      </svg>
+
+                      <svg id="svgTwoAnimateDup" class="logotype--svg cursor-pointer hide-on-mob" width="478" height="73" viewBox="0 0 479 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 71.4L18.4 1.40002H41.4L59.8 71.4H46.2L42.4 56H17.4L13.6 71.4H0ZM20.5 43.8H39.3L30.8 9.70002H29L20.5 43.8Z" fill="inherit"/>
+                        <path d="M64.85 71.4V1.40002H89.95L103.85 62.4H105.65V1.40002H118.65V71.4H93.55L79.65 10.4H77.85V71.4H64.85Z" fill="inherit"/>
+                        <path d="M126.92 71.4V1.40002H140.12V71.4H126.92Z" fill="inherit"/>
+                        <path d="M148.39 71.4V1.40002H172.89L184.99 62.4H186.79L198.89 1.40002H223.39V71.4H210.59V11.1H208.79L196.79 71.4H174.99L162.99 11.1H161.19V71.4H148.39Z" fill="inherit"/>
+                        <path d="M228.49 71.4L246.89 1.40002H269.89L288.29 71.4H274.69L270.89 56H245.89L242.09 71.4H228.49ZM248.99 43.8H267.79L259.29 9.70002H257.49L248.99 43.8Z" fill="inherit"/>
+                        <path d="M301.4 71.4V13.4H281V1.40002H335V13.4H314.6V71.4H301.4Z" fill="inherit"/>
+                        <path d="M340.65 71.4V1.40002H353.85V71.4H340.65Z" fill="inherit"/>
+                        <path d="M388.98 72.8C380.18 72.8 373.18 70.38 367.98 65.55C362.78 60.72 360.18 53.8 360.18 44.8V28C360.18 19 362.78 12.08 367.98 7.25C373.18 2.42 380.18 0 388.98 0C397.78 0 404.78 2.42 409.98 7.25C415.18 12.08 417.78 19 417.78 28V44.8C417.78 53.8 415.18 60.72 409.98 65.55C404.78 70.38 397.78 72.8 388.98 72.8ZM388.98 61C393.91 61 397.75 59.57 400.48 56.7C403.21 53.83 404.58 50 404.58 45.2V27.6C404.58 22.8 403.21 18.97 400.48 16.1C397.75 13.23 393.91 11.8 388.98 11.8C384.05 11.8 380.3 13.23 377.53 16.1C374.76 18.97 373.38 22.8 373.38 27.6V45.2C373.38 50 374.76 53.83 377.53 56.7C380.3 59.57 384.11 61 388.98 61Z" fill="inherit"/>
+                        <path d="M424.12 71.4V1.40002H449.22L463.12 62.4H464.92V1.40002H477.92V71.4H452.82L438.92 10.4H437.12V71.4H424.12Z" fill="inherit"/>
+                      </svg>
+
+                    </a>
+
+                    <!-- design svg header -->
+                    <a id="logotypeSvgWidthTop" class="logotype--a-top pointer-events-visible" href="design.html" title="Design">
+
+                      <svg id="svgOneAnimate" class="logotype--svg cursor-pointer" width="309" height="73" viewBox="0 0 309 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 71.4V59.8H9.2V13H0V1.40002H28.8C38.2 1.40002 45.35 3.78002 50.25 8.55002C55.15 13.32 57.6 20.4 57.6 29.8V43C57.6 52.4 55.15 59.48 50.25 64.25C45.35 69.02 38.2 71.4 28.8 71.4H0ZM22.4 59.4H29C34.33 59.4 38.23 58 40.7 55.2C43.17 52.4 44.4 48.47 44.4 43.4V29.4C44.4 24.27 43.17 20.32 40.7 17.55C38.23 14.78 34.33 13.4 29 13.4H22.4V59.4Z" fill="black"/>
+                        <path d="M64.17 71.4V1.40002H109.17V13.4H77.37V30.1H106.37V42.1H77.37V59.4H109.77V71.4H64.17Z" fill="black"/>
+                        <path d="M139.1 72.8C133.7 72.8 128.93 71.83 124.8 69.9C120.67 67.97 117.43 65.2 115.1 61.6C112.77 58 111.6 53.67 111.6 48.6V45.8H124.6V48.6C124.6 52.8 125.9 55.95 128.5 58.05C131.1 60.15 134.63 61.2 139.1 61.2C143.57 61.2 147.02 60.3 149.25 58.5C151.48 56.7 152.6 54.4 152.6 51.6C152.6 49.67 152.05 48.1 150.95 46.9C149.85 45.7 148.25 44.72 146.15 43.95C144.05 43.18 141.5 42.47 138.5 41.8L136.2 41.3C131.4 40.23 127.28 38.88 123.85 37.25C120.42 35.62 117.78 33.47 115.95 30.8C114.12 28.13 113.2 24.67 113.2 20.4C113.2 16.13 114.22 12.48 116.25 9.45C118.28 6.42 121.15 4.08 124.85 2.45C128.55 0.82 132.9 0 137.9 0C142.9 0 147.35 0.85 151.25 2.55C155.15 4.25 158.22 6.78 160.45 10.15C162.68 13.52 163.8 17.73 163.8 22.8V25.8H150.8V22.8C150.8 20.13 150.28 17.98 149.25 16.35C148.22 14.72 146.73 13.52 144.8 12.75C142.87 11.98 140.57 11.6 137.9 11.6C133.9 11.6 130.95 12.35 129.05 13.85C127.15 15.35 126.2 17.4 126.2 20C126.2 21.73 126.65 23.2 127.55 24.4C128.45 25.6 129.8 26.6 131.6 27.4C133.4 28.2 135.7 28.9 138.5 29.5L140.8 30C145.8 31.07 150.15 32.43 153.85 34.1C157.55 35.77 160.43 37.97 162.5 40.7C164.57 43.43 165.6 46.93 165.6 51.2C165.6 55.47 164.52 59.22 162.35 62.45C160.18 65.68 157.12 68.22 153.15 70.05C149.18 71.88 144.5 72.8 139.1 72.8Z" fill="black"/>
+                        <path d="M170.81 71.4V1.40002H184.01V71.4H170.81Z" fill="black"/>
+                        <path d="M217.34 72.8C212.54 72.8 208.19 71.72 204.29 69.55C200.39 67.38 197.29 64.22 194.99 60.05C192.69 55.88 191.54 50.8 191.54 44.8V28C191.54 19 194.07 12.08 199.14 7.25C204.21 2.42 211.07 0 219.74 0C228.41 0 234.99 2.28 239.69 6.85C244.39 11.42 246.74 17.6 246.74 25.4V25.8H233.74V25C233.74 22.53 233.22 20.3 232.19 18.3C231.16 16.3 229.61 14.72 227.54 13.55C225.47 12.38 222.87 11.8 219.74 11.8C215.07 11.8 211.41 13.23 208.74 16.1C206.07 18.97 204.74 22.87 204.74 27.8V45C204.74 49.87 206.07 53.78 208.74 56.75C211.41 59.72 215.14 61.2 219.94 61.2C224.74 61.2 228.24 59.93 230.44 57.4C232.64 54.87 233.74 51.67 233.74 47.8V46.8H217.14V35.6H246.74V71.4H234.54V64.7H232.74C232.27 65.83 231.52 67.03 230.49 68.3C229.45 69.57 227.91 70.63 225.84 71.5C223.77 72.37 220.94 72.8 217.34 72.8Z" fill="black"/>
+                        <path d="M254.28 71.4V1.40002H279.38L293.28 62.4H295.08V1.40002H308.08V71.4H282.98L269.08 10.4H267.28V71.4H254.28Z" fill="black"/>
+                      </svg>
+
+                        <svg id="svgOneAnimateDup" class="logotype--svg cursor-pointer hide-on-mob" width="309" height="73" viewBox="0 0 309 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M0 71.4V59.8H9.2V13H0V1.40002H28.8C38.2 1.40002 45.35 3.78002 50.25 8.55002C55.15 13.32 57.6 20.4 57.6 29.8V43C57.6 52.4 55.15 59.48 50.25 64.25C45.35 69.02 38.2 71.4 28.8 71.4H0ZM22.4 59.4H29C34.33 59.4 38.23 58 40.7 55.2C43.17 52.4 44.4 48.47 44.4 43.4V29.4C44.4 24.27 43.17 20.32 40.7 17.55C38.23 14.78 34.33 13.4 29 13.4H22.4V59.4Z" fill="black"/>
+                          <path d="M64.17 71.4V1.40002H109.17V13.4H77.37V30.1H106.37V42.1H77.37V59.4H109.77V71.4H64.17Z" fill="black"/>
+                          <path d="M139.1 72.8C133.7 72.8 128.93 71.83 124.8 69.9C120.67 67.97 117.43 65.2 115.1 61.6C112.77 58 111.6 53.67 111.6 48.6V45.8H124.6V48.6C124.6 52.8 125.9 55.95 128.5 58.05C131.1 60.15 134.63 61.2 139.1 61.2C143.57 61.2 147.02 60.3 149.25 58.5C151.48 56.7 152.6 54.4 152.6 51.6C152.6 49.67 152.05 48.1 150.95 46.9C149.85 45.7 148.25 44.72 146.15 43.95C144.05 43.18 141.5 42.47 138.5 41.8L136.2 41.3C131.4 40.23 127.28 38.88 123.85 37.25C120.42 35.62 117.78 33.47 115.95 30.8C114.12 28.13 113.2 24.67 113.2 20.4C113.2 16.13 114.22 12.48 116.25 9.45C118.28 6.42 121.15 4.08 124.85 2.45C128.55 0.82 132.9 0 137.9 0C142.9 0 147.35 0.85 151.25 2.55C155.15 4.25 158.22 6.78 160.45 10.15C162.68 13.52 163.8 17.73 163.8 22.8V25.8H150.8V22.8C150.8 20.13 150.28 17.98 149.25 16.35C148.22 14.72 146.73 13.52 144.8 12.75C142.87 11.98 140.57 11.6 137.9 11.6C133.9 11.6 130.95 12.35 129.05 13.85C127.15 15.35 126.2 17.4 126.2 20C126.2 21.73 126.65 23.2 127.55 24.4C128.45 25.6 129.8 26.6 131.6 27.4C133.4 28.2 135.7 28.9 138.5 29.5L140.8 30C145.8 31.07 150.15 32.43 153.85 34.1C157.55 35.77 160.43 37.97 162.5 40.7C164.57 43.43 165.6 46.93 165.6 51.2C165.6 55.47 164.52 59.22 162.35 62.45C160.18 65.68 157.12 68.22 153.15 70.05C149.18 71.88 144.5 72.8 139.1 72.8Z" fill="black"/>
+                          <path d="M170.81 71.4V1.40002H184.01V71.4H170.81Z" fill="black"/>
+                          <path d="M217.34 72.8C212.54 72.8 208.19 71.72 204.29 69.55C200.39 67.38 197.29 64.22 194.99 60.05C192.69 55.88 191.54 50.8 191.54 44.8V28C191.54 19 194.07 12.08 199.14 7.25C204.21 2.42 211.07 0 219.74 0C228.41 0 234.99 2.28 239.69 6.85C244.39 11.42 246.74 17.6 246.74 25.4V25.8H233.74V25C233.74 22.53 233.22 20.3 232.19 18.3C231.16 16.3 229.61 14.72 227.54 13.55C225.47 12.38 222.87 11.8 219.74 11.8C215.07 11.8 211.41 13.23 208.74 16.1C206.07 18.97 204.74 22.87 204.74 27.8V45C204.74 49.87 206.07 53.78 208.74 56.75C211.41 59.72 215.14 61.2 219.94 61.2C224.74 61.2 228.24 59.93 230.44 57.4C232.64 54.87 233.74 51.67 233.74 47.8V46.8H217.14V35.6H246.74V71.4H234.54V64.7H232.74C232.27 65.83 231.52 67.03 230.49 68.3C229.45 69.57 227.91 70.63 225.84 71.5C223.77 72.37 220.94 72.8 217.34 72.8Z" fill="black"/>
+                          <path d="M254.28 71.4V1.40002H279.38L293.28 62.4H295.08V1.40002H308.08V71.4H282.98L269.08 10.4H267.28V71.4H254.28Z" fill="black"/>
+                        </svg>
+
+                    </a>
+                    
+
                   </div>
-        
-                </div>
-
-                <div class="cv-content lg:pt-s lg:border-top--one">
-
-                  <div class="parallax--cv-sub-header--container lg:pb-header-height--plus-1rem">
-                    <div class="cv-title md:pt-s md:border-top--one">
-                      <span class="cv-header uppercase hide-on-mob md:text-xl lg:text-2xl lgmm:text-2xl line-height--caps none">/</span>
-                      <h3 class="cv-header uppercase wfit md:text-xl lg:text-2xl lgmm:text-2xl line-height--caps">Code</h3>
-                    </div>
-                  </div>
-
-                  <div class="parallax--cv-experience--container lgbgb:grid-col-3-5 top-base md:pt-s pb-header-height--plus-1rem">
-                    <div class="cv-experience--container">
-                      <div class="cv-title--container">
-                        <div class="cv-date">
-                          <h3 class="text--grey font-weight-400 wfit line-height--caps">Good Foundation:</h3>
-                        </div>
-                      </div>
-                      <ul class="cv-tag-list overflow-unset">
-                        <li class="cv-bulleted-list--li-span md:text-s lg:text-m lgbt:text-l line-height--caps">
-                          <span>HTML</span>
-                          <span>·</span>
-                          <span>CSS</span>
-                          <span>·</span>
-                          <span>Javascript</span>
-                          <span>·</span>
-                          <span>Shopify Liquid</span>
-                        </li>
-                      </ul>
-                      <div class="cv-title--container">
-                        <div class="cv-date">
-                          <h3 class="text--grey font-weight-400 wfit line-height--caps">Certificates:</h3>
-                        </div>
-                      </div>
-                      <ul class="cv-tag-list overflow-unset">
-                        <li class="cv-bulleted-list--li-span md:text-s lg:text-m lgbt:text-l line-height--caps gap-s">
-                          <span>
-                            <a href="assets/chrisedwards-gdac's profile _ Codecademy-HMTL.pdf" title="Link to HTML certficiate download" class="link--certificate uppercase pt-xs pr-s pb-xs pl-s border-outline--one-solid border-radius-half mb-component-border-width" target="_blank">
-                              <svg class="cv-link--hover contact-form--link--svg" width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M8 1.35156L16 9.35156L8 17.3516" stroke="inherit" stroke-miterlimit="10"/>
-                                <path d="M0 9.35156H16" stroke="inherit" stroke-miterlimit="10"/>
-                              </svg>
-                              <p>HTML</p>
-                            </a>
-                          </span>
-                          <span>
-                            <a href="assets/chrisedwards-gdac's profile _ Codecademy-CSS.pdf" title="Link to CSS certficiate download" class="link--certificate uppercase pt-xs pr-s pb-xs pl-s border-outline--one-solid border-radius-half mb-component-border-width" target="_blank">
-                              <svg class="cv-link--hover contact-form--link--svg" width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M8 1.35156L16 9.35156L8 17.3516" stroke="inherit" stroke-miterlimit="10"/>
-                                <path d="M0 9.35156H16" stroke="inherit" stroke-miterlimit="10"/>
-                              </svg>
-                              <p>CSS</p>
-                            </a>
-                          </span>
-                          <span>
-                            <a href="assets/chrisedwards-gdac's profile _ Codecademy-Javascript.pdf" title="Link to Javascript certficiate download" class="link--certificate uppercase pt-xs pr-s pb-xs pl-s border-outline--one-solid border-radius-half mb-component-border-width" target="_blank">
-                              <svg class="cv-link--hover contact-form--link--svg" width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M8 1.35156L16 9.35156L8 17.3516" stroke="inherit" stroke-miterlimit="10"/>
-                                <path d="M0 9.35156H16" stroke="inherit" stroke-miterlimit="10"/>
-                              </svg>
-                              <p>Javascript</p>
-                            </a>
-                          </span>
-                          
-                          <!-- <span><a href="assets/chrisedwards-gdac's profile _ Codecademy-HMTL.pdf" class="link--cv" title="Link to HTML certficiate download" target="_blank">HTML</a></span>
-                          <span>·</span>
-                          <span><a href="assets/chrisedwards-gdac's profile _ Codecademy-CSS.pdf" class="link--cv" title="Link to CSS certficiate download" target="_blank">CSS</a></span>
-                          <span>·</span>
-                          <span><a href="assets/chrisedwards-gdac's profile _ Codecademy-Javascript.pdf" class="link--cv" title="Link to Javascript certficiate download" target="_blank">Javascript</a></span> -->
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-        
-                </div>
-
-                <div class="cv-content lg:pt-s lg:border-top--one">
-
-                  <div class="parallax--cv-sub-header--container lg:pb-header-height--plus-1rem">
-                    <div class="cv-title md:pt-s md:border-top--one">
-                      <span class="cv-header uppercase hide-on-mob md:text-xl lg:text-2xl lgmm:text-2xl line-height--caps none">/</span>
-                      <h3 class="cv-header uppercase wfit md:text-xl lg:text-2xl lgmm:text-2xl line-height--caps">Strengths</h3>
-                    </div>
-                  </div>
-
-                  <div class="parallax--cv-experience--container lgbgb:grid-col-3-5 top-base md:pt-s pb-s">
-                    <div class="cv-experience--container">
-                      <ul class="cv-tag-list overflow-unset">
-                        <p class="cv-text-background strenghts md:text-m lg:text-m lgbt:text-l">Typography, motion design, UI and the general organisation of information. I'm also excited by the opportunity to learn and experiment with new technologies wherever possible. My strengths lie in creating visually appealing and intuitive structures that incorporate both form and functionality, with a goal to produce designs that capture attention and enhance engagement.</p>
-                      </ul>
-                    </div>
-                  </div>
-        
                 </div>
               </div>
-            </section>
-          <!-- end of CV-->
-
+            </section>            
           </div>
-          <footer id="footer--container" class="footer--container">
+          <footer id="footer--container" class="footer--container bg-transparent--important lg:position-fixed--important lg:z-index-3 lg:pointer-events-visible">
             <div class="footer--content">
               <div class="footer--col">
                 <div class="cursor-pointer hide-on-mob">
@@ -884,7 +738,7 @@
                   </ul>
                 </a>
               </div>
-              <div class="footer--col lgbgb:grid-col-3-5">
+              <div class="footer--col">
                 <a id="linkedInLinkFooter" href="https://www.linkedin.com/in/chrisedwardsdesign" class="cursor-pointer hide-on-mob hide-on-desktop" title="LinkedIn External Link" target="_blank">
                   <ul>
                     <li class="footer--info-li-color uppercase">LINKEDIN</li>
@@ -914,5 +768,136 @@
           </footer>
       </main>
     </div>
+
+    <!-- <div id="page-wrapper-trigger" class="hide-on-mob"></div>
+    <div id="canvasRipple" class="hide-on-mob"></div> -->
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="jquery.ripples.js"></script>
+    <script>
+      $(document).ready(function() {
+        var mode = sessionStorage.getItem('mode'); // get the value for 'mode' from sessionStorage
+    
+        // If mode is not set in sessionStorage, set default to 'dark-mode'
+        if (!mode) {
+          sessionStorage.setItem('mode', 'dark-mode');
+          mode = 'dark-mode';
+        }
+    
+        var dropInterval;
+        var startRipplesOnMouseMove = false;
+        var mouseMoved = false;
+        var ripplesTimeout;
+        var ripplesTimer = 0;
+    
+        function setupRipples() {
+          console.log('Setting up ripples...');
+          $('#page-wrapper-trigger').ripples({
+            resolution: 256,
+            dropRadius: 15,
+            perturbance: 1,
+          });
+          $('#canvasRipple').ripples({
+            resolution: 128,
+            dropRadius: 10,
+            perturbance: 1,
+            interactive: false
+          });
+        }
+    
+        function removeRipples() {
+          console.log('Removing ripples...');
+          $('#canvasRipple, #page-wrapper-trigger').ripples('destroy');
+        }
+    
+        function createRandomRipple() {
+          var dropIntervalTime = Math.max(1000, Math.min(4000, getRandomInterval()));
+          if (startRipplesOnMouseMove && ripplesTimer < 10000) {
+            var $el = $('#page-wrapper-trigger');
+            var x = Math.random() * $el.outerWidth();
+            var y = Math.random() * $el.outerHeight();
+    
+            var dropRadius = 20;
+            var strength = 0.1 + Math.random() * 0.09;
+    
+            $el.ripples('drop', x, y, dropRadius, strength);
+    
+            console.log('Next ripple in: ' + (dropIntervalTime / 1000) + ' seconds');
+            dropInterval = setTimeout(createRandomRipple, dropIntervalTime);
+            ripplesTimer += dropIntervalTime;
+          } else if(ripplesTimer >= 10000) {
+            stopRipples();
+          }
+        }
+    
+        function startRipples() {
+          console.log('Starting ripples...');
+          setupRipples();
+          ripplesTimer = 0;
+          startRipplesOnMouseMove = true; // Start ripples immediately
+          createRandomRipple();
+        }
+    
+        function stopRipples() {
+          console.log('Stopping ripples...');
+          startRipplesOnMouseMove = false;
+          clearTimeout(dropInterval);
+          dropInterval = null;
+          ripplesTimeout = null;
+        }
+    
+        function getRandomInterval() {
+          return Math.floor(Math.random() * 3000) + 1000;
+        }
+    
+        function handleModeChange() {
+          mode = sessionStorage.getItem('mode'); // Update the mode variable
+          // Call the function to either start or stop the ripples depending on the new mode
+          (mode === 'dark-mode' && document.body.classList.contains('dark-mode')) ? startRipples() : stopRipples();
+        }
+    
+        // Add an event listener to the toggle button
+        document.getElementById('toggleBtnDesktop').addEventListener('click', handleModeChange);
+    
+        if (mode === 'dark-mode' && document.body.classList.contains('dark-mode') && $(window).width() >= 640) {
+          setTimeout(startRipples, 2000);
+        }
+    
+        $(window).resize(function() {
+          if ($(window).width() >= 640 && mode === 'dark-mode' && document.body.classList.contains('dark-mode')) {
+            if(!startRipplesOnMouseMove) {
+              startRipples();
+            }
+          } else {
+            stopRipples();
+          }
+        });
+    
+        $(window).on('mousemove', function() {
+          if (mode === 'dark-mode' && document.body.classList.contains('dark-mode') && $(window).width() >= 640) {
+            ripplesTimer = 0;
+            clearTimeout(dropInterval);
+            if(!startRipplesOnMouseMove) {
+              startRipples();
+            } else {
+              dropInterval = setTimeout(createRandomRipple, getRandomInterval());
+            }
+          } else {
+            stopRipples();
+          }
+        });
+
+        $(window).on('blur', function() {
+          console.log('Window blurred. Stopping ripples...');
+          stopRipples();
+        });
+    
+        $(window).on('focus', function() {
+          if(mode === 'dark-mode' && document.body.classList.contains('dark-mode') && !startRipplesOnMouseMove) {
+            setTimeout(startRipples, 2000);
+          }
+        });
+      });
+    </script> -->
   </body>
 </html>
