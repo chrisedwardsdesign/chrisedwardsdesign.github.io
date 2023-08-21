@@ -23,18 +23,18 @@
     <link rel="stylesheet" href="splide-extension-video-master/dist/css/splide-extension-video.min.css">
     <link rel="license" href="/license.txt">
     <!-- Preload important scripts -->
-    <!-- <link rel="preload" href="splide/dist/js/splide.min.js" as="script">
-    <link rel="preload" href="splide-extension-video-master/dist/js/splide-extension-video.min.js" as="script"> -->
+    <link rel="preload" href="splide/dist/js/splide.min.js" as="script">
+    <link rel="preload" href="splide-extension-video-master/dist/js/splide-extension-video.min.js" as="script">
     <!-- Defer loading non-essential scripts -->
-    <!-- <script async src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
-    <script src="main.js" type="module" defer></script> -->
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+    <script src="main.js" type="module" defer></script>
     <!-- Defer loading essential scripts -->
-    <!-- <script src="splide/dist/js/splide.min.js" defer></script>
-    <script src="splide-extension-video-master/dist/js/splide-extension-video.min.js" defer></script> -->
+    <script src="splide/dist/js/splide.min.js" defer></script>
+    <script src="splide-extension-video-master/dist/js/splide-extension-video.min.js" defer></script>
   </head>
-  <body class="dark-mode fixed">
+  <body class="dark-mode">
 
-    <div class="site--maintenance-container display-flex fixed w100 h100">
+    <!-- <div class="site--maintenance-container display-flex fixed w100 h100 none">
       <div class="site--maintenance--message grid justify-content-center align-items-center height-100 w100 gap-one">
         <div class="w100 hfit grid-col-1 site--maintenance--text-color">
           <h1 class="uppercase">Chris Edwards</h1>
@@ -85,9 +85,9 @@
           <p class="uppercase">© Copyright 2023, CUI</p>
         </div>
       </div>
-    </div>
+    </div> -->
 
-    <div id="sessionOverlay" class="none">
+    <div id="sessionOverlay" class="">
       <a class="nav--logotype-container" href="index.html" title="Homepage">
         <div class="nav--logotype-container cursor-none" title="Page title: CV RÉSUMÉ">
           <h1 class="nav--logotype uppercase">Chris Edwards Design</h1>
@@ -106,7 +106,7 @@
       </section>
     </div>
 
-    <header id="header--container" class="lg:position-fixed--important lg:opacity-1-important bg-transparent--important none">
+    <header id="header--container" class="lg:position-fixed--important lg:opacity-1-important bg-transparent--important">
       <!-- desktop menu -->
       <!-- nav logo -->
       <nav id="navBar" aria-label="Desktop navigation menu" class="container--nav md:grid-auto-cols--minmax md:grid-cols--unset">
@@ -482,7 +482,7 @@
       </div>
     </section>
 
-    <div id="page-wrapper" class="page-wrapper lg:position-fixed--important lg:height-100vh lg:pointer-events-none lg:z-index-2 none">
+    <div id="page-wrapper" class="page-wrapper lg:position-fixed--important lg:height-100vh lg:pointer-events-none lg:z-index-2">
       <main class="main--wrapper lg:bg-transparent">
           <div id="innerWrapper" class="inner-wrapper lg:position-fixed--important md:bg-transparent--important lg:bg-transparent--important md:min-height-fit">
 
@@ -769,10 +769,10 @@
       </main>
     </div>
 
-    <!-- <div id="page-wrapper-trigger" class="hide-on-mob"></div>
-    <div id="canvasRipple" class="hide-on-mob"></div> -->
+    <div id="page-wrapper-trigger" class="hide-on-mob"></div>
+    <div id="canvasRipple" class="hide-on-mob"></div>
 
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="jquery.ripples.js"></script>
     <script>
       $(document).ready(function() {
@@ -791,7 +791,7 @@
         var ripplesTimer = 0;
     
         function setupRipples() {
-          console.log('Setting up ripples...');
+          // console.log('Setting up ripples...');
           $('#page-wrapper-trigger').ripples({
             resolution: 256,
             dropRadius: 15,
@@ -806,7 +806,7 @@
         }
     
         function removeRipples() {
-          console.log('Removing ripples...');
+          // console.log('Removing ripples...');
           $('#canvasRipple, #page-wrapper-trigger').ripples('destroy');
         }
     
@@ -822,7 +822,7 @@
     
             $el.ripples('drop', x, y, dropRadius, strength);
     
-            console.log('Next ripple in: ' + (dropIntervalTime / 1000) + ' seconds');
+            // console.log('Next ripple in: ' + (dropIntervalTime / 1000) + ' seconds');
             dropInterval = setTimeout(createRandomRipple, dropIntervalTime);
             ripplesTimer += dropIntervalTime;
           } else if(ripplesTimer >= 10000) {
@@ -831,7 +831,7 @@
         }
     
         function startRipples() {
-          console.log('Starting ripples...');
+          // console.log('Starting ripples...');
           setupRipples();
           ripplesTimer = 0;
           startRipplesOnMouseMove = true; // Start ripples immediately
@@ -839,7 +839,7 @@
         }
     
         function stopRipples() {
-          console.log('Stopping ripples...');
+          // console.log('Stopping ripples...');
           startRipplesOnMouseMove = false;
           clearTimeout(dropInterval);
           dropInterval = null;
@@ -888,7 +888,7 @@
         });
 
         $(window).on('blur', function() {
-          console.log('Window blurred. Stopping ripples...');
+          // console.log('Window blurred. Stopping ripples...');
           stopRipples();
         });
     
@@ -898,6 +898,6 @@
           }
         });
       });
-    </script> -->
+    </script>
   </body>
 </html>
