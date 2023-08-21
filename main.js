@@ -5,14 +5,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
       let computedStyle = window.getComputedStyle(sectionMediaHeight);
       let sectionMediaheightCalc = parseFloat(computedStyle.getPropertyValue('height'));
       
-      console.log('Computed Height of sectionMedia:', sectionMediaheightCalc);
+      // console.log('Computed Height of sectionMedia:', sectionMediaheightCalc);
       document.documentElement.style.setProperty('--sectionMedia-height', sectionMediaheightCalc + 'px');
 
       let elementSectionGraphic = document.getElementById('sectionGraphic');
       let elementSectionGraphiccomputedStyle = window.getComputedStyle(elementSectionGraphic);
       let elementSectionGraphiccomputedStyleCalc = parseFloat(elementSectionGraphiccomputedStyle.getPropertyValue('height'));
       
-      console.log('Computed Height of sectionMedia:', elementSectionGraphiccomputedStyleCalc);
+      // console.log('Computed Height of sectionMedia:', elementSectionGraphiccomputedStyleCalc);
       
       document.documentElement.style.setProperty('--section-graphic-height', elementSectionGraphiccomputedStyleCalc + 'px');
     }
@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   window.addEventListener('resize', handleScroll);
 
   const themeMode = sessionStorage.getItem('themeMode');
-  console.log('Retrieved theme mode:', themeMode);
+  // console.log('Retrieved theme mode:', themeMode);
   if (themeMode) {
     const darkModeSet = body.classList.contains('dark-mode');
     if ((themeMode === 'dark' && !darkModeSet) || (themeMode === 'light' && darkModeSet)) {
@@ -247,13 +247,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
     document.head.appendChild(style);
 
       function recalculateSplideSize() {
-        console.log('resize event fired');
+        // console.log('resize event fired');
         splide.refresh();
       }
       
-      console.log('Before adding event listener');
+      // console.log('Before adding event listener');
       window.addEventListener('resize', recalculateSplideSize);
-      console.log('After adding event listener');
+      // console.log('After adding event listener');
 
     }
     
@@ -409,21 +409,21 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
         if (resizeObserver) {
             resizeObserver.disconnect();
-            console.log('Stopped observing');
+            // console.log('Stopped observing');
         }
 
         clearTimeout(resizeTimeout);
 
         if (window.innerWidth > 1360) {
             splideListContainer = document.querySelector('#splide01-list');
-            console.log('splideListContainer');
+            // console.log('splideListContainer');
             
             resizeObserver = new ResizeObserver(entries => {
                 for (let entry of entries) {
                     if (entry.target === splideListContainer) {
-                        console.log('Container size changed');
+                        // console.log('Container size changed');
                         splide.refresh();
-                        console.log('Splide refreshed');
+                        // console.log('Splide refreshed');
                   }
                 }
             });
@@ -435,7 +435,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 resizeObserver.observe(splideListContainer);
                 setTimeout(() => {
                     resizeObserver.disconnect();
-                    console.log('Stopped observing');
+                    // console.log('Stopped observing');
                 }, observationDuration);
             }, 350);
         }
