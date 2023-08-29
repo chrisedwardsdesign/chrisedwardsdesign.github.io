@@ -975,7 +975,7 @@ section {
 
 .parallax--img--holder {
   position: sticky;
-  top: 1rem;
+  top: 0;
   display: grid;
   grid-auto-columns: minmax(auto, 1fr);
   gap: 1rem;
@@ -5152,6 +5152,14 @@ svg#menuPlusClose.menu--svg-arrow-down {
   height: auto;
 }
 
+.height-unset {
+  height: unset;
+}
+
+.footer--height-header {
+  height: var(--header-height-desktop);
+}
+
 .width-auto {
   width: auto;
 }
@@ -6045,6 +6053,12 @@ svg#menuPlusClose.menu--svg-arrow-down {
 }
 
 @media only screen and (min-width: 640px) {
+  .lg\:relative {
+    position: relative;
+  }
+  .lg\:footer--height-header {
+    height: var(--header-height-desktop);
+  }
   .lg\:w100 {
     width: 100%;
   }
