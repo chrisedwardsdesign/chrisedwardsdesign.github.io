@@ -6389,6 +6389,12 @@ svg#menuPlusClose.menu--svg-arrow-down {
 }
 
 @media only screen and (min-width: 760px) {
+  .lgt\:flex {
+    display: flex;
+  }
+  .lgt\:none {
+    display: none;
+  }
   .lgt\:pt-s {
     padding-top: 1rem;
   }
@@ -6526,6 +6532,12 @@ svg#menuPlusClose.menu--svg-arrow-down {
 }
 
 @media only screen and (min-width: 840px) {
+  .lgta\:flex {
+    display: flex;
+  }
+  .lgta\:none {
+    display: none;
+  }
   .lgta\:pt-s {
     padding-top: 1rem;
   }
