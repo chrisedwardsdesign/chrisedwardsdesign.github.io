@@ -468,11 +468,11 @@
     </section>
     <div id="page-wrapper" class="page-wrapper">
       <main class="main--wrapper">
-          <div id="innerWrapper" class="inner-wrapper">
+          <div id="innerWrapper" class="inner-wrapper md:pt-header-height lg:pt-header-height lg:pt-0">
             
             <section id="sectionContent" class="content-s hide-on-mob--important">
-              <div class="grid grid-auto-cols--minmax gap-one grid-col-1-3 pt-header-height">
-                <div class="content--text-desktop-pages grid-auto-cols--minmax md:pt-s lg:pt-s lgbg:pt-none md:border-top--one lg:border-top--one lgbg:border-top--none">
+              <div class="grid grid-auto-cols--minmax gap-one grid-col-1-3 pt-header-height lg:pt-0">
+                <div class="content--text-desktop-pages grid-auto-cols--minmax md:pt-s lg:pt-s lgbg:pt-none md:border-top--one lg:border-top--one lgbg:border-top--none pb-m">
                   <h3 class="line-height--standard-caps md:text-xl lg:text-2xl lgmm:text-2xl mdta:grid-col-1-2 lgta:grid-col-1-3 md:grid-row-1 lg:grid-row-1 md:text-m uppercase">Background</h3>
                   <p class="intro-text-desktop mdta:grid-col-2-3 lgta:grid-col-3-5 mdta:grid-row-1 lgta:grid-row-1 lgta:grid-row-1 md:text-m lg:text-m lgbt:text-l">
                     Manchester-based multidisciplinary designer with a strong focus in UI, digital, and motion design. My skillset also includes a good foundation in HTML, CSS, JavaScript, and Shopify Liquid, as well as some experience and a keen interest in 3D software packages like Blender and Cinema 4D.
@@ -490,8 +490,8 @@
 
             <section id="content--container" class="content--container--grid-pages">
               <div id="contentXl" class="content-xl-pages">
-                <div class="grid grid-auto-cols--minmax gap-one grid-col-1-9 height-fit lg:mt-header-height--plus-1rem">
-                  <div class="content--text-desktop-pages lg:pt-s lg:pt-none lg:border-top--one">
+                <div class="grid grid-auto-cols--minmax gap-one grid-col-1-9 height-fit">
+                  <div class="content--text-desktop-pages lg:pt-s lg:pt-none lg:border-top--one pb-m">
                     <h3 class="line-height--standard-caps md:text-xl lg:text-2xl lgmm:text-2xl lg:grid-col-1-2 lgmm:grid-col-1-3 lgbgb:grid-col-1-2 md:text-m grid-row-1 uppercase">Background</h3>
                     <p class="intro-text-desktop lg:grid-col-1-2 lgmm:grid-col-3-5 lgbg:grid-col-3-5 lgbgb:grid-col-3-5 md:text-m lg:text-m lgbt:text-l">
                       Manchester-based multidisciplinary designer with a strong focus in UI, digital, and motion design. My skillset also includes a good foundation in HTML, CSS, JavaScript, and Shopify Liquid, as well as some experience and a keen interest in 3D software packages like Blender and Cinema 4D.
@@ -509,39 +509,35 @@
             </section>
 
           <!-- CV -->
-            <section class="paralax--section-container pt-header-height">
+            <section class="paralax--section-container">
               <div class="cv-section--container">
                 <div class="cv-content lg:pt-s lg:border-top--one">
 
-                  <div class="parallax--cv-sub-header--container top-base grid-row-1 md:pt-s md:border-top--one hide-on-desktop">
+                  <div class="md:relative parallax--cv-sub-header--container top-0 grid-row-1 md:pt-s md:border-top--one hide-on-desktop pb-header-height--plus-1rem ">
                     <div class="cv-title">
                       <span class="cv-header uppercase hide-on-mob line-height--caps">/</span>
                       <h3 class="cv-header uppercase wfit md:text-xl lg:text-2xl lgmm:text-2xl line-height--caps">Background</h3>
                     </div>
-                  </div>
-                  <div class="parallax--cv-experience--container md:pt-s pb-s pb-header-height hide-on-desktop">
-                    <div class="cv-experience--container">
-                      <div class="cv-bulleted-list">
-                        <p class="cv-text-background">Manchester-based multidisciplinary designer with a strong focus in UI, digital, and motion design. My skillset also includes a good foundation in HTML, CSS, JavaScript, and Shopify Liquid, as well as some experience and a keen interest in 3D software packages like Blender and Cinema 4D.</p>
-                        <a href="assets/Chris-Edwards-CV.pdf" class="link--cv-page-mob link--main--cv link-cv-mobile align-self-start uppercase mt-s-xs pt-xs pr-s pb-xs pl-s border-outline--one-solid border-radius-half" target="_blank">
-                          <svg class="contact-form--link--svg" width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8 1.35156L16 9.35156L8 17.3516" stroke="inherit" stroke-miterlimit="10"/>
-                            <path d="M0 9.35156H16" stroke="inherit" stroke-miterlimit="10"/>
-                          </svg>
-                          <p class="line-height--caps">Download CV</p>
-                        </a>
-                      </div>
+                    <div class="cv-bulleted-list">
+                      <p class="cv-text-background">Manchester-based multidisciplinary designer with a strong focus in UI, digital, and motion design. My skillset also includes a good foundation in HTML, CSS, JavaScript, and Shopify Liquid, as well as some experience and a keen interest in 3D software packages like Blender and Cinema 4D.</p>
+                      <a href="assets/Chris-Edwards-CV.pdf" class="link--cv-page-mob link--main--cv link-cv-mobile align-self-start uppercase mt-s-xs pt-xs pr-s pb-xs pl-s border-outline--one-solid border-radius-half" target="_blank">
+                        <svg class="contact-form--link--svg" width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M8 1.35156L16 9.35156L8 17.3516" stroke="inherit" stroke-miterlimit="10"/>
+                          <path d="M0 9.35156H16" stroke="inherit" stroke-miterlimit="10"/>
+                        </svg>
+                        <p class="line-height--caps">Download CV</p>
+                      </a>
                     </div>
                   </div>
 
-                  <div class="parallax--cv-sub-header--container lg:top-base lg:pb-header-height--plus-1rem md:pt-s">
+                  <div class="md:relative parallax--cv-sub-header--container lg:top-base lg:pb-header-height--plus-1rem md:pb-s">
                     <div class="cv-title md:pt-s md:border-top--one">
                       <span class="cv-header uppercase hide-on-mob md:text-xl lg:text-2xl lgmm:text-2xl line-height--caps none">/</span>
                       <h3 class="cv-header uppercase wfit md:text-xl lg:text-2xl lgmm:text-2xl line-height--caps">Experience</h3>
                     </div>
                   </div>
 
-                  <div class="md:relative  parallax--cv-experience--container lgbgb:grid-col-3-5 md:pt-s pb-s">
+                  <div class="md:relative parallax--cv-experience--container lgbgb:grid-col-3-5 md:pt-s pb-s">
                     <div class="cv-experience--container">
                       <div class="cv-title--container">
                         <div class="cv-title">
