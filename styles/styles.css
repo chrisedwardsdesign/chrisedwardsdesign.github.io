@@ -5157,7 +5157,8 @@ svg#menuPlusClose.menu--svg-arrow-down {
 }
 
 .footer--height-header {
-  height: var(--header-height-desktop);
+  height: var(--header-height-desktop)!important;
+  min-height: var(--header-height-desktop)!important;
 }
 
 .width-auto {
@@ -6063,7 +6064,8 @@ svg#menuPlusClose.menu--svg-arrow-down {
     position: relative;
   }
   .lg\:footer--height-header {
-    height: var(--header-height-desktop);
+    height: var(--header-height-desktop)!important;
+    min-height: var(--header-height-desktop)!important;
   }
   .lg\:w100 {
     width: 100%;
