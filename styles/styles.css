@@ -436,7 +436,8 @@ section {
   border-top: var(--section-border-width) solid var(--color-primary);
   background-color: var(--background-color-primary);
   position: sticky;
-  min-height: 100vh;
+  /* min-height: 100vh; */
+  min-height: fit-content;
   width: 100%;
   left: 0;
   top: 0;
@@ -4600,6 +4601,11 @@ svg#menuPlusClose.menu--svg-arrow-down {
   width: 100%;
   border-bottom: var(--component-border-width) dashed var(--color-highlight-2);
   justify-content: space-between;
+}
+
+.accordion-item--left {
+  gap: 0.5rem!important;
+  justify-content: flex-start!important;
 }
 
 .accordion-item a:hover, .accordion-item p:hover {
