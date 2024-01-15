@@ -1115,63 +1115,6 @@ updateSvgIcons();
   copyrightMessageToggle.addEventListener('click', creditsToggle);
   copyrightOverlay.addEventListener('click', creditsToggle);
 
-  // Marquee 1
-  // const marqueeText1 = document.getElementById("contactFormMarqueeTitle");
-  // const marqueeContainer1 = document.getElementById("contact-form-footer");
-  // let marqueeTextWidth1 = marqueeText1.offsetWidth;
-  // let marqueeParentWidth1 = marqueeContainer1.offsetWidth;
-  // const formPositionElement = document.getElementById("formPosition");
-
-  // const formTriggerOpenClick = document.getElementById("formTriggerOpen");
-  // const formTriggerThreeClick = document.getElementById("formTriggerThree");
-  // const formTriggerThreeClose = document.getElementById("contactFormTriggerTwo");
-  // let shouldMarquee1Animate = false;
-
-  // formTriggerOpenClick.addEventListener("click", function() {
-  //   shouldMarquee1Animate = true;
-  // });
-
-  // formTriggerThreeClick.addEventListener("click", function() {
-  //   shouldMarquee1Animate = true;
-  // });
-
-  // formTriggerThreeClose.addEventListener("click", function() {
-  //   shouldMarquee1Animate = false;
-  // });
-
-  // animate(marqueeText1, marqueeContainer1, () => marqueeTextWidth1, () => marqueeParentWidth1, () => !formPositionElement.classList.contains("slide-left") && shouldMarquee1Animate);
-
-  // // Marquee 2
-  // const marqueeText2 = document.getElementById("contactFormMarqueeTitleTwo");
-  // const marqueeContainer2 = document.getElementById("contact-form-menu");
-  // let marqueeTextWidth2 = marqueeText2.offsetWidth;
-  // let marqueeParentWidth2 = marqueeContainer2.offsetWidth;
-  // const mobileMenuDropDown = document.getElementById("mobileMenuDropDown");
-
-  // animate(marqueeText2, marqueeContainer2, () => marqueeTextWidth2, () => marqueeParentWidth2, () => mobileMenuDropDown.classList.contains("visible"));
-
-  // function animate(element, container, getTextWidth, getParentWidth, shouldAnimate) {
-  //   let baseValue = 0;
-  //   function step() {
-  //     if (shouldAnimate()) {
-  //       baseValue -= 2; // decrease baseValue by 2 pixels on each frame
-  //       element.style.marginLeft = baseValue + "px";
-  //       if (baseValue <= -getTextWidth()) {
-  //         baseValue = getParentWidth();
-  //       }
-  //     }
-  //     requestAnimationFrame(step);
-  //   }
-  //   requestAnimationFrame(step);
-  // }
-
-  // window.addEventListener("resize", function() {
-  //   marqueeTextWidth1 = marqueeText1.offsetWidth;
-  //   marqueeParentWidth1 = marqueeContainer1.offsetWidth;
-  //   marqueeTextWidth2 = marqueeText2.offsetWidth;
-  //   marqueeParentWidth2 = marqueeContainer2.offsetWidth;
-  // });
-
   // svg resize
   if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
     const centerElement = document.getElementById('logotypeSvgWidthCenter');
